@@ -1,7 +1,11 @@
 @def title = "An Introduction to Climate Modeling"
 @def tags = ["syntax", "code"]
 
-# Course Description
+# An Introduction to Climate Modeling
+
+\fig{/assets/earth_heating.gif}
+
+## Course Description
 
 A course about the basics of climate modeling, numerical methods, and scientific computations. 
 The objective is that the participants implement a two-dimensional Energy Balance Model to simulate Earth's climate.
