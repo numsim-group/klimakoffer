@@ -12,10 +12,10 @@ mintoclevel = 2
 ignore = ["node_modules/"]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
-generate_rss = true
-website_title = "Franklin Template"
-website_descr = "Example website using Franklin"
-website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
+generate_rss = false
+website_title = "An Introduction to Climate Modeling"
+website_descr = "In this course, you will learn how to implement an energy balance model for climate simulations"
+website_url   = "https://www.mi.uni-koeln.de/IntroToClimateModeling/"
 +++
 
 <!--
