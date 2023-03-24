@@ -34,13 +34,13 @@ tags = ["syntax", "code"]
 
 ## Examination
 
-* Milestone 7 is free style and the topic chosen by students with a final presentation at the end that will be graded. The grad makes 50% of the final grade.
-* Per person oral exam (10 - 15 minutes) give the other 50% of the grade.
+* Milestone 7 is free style and the topic chosen by students with a final presentation at the end that will be graded. The grade makes 50% of the final grade.
+* Per person oral exam (10 - 15 minutes) gives the other 50% of the grade.
 * Admission criterion for oral exam: Pass milestone 7 with at least grade *4.0*.
 
 ## Organization of the course 
 
-* All announcements and deliverables and internal communications will be done via [ILIAS](https://www.ilias.uni-koeln.de/ilias/goto_uk_crs_5096476.html)!
+* All announcements and internal communications will be done via [ILIAS](https://www.ilias.uni-koeln.de/ilias/goto_uk_crs_5096476.html)!
 * Make sure that you can log in there and check "general information".
 * If you have a question, please post in [ILIAS Forum](https://www.ilias.uni-koeln.de/ilias/goto_uk_frm_5121639.html).
 
