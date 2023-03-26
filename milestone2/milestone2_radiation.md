@@ -33,7 +33,7 @@ In our EBM, we aim to include four effects:
 
 The goal in this section is to define a model/parametrization for the source term $S_{OLW}(T,x,t)$. 
 
-But first, to warm up with the topic, we consider as a toy model an idealized black-body Earth, i.e., we assume that the Earth is a _black body_ that emits radiation in the infrared spectrum.
+But first, to warm up with the topic, we consider as a toy model an idealized black-body Earth, i.e., we assume that the Earth is a _black body_ that emits and absorbs radiation in the infrared spectrum.
 
 The radiation energy per time that is emitted by a black body can be computed by the Stefan-Boltzmann law of physics 
 $$
