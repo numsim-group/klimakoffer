@@ -58,19 +58,15 @@ Let us assume that we have a 2D data field $F[j,i]$, with $j=0,...,\nlat$ and $i
 We assume that we have our area vector $area[j]$, with $j=0,...,\nlat$, from milestone 3. 
 With the assumption that along the longitue direction $i$, all values at the north pole of $F[0,i]$ are the same, we can compute the area average as 
 \begin{align}
-\overline{F}_N =& area[1]\,F[1,1] & (\text{North~pole})
+\overline{F}_N = 2 \Bigg(& \texttt{area}[1]\,F[1,1]  & (\text{North~pole}) 
 \\
-+& \sum_{j=1}^{j_{\text{equator}}-1} area[j]\,\sum\limits_{i=1}^{\nlong} F[j,i]
++& \sum_{j=1}^{j_{\text{equator}}-1} \texttt{area[j]}\,\sum\limits_{i=1}^{\nlong} F[j,i]
 & (\text{Intermediate~cells})
 \\
-&+ \frac{1}{2}\,area[j_{\text{equator}}]\,\sum\limits_{i=1}^{\nlong} F[j_{\text{equator}},i]
+&\left.+ \frac{1}{2}\,\texttt{area}[j_{\text{equator}}]\,\sum\limits_{i=1}^{\nlong} F[j_{\text{equator}},i] \right)
 & (\text{Equator})
 \end{align}
-
-We need to be careful at the end, as our $area[j]$ vector is normalized for the whole sphere surface, but the North is only half of it 
-$$
-\overline{F}_N = \overline{F}_N / 2.
-$$
+Note that we are multiplying by the factor $2$ as our $area[j]$ vector is normalized for the whole sphere surface, but the North is only half of it.
 In an analogous way, we can easily compute the area average of the southern hemisphere.
 
 With these new averages, and the tools we developed before, we are able to now generate a 0D-EBM for the northern and the southern hemispheres each. We solve the two 0D-EBM models individually to equilibrium as an approximation. The next figure shows the annual temperature distributsions: 
