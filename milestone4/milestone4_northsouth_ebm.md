@@ -55,7 +55,7 @@ $$
 @@
 
 Let us assume that we have a 2D data field $F[j,i]$, with $j=1,...,\nlat$ and $i=1,...,\nlong$, for which we want to compute an area average over the nothern hemisphere. 
-We assume that we have our area vector $area[j]$, with $j=1,...,\nlat$, from milestone 3. 
+We assume that we have our area vector $area[j]$, with $j=1,...,\nlat$, from [milestone 3](/milestone3/milestone3_averages/). 
 With the assumption that along the longitude direction $i$, all values at the north pole of $F[1,i]$ are the same, we can compute the area average as 
 \begin{align}
 \overline{F}_N = 2 \Bigg(& \texttt{area}[1]\,F[1,1]  & (\text{North~pole}) 
@@ -66,7 +66,7 @@ With the assumption that along the longitude direction $i$, all values at the no
 &\left.+ \frac{1}{2}\,\texttt{area}[j_{\text{equator}}]\,\sum\limits_{i=1}^{\nlong} F[j_{\text{equator}},i] \right)
 & (\text{Equator})
 \end{align}
-Note that we are multiplying by the factor $2$ as our $area[j]$ vector is normalized for the whole sphere surface, but the North is only half of it.
+Note that we are multiplying by the factor $2$ as our $\texttt{area}[j]$ vector is normalized for the whole sphere surface, but the North is only half of it.
 In an analogous way, we can easily compute the area average of the southern hemisphere.
 
 With these new averages, and the tools we developed before, we are able to now generate a 0D-EBM for the northern and the southern hemispheres each. We solve the two 0D-EBM models individually to equilibrium as an approximation. The next figure shows the annual temperature distributsions: 
@@ -74,4 +74,4 @@ With these new averages, and the tools we developed before, we are able to now g
 
 \fig{/assets/milestone4/temperatures_northsouth.png}
 
-We can clearly see that the temperature distributions of north and south are phase shifted.  It seems however, that the phase shift in this simple model is mainly due to the seasonal difference of the solar insolation. There is no clear effect due to the difference in heat capacity visible. The average heat-capacities are $C_N = 5.2$ and $C_S=7$ $[J/Ksm]$. If we check the maximum temperature variation in the hemispheres, we get $\Delta T_{N,max} = 5$ and $\Delta T_{S,max} = 4.2$ $[K]$, which shows that a lower heat-capacity allows for a stronger variation in temperature. From our own experience about the annual seasons, it is clear that the seasonal temperature distribution from both, the North and the South, are still off. It seems that averaging our EBM first in the North and in the South, then compute the temperatures is to crude of an approximation to capture the seasonal temperature distribution accurately.
+We can clearly see that the temperature distributions of north and south are phase shifted.  It seems, however, that the phase shift in this simple model is mainly due to the seasonal difference of the solar insolation. There is no clear effect due to the difference in heat capacity visible. The average heat-capacities are $C_N = 5,2$ $[J/Ksm]$ and $C_S=7$ $[J/Ksm]$. If we check the maximum temperature variation in the hemispheres, we get $\Delta T_{N,max} = 5$ and $\Delta T_{S,max} = 4.2$ $[K]$, which shows that a lower heat-capacity allows for a stronger variation in temperature. From our own experience about the annual seasons, it is clear that the seasonal temperature distribution from both, the North and the South, are still off. It seems that averaging our EBM first in the North and in the South, then compute the temperatures is too crude of an approximation to capture the seasonal temperature distribution accurately.
