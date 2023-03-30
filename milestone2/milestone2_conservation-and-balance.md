@@ -21,7 +21,7 @@ following simple principle:
 @@colbox-blue
 **Observation:** The temporal change of $u(x,t)$ in a sub-domain $\omega\subset\Omega$ is equal to the amount
 that gets generated or destroyed inside of $\omega$ in addition to the flux balance
-to the inside or outside of $\omega$ through the surface/boundary $\partial\omega$.
+inwards or outwards through the surface/boundary $\partial\omega$.
 @@
 
 The quantity of $u$ changes, if: 
@@ -48,7 +48,7 @@ Consider a sub-domain $\omega$ with outward pointing normal vector $\vec{n}$:
 $$
 \underbrace{\partialderiv{}{t} \int_{\omega} u \d x}_{\substack{\text{temporal~change} \\ \text{of}~u~\text{in}~\omega}} = 
 - \underbrace{\oint_{\partial \omega} \vec{f} \cdot \vec{n} \d s}_{\substack{\text{change~through} \\ \text{surface~flux}~\vec{f}}} 
-+ \underbrace{\int_{\omega} s(x,t) \d x}_{\substack{\text{change~through} \\ \text{source}~\vec{s(x,t)}}} 
++ \underbrace{\int_{\omega} S(x,t) \d x}_{\substack{\text{change~through} \\ \text{source}~S(x,t)}} 
 $$
 
 @@colbox-blue
@@ -64,7 +64,7 @@ and time), we can apply the Gauss integral theorem to the surface integral
 \begin{align}
 {\int_{\omega} \partialderiv{u}{t} \d x}
 + \underbrace{\int_{\omega} \Nabla \cdot \vec{f} \d x}_{=\int_{\omega} \partialderiv{f_1}{x_1} + \partialderiv{f_2}{x_2} + \cdots + \partialderiv{f_n}{x_n} \d x}
-= \int_{\omega} s(x,t) \d x
+= \int_{\omega} S(x,t) \d x
 \end{align}
 
 As we have chosen an arbitrary sub-domain $\omega$ with no special properties, the equation needs to hold for all choices of $\omega\subset\Omega$. This
@@ -84,7 +84,7 @@ $$
 $$
 @@
 
-Depending on the process we want to model, we need to chose the quantity o finterest $u(x,t)$, a model for the flux $\vec{f}(u,x,t)$  and a model for the source term $S(u,x,t)$. There are 
+Depending on the process we want to model, we need to chose the quantity of interest $u(x,t)$, a model for the flux $\vec{f}(u,x,t)$  and a model for the source term $S(u,x,t)$. There are 
 many examples of such models, e.g., mass and momentum conservation in fluid mechanics. We consider here as an example the so-called heat equation, or heat transfer equation. 
 
 For the heat equqation we are interested in the change of temperature $T(x,t)$ (which is strongly related to the internal energy of a body) in space and time, hence our choice for the unknown quantity is $u = T$. Next, we need a model for the flux. Jean Babtiste Joseph Fourier (1822) gave a model for the heat flux, where the flux of heat is negative proportional to the temperature difference (heat goes from high temperatures to lower temperatures), i.e. 
@@ -128,7 +128,9 @@ to get a classification of the different types
 
 (iii) $\Delta(x,t) < 0$, the PDE is hyperbolic in $(x,t)$
 
-If we consider again our simple 1D constant coefficient heat equation and compute its type, we get $\Delta(x,t) = 0\quad\forall (x,t)$. Hence, the **heat equation is a parabolic PDE**. 
+These definitions are motivated by the definition of conic sections. It is interesting to note, that the type of the PDE has strong implications about the solution behaviour. Hence, there are typical processes that are in nature either elliptic (e.g. gravity), hyperbolic (wave equations, advection), or parabolic (heat equation):
+
+If we consider again our simple 1D constant coefficient heat equation and compute its type, we get $\Delta(x,t) = 0,\;\forall (x,t)$. Hence, the **heat equation is a parabolic PDE**. 
 
 In general, parabolic PDEs model processes that evolve in time and are **not** reversible in time, such as friction, diffusion, dissipation, etc. The effect over time is a "smearing" of the quantity, smooting out of large gradients and extrema. 
 

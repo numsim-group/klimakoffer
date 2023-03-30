@@ -17,25 +17,19 @@ $$
 (A(CO_2) + B\,T) 4\,\pi\,R_E^2 = S_0\,(1-\alpha)\,\pi\,R_E^2.
 $$
 
-As our next step, we want to include a temporal component, i.e., the possibility that temperature $T$ changes in time. 
-<!-- Following the derivations the [EBM chapter](/milestone2/milestone2_ebm/), we add the temporal term  -->
-Temporal change can be modeled by the temporal derivative $\frac{\partial T}{\partial t} = T_t$. Hence, we add such a term with a constant to our model
+As our next step, we want to include a temporal component, i.e., the possibility that temperature $T$ changes in time. Following the general derivations of the [EBM chapter](/milestone2/milestone2_ebm/), we add the temporal term, which is proportional to the temporal derivative $\frac{\partial T}{\partial t} = T_t$. Hence, we add the temporal term with the constant $C$ to our model
 $$
-(C\,T_t)4\,\pi\,R_E^2 + (A(CO_2) + B\,T) 4\,\pi\,R_E^2 = S_0\,(1-\alpha)\,\pi\,R_E^2
+(C\,T_t + A(CO_2) + B\,T) 4\,\pi\,R_E^2 = S_0\,(1-\alpha)\,\pi\,R_E^2
 $$
 to get
 $$
 C\,T_t + A(CO_2) + B\,T = \frac{S_0}{4}\,(1-\alpha) =: Q\,(1-\alpha), 
 $$
-where analysis of the physical units reveal that
-$$
-[C] = [J/m^2/K],
-$$
-which is the Earth surface normalized heat capacity.
+where analysis of the physical units reveal that the Earth's surface area normalized heat capacity $C$ has the units $[J/m^2/K]$.
 
 @@colbox-blue
-**Remark 10:** The term heat capacity hints towards a process of "storing the heat". From our observation (and every day experience) we know that depending on the material the
-storing of heat can be different: For instance when we compare the heat in air and the heat stored in water, or the heat stored in the solid walls of our houses rooms. For our
+**Remark 10:** The term heat capacity hints towards a process of "storing the heat". From our observation (and every day experience) we know that depending on the material, the
+storage capabilities of heat can be different: For instance when we compare the heat in air and the heat stored in water, or the heat stored in the solid walls of our appartment rooms. For our
 full EBM model we want to take this into account and want to have different values of $C$ depending on the location, i.e., if the location is on land, ocean, snow covered
 or with sea ice. We want to make it dependent on the geography (from milestone 1).
 @@
@@ -71,7 +65,9 @@ $$
 **Remark 11:** These numbers are directly from the paper of Zhuang et al. (2017, Table 1, note that there is a typo in the table for the ocean). However, there is a range of possible numbers available in the literature, depending on the authors.
 @@
 
-With these estimates of the heat capacities for different materials, we are almost ready to define the heat capacity values for the geography map from milestone 1. But first we introduce a normalization with respect to our time scale that we will need later on for our full EBM. The typical units in physics for time $t$ is seconds $[s]$. However out of convenience we will instead use the unit year $[yr]$ instead. This affects the time derivative of temperature $T_t$ that we need to scale properly with the number of seconds per year. We choose $sec\_per\_year = 3.15576\cdot 10^7$ following the paper by Zhuang et al. (2017), which corresponds to $365,25$ days in the year. To not carry around this scaling factor explicitly, out of convenience, we absorb this parameter into the heat capacity $C(x)$ as it gets multiplied by $T_t$ anyways. 
+With these estimates of the heat capacities for different materials, we are almost ready to define the heat capacity values for the geography map from milestone 1. 
+
+But first we introduce a normalization with respect to our time scale that we will need later on for our full EBM. The typical units in physics for time $t$ is seconds $[s]$. However out of convenience we will instead use the unit year $[yr]$ instead. This affects the time derivative of temperature $T_t$ that we need to scale properly with the number of seconds per year. We choose $sec\_per\_year = 3.15576\cdot 10^7$ following the paper by Zhuang et al. (2017), which corresponds to $365,25$ days in the year. To not carry around this scaling factor explicitly, out of convenience, we absorb this parameter into the heat capacity $C(x)$ as it gets multiplied by $T_t$ anyways. 
 
 We hence get, for the different geopgraphy types in the map: 
 

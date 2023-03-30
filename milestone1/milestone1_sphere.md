@@ -31,7 +31,7 @@ spherical coordinates. In the geographic coordinate system, we speak of latitude
 * **Source:** Wikipedia.
 
 @@colbox-blue
-**Remark 1:** the values of longitude and latitude can be given in radians or degrees.
+**Remark 1:** The values of longitude and latitude can be given in radians or degrees.
 @@
 
 @@colbox-blue
@@ -46,8 +46,8 @@ coordinates are precise and can be compared.
 
 We consider the spherical coordinate system, in which all points in the three-dimensional space can be located using three variables:
 * Radius ($r \in \R, \, 0 \le r < \infty$),
-* Latitude ($\lat \in \R, \, -\pi/2 \le r < \pi/2$) **or** colatitude ($\colat \in \R, \, 0 \le r < \pi$),
-* Longitude: $\varphi \in \R, \, 0 \le r < 2\pi$.
+* Latitude ($\lat \in \R, \, -\pi/2 \le \lat < \pi/2$) **or** colatitude ($\colat \in \R, \, 0 \le \colat < \pi$),
+* Longitude: $\varphi \in \R, \, 0 \le \varphi < 2\pi$.
 
 ![](/assets/milestone1/SphereCoord.png)
 
@@ -70,7 +70,7 @@ From mathematical analysis, we know that the Jacobian of the coordinate transfor
 \partialderiv{z}{\varphi} &= 0, & 
 \partialderiv{z}{\colat} &= -r \sin \colat,
 \end{align}
-and the respective Jacobian matrix,
+respectively in matrix form
 \begin{align}
 J =
 \partialderiv{(x,y,z)}{(r,\colat,\varphi)} =
@@ -79,7 +79,7 @@ J =
 \sin \colat \sin \varphi & r \sin \colat \cos \varphi & r \cos \colat \sin \varphi \\
 \sin \colat \cos \colat  & 0 & -r \sin \colat 
 \end{bmatrix}
-\in \R^{3 \times 3}
+\in \R^{3 \times 3},
 \end{align}
 with the determinant
 $$\label{eq:det}

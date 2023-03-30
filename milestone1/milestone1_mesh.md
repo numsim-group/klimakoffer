@@ -11,9 +11,9 @@ tags = ["climatesystem"]
 # Milestone 1 - Meshing the sphere
 \toc
 
-In numerical methods, we often partition the domain in smaller subdomains using what is called a mesh. We will then approximate the solution to the partial differential equation that describes our model within each of those subdomains.
+In numerical methods, we often partition the domain in smaller subdomains using what is called a mesh. The subdomains are often called grid cells, or mesh cells, or grid boxes. We will then approximate the solution to the partial differential equation that describes our model within each of those little grid cells.
 
-The easiest way to partition a sphere is to use subdomains with uniform radius, latitude/colatitude and longitude spacings:
+The easiest way to partition a sphere is to use grid cells with uniform radius, latitude/colatitude and longitude spacings:
 
 ![](/assets/milestone1/PolesProblem.png)
 * **Source**: Wikipedia
@@ -27,7 +27,7 @@ In fact, we can note that [the determinant](/milestone1/milestone1_sphere/#eqdet
 get equal to zero for $\colat \in \{ 0, \pi\}$. From linear
 algebra, we know that matrices with determinant
 equal to zero are not regular, i.e., they cannot
-be invented. Transformations where the Jacobian
+be inverted. Transformations where the Jacobian
 matrix gets irregular are singular at this specific
 locations. The locations $\colat=0$ (North) and $\colat=\pi$ (South)
 correspond to the poles. Therefore, the transformation is
@@ -62,7 +62,7 @@ In the illustration, the boundaries of our domain are marked in blue, the grid l
 Since our domain is periodic in the longitude direction, we do not need to store the last column of grid points ($\varphi = \pi$), as their position on the surface of the sphere is the same as for the first column ($\varphi = -\pi$).
 
 Note that all the points in the first row ($\lat = \pi/2$) correspond to the same position (north pole), and all the points in the last row ($\lat = -\pi/2$) too (south pole).
-Nevertheless, we will keep these duplicated grid points in our model to simplify the storage (we can use a matrix to store the values).
+Nevertheless, we will keep these duplicated grid points in our model to simplify the storage (we can use a matrix format to store the values).
 
 We define the number of grid points as
 \begin{align}
@@ -75,7 +75,7 @@ to get the size of the grid cells as
 \Delta \lat &= \Delta \colat = \frac{\pi}{\nlat -1}.
 \end{align}
 
-To simplify the derivation of our numerical climate model, we will use uniform grids, i.e., $\Delta \varphi = \Delta \lat$, so we get:
+To simplify the derivation of our numerical climate model, we will use uniform grids, i.e., $\Delta \varphi = \Delta \lat$, so we require:
 $$
 \nlong = 2(\nlat - 1).
 $$
@@ -94,20 +94,20 @@ and equivalently the colatitude grid node locations are
 \end{align}
 
 To illustrate the results of the model,
-we could directly plot in computational space.
+we could directly plot in computational space (lat/long grid).
 However, it is more pleasing to the eyes and
 more common to plot the results in physical
 space (or an approximation to that).
 There are many options available in the literature
 to get from lat/long to other coordinates.
-In this course we all use the so-called Robinson
+In this course we use the so-called Robinson
 projection, which is an interesting one as this
 transform has no mathematical properties (it does not keep distances, angles, or areas) but
 was designed by Robinson by hand to look
 pleasing to his eyes(!).
 
 While Robinson provided a translation
-table for values (lat/lon), there are
+table for values (lat/long), there are
 closed form approximations available.
 The form we consider was presented by
 > Beineke, D. (1991). Untersuchung zur Robinson-Abbildung und Vorschlag einer analytischen Abbildungsvorschrift. Kartographische Nachrichten, 41(3), 85-94.
@@ -145,5 +145,5 @@ As can be seen in the figure, the
 geographic map can be used to
 display the land-sea-ice-show
 mask of Earth, which is the
-topic of the first assignment.
+topic of the first assignment, milestone 1.
 
