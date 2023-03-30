@@ -14,6 +14,8 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 ---
 
+To formulate our zero-dimensional EBM and to analyze the output of our model, we will require to compute spatial and temporal averages of grid data, such as temperatures, heat capacities, and forcing terms.
+
 ## Area average
 
 We have to be careful about computing the
@@ -26,6 +28,12 @@ We consider the latitude/longitude grid:
 
 In the figure, the discretization nodes are marked in purple, the grid _lines_ are marked in gray, and we have drawn additional auxiliary grid lines (dotted lines in red) between our computational nodes.
 We are going to use these auxiliary grid lines to define the surface area that corresponds to each computational node.
+
+The area average of a field $F(x)$ that takes the value $F_{ij}$ at each node $ij$ can be written as
+$$\label{eq:areaaverage}
+\overline{F} = \sum_{i,j} \omega_{ij} F_{ij},
+$$
+where $\omega_{ij}$ contains the _normalized_ areas for each of the grid points of our mesh.
 
 Observe that, even though we use a regular grid, the area that corresponds to each computational node of our grid depends only on the latitude, and not on the longitude.
 Therefore, our goal is to compute the corresponding
@@ -50,14 +58,14 @@ $$
 \tilde A_{\text{pole}} = 2 \pi R_E^2 (1-\cos \lat) = 2 \pi R_E^2 \left(1-\cos \left(\frac{\Delta \lat}{2}\right)\right).
 $$
 
-As we will use the area calculation only in to compute area averages of quantities on the surface of the spghere, we will directly normalize this value with the surface area of the Earth (spehere), i.e.
+As we will use the area calculation only to compute area averages of quantities on the surface of the spghere, we will directly normalize this value with the surface area of the Earth (spehere), i.e.
 $$\label{eq:cap}
 A_{\text{pole}} = \frac{1}{4\pi R_E^2} \tilde A_{\text{pole}} = \frac{1}{2} \left(1-\cos \left(\frac{\Delta \lat}{2}\right)\right).
 $$
 
 ### Interior nodes
 
-For the interior nodes, we consider a spherical segment between the two angles $\lat_j - \Delta \lat/2$ and $\lat_j + \Delta \lat/2$.
+For the interior nodes, we consider a spherical segment between the two angles $(\lat_j - \Delta \lat/2)$ and $(\lat_j + \Delta \lat/2)$.
 We can use \eqref{eq:cap} to compute the difference between two spherical caps and obtain
 \begin{align}
 A_{\text{int}} &= \frac{1}{2} \left(\cos \left(\lat_j - \frac{\Delta \lat}{2}\right) - \cos \left(\lat_j + \frac{\Delta \lat}{2}\right)\right)
@@ -67,7 +75,7 @@ A_{\text{int}} &= \frac{1}{2} \left(\cos \left(\lat_j - \frac{\Delta \lat}{2}\ri
 
 ### Implementation and data structures
 
-To compute the area average of a vector containing values at the grid points, we will directly store the normalized area entroes in a vector of floats with length $\nlat$ that we will call `area`.
+To compute the area average of a vector containing values at the grid points, we will directly store the normalized area entries ($\omega_{ij}$ of equation \eqref{eq:areaaverage}) in a vector of floats with length $\nlat$ that we will call `area`.
 
 For instance, assuming $\nlat = 65$, we can declare the vector in julia as
 ```julia:./define_area.jl
@@ -124,7 +132,7 @@ That is why we store the areas of the individual cells (normalization with the f
 **Remark:** We have to adjust the expressions if we use a zero-based programming language (like python).
 @@
 
-With this, we get an easy formula for the calculation of the area average of a given field `F(j,i)` wirh $j=1, \ldots, \nlat$ and $i=1, \ldots, \nlong$.
+With this, we get an easy formula for the calculation of the area average of a given field `F(j,i)` with $j=1, \ldots, \nlat$ and $i=1, \ldots, \nlong$.
 ```julia:./computearea.jl
 function calc_mean(field, area, n_latitude, n_longitude)
   if size(field)[1] !== n_latitude || size(field)[2] !== n_longitude
@@ -144,7 +152,7 @@ function calc_mean(field, area, n_latitude, n_longitude)
 end 
 ```
 
-We test our routine by computing the area average of the dara $F(j,i)=1 \forall (i,j)$ to get the value of $1$.
+We test our routine by computing the area average of the dara $F(j,i)=1 \, \forall (i,j)$ to get the value of $1$.
 ```julia:./testarea.jl
 field = ones(Float64,n_latitude,n_longitude)
 println("Area : ", calc_mean(field, area, n_latitude, n_longitude))
