@@ -41,7 +41,7 @@ approximation of the area for each latitude
 grid coordinate ($\lat_j$).
 
 In addition, observe that each node at the pole maps to a triangle, and not to a quadrilateral.
-In preparation for the discretization of the diffusion operator in sperical
+In preparation for the discretization of the diffusion operator in spherical
 coordinates ([milestone 5](/milestone5/milestone5_menu/)), we already start to
 treat the pole regions ($j=1$ and $j=\nlat$)
 in a special way.
@@ -58,7 +58,7 @@ $$
 \tilde A_{\text{pole}} = 2 \pi R_E^2 (1-\cos \lat) = 2 \pi R_E^2 \left(1-\cos \left(\frac{\Delta \lat}{2}\right)\right).
 $$
 
-As we will use the area calculation only to compute area averages of quantities on the surface of the spghere, we will directly normalize this value with the surface area of the Earth (spehere), i.e.
+As we will use the area calculation only to compute area averages of quantities on the surface of the sphere, we will directly normalize this value with the surface area of the Earth (spehere), i.e.
 $$\label{eq:cap}
 A_{\text{pole}} = \frac{1}{4\pi R_E^2} \tilde A_{\text{pole}} = \frac{1}{2} \left(1-\cos \left(\frac{\Delta \lat}{2}\right)\right).
 $$
@@ -77,7 +77,7 @@ A_{\text{int}} &= \frac{1}{2} \left(\cos \left(\lat_j - \frac{\Delta \lat}{2}\ri
 
 To compute the area average of a vector containing values at the grid points, we will directly store the normalized area entries ($\omega_{ij}$ of equation \eqref{eq:areaaverage}) in a vector of floats with length $\nlat$ that we will call `area`.
 
-For instance, assuming $\nlat = 65$, we can declare the vector in julia as
+For instance, assuming $\nlat = 65$, we can declare the vector in Julia as
 ```julia:./define_area.jl
 n_latitude = 65
 n_longitude = 2 * (n_latitude - 1)
@@ -88,7 +88,7 @@ The grid size is
 $$
 \Delta \lat = \frac{\pi}{\nlat - 1}.
 $$
-Therefore, taking into account that julia uses one-based indexing we have for the poles
+Therefore, taking into account that Julia uses one-based indexing we have for the poles
 ```julia:./poles.jl
 delta_theta = pi / (n_latitude - 1)
 area[1] = 0.5 * (1 - cos(0.5 * delta_theta))
@@ -122,14 +122,14 @@ Hence, it makes sense to not differentiate between those values, but just use th
 
 On the other hand, the solution values in the interior of the grid are in general different for each location `i`, e.g.:
 $$
-T(j,i=1) \ne T(j,i=2) = \cdots = T(j,i=\nlong),
+T(j,i=1) \ne T(j,i=2) \ne \cdots \ne T(j,i=\nlong),
 $$
 for $j\notin\{1,\nlat\}$. 
 That is why we store the areas of the individual cells (normalization with the factor $1/\nlong$) for the interior cells.
 @@
 
 @@colbox-blue
-**Remark:** We have to adjust the expressions if we use a zero-based programming language (like python).
+**Remark:** We have to adjust the expressions if we use a zero-based programming language (like Python).
 @@
 
 With this, we get an easy formula for the calculation of the area average of a given field `F(j,i)` with $j=1, \ldots, \nlat$ and $i=1, \ldots, \nlong$.
@@ -152,7 +152,7 @@ function calc_mean(field, area, n_latitude, n_longitude)
 end 
 ```
 
-We test our routine by computing the area average of the dara $F(j,i)=1 \, \forall (i,j)$ to get the value of $1$.
+We test our routine by computing the area average of the dara $F(j,i)=1, \; \forall (i,j)$ to get the value of $1$.
 ```julia:./testarea.jl
 field = ones(Float64,n_latitude,n_longitude)
 println("Area : ", calc_mean(field, area, n_latitude, n_longitude))
@@ -163,13 +163,11 @@ When we execute the code, we obtain:
 
 ## Temporal average
 
-The temporal average is less involved and relatively straightforward. We make the assumption that tht temporal behavior is periodic (Earth moving around the sun in one year).
-
-We normalize the time, such that $t=1$ corresponds to one year time.
+The temporal average is less involved and relatively straightforward. We make the assumption that the temporal behavior is periodic with perdiodicity $\Delta t_{periodic} = 1$ (Earth moving around the sun in one year). Note, that we normalized the time, such that $t=1$ corresponds to one year time.
 
 In our temporal discretization, we will choose a fixed number of time steps per year $\ntime$ and compute the fixed time-step size as $\Delta t = 1 / \ntime$.
 
-Given a vector that contains solution values in time $F(k)$ with $k=1, \ldots, \ntime$, we compute the temporal average as
+Given a vector that contains solution values in time $F(k)$ with $k=1, \ldots, \ntime$ we compute the temporal average as
 \begin{align}
 \widehat{F} &= \frac{\left( \sum_{k=1}^{\ntime} F(k) \Delta t_k \right)}{\left( \sum_{k=1}^{\ntime} \Delta t_k \right)}
 \\

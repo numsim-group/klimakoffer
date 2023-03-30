@@ -17,13 +17,12 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Time dependent source term
 
 As a next step, we want to incorporate the annual change of the insolation and consider a simplified EBM, where we only average in space
-but not in time. We apply the area avenging to our coefficients to get
+but not in time. We apply the area averaging to our coefficients to get
 $$
 \overline{C} \partialderiv{\overline{T}}{t} + A(CO_2) + B \overline{T} = \overline{Q_{\alpha} S}(t),
 $$
 
-where we keep the time dependence of the
-solar source term
+where we keep the time dependence of the solar source term.
 
 @@colbox-blue
 **Remark:** We get $\overline{Q_{\alpha} S}(t)$ by computing the area average of $(1-\alpha)S(x,t)$ at
@@ -33,7 +32,7 @@ every single time step separately.
 As it is a cumbersome to compute the 
 analytical solution, we take the chance to
 consider numerical approximation methods,
-so-called ODE solves, to numerically calculate 
+so-called ODE solvers, to numerically calculate 
 an (approximate) ODE solution.
 
 Typically, in ODE literature, we consider a
@@ -122,16 +121,16 @@ $$
 
 Now that we have an approximation for $y_1$, we can proceed analogously for $y_2$, $y_3$, $\ldots$,
 \begin{align}
-\text{Euler~(explicit):}& &y_{j+1} &= y_j + (t_{j+1} - t_j) f(y_j,t_j)
+\text{Euler~(explicit):}& &y_{k+1} &= y_k + (t_{k+1} - t_k) f(y_k,t_k)
 \\
-\text{Euler~(implicit):}& &y_{j+1} &= y_j + (t_{j+1} - t_j) f(y_{j+1},t_{j+1}).
+\text{Euler~(implicit):}& &y_{k+1} &= y_k + (t_{k+1} - t_k) f(y_{k+1},t_{k+1}).
 \end{align}
 
 The first variant is called _explicit_
-as the new value $y_{j+1}$ can be directly
-computed with the information that is known at $t_j$. The second variant is
+as the new value $y_{k+1}$ can be directly
+computed with the information that is known at $t_k$. The second variant is
 _implicit_ as the new unknown solution
-$y_{j+1}$ also appears on the right-hand side.
+$y_{k+1}$ also appears on the right-hand side.
 Hence, an algebraic equation needs to be
 solved for every time step.
 
@@ -142,7 +141,7 @@ the Euler methods are **not** exact
 solutions of the ODE, but have an error.
 First-order accuracy means that the
 error of the approximation depends **linearly**
-on the time-step size $\Delta t = t_{j+1} - t_j$. Hence, by decreasing
+on the time-step size $\Delta t = t_{k+1} - t_k$. Hence, by decreasing
 the time-step size, the error gets smaller.
 However, at the same time, the number of
 time steps $\ntime$ gets larger, i.e., the
@@ -152,11 +151,11 @@ the desired accuracy in our numerical
 simulation.
 
 @@colbox-blue
-**Remark:** It is easy to generate a second-order time-integration method based on the Euler methods. For instance, the (semi)implicit Crank--Nicolson scheme is
+**Remark:** It is easy to generate a second-order time-integration method based on the Euler methods. For instance, the implicit Crank--Nicolson scheme is
 $$
-y_{j+1} = y_j + \frac{t_{j+1} - t_j}{2} \left(f(y_{j},t_{j}) + f(y_{j+1},t_{j+1}) \right),
+y_{k+1} = y_k + \frac{t_{k+1} - t_k}{2} \left(f(y_{k},t_{k}) + f(y_{k+1},t_{k+1}) \right),
 $$
-which results whhen approximating the integral with a trapezoidal rule.
+which results when approximating the integral with a trapezoidal rule.
 @@
 
 ## Stability of the explicit and implicit Euler methods
@@ -167,7 +166,7 @@ computed without solving an algebraic (possibly
 non-linear) equation.
 However, the simplicity of the explicit nature
 comes at a hefty price: the choice of the size
-of $\Delta t$ is not arbitrary anymore but needs
+of $\Delta t$ is not arbitrary anymore, but needs
 to be small enough due to stability reasons.
 
 As an example, let us consider the ODE
@@ -182,7 +181,7 @@ Since $\lambda$ is a complex number, we can write it as $\lambda = a + b i$. The
 y(t) &= e^{at} e^{bti}  \\
  &= e^{at} \left( \cos(bt) + i \sin(bt) \right),
 \end{align}
-which shows that the real part corresponds to the amplitude of the solution (which grows in time for $a>0$ and decreases for $a<0$) and the imaginary part is the oscillatory part.
+which shows that the real part corresponds to the amplitude of the solution (which grows in time for $a>0$ and decreases for $a<0$) and that the imaginary part is the oscillatory part.
 
 \fig{/assets/milestone3/ODEsolution.png}
 
@@ -200,7 +199,7 @@ If we compare the two solutions,
 $$
 |y_{\delta}(t) - y(t)| = |\delta e^{\lambda t}|,
 $$
-we see that only for non-positive real ports, $a \le 0$,
+we see that only for non-positive real parts, $a \le 0$,
 the difference stays small in time even
 when considering a small $\delta$ perturbation.
 The problem is called stable for $Re(\lambda) = a \le 0$.
@@ -211,14 +210,14 @@ problems!
 If we apply first the explicit Euler
 formula to solve the problem, we get
 \begin{align}
-y_{j+1} &= y_j + \Delta t \lambda y_j
+y_{k+1} &= y_k + \Delta t \lambda y_k
 \\
-&= (1 + \Delta t \lambda) y_j.
+&= (1 + \Delta t \lambda) y_k.
 \end{align}
 
 If we look at the amplitude of the numerical solution we obtain
 $$
-|y_{j+1}| = |1 + \Delta t \lambda| |y_j|,
+|y_{k+1}| = |1 + \Delta t \lambda| |y_k|,
 $$
 which shows that $|1 + \Delta t \lambda|$ is the amplification factor of the explicit Euler method.
 We can investigate for which values of $\Delta t$ this factor is smaller than $1$ to obtain:
@@ -246,7 +245,7 @@ very low for large values of $\lambda$. Such problems
 are sometimes also referred to as _stiff problems_.
 @@
 
-The advantage of the explicit Euler is the
+The advantage of the explicit Euler method is the
 simplicity and the computationally cheap algorithm.
 The downside is that the size of the time
 step can be very low due to numerical 
@@ -254,8 +253,8 @@ stability issues.
 
 If we consider now the **implicit** Euler method for our simple ODE \eqref{eq:simpleODE}, we obtain
 \begin{align}
-y_{j+1} &= y_j + \lambda \Delta t y_{j+1} \\
-y_{j+1} &= \frac{y_j}{1- \lambda \Delta t}.
+y_{k+1} &= y_k + \lambda \Delta t y_{k+1} \\
+y_{k+1} &= \frac{y_k}{1- \lambda \Delta t}.
 \end{align}
 In this simple case, we can directly solve the implicit equation!
 
@@ -267,7 +266,7 @@ the implicit Euler method:
 This shows that the implicit Euler scheme
 is stable for all values of $\lambda \Delta t$, except for the
 ones inside the blue circle. In particular, the
-scheme is _inconditionally_ stable for **all** choices of $\Delta t$ in
+scheme is _unconditionally_ stable for **all** choices of $\Delta t$ in
 case $Re(\lambda) = a \le 0$.
 
 Hence, the big advantage of the implicit
@@ -283,7 +282,7 @@ the explicit or implicit method is more
 efficient.
 @@
 
-## Milestone 3 - Towards our climate modeling software
+## Temporal equilibrium simulation
 In conclusion, we have now all the tools
 available to solve our time dependent
 area-averaged EBM with either explicit

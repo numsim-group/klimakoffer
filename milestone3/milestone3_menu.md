@@ -12,14 +12,14 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 In the last milestone, we focused
 on the modeling aspect and introduced several
-parametrizations of ,e.g., heat capacity, albedo
+parametrizations of ,e.g., heat capacity, albedo,
 radiation, etc.
 
 Before moving on to modeling the diffusion
 operator and the diffusion coefficient, we
 take a step back and move deeper into
 understanding the solution behavior of the simplified
-EBM we discussed in last chapter. This will also helps us
+EBM we discussed in last chapter. This will also help us
 to introduce some numerical concepts and
 algorithms that we will use later for the full
 EBM.
