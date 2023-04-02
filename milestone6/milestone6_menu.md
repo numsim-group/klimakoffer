@@ -10,4 +10,6 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 # Milestone 6
 
-1. [Content](/milestone6/milestone6/)
+Under construction
+
+<!-- 1. [Content](/milestone6/milestone6/) -->

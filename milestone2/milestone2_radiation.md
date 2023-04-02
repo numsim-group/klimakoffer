@@ -14,14 +14,14 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 ## Introduction
 
-The energy balance of Earth is strongly impacted by radiation. The following figure shows the energy fluxes in the global Earth-atmosphere system
+The energy balance of Earth is strongly impacted by radiation. The following figure shows the energy fluxes in the global Earth atmosphere system
 
 \fig{/assets/milestone2/ClimateSystem.png}
 * Figure from [Trenberth, K. E., Fasullo, J. T., & Kiehl, J. (2009). Earth's global energy budget. Bulletin of the American Meteorological Society, 90(3), 311-324](https://journals.ametsoc.org/downloadpdf/journals/bams/90/3/2008bams2634_1.pdf).
 
 In our EBM, we aim to include four effects: 
 
-(i) Incoming solar raditaion. 
+(i) Incoming solar radiation. 
 
 (ii) Reflection of radiation by the surface and cloud cover. 
 
@@ -33,7 +33,7 @@ In our EBM, we aim to include four effects:
 
 The goal in this section is to define a model/parametrization for the source term $S_{OLW}(T,x,t)$. 
 
-But first, to warm up with the topic, we consider as a toy model an idealized black-body Earth, i.e., we assume that the Earth is a _black body_ that emits radiation in the infrared spectrum.
+But first, to warm up with the topic, we consider as a toy model an idealized black-body Earth, i.e., we assume that the Earth is a _black body_ that emits and absorbs radiation in the infrared spectrum.
 
 The radiation energy per time that is emitted by a black body can be computed by the Stefan-Boltzmann law of physics 
 $$
@@ -54,7 +54,7 @@ S_{sol} &= S_0\,(1-\alpha)\,\pi\,R_E^2, \\
 S_{OLW} &= - \sigma_{SB} T_R^4 4\,\pi\,R_E^2.
 \end{align}
 
-We can directly solve \eqref{eq:blackbody} to get the equilibrium solution
+We can directly solve \eqref{eq:blackbody} to get the black-body equilibrium temperature
 $$
 T_R = \left(\frac{S_0}{4}\frac{(1-\alpha)}{\sigma_{SB}}\right)^{\frac{1}{4}}\approx 255\, [K] = -18\, [^\circ C].
 $$
@@ -73,12 +73,12 @@ It is in general motivated by available observational data, shown in the next fi
 The figure shows infrared radiation density plots averaged monthly, measured by satellite compared to the surface temperature at the same month and location. 
 (a) shows the whole sky (including clouds) and (b) shows only the clear (cloudless) sky.
 
-If we consider the temperature in units Kelvin, we can fit the observed data with the linear model by choosing good constants $A$, and $B$ to get 
+If we consider the temperature in units Kelvin, we can fit the observed data with the linear model by choosing good constants $A$ and $B$ to get 
 $$
 I_{IR/OLW} = A + B\,(T - 273.15),
 $$
 with $A=210.3$ as the radiative cooling in units $[W/m^2]$, and $B=2.15$ the radiative cooling feedback with units $[W/m^2/K]$. 
-It is important to note that the choice of these parameters has a direct impact on the outgoing radiation and hence on the cooling. Several others have fitted the data differently, hence some range of choices is available. The values we selected are from the paper by Zhuang et al. (2017).
+It is important to note that the choice of these parameters has a direct impact on the outgoing radiation and hence on the cooling. Several others have fitted the data differently, hence some range of choices for $A$ and $B$ is available. The values we select are from the paper by Zhuang et al. (2017).
 
 We are now able to consider a second, but hopefully improved toy EBM. We replace the crude black-body radiation with a phenomenological approximation of the outgoing radiation (the Budyko model) to get 
 $$
@@ -109,10 +109,11 @@ Argon, on the other hand, is a monatomic gas, meaning it consists of individual 
 
 Overall, the lack of strong absorption of infrared radiation by these main constituents of the atmosphere allows heat to escape from the Earth's surface and be radiated out to space, helping to regulate the planet's temperature.
 
-$H_2O$ molecules, on the other hand, have a permanent dipole moment because the distribution of electrons in the molecule is asymmetric. As a result, $H_2O$ molecules respond strongly to passing electromagnetic waves, including those in the infrared spectrum, which leads to the absorption of infrared radiation.
+$H_2O$ molecules, on the other hand, have a permanent dipole moment because the distribution of electrons in the molecule is asymmetric. As a result, $H_2O$ molecules respond strongly to passing electromagnetic waves, including those in the infrared spectrum, which leads to the absorption of infrared radiation. 
+
 Molecules such as $CO_2$, $CH_4$, and $NO_2$ do not have a permanent dipole moment because they are symmetrical in shape. However, they can still absorb infrared radiation through the phenomenon of induced dipole moments. When an infrared photon passes near one of these molecules, it can cause the electrons in the molecule to shift slightly, resulting in a temporary dipole moment. This temporary dipole moment can then interact with the passing electromagnetic wave, leading to the absorption of infrared radiation.
 
-The ability of these molecules to absorb infrared radiation is significant because it allows them to contribute to the greenhouse effect. The greenhouse effect is the process by which certain gases in the Earth's atmosphere, including $CO_2$, $CH_4$, and $NO_2$, trap heat and warm the planet's surface. Without this natural process, the Earth's average temperature would be much colder and life as we know it would not be possible. However, when these gases are present in excess, they can cause an imbalance in the greenhouse effect, leading to climate change.
+The ability of these molecules to absorb infrared radiation is significant because it allows them to contribute to the greenhouse effect. The greenhouse effect is the process by which certain gases in the Earth's atmosphere, including $CO_2$, $CH_4$, and $NO_2$, trap heat and warm the planet's surface. Without this natural process, the Earth's average temperature would be much lower and life as we know it would not be possible. However, when these gases are present in excess, they can cause an imbalance in the greenhouse effect, leading to climate change.
 
 @@colbox-blue
 **Comment:** The effect of greenhouse gases is very complex and there is a lot of ongoing research. $H_2O$ in particular is very important but ever so complex due to it being dependent on many other components and processes, i.e., the full water cycle. We will consider in our EBM only the effect of $CO_2$ on the radiation. Infrared absorbtion means that the efficiency of our outgoing radiation (cooling effect) decreases (which causes a higher equilibrium temperature). This decrease in efficiency is topic of many investigations and studies, e.g., by the IPCC.
@@ -124,7 +125,7 @@ In this course, we follow the paper by Myhre et al. (1998) to define our paramet
 * Figures from Myhre et al. (1998)
 
 The figures show radiative forcing as a function
-of concentration [ppm] for $CO_2$, $CH_4$, $N_2O$.
+of concentration [ppm] for the gases    $CO_2$, $CH_4$, $N_2O$.
 
 Myhre et al. and also other research groups
 introduced simplified expressions that
@@ -135,13 +136,13 @@ parametrize the effect
 
 As mentioned, we only consider the effect of $CO_2$ in our model and hence choose the approximation 
 $$
-\Delta T = \alpha_{\text{Myhre}}\, \ln(CO_2/CO_2(t_0)),
+\Delta F = \alpha_{\text{Myhre}}\, \ln(CO_2/CO_2(t_0)),
 $$
 where 
 $$
 \alpha_{\text{Myhre}} = 5.35\,[W/m^2],
 $$
-$CO_2$ is the concentration in $[ppm]$, and $CO_2(t_0) = 315\, [ppm]$ is the reference concentration in the year $1950$.
+$CO_2$ is the concentration in $[ppm]$, and $CO_2(t_0) = 315\, [ppm]$ is the reference concentration in the year $t_0 = 1950$.
 
 In summary, we get the following parametrization of our outgoing longwave radiation source term 
 $$
@@ -153,11 +154,11 @@ S_{OLW}(T,x,t,CO_2) = - (A(CO_2) + B\,T),
 $$
 where
 $$
-A(CO_2) := 210.3 - 5.35\,\ln(CO_2/315))\,\,[W/m^2]
+A(CO_2) := 210.3 - 5.35\,\ln(CO_2/315))\,\,[W/m^2],
 $$
 and 
 $$
-B = 2.15\,\,[W/m^2/K]
+B = 2.15\,\,[W/m^2/K],
 $$
-where we further made the assumption that the unit of the temperature $[T] = [^\circ C]$ instead of Kelvin.
+where we further made the assumption that the unit of the temperature $T$ is  $[^\circ C]$ instead of Kelvin.
 

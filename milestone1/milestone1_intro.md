@@ -13,7 +13,7 @@ tags = ["climatesystem"]
 
 ## Components of the Climate System
 
-The Earth's climate is a complex system that redistributes the energy (hear) from the sun throughout the planet. This energy transfer is carried out by various components, including the atmosphere, hydrosphere, cryosphere, land surface, and biosphere. Each of these components plays a crucial role in regulating the Earth's climate, and changes to any one of them can have far-reaching effects on the system as a whole. 
+The Earth's climate is a complex system that redistributes the energy from the sun throughout the planet. This energy transfer is carried out by various components, including the atmosphere, hydrosphere, cryosphere, land surface, and biosphere. Each of these components plays a crucial role in regulating the Earth's climate, and changes to any one of them can have far-reaching effects on the system as a whole. 
 In addition, human activities affect climate on Earth significantly and are nowadays considered an additional component: the anthroposphere.
 Understanding how these components interact with each other is essential to comprehending the complex processes that govern the Earth's climate.
 
@@ -68,9 +68,7 @@ Understanding the role of the Biosphere in the Earth's climate system is critica
 
 The Anthroposphere is the term used to describe all the interactions and activities of humans that change existing processes or create new ones within the Earth's climate system. This includes activities such as the high-rate emission of substances, changes in land use, including deforestation, desertification, the conversion of natural habitats into constructed areas, and the drainage of marshes. These human activities can have significant impacts on the Earth's climate and ecosystems, affecting factors such as greenhouse gas emissions, water availability, and the balance of biodiversity. 
 
-Apart from the components mentioned earlier, there are additional components that can significantly impact the Earth's climate system. These components are based on rare and extreme events, such as volcanic eruptions, which can release large amounts of gases and particles into the atmosphere. These emissions can have short-term effects on the planet's temperature and weather patterns by altering the amount of solar radiation that reaches the Earth's surface. Volcanic eruptions can also have long-term impacts by contributing to changes in the Earth's albedo and carbon cycle. Therefore, while such events may be infrequent, they play an important role in shaping the Earth's climate system
-
--------
+Apart from the components mentioned earlier, there are additional components that can significantly impact the Earth's climate system. These components are based on rare and extreme events, such as volcanic eruptions, which can release large amounts of gases and particles into the atmosphere. These emissions can have short-term effects on the planet's temperature and weather patterns by altering the amount of solar radiation that reaches the Earth's surface. Volcanic eruptions can also have long-term impacts by contributing to changes in the Earth's albedo and carbon cycle. Therefore, while such events may be infrequent, they play an important role in shaping the Earth's climate system.
 
 A complete climate model contains all
 of the above components. Furthermore,
@@ -91,7 +89,7 @@ algorithms and their implementation, etc.
 
 
 As a result, a fully coupled global climate model
-is out of the scope of this course!
+is out of the scope for this course!
 @@
 
 @@colbox-green
@@ -99,20 +97,21 @@ is out of the scope of this course!
 
 Not all research questions in climate sciece
 require the full model. It is, however, part of the
-scientific work to select a valid selection of
+scientific work to select a valid sub-set of
 components and processes to get valid
 answers that are scientifically robust.
-
-With this introductory discussion on the climate
-system, we come to the conclusion that to achieve
-our goal "implement your own climate model from scratch" we need simplifications. To be more
-precise: we will need strong simplifications!!
 @@
 
 **Comment**: For the interested student, we
 recommend to attend other specialized courses
 available at UoC or read detailed
 lecture notes such as for instance: ["Introduction to Climate Modeling" by Prof. Stocker, Physikalisches Institut, University of Bern (2016)]((https://climatehomes.unibe.ch/~stocker/papers/stocker18icm.pdf)).
+
+With this introductory discussion on the climate
+system, we come to the conclusion that to achieve
+our goal "implement your own climate model from scratch" we need simplifications. To be more
+precise: we will need strong simplifications!!
+
 
 ## Hierarchy of Climate Models
 
@@ -145,7 +144,7 @@ as possible.
 However in many cases nature is "multi-scale".
 This means, for instance, that the spectra of
 spatial sales range from centimeter and meter
-up to 100 km.
+up to 100+ km.
 We will learn that "resolution"
 makes simulations expensive to run on a computer.
 The resolution necessary to resolve all scales
@@ -182,13 +181,13 @@ of simplifications with focus on Atmosphere+Hydrosphere:
 ![](/assets/milestone1/Models.png)
 * Figure from lecture notes: [Stocker, "Introduction to Climate Modeling". Universität Bern](https://climatehomes.unibe.ch/~stocker/papers/stocker18icm.pdf).
 
-## How did we choose a model?
+## How did we choose a model for this course?
 
 We used the following criteria to find a model for this course:
 
 * It must be feasible to implement the model from scratch in one semester by students (ESM is out).
-* We want to have a 2D grid to include earth surface modeling aspects that depend on the geography. Moreover, the topic of how to mesh the spheres is an important decision for a grid based models in GCMs/ESMs.
-* The physics, the numerics, and the computational aspects should be accessible to a broad range of students (math, physiscs, meteorology, geophysics, etc.)
+* We want to have a 2D grid to include earth surface modeling aspects that depend on the geography. Moreover, the topic of how to mesh the spheres is an important decision for a grid based model in GCMs/ESMs.
+* The physics, the numerics, and the computational aspects should be accessible to a broad range of students (math, physics, meteorology, geophysics, etc.)
 
 **What model did we choose?**
 
@@ -196,10 +195,10 @@ From the criteria mentioned above, we
 decided to go for a 2D Energy Balance Model (EBM),
 which is a heavily simplified climate model
 that estimates the average temperature
-of the atmosphere at location on the surface of earth using a _partial differential equation_.
+of the atmosphere at the surface of Earth using a second order _partial differential equation_.
 
-In our course, we will mainly follow the paper
-> Zhuang, K., North, G. R., & Stevens, M. J. (2017). A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm. SoftwareX, 6, 198-202.
+In our course, we will mainly follow the paper (although we changed the numerics a little bit):
+> [Zhuang, K., North, G. R., & Stevens, M. J. (2017). A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm. SoftwareX, 6, 198-202.](https://www.sciencedirect.com/science/article/pii/S2352711017300262)
 
 
 <!-- **See if we keep the following:**

@@ -29,7 +29,7 @@ The derivations presented in this section can be found in the following referenc
 
 ![](/assets/milestone2/Orbits.png)
 
-Before we delve into calculating the impact of the Earth-sun distance and Earth's axis tily on the solar radiation on Earth, let us define some relevant concepts (see figure above for reference):
+Before we delve into calculating the impact of the Earth-sun distance and Earth's axis tilting on the solar radiation on Earth, let us define some relevant concepts (see figure above for reference):
 
 * Perihelion: The point in Earth's orbit where it is closest to the Sun. Currently, the perihelion occurs around January 4th.
 * Aphelion: The point in Earth's orbit where it is farthest from the Sun. Currently, the aphelion occurs around July 6th.
@@ -38,7 +38,7 @@ Before we delve into calculating the impact of the Earth-sun distance and Earth'
 * Northern winter solstice: The point in Earth's orbit where the shortest day of the year occurs in the Northern Hemisphere and the longest day of the year occurs in the Southern Hemisphere. At this point, the plane formed by the rotation axis of Earth and the line that connects Earth and the Sun is perpendicular to the ecliptic. Currently, the Northern winter solstice occurs around December 21st.
 * Vernal equinox: The point in Earth's orbit where the line that connects Earth and the Sun aligns with the equatorial plane of Earth during the transition from winter to summer in the Northern Hemisphere. This is also the moment when Earth's rotation axis is directly perpendicular to the Sun-Earth line.
 * Northern autumnal equinox: The point in Earth's orbit where the line that connects Earth and the Sun aligns with the equatorial plane of Earth during the transition from summer to winter in the Northern Hemisphere. This is also the moment when Earth's rotation axis is directly perpendicular to the Sun-Earth line.
-* True longitude of Earth ($\lambda$): Position of Earth at a given time as meassured from the vernal equinox. The position $\lambda = 0$ is considered the begining of an _astronomical year_.
+* True longitude of Earth ($\lambda$): Position of Earth at a given time as measured from the vernal equinox. The position $\lambda = 0$ is considered the beginning of an _astronomical year_.
 
 To compute the distance from the sun and Earth's axis tilt angle, we need to consider three parameters that vary over time as a result of the gravitational interactions between Earth and other celestial bodies within the solar system. We call these parameters the **orbital parameters** and define them as
 
@@ -63,7 +63,7 @@ This is a reasonable assumption for climate simulations in which the orbital par
 
 
 <!-- As we saw in the [Radiation Section](#radiation) -->
-The inverse-square law states that the total radiation radiation that is received from a source is inversely proportional to the square of the distance from source.
+The inverse-square law states that the total radiation that is received from a source is inversely proportional to the square of the distance from the source.
 
 ![](/assets/milestone2/Inverse_square_law.png)
 * Source: Wikipedia
@@ -72,7 +72,7 @@ As a result, the total radiation that is received at the top layer of Earth's at
 $$
 S_r(t) = \frac{r_0^2}{r^2} S_0,
 $$
-where $r$ is the (time-dependent) Earth-sun distance, $r_0 \approx a$ is roughly the mean Earth-sun distance (defined as one anstronomical unit), and $S_0$ is the so-called solar constant, the mean solar elecromagnetic radiation per unit area meassured on a surface perpendicular to the solar rays at a distance $r_0$. 
+where $r$ is the (time-dependent) Earth-sun distance, $r_0 \approx a$ is roughly the mean Earth-sun distance (defined as one anstronomical unit), and $S_0$ is the so-called solar constant, the mean solar elecromagnetic radiation per unit area measured on a surface perpendicular to the solar rays at a distance $r_0$. 
 
 Since Earth's orbit is an ellipse and the sun sits in one focus, we can calulate the Earth-sun distance as
 $$\label{eq:r}
@@ -153,13 +153,13 @@ $$
 
 ### Bonus: Computation of the true longitude $\lambda$
 
-Kepler's second law states that a line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time. Therefore, Earth moves faster when it is closer to the sun. Is a short time interval $\d t$, the area swept is equal to the area of a triangle with base $r \d \nu$ and height $r$. Therefore, ee can write Kepler's second law as
+Kepler's second law states that a line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time. Therefore, Earth moves faster when it is closer to the sun. Is a short time interval $\d t$, the area swept is equal to the area of a triangle with base $r \d \nu$ and height $r$. Therefore, we can write Kepler's second law as
 $$\label{eq:dAdt}
 \frac{\d A}{\d t} = \frac{\pi a b}{T} = \frac{r^2}{2} \frac{\d \nu}{\d t},
 $$
 where $\pi a b$ is the total area of a ellipse, which is swept in a complete period $T$.
 
-Assuming that the time is meassured in years and replacing the definition of the Earh-sun distance \eqref{eq:r} and the eccentricity \eqref{eq:ecc} into \eqref{eq:dAdt} we obtain
+Assuming that the time is measured in years and replacing the definition of the Earth-sun distance \eqref{eq:r} and the eccentricity \eqref{eq:ecc} into \eqref{eq:dAdt} we obtain
 $$
 \frac{\d \lambda}{\d t} = \frac{2\pi}{(1 - e^2)^{3/2}} (1 - e \cos (\lambda - \tilde \omega))^2.
 $$

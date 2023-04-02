@@ -14,12 +14,12 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 ## Introduction
 
-The Energy Balance Climate Models (or Energy Balance Models (WBM) in short) were
-introduced in the 1960s by Budyko and Sellers independently (with some variations). They are thus sometimes referred to the Budyko-Sellers equations (or model). 
+The Energy Balance Climate Models (or Energy Balance Models (EBM) in short) were
+introduced in the 1960s by Budyko and Sellers independently (with some variations). They are thus sometimes referred to as Budyko-Sellers equations (or model). 
 
 EBMs where mainly used up to the 1970s, but later replaced more and more by the GCMs. Nowadays EBMs belong to the class of simple climate models, but
 are still in use by some researchers to date, with publications in 2020s. Interestingly enough, EBM type models are used to estimate climates of (habitable) exoplanets (where naturally not many detailed data is known). Their disadvantage (being too simple) is sometimes an advantage when trying to analyse the effect of single processes or at least
-get on intuition about how they act. To quote the bookby Kim and North (2017) "Energy balance climate models", Wiley:
+get on intuition about how they act. To quote the book by Kim and North (2017) "Energy balance climate models", Wiley:
 
 > In some cases such as perturbations of the surface temperature field due to small changes in greenhouse gases or the Earth's orbital elements, they can be surprisingly helpful even to a quantitative extend.
 
@@ -45,7 +45,7 @@ in a spatial domain $\Omega$, with boundary conditions for $u$ at the surface $\
 
 The modeling process involves the choice of $u$, $\vec{f}$, and $S$. As the name suggests, we consider as our unknown the
 energy, more precisely the internal energy. The internal energy of a body/fluid is proportional to its temperature. In the context of climate modelling we are interested
-in simulating said temperature $T(x,t)$. More precisely we are interested to approximatem the **surface temperature**.
+in simulating said temperature $T(x,t)$. More precisely we are interested to approximate the **surface temperature**.
 
 We hence make our first modeling step and choose $u(x,t) \sim T(x,t)$, i.e. 
 $$
@@ -61,9 +61,9 @@ As mentioned, we are interested in the (surface) temperature $T(x,t)$ and its te
 $$
 \vec{f} = D(x)\,\vec{\nabla} T,
 $$
-where the diffusion coefficient has the size square of spatial dimension, $D(x)\in\mathbb{R}_+$, with positive entries.
+where the diffusion coefficient has positive entries, $D(x)\in\mathbb{R}_+$.
 
-In this course, we consider a version of the EBM where solar/stellar radiation as incoming energy source term and the outgoing longwave radiation (in the infrared) as an energy sink term, i.e., the source term has two mayor parts
+In this course, we consider a version of the EBM where solar/stellar radiation is an incoming energy source term and the outgoing longwave radiation (in the infrared) is an energy sink term, i.e., the source term has two major parts
 $$
 S(u,x,t) = S_{OLW}(T,x,t) + S_{sol}(x,t).
 $$
@@ -74,10 +74,10 @@ C(x)\,\frac{\partial T}{\partial t} + \vec{\nabla}\cdot(D(x)\,\vec{\nabla} T) = 
 $$
 
 @@colbox-blue
-**Remark 7:** We note that we consider the EBM on the sphere, i.e., on the Earth's surface. This means that for the
-discretization we need to get more into the detail of what the coordinates $x$ really are, and how the differential operators $\vec{\nabla}$ are defined in sperical coordinates. 
+**Remark 7:** We already noted that we consider the EBM on the sphere, i.e., on the Earth's surface. This means that for the
+discretization we will need to get more into the detail on how the differential operators $\vec{\nabla}$ are defined in spherical coordinates. 
 @@
 
 The modeling process is not finished yet, as we need detailed definitions of the heat capacity $C(x)$, the diffusion coefficient $D(x)$, and the sources $S_{OLW}(T,x,t)$, $S_{sol}(x,t)$. 
 
-We will focus next on all of these sub-models and parametrizations, except for the diffusion coefficient $D(x)$ and the approximation of the diffusion operator. This will be discussed in [milestone 5](/milestone5/) in detail.
+We will focus next on all of these sub-models and parametrizations, except for the diffusion coefficient $D(x)$ and the approximation of the diffusion operator. This will be discussed in [milestone 5](/milestone5/milestone5_menu/) in detail.
