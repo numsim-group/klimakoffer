@@ -16,13 +16,13 @@ tags = ["climatesystem"]
 In this milestone, the goal is to read-in the geography information of planet Earth and plot it as a two-dimensional world map.
 We consider an equirectangular grid of the Earth, i.e., an equidistant rectangular grid in spherical coordinates, where the grid point $(i, j)$ has the spherical coordinates $(\varphi_i, \theta_j)$, where $\varphi_i$ is the longitude between $-90\degree$ south and $90\degree$ north (including the poles) and $\theta_j$ the latitude between $-180\degree$ west and $180\degree$ east.
 The basis for this is the input file
-*The_World128x65.dat*, which describes the distribution of the different Earth surface types.
+[The_World128x65.dat](/assets/milestone1/input/The_World128x65.dat), which describes the distribution of the different Earth surface types.
 This file contains a matrix $G \in \mathbb{N}^{65 \times 128}$ with entries $g_{ij} \in \{1,2,3,5\}$, where the entry $g_{ij}$ stores the Earth surface type at grid point $(i, j)$.
 Here, $1$ represents the Earth surface type *land*, $2$ represents *sea ice*, $3$ represents *snow*, and $5$ represents *ocean*. The grid resolution in longitude and latitude direction is $2.8125^{\circ}$.
 The basis for this distribution and grid is from Zhuang et al.[^1]
 You can proceed as follows:
 
-1. Write a function *read_geography*, which reads the file *The_World128x65.dat* from the folder *input* and outputs a matrix $T \in \mathbb{N}^{65 \times 128}$  with the classification of the earth surface types.
+1. Write a function *read_geography*, which reads the file [The_World128x65.dat](/assets/milestone1/input/The_World128x65.dat) from the folder *input* and outputs a matrix $T \in \mathbb{N}^{65 \times 128}$  with the classification of the earth surface types.
 
 2. Write a function *robinson_projection*, which maps an equirectangular grid in spherical coordinates to the plane.
 For simplicity use the approximate formula by Beineke for the Robinson projection,
