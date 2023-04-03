@@ -17,4 +17,4 @@ At the end of the chapter, we will select a climate model for the course and int
 2. [Spherical coordinates](/milestone1/milestone1_sphere/)
 3. [Meshing the sphere](/milestone1/milestone1_mesh/)
 4. [Project description](/milestone1/milestone1_project/)
-5. [Control solutions](/milestone1/milestone1_solutions/)
+5. [Project results](/milestone1/milestone1_results/)
