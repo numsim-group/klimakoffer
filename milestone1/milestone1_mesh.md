@@ -80,13 +80,13 @@ $$
 \nlong = 2(\nlat - 1).
 $$
 
-The longitude grid node locations are
+The longitude grid node locations are defined from west to east
 \begin{align}
 \varphi_i &= -\pi + (i-1) \Delta \varphi, & i&=1, 2, \ldots, \nlong,
 \end{align}
-the latitude grid node locations are
+the latitude grid node locations are defined from north to south
 \begin{align}
-\lat_j &= -\frac{\pi}{2} + (j-1) \Delta \lat, & j&= 1, 2, \ldots, \nlat,
+\lat_j &= \frac{\pi}{2} - (j-1) \Delta \lat, & j&= 1, 2, \ldots, \nlat,
 \end{align}
 and equivalently the colatitude grid node locations are
 \begin{align}
