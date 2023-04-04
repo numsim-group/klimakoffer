@@ -36,7 +36,7 @@ Overall, these processes work together to create a complex and dynamic atmospher
 
 ### Hydrosphere 
 
-The hydrosphere comprises all forms of water on and below the Earth's surface, including oceans, rivers, lakes, groundwater, and glaciers. It also includes the entire global water cycle, which begins when precipitation reaches the surface.
+The hydrosphere comprises all forms of water on and below the Earth's surface, including oceans, rivers, lakes, and groundwater reservoirs. It also includes the entire global water cycle, which begins when precipitation reaches the surface.
 
 Several important processes occur within the hydrosphere, some of which are:
 
