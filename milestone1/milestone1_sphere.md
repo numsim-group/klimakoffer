@@ -87,7 +87,7 @@ $$\label{eq:det}
 $$
 
 @@colbox-blue
-**Example:**  The coordinate transformation can be used to compute the volume of a sphere with radious R:
+**Example:**  The coordinate transformation can be used to compute the volume of a sphere with radius $R$:
 \begin{align}
 \iiint_{V} \d V &= \iiint_{V} \d x \d y \d z \\
 &= \int_{r=0}^R \int_{\colat=0}^{\pi} \int_{\varphi=0}^{2\pi} |J| \d r \d \colat \d \varphi\\

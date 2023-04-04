@@ -35,7 +35,8 @@ tags = ["syntax", "code"]
 
 * Milestone 7 is free style and the topic chosen by students with a final (Jupyter notebook) presentation at the end of the semester that will be graded. Again, we are here to help: we will guide and supervise the selection of topics for milestone 7, and give advise and support during the hands-on phase. The grade for the final presentation makes 50% of the total course grade.
 * Admission criterion for oral exam: Pass milestone 7 with at least grade *4.0*.
-* Per person oral exam (10 - 15 minutes) gives the other 50% of the total grade.
+* Per person oral exam gives the other 50% of the total grade.
+<!-- (10 - 15 minutes) -->
 
 ## Organization of the course 
 

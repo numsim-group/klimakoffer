@@ -95,7 +95,7 @@ is out of the scope for this course!
 @@colbox-green
 **Good news**
 
-Not all research questions in climate sciece
+Not all research questions in climate science
 require the full model. It is, however, part of the
 scientific work to select a valid sub-set of
 components and processes to get valid
