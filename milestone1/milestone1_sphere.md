@@ -73,7 +73,7 @@ From mathematical analysis, we know that the Jacobian of the coordinate transfor
 respectively in matrix form
 \begin{align}
 J =
-\partialderiv{(x,y,z)}{(r,\colat,\varphi)} =
+\partialderiv{(x,y,z)}{(r,\varphi,\colat)} =
 \begin{bmatrix}
 \sin \colat \cos \varphi & -r \sin \colat \sin \varphi & r \cos \colat \cos \varphi \\
 \sin \colat \sin \varphi & r \sin \colat \cos \varphi & r \cos \colat \sin \varphi \\
