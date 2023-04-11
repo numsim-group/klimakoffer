@@ -16,7 +16,7 @@ tags = ["climatesystem"]
 [(Download description in PDF format)](/assets/milestone1/description.pdf)
 
 In this milestone, the goal is to read-in the geography information of planet Earth and plot it as a two-dimensional world map.
-We consider an equirectangular grid of the Earth, i.e., an equidistant rectangular grid in spherical coordinates, where the grid point $(i, j)$ has the spherical coordinates $(\varphi_i, \theta_j)$, where $\varphi_i$ is the longitude between $-90\degree$ south and $90\degree$ north (including the poles) and $\theta_j$ the latitude between $-180\degree$ west and $180\degree$ east.
+We consider an equirectangular grid of the Earth, i.e., an equidistant rectangular grid in spherical coordinates, where the grid point $(i, j)$ has the spherical coordinates $(\varphi_i, \theta_j)$, where $\varphi_i$ is the longitude between $-180\degree$ west and $180\degree$ east and $\theta_j$ the latitude between $-90\degree$ south and $90\degree$ north (including the poles).
 The basis for this is the input file
 [The_World128x65.dat](/assets/milestone1/input/The_World128x65.dat), which describes the distribution of the different Earth surface types.
 This file contains a matrix $G \in \mathbb{N}^{65 \times 128}$ with entries $g_{ij} \in \{1,2,3,5\}$, where the entry $g_{ij}$ stores the Earth surface type at grid point $(i, j)$.
