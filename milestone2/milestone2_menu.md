@@ -17,3 +17,5 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 5. [Albedo](/milestone2/milestone2_albedo/)
 6. [Solar forcing](/milestone2/milestone2_solar-forcing/)
 7. [Time discretization](/milestone2/milestone2_time-disc/)
+8. [Project description](/milestone2/milestone2_project/)
+9. [Project results](/milestone2/milestone2_results/)

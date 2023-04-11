@@ -34,14 +34,19 @@ function plot_geo(geo_dat)
     nlatitude, nlongitude = size(geo_dat)
     x, y = robinson_projection(nlatitude, nlongitude)
 
+    # Unfortunately, this is a bit buggy. When passing a `cgrad` with `categorical=true`,
+    # one would expect to only get the colors of this discrete `cgrad`, but for some reason,
+    # that is not the case.
+    # Instead, we got the colors that we want by experimenting with the levels.
+    # We tried to make the range for ocean only slightly larger than the others to avoid
+    # a weird looking colorbar.
     plot = contourf(x, y, geo_dat,
+                    levels=[0.5, 1.7, 2.9, 4.1, 5.5],
                     clims=(1, 5),
-                    # Due to machine precision problems, 1,2,3,5 is replaced by lower values.
-                    levels=[0.999, 1.999, 2.999, 3.999, 5.0],
                     aspect_ratio=1,
                     title="Earth Geography",
                     c=cgrad([:darkgreen, :lightsteelblue, :lavender, :navy]),
-                    colorbar_ticks=([1.5, 2.5, 3.5, 4.5],
+                    colorbar_ticks=([1.1, 2.3, 3.5, 4.8],
                                     ["land", "sea ice", "snow cover", "ocean"]),
                     axis=([], false),
                     dpi=300)

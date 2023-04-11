@@ -13,6 +13,10 @@ tags = ["climatesystem"]
 
 ## Approximate Robinson Projection
 
+This is a possible Julia implementation of milestone 1:
+
+\input{julia}{/assets/scripts/milestone1.jl}
+
 This is an example for the expected result:
 
 \input{plot}{/assets/scripts/milestone1.jl}
