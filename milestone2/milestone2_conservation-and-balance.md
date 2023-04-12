@@ -46,8 +46,8 @@ Consider a sub-domain $\omega$ with outward pointing normal vector $\vec{n}$:
 \fig{/assets/milestone2/domain.png}
 
 $$
-\underbrace{\partialderiv{}{t} \int_{\omega} u \d x}_{\substack{\text{temporal~change} \\ \text{of}~u~\text{in}~\omega}} = 
-- \underbrace{\oint_{\partial \omega} \vec{f} \cdot \vec{n} \d s}_{\substack{\text{change~through} \\ \text{surface~flux}~\vec{f}}} 
+\underbrace{\partialderiv{}{t} \int_{\omega} u \d x}_{\substack{\text{temporal\,change} \\ \text{of}\,u\,\text{in}\,\omega}} = 
+- \underbrace{\oint_{\partial \omega} \vec{f} \cdot \vec{n} \d s}_{\substack{\text{change~through} \\ \text{surface~flux}\,\vec{f}}} 
 + \underbrace{\int_{\omega} S(u,x,t) \d x}_{\substack{\text{change~through} \\ \text{source}~S(u,x,t)}} 
 $$
 
