@@ -48,7 +48,7 @@ Consider a sub-domain $\omega$ with outward pointing normal vector $\vec{n}$:
 $$
 \underbrace{\partialderiv{}{t} \int_{\omega} u \d x}_{\substack{\text{temporal~change} \\ \text{of}~u~\text{in}~\omega}} = 
 - \underbrace{\oint_{\partial \omega} \vec{f} \cdot \vec{n} \d s}_{\substack{\text{change~through} \\ \text{surface~flux}~\vec{f}}} 
-+ \underbrace{\int_{\omega} S(x,t) \d x}_{\substack{\text{change~through} \\ \text{source}~S(x,t)}} 
++ \underbrace{\int_{\omega} S(u,x,t) \d x}_{\substack{\text{change~through} \\ \text{source}~S(u,x,t)}} 
 $$
 
 @@colbox-blue
@@ -64,7 +64,7 @@ and time), we can apply the Gauss integral theorem to the surface integral
 \begin{align}
 {\int_{\omega} \partialderiv{u}{t} \d x}
 + \underbrace{\int_{\omega} \Nabla \cdot \vec{f} \d x}_{=\int_{\omega} \partialderiv{f_1}{x_1} + \partialderiv{f_2}{x_2} + \cdots + \partialderiv{f_n}{x_n} \d x}
-= \int_{\omega} S(x,t) \d x
+= \int_{\omega} S(u,x,t) \d x
 \end{align}
 
 As we have chosen an arbitrary sub-domain $\omega$ with no special properties, the equation needs to hold for all choices of $\omega\subset\Omega$. This
@@ -78,7 +78,7 @@ $$
 @@
 
 @@colbox-blue
-**Remark 4:** For many processes, the source term can be neglected, i.e., we can choose $S(x,t) = 0$. The resulting PDE describes processes, where the quantity $u$ is neither destroyed nor generated, but is only changed by fluxes. Such PDEs are called conservation laws
+**Remark 4:** For many processes, the source term can be neglected, i.e., we can choose $S(u,x,t) = 0$. The resulting PDE describes processes, where the quantity $u$ is neither destroyed nor generated, but is only changed by fluxes. Such PDEs are called conservation laws
 $$
 \frac{\partial u}{\partial t} + \vec{\nabla}\cdot\vec{f} = 0,\quad x\in\Omega,\,\,t\in\mathbb{R}^+.
 $$
@@ -87,11 +87,11 @@ $$
 Depending on the process we want to model, we need to chose the quantity of interest $u(x,t)$, a model for the flux $\vec{f}(u,x,t)$  and a model for the source term $S(u,x,t)$. There are 
 many examples of such models, e.g., mass and momentum conservation in fluid mechanics. We consider here as an example the so-called heat equation, or heat transfer equation. 
 
-For the heat equqation we are interested in the change of temperature $T(x,t)$ (which is strongly related to the internal energy of a body) in space and time, hence our choice for the unknown quantity is $u = T$. Next, we need a model for the flux. Jean Babtiste Joseph Fourier (1822) gave a model for the heat flux, where the flux of heat is negative proportional to the temperature difference (heat goes from high temperatures to lower temperatures), i.e. 
+For the heat equation we are interested in the change of temperature $T(x,t)$ (which is strongly related to the internal energy of a body) in space and time, hence our choice for the unknown quantity is $u = T$. Next, we need a model for the flux. Jean Babtiste Joseph Fourier (1822) gave a model for the heat flux, where the flux of heat is negative proportional to the temperature difference (heat goes from high temperatures to lower temperatures), i.e. 
 
 \begin{align}
 \vec{f}(T,x,t) &\sim 
-\Nabla T = 
+-\Nabla T = 
 \begin{bmatrix}
 \partial_{x_1} T \\
 \partial_{x_2} T \\
@@ -99,7 +99,7 @@ For the heat equqation we are interested in the change of temperature $T(x,t)$ (
 \partial_{x_n} T
 \end{bmatrix}
 \\
-\vec{f}(T) &= d \Nabla T
+\vec{f}(T) &= -d \Nabla T
 \end{align}
 where $d$ is the heat conduction coefficient with $d=d(T,x,t) \ge 0$ in general.
 
@@ -132,5 +132,5 @@ These definitions are motivated by the definition of conic sections. It is inter
 
 If we consider again our simple 1D constant coefficient heat equation and compute its type, we get $\Delta(x,t) = 0,\;\forall (x,t)$. Hence, the **heat equation is a parabolic PDE**. 
 
-In general, parabolic PDEs model processes that evolve in time and are **not** reversible in time, such as friction, diffusion, dissipation, etc. The effect over time is a "smearing" of the quantity, smooting out of large gradients and extrema. 
+In general, parabolic PDEs model processes that evolve in time and are **not** reversible in time, such as friction, diffusion, dissipation, etc. The effect over time is a "smearing" of the quantity, smoothing out of large gradients and extrema. 
 

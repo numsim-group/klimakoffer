@@ -19,7 +19,7 @@ introduced in the 1960s by Budyko and Sellers independently (with some variation
 
 EBMs where mainly used up to the 1970s, but later replaced more and more by the GCMs. Nowadays EBMs belong to the class of simple climate models, but
 are still in use by some researchers to date, with publications in 2020s. Interestingly enough, EBM type models are used to estimate climates of (habitable) exoplanets (where naturally not many detailed data is known). Their disadvantage (being too simple) is sometimes an advantage when trying to analyse the effect of single processes or at least
-get on intuition about how they act. To quote the book by Kim and North (2017) "Energy balance climate models", Wiley:
+get an intuition about how they act. To quote the book by Kim and North (2017) "Energy balance climate models", Wiley:
 
 > In some cases such as perturbations of the surface temperature field due to small changes in greenhouse gases or the Earth's orbital elements, they can be surprisingly helpful even to a quantitative extend.
 
@@ -43,34 +43,34 @@ $$
 $$
 in a spatial domain $\Omega$, with boundary conditions for $u$ at the surface $\partial\Omega$ and initial conditions $u(x,t=0) = u_0(x)$.
 
-The modeling process involves the choice of $u$, $\vec{f}$, and $S$. As the name suggests, we consider as our unknown the
+The modeling process involves the choice of $u$, $\vec{f}$, and $S$. As the name EBM suggests, we consider as our unknown the
 energy, more precisely the internal energy. The internal energy of a body/fluid is proportional to its temperature. In the context of climate modelling we are interested
-in simulating said temperature $T(x,t)$. More precisely we are interested to approximate the **surface temperature**.
+in simulating said temperature, more precisely we are interested to approximate the **surface temperature** $T(x,t)$.
 
 We hence make our first modeling step and choose $u(x,t) \sim T(x,t)$, i.e. 
 $$
 u(x,t) = C(x)\,T(x,t),
 $$
-where the parameter $C(x)$ is a scaled **heat capacity**. 
+where the parameter $C(x)$ is a scaled **heat capacity**, which combined with temperature gives the model of internal energy. 
 
 @@colbox-blue
 **Important note:** We use the variable $x$ as a placeholder notation for the coordinate variables. We want to solve the EBM on the sphere surface. Hence, $x$ refers to the spherical coordinates (latitude/colatitude and longitude).
 @@
 
-As mentioned, we are interested in the (surface) temperature $T(x,t)$ and its temporal evolution - the fluxes can be modeled analogously to the fluxes of the heat transfer equation $\vec{f}\sim\vec{\nabla} T$, which leads to the model of the EBM flux as 
+As mentioned, we are interested in the (surface) temperature $T(x,t)$ and its temporal evolution - the fluxes can be modeled analogously to the fluxes of the heat transfer equation $\vec{f}\sim-\vec{\nabla} T$, which leads to the model of the EBM flux as 
 $$
-\vec{f} = D(x)\,\vec{\nabla} T,
+\vec{f} = -D(x)\,\vec{\nabla} T,
 $$
 where the diffusion coefficient has positive entries, $D(x)\in\mathbb{R}_+$.
 
-In this course, we consider a version of the EBM where solar/stellar radiation is an incoming energy source term and the outgoing longwave radiation (in the infrared) is an energy sink term, i.e., the source term has two major parts
+In this course, we consider an advanced version of the EBM where detailed solar/stellar radiation is the incoming energy source term and the outgoing longwave radiation (in the infrared) is an energy sink term, i.e., the source term has two major parts
 $$
 S(u,x,t) = S_{OLW}(T,x,t) + S_{sol}(x,t).
 $$
 
 With these first modeling steps/decisions, the general form of the EBM is 
 $$\label{eq:EBM}
-C(x)\,\frac{\partial T}{\partial t} + \vec{\nabla}\cdot(D(x)\,\vec{\nabla} T) = S_{OLW}(T,x,t) + S_{sol}(x,t).
+C(x)\,\frac{\partial T}{\partial t} - \vec{\nabla}\cdot(D(x)\,\vec{\nabla} T) = S_{OLW}(T,x,t) + S_{sol}(x,t).
 $$
 
 @@colbox-blue
