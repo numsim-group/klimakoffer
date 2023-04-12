@@ -41,7 +41,7 @@ This function should return two matrices $X = x_{ij}$ and $Y = y_{ij}$, where $x
 3. Write a function *plot_geo* that creates a plot of the Earth surface type $g_{ij}$ against the mapped coordinates $(x_{ij}, y_{ij})$.
 4. Use these functions in a program and run it to check your results.
 
-[^1]: K. Zhuang, G.R. North, M.J. Stevens, {\em A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm}, SoftwareX, Vol. 6, pp. 198-202, July 7, 2017.
+[^1]: K. Zhuang, G.R. North, M.J. Stevens, _A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm_, SoftwareX, Vol. 6, pp. 198-202, July 7, 2017.
 
 
 

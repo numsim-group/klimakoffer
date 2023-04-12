@@ -19,13 +19,13 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 As a next step, we want to incorporate the annual change of the insolation and consider a simplified EBM, where we only average in space
 but not in time. We apply the area averaging to our coefficients to get
 $$
-\overline{C} \partialderiv{\overline{T}}{t} + A(CO_2) + B \overline{T} = \overline{Q_{\alpha} S}(t),
+\overline{C} \partialderiv{\overline{T}}{t} + A(CO_2) + B \overline{T} = \overline{\alpha_c S}(t),
 $$
 
 where we keep the time dependence of the solar source term.
 
 @@colbox-blue
-**Remark:** We get $\overline{Q_{\alpha} S}(t)$ by computing the area average of $(1-\alpha)S(x,t)$ at
+**Remark:** We get $\overline{\alpha_c S}(t)$ by computing the area average of $(1-\alpha)S(x,t)$ at
 every single time step separately.
 @@
 
@@ -46,7 +46,7 @@ which we get for the choice
 \begin{align}
 y(t) &= \overline{T}(t)
 \\
-f(y,t) &= \frac{1}{\overline{C}} \left( \overline{Q_{\alpha} S}(t) -A - B \, \overline{T}  \right).
+f(y,t) &= \frac{1}{\overline{C}} \left( \overline{\alpha_c S}(t) -A - B \, \overline{T}  \right).
 \end{align}
 
 @@colbox-blue

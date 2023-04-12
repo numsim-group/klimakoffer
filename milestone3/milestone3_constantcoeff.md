@@ -19,19 +19,19 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 We recall that the EBM we have derived
 so far is given by
 $$
-C(x) \partialderiv{T}{t} + A(CO_2) + B T = (1 - \alpha(x)) S(x,t).
+C(x) \partialderiv{T}{t} + A(CO_2) + B T = \underbrace{(1 - \alpha(x))}_{\alpha_c(x)} S(x,t).
 $$
 
 This equation is difficult to solve analytically.
 Hence, we introduce a simplification and consider a constant coefficient approximation
 by getting rid of the spatial and temporal dependence
-of the heat capacity and solar forcing coefficients: $C(x)$ and $(1 - \alpha(x)) S(X,t)$.
+of the heat capacity and solar forcing coefficients: $C(x)$ and $(1 - \alpha(x)) S(x,t)$.
 We do this by computing area averages in
 space and averages in time to obtain
 $$\label{eq:constant_coeff_ebm}
-\overline{C} \partialderiv{\overline{T}}{t} + A(CO_2) + B \overline{T} = \widehat{\overline{Q_{\alpha} S}},
+\overline{C} \partialderiv{\overline{T}}{t} + A(CO_2) + B \overline{T} = \widehat{\overline{\alpha_c S}},
 $$
-where $\overline{C}$ is the spatial average of the heat capacity coefficient, $\widehat{\overline{Q_{\alpha} S}}$ is a spatial and temporal average of the solar forcing term, and $\overline{T}$ is an approximation to the spatial average of Earth's temperature.
+where $\overline{C}$ is the spatial average of the heat capacity coefficient, $\widehat{\overline{\alpha_c S}}$ is a spatial and temporal average of the solar forcing term, and $\overline{T}$ is an approximation to the spatial average of Earth's temperature.
 
 The computation of the spatial and temporal averages is detailed in [Milestone 3 - Averages](/milestone3/milestone3_averages/).
 
@@ -41,7 +41,7 @@ As this model only depends on time and not on any spatial coordinate, we also co
 
 We can define the steady-state solution (also known as equilibrium solution) $T_{eq}$ by assuming $\partial \overline{T} / \partial t =0$, to obtain
 $$
-T_{eq} = \frac{\widehat{\overline{Q_{\alpha} S}} - A}{B}.
+T_{eq} = \frac{\widehat{\overline{\alpha_c S}} - A}{B}.
 $$
 
 @@colbox-blue

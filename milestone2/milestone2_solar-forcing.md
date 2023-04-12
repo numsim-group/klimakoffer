@@ -153,7 +153,7 @@ $$
 
 ---
 
-In summary, the solar forcing is given by the expression
+In summary, the insolation is given by the expression
 $$
 S(\theta,t) =
 \begin{cases}
@@ -167,6 +167,11 @@ $$
 with the normalized distance between Earth and sun squared
 $$
 \rho(t) =  \left(\frac{1 - e \cos (\nu(t))}{1-e^2}\right)^2.
+$$
+
+The total solar forcing is given by
+$$
+S_{sol}\left(\lat,\varphi,t\right) = S\left(\lat,t\right) (1 - \alpha \left(\lat,\varphi\right)).
 $$
 
 ### Bonus: Computation of the true longitude $\lambda$

@@ -23,7 +23,7 @@ $$
 $$
 to get
 $$
-C\,T_t + A(CO_2) + B\,T = \frac{S_0}{4}\,(1-\alpha) =: Q\,(1-\alpha), 
+C\,T_t + A(CO_2) + B\,T = \frac{S_0}{4}\,(1-\alpha), 
 $$
 where analysis of the physical units reveal that the Earth's surface area normalized heat capacity $C$ has the units $[J/m^2/K]$.
 
@@ -87,6 +87,6 @@ Ocean ($geo=5$): $C = (\widetilde{C}_{mixed} + \widetilde{C}_{atm})/sec\_per\_ye
 
 In summary, we have now our first time dependent (still simplified) EBM
 $$
-C(x)\,T_t(x,t) + A(CO_2) + B\,T(x,t) = Q\,(1-\alpha).
+C(x)\,T_t(x,t) + A(CO_2) + B\,T(x,t) = \frac{S_0}{4}\,(1-\alpha).
 $$
 

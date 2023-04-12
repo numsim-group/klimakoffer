@@ -29,7 +29,7 @@ For $P_2(x)=\frac{(3x^2-1)}{2}$ and $x=\sin(\lat)$, where $\lat$ is the latitude
 
 2. In the table below, besides atmospheric parameters, constants are given for each type of the earth's surface, which are used for the calculation of the effective heat capacity. The effective heat capacity of a grid cell results from the sum of the heat capacity of the respective surface type and the heat capacity of the overlying atmospheric column. Since the climate model measures time in years, this heat capactiy has to be divided by the number of seconds in a year $3.15576\times10^7 s$. Implement a function *calc_heatcapacity* analogous to *calc_albedo* to calculate the geography-dependent heat capacity per surface area using the given constants from the table below.
 
-| **Types** | **Density $\rho$ in $\mathrm{kg\,m}^{-3}$}** | **Specific heat capacity in $\mathrm{J\,kg^{-1}K^{-1}}$** | **Depth in $\mathrm{m}$** |
+| **Types** | **Density $\rho$ in $\mathrm{kg\,m}^{-3}$** | **Specific heat capacity in $\mathrm{J\,kg^{-1}K^{-1}}$** | **Depth in $\mathrm{m}$** |
 |-------------|-----------|---------------|---------------|
 | Atmosphere | 1.225 | 1000 | 3850 |
 | Ocean mixed layer | 1030 | 4000 | 70 |
@@ -95,8 +95,8 @@ Here, $S$ is the insolation defined above and $\alpha_c$ is the coalbedo given b
 6. To visualize the solar forcing as an animation, calculate the albedo and the solar forcing for a grid size of $65 \times 128$ (with the [data file](/assets/milestone2/input/The_World128x65.dat) from milestone 1) and $48$ time steps within a year. Then plot your result using the function
 *robinson_projection* from milestone 1.
 
-[^1]: K. Zhuang, G.R. North, M.J. Stevens, {\em A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm}, SoftwareX, Vol. 6, pp. 198-202, July 7, 2017.
-[^2]: A. L. Berger, {\em Long-Term Variations of Daily Insolation and Quaternary Climatic Changes}, Journal of the Atmospheric Sciences, Vol. 35, pp. 2362-2367, 1987.}
+[^1]: K. Zhuang, G.R. North, M.J. Stevens, _A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm_, SoftwareX, Vol. 6, pp. 198-202, July 7, 2017.
+[^2]: A. L. Berger, _Long-Term Variations of Daily Insolation and Quaternary Climatic Changes_, Journal of the Atmospheric Sciences, Vol. 35, pp. 2362-2367, 1987.
 
 
 
