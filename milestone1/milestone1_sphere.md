@@ -66,7 +66,7 @@ From mathematical analysis, we know that the Jacobian of the coordinate transfor
 \partialderiv{y}{r} &= \sin \colat \sin \varphi, &
 \partialderiv{y}{\varphi} &= r \sin \colat \cos \varphi, & 
 \partialderiv{y}{\colat} &= r \cos \colat \sin \varphi \\
-\partialderiv{z}{r} &= \sin \colat \cos \colat, &
+\partialderiv{z}{r} &= \cos \colat, &
 \partialderiv{z}{\varphi} &= 0, & 
 \partialderiv{z}{\colat} &= -r \sin \colat,
 \end{align}
@@ -77,7 +77,7 @@ J =
 \begin{bmatrix}
 \sin \colat \cos \varphi & -r \sin \colat \sin \varphi & r \cos \colat \cos \varphi \\
 \sin \colat \sin \varphi & r \sin \colat \cos \varphi & r \cos \colat \sin \varphi \\
-\sin \colat \cos \colat  & 0 & -r \sin \colat 
+\cos \colat  & 0 & -r \sin \colat 
 \end{bmatrix}
 \in \R^{3 \times 3},
 \end{align}
