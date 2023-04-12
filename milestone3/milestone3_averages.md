@@ -70,7 +70,7 @@ We can use \eqref{eq:cap} to compute the difference between two spherical caps a
 \begin{align}
 A_{\text{int}} &= \frac{1}{2} \left(\cos \left(\lat_j - \frac{\Delta \lat}{2}\right) - \cos \left(\lat_j + \frac{\Delta \lat}{2}\right)\right)
 \\
-&= \frac{1}{2}  \sin \left(\frac{\Delta \lat}{2}\right) \sin \left(\lat_j\right).
+&= \sin \left(\frac{\Delta \lat}{2}\right) \sin \left(\lat_j\right).
 \end{align}
 
 ### Implementation and data structures

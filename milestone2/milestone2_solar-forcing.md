@@ -94,7 +94,7 @@ Due to Earth's axial tilt, the solar irradiance depends on the latitude and the 
 
 We call the angle between the Earth-sun line and the equatorial plane of Earth _declination angle_ and note it with $\delta$. This angle changes throughout the year, as the Earth revolves around the sun (see figure):
 
-![](/assets/milestone2/Declination.png)
+![](/assets/milestone2/Declination_new.png)
 
 In general, the declination angle can be computed as
 $$
@@ -131,7 +131,7 @@ $$
 z_0 = -\tan(\lat)\tan(\delta) \le -1.
 $$
 
-The calculation of the effective insolation is more involved, as it requires the use of differential geometry. The result reads as
+The calculation of the effective insolation is more involved, as it requires the use of spherical astronomy. The result reads as
 $$
 S(\lat,t) = S_r(t) \sin(\lat) \sin(\delta).
 $$
@@ -142,7 +142,7 @@ $$
 - \left( \frac{\pi}{2} - |\delta| \right) < \lat < \frac{\pi}{2} - |\delta|.
 $$
 
-For these latitudes, the calculation of the insolation also requires the use of differential geometry. The result reads as
+For these latitudes, the calculation of the insolation also requires the use of spherical astronomy. The result reads as
 $$
 S(\lat,t) = S_r(t) \frac{1}{\pi} (H_0 \sin(\lat) \sin(\delta)+\cos(\lat) \cos(\delta) \sin(H_0)),
 $$
