@@ -111,7 +111,7 @@ $$
 $$
 or equivalently
 $$
-z = -\tan(\lat)\tan(\delta) \ge 1.
+z_0 = -\tan(\lat)\tan(\delta) \ge 1.
 $$
 
 For these latitudes, the insolation is simply
@@ -128,7 +128,7 @@ $$
 $$
 or equivalently
 $$
-z = -\tan(\lat)\tan(\delta) \le -1.
+z_0 = -\tan(\lat)\tan(\delta) \le -1.
 $$
 
 The calculation of the effective insolation is more involved, as it requires the use of differential geometry. The result reads as
@@ -148,7 +148,25 @@ S(\lat,t) = S_r(t) \frac{1}{\pi} (H_0 \sin(\lat) \sin(\delta)+\cos(\lat) \cos(\d
 $$
 with the absolute angle of the sun at sunrise and sunset
 $$
-H_0 = \arccos (z).
+H_0 = \arccos (z_0).
+$$
+
+---
+
+In summary, the solar forcing is given by the expression
+$$
+S(\theta,t) =
+\begin{cases}
+0 & \text{if}~|\lat| + |\delta| \ge \frac{\pi}{2} \,\, \text{with} \,\, \lat \delta < 0,
+\\
+S_0 \rho(t)\sin(\lat) \sin(\delta) & \text{if}~|\lat| + |\delta| \ge \frac{\pi}{2} \,\, \text{with} \,\, \lat \delta > 0,
+ \\
+\frac{S_0 \rho(t)}{\pi} (H_0 \sin(\lat) \sin(\delta)+\cos(\lat) \cos(\delta) \sin(H_0)) & \text{if}~- \left( \frac{\pi}{2} - |\delta| \right) < \lat < \frac{\pi}{2} - |\delta|,
+\end{cases}
+$$
+with the normalized distance between Earth and sun squared
+$$
+\rho(t) =  \left(\frac{1 - e \cos (\nu(t))}{1-e^2}\right)^2.
 $$
 
 ### Bonus: Computation of the true longitude $\lambda$
