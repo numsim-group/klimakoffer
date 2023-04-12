@@ -8,7 +8,7 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 1 - Project Results
+# Milestone 2 - Project Results
  
 
 ## Approximate Robinson Projection
