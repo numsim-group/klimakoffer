@@ -16,7 +16,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 In milestone 2 you will program the calculation of all necessary parameters for the calculation of the time and space dependent solar forcing and then visualize it as an animation over a period of one year in 48 time steps. For this you will need the functions *read_geography* and *robinson_projection* from milestone 1.
 
-1. Write a function *calc_albedo* which outputs the albedo $a_{ij}$ for the points $\left(\lat_i,\varphi_j\right)$ as a matrix $A \in \mathbb{R}^{65\times 128}$ depending on the earth surface type $T\in \mathbb{N}^{65\times 128}$ (see milestone 1). For the calculation use the albedo scheme below as proposed by Zhuang et al. [^1].
+1. Write a function *calc_albedo* which outputs the albedo $\alpha_{ij}$ for the points $\left(\lat_i,\varphi_j\right)$ as a matrix $A \in \mathbb{R}^{65\times 128}$ depending on the earth surface type $T\in \mathbb{N}^{65\times 128}$ (see milestone 1). For the calculation use the albedo scheme below as proposed by Zhuang et al. [^1].
 
 | **Land mask** | **Albedo** |                                                                                                 
 |---------------|--------------|
@@ -74,7 +74,7 @@ Make sure that your implementation handles values $\pm \infty$ of the tangent at
 
 5. Write a function *calc\_solar\_forcing* with input arguments
 
-* albedo values at the grid points,
+* $\alpha$: albedo values at the grid points,
 * $S_0$: solar constant with default value $S_0 = 1371.685$,
 * $e$: eccentricity with default value $e = 0.01674$,
 * $\epsilon$: obliquity with default value $\epsilon  = 0.409253$,
@@ -83,13 +83,13 @@ Make sure that your implementation handles values $\pm \infty$ of the tangent at
 
 
 Note that these default orbital parameters correspond to the year 1950.
-This function should calculate and return the solar forcing $F_S(\lat_i,\varphi_j,t_k)$ at each grid point $(\lat_i, \varphi_j)$ and for each time step $t_k$.
+This function should calculate and return the solar forcing $S_{sol}(\lat_i,\varphi_j,t_k)$ at each grid point $(\lat_i, \varphi_j)$ and for each time step $t_k$.
 The return value should be a three-dimensional array, where the first dimension corresponds to the latitude, the second to the longitude, and the third to the time step.
 The solar forcing is given by
 \begin{equation*}
-	F_S\left(\lat,\varphi,t\right) = S\left(\lat,t\right)a_c\left(\lat,\varphi\right).
+	S_{sol}\left(\lat,\varphi,t\right) = S\left(\lat,t\right)\alpha_c\left(\lat,\varphi\right).
 \end{equation*}
-Here, $S$ is the insolation defined above and $a_c$ is the coalbedo given by $a_c = 1 - a$, where $a$ is the albedo.
+Here, $S$ is the insolation defined above and $\alpha_c$ is the coalbedo given by $\alpha_c = 1 - \alpha$, where $\alpha$ is the albedo.
 
 
 6. To visualize the solar forcing as an animation, calculate the albedo and the solar forcing for a grid size of $65 \times 128$ (with the [data file](/assets/milestone2/input/The_World128x65.dat) from milestone 1) and $48$ time steps within a year. Then plot your result using the function
