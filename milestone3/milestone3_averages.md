@@ -81,7 +81,7 @@ For instance, assuming $\nlat = 65$, we can declare the vector in Julia as
 ```julia:./define_area.jl
 n_latitude = 65
 n_longitude = 2 * (n_latitude - 1)
-area = zeros(Float64,n_latitude)
+area = zeros(Float64, n_latitude)
 ```
 
 The grid size is 
