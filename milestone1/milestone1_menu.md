@@ -8,7 +8,7 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 1
+# Milestone 1 (Warmup)
 
 In this milestone, we will learn about the climate system and different climate models that describe it.
 At the end of the chapter, we will select a climate model for the course and introduce some basic concepts about the mesh and visualization.

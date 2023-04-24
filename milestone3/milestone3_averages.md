@@ -14,7 +14,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 ---
 
-To formulate our zero-dimensional EBM and to analyze the output of our model, we will require to compute spatial and temporal averages of grid data, such as temperatures, heat capacities, and forcing terms.
+As mentioned, we need to be careful when computing spatial averages because of the spherical coordinate system. We need the averaging procedures to (i) define our simplified models, (ii) to later analyze the numerical results that we get, e.g., compute the average temperature in the southern hemisphere. We further need to define temporal averaging and apply all of this to our field data, such as, e.g., the temperature itself, the heat capacity, or the solar forcing terms. 
 
 ## Area average
 
@@ -29,20 +29,20 @@ We consider the latitude/longitude grid:
 In the figure, the discretization nodes are marked in purple, the grid _lines_ are marked in gray, and we have drawn additional auxiliary grid lines (dotted lines in red) between our computational nodes.
 We are going to use these auxiliary grid lines to define the surface area that corresponds to each computational node.
 
-The area average of a field $F(x)$ that takes the value $F_{ij}$ at each node $ij$ can be written as
+The area average of a field $F(x)$ that takes the value $F_{ji}$ at each node $ji$ can be in general written as
 $$\label{eq:areaaverage}
-\overline{F} = \sum_{i,j} \omega_{ij} F_{ij},
+\overline{F} = \sum_{j,i} \omega_{ji} F_{ji},
 $$
-where $\omega_{ij}$ contains the _normalized_ areas for each of the grid points of our mesh.
+where $\omega_{ji}$ contains the _normalized_ areas for each of the grid points of our mesh.
 
 Observe that, even though we use a regular grid, the area that corresponds to each computational node of our grid depends only on the latitude, and not on the longitude.
 Therefore, our goal is to compute the corresponding
 approximation of the area for each latitude
-grid coordinate ($\lat_j$).
+grid coordinate $\lat_j$.
 
 In addition, observe that each node at the pole maps to a triangle, and not to a quadrilateral.
 In preparation for the discretization of the diffusion operator in spherical
-coordinates ([milestone 5](/milestone5/milestone5_menu/)), we already start to
+coordinates ([Milestone 5](/milestone5/milestone5_menu/)), we already start to
 treat the pole regions ($j=1$ and $j=\nlat$)
 in a special way.
 
@@ -53,7 +53,7 @@ We need to compute the area of a spherical cap at the angle $\lat = \frac{\Delta
 \fig{/assets/milestone3/SphericalCap.png}
 * Source: Wikipedia
 
-Using mathematical analysis, we can derive the area of a spherical cap with radius $R_E$ as
+Using standard geometrical formulae, we can derive the area of a spherical cap with radius $R_E$ as
 $$
 \tilde A_{\text{pole}} = 2 \pi R_E^2 (1-\cos \lat) = 2 \pi R_E^2 \left(1-\cos \left(\frac{\Delta \lat}{2}\right)\right).
 $$
@@ -81,7 +81,7 @@ For instance, assuming $\nlat = 65$, we can declare the vector in Julia as
 ```julia:./define_area.jl
 n_latitude = 65
 n_longitude = 2 * (n_latitude - 1)
-area = zeros(Float64,n_latitude)
+area = zeros(Float64, n_latitude)
 ```
 
 The grid size is 
@@ -152,7 +152,7 @@ function calc_mean(field, area, n_latitude, n_longitude)
 end 
 ```
 
-We test our routine by computing the area average of the dara $F(j,i)=1, \; \forall (i,j)$ to get the value of $1$.
+We test our routine by computing the area average of the data $F(j,i)=1, \; \forall (j,i)$ to get the value of $1$.
 ```julia:./testarea.jl
 field = ones(Float64,n_latitude,n_longitude)
 println("Area : ", calc_mean(field, area, n_latitude, n_longitude))
