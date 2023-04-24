@@ -27,7 +27,7 @@ To solve the zero-dimensional EBM you should proceed as described in the next st
 
 1. Implement a function *calc_area*, which determines the area fraction of each grid cell as a function of latitude, with an equidistant step size $h=\frac{\pi}{64}$ for a $128 \times 65$ grid, and returns the values as a vector.
 2. Implement a *calc_mean* function, using the results from the first task, which takes a matrix of values of a given parameter like albedo or solar forcing for each grid cell and returns the mean value over the whole area.
-3. Write a function *calc\_radiative\_cooling\_co2*, which returns the $CO_2$ dependent radiative cooling $A$ for a given $CO_2$ concentration $c$. As default values use the $CO_2$ concentration of the year 1950. The radiative cooling $A$ is given by
+3. Write a function *calc\_radiative\_cooling\_co2*, which returns the $CO_2$ dependent radiative cooling $A$ for a given $CO_2$ concentration $c$. As default value use the $CO_2$ concentration of the year 1950: $c_0 = 315.0$. The radiative cooling $A$ is given by
 \begin{align}
 A(c) = 210.3-5.35 \log\left(\frac{c}{c_0}\right)
 \label{A}
