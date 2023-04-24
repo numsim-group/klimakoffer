@@ -1,0 +1,31 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[backend=biber]{biblatex}
+\usepackage{enumitem}
+\usepackage[left=3cm, right=2cm]{geometry}
+\usepackage[intlimits]{esint}
+%\usepackage{tikzit}
+\usepackage{tikz}
+\setlength{\parindent}{0pt}\begin{document}
+%\input{sample.tikzstyles}
+\usetikzlibrary{decorations.pathreplacing}
+%A tikz picture as an equation:
+%\ctikzfig{tikzfig}
+\subsection{Time discretization}
+%\usepgfmodule{decorations}
+\begin{tikzpicture}
+\draw[thick,->] (-1,0) -- (9,0) node[anchor=north east] {$t$};
+\draw[thick,->] (-1,0) -- (-1,4.5) node[anchor=north east] {$y(t)$};
+\foreach \x in {0,1,2,3,4}
+   \draw (\x ,1pt) -- (\x,-1pt) node[anchor=north] {$t_{\x}$};
+\draw (5 ,1pt) -- (5 ,-1pt) node[anchor=north] {$\cdots$};
+
+\draw [decorate,decoration={brace,amplitude=10pt},xshift=0pt,yshift=0pt]
+(1 ,0.6 ) -- (2  ,0.6 ) node [black,midway,yshift=17pt] 
+{$\Delta t$};
+\end{tikzpicture}
+
+
+\end{document}
