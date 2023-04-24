@@ -12,7 +12,9 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 ## Compute Albedo and Solar Forcing Terms and Visualize in Time
 
-[(Download description in PDF format)](/assets/milestone2/description.pdf)
+[(Download description in PDF format)](/assets/milestone2/description.pdf)\\
+[(Download *The_World128x65.dat*)](/assets/milestone2/input/The_World128x65.dat)\\
+[(Download *True_Longitude.dat*)](/assets/milestone2/input/True_Longitude.dat)
 
 In milestone 2 you will program the calculation of all necessary parameters for the calculation of the time and space dependent solar forcing and then visualize it as an animation over a period of one year in 48 time steps. For this you will need the functions *read_geography* and *robinson_projection* from milestone 1.
 

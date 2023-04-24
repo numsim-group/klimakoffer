@@ -12,7 +12,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 In the last milestone, we focused
 on the modeling aspect and introduced several
-parametrizations of,e.g., heat capacity, albedo,
+parametrizations of, e.g., heat capacity, albedo,
 radiation, etc.
 
 Before moving on to modeling the diffusion
@@ -27,3 +27,5 @@ EBM.
 1. [Constant-coefficient EBM](/milestone3/milestone3_constantcoeff/)
 2. [ODE Solvers](/milestone3/milestone3_odesolvers/)
 3. [Averages](/milestone3/milestone3_averages/)
+4. [Project description](/milestone3/milestone3_project/)
+5. [Project results](/milestone3/milestone3_results/)

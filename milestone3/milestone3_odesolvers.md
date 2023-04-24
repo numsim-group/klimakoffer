@@ -76,7 +76,7 @@ y'(t) = f(y,t).
 $$
 Formally, the solution is given by
 $$
-y(t - y(t_0)) = \int_{t_0}^t y'(t) \d t = \int_{t_0}^t f(y,t) \d t.
+y(t) - y(t_0) = \int_{t_0}^t y'(t) \d t = \int_{t_0}^t f(y,t) \d t.
 $$
 
 The problem is of course that the solution $y(t)$ is needed to compute the right-hand-side time integral.
@@ -199,7 +199,7 @@ $$
 which shows that $|1 + \Delta t \lambda|$ is the amplification factor of the explicit Euler method.
 We can investigate for which values of $\Delta t$ this factor is smaller than $1$ to obtain:
 
-\fig{/assets/milestone3/Stability_explicitEuler.png}
+\fig{/assets/milestone3/Stability_explicit_Euler.png}
 
 > We need that the product $(\Delta t \lambda)$ is within the marked red circle to keep the numerical amplification factor smaller than $1$!
 
@@ -216,7 +216,7 @@ y(0) &= 1.
 \end{align}
 
 The red circle stability area gives a
-maximum time step size of $\Delta t_{\max} = \frac{1}{1000}$,
+maximum time step size of $\Delta t_{\max} = \frac{1}{500}$,
 which shows that the time-step size can get
 very low for large values of $\lambda$. Such problems
 are sometimes also referred to as _stiff problems_.
@@ -238,7 +238,7 @@ In this simple case, we can directly solve the implicit equation!
 The amplification factor is now $\left| \frac{1}{1- \lambda \Delta t} \right|$, which gives the stability region of
 the implicit Euler method:
 
-\fig{/assets/milestone3/Stability_implicitEuler.png}
+\fig{/assets/milestone3/Stability_implicit_Euler.png}
 
 This shows that the implicit Euler scheme
 is stable for all values of $\lambda \Delta t$, except for the
@@ -254,7 +254,7 @@ to be chosen for accuracy reasons.
 @@colbox-blue
 **Remark:** Depending on the stiffness
 of the ODE problem and the computational
-complexity of the implicit equation, either the
+complexity of the implicit equation, either
 the explicit or implicit method is more
 efficient.
 @@
