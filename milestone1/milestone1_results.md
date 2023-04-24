@@ -1,6 +1,6 @@
 +++
 title = "Milestone 1"
-hascode = false
+hascode = true
 rss = "Description"
 rss_title = "Milestone 1"
 rss_pubdate = Date(2019, 5, 1)
