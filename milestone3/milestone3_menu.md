@@ -8,7 +8,7 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 3
+# Milestone 3 (ODE Numerics)
 
 In the last milestone, we focused
 on the modeling aspect and introduced several
@@ -19,9 +19,9 @@ Before moving on to modeling the diffusion
 operator and the diffusion coefficient, we
 take a step back and move deeper into
 understanding the solution behavior of the simplified
-EBM we discussed in last chapter. This will also help us
+EBM we discussed in the last chapter. This will also help us
 to introduce some numerical concepts and
-algorithms that we will use later for the full
+algorithms to solve ordinary differential equations (ODEs) that we will use later for the full
 EBM.
 
 1. [Constant-coefficient EBM](/milestone3/milestone3_constantcoeff/)

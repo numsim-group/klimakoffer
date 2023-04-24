@@ -8,7 +8,7 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 2
+# Milestone 2 (Physical Parametrization)
 
 1. [Conservation and balance](/milestone2/milestone2_conservation-and-balance/)
 2. [Energy Balance Model](/milestone2/milestone2_ebm/)
