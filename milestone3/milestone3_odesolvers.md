@@ -76,7 +76,7 @@ y'(t) = f(y,t).
 $$
 Formally, the solution is given by
 $$
-y(t - y(t_0)) = \int_{t_0}^t y'(t) \d t = \int_{t_0}^t f(y,t) \d t.
+y(t) - y(t_0) = \int_{t_0}^t y'(t) \d t = \int_{t_0}^t f(y,t) \d t.
 $$
 
 The problem is of course that the solution $y(t)$ is needed to compute the right-hand-side time integral.
@@ -216,7 +216,7 @@ y(0) &= 1.
 \end{align}
 
 The red circle stability area gives a
-maximum time step size of $\Delta t_{\max} = \frac{1}{1000}$,
+maximum time step size of $\Delta t_{\max} = \frac{1}{500}$,
 which shows that the time-step size can get
 very low for large values of $\lambda$. Such problems
 are sometimes also referred to as _stiff problems_.

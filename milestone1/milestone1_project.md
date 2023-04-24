@@ -13,7 +13,8 @@ tags = ["climatesystem"]
 
 ## Read-in and Plot Geography
 
-[(Download description in PDF format)](/assets/milestone1/description.pdf)
+[(Download description in PDF format)](/assets/milestone1/description.pdf)\\
+[(Download *The_World128x65.dat*)](/assets/milestone1/input/The_World128x65.dat)
 
 In this milestone, the goal is to read-in the geography information of planet Earth and plot it as a two-dimensional world map.
 We consider an equirectangular grid of the Earth, i.e., an equidistant rectangular grid in spherical coordinates, where the grid point $(i, j)$ has the spherical coordinates $(\theta_i, \varphi_j)$, where $\theta_i$ is the latitude between $-90\degree$ south and $90\degree$ north (including the poles) and $\varphi_j$ the longitude between $-180\degree$ west and $180\degree$ east.

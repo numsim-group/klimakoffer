@@ -206,11 +206,9 @@ function milestone2()
     solar_forcing = calc_solar_forcing(albedo, true_longitude)
 
     # Plot solar forcing for each time step
-    
     anim = @animate for ts in 1:length(true_longitude)
         plot_solar_forcing(solar_forcing, ts)
     end
 
     gif(anim, joinpath(@__DIR__, "solar_forcing.gif"), fps=7)
-    
 end
