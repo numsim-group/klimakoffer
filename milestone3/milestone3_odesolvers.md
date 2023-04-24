@@ -199,7 +199,7 @@ $$
 which shows that $|1 + \Delta t \lambda|$ is the amplification factor of the explicit Euler method.
 We can investigate for which values of $\Delta t$ this factor is smaller than $1$ to obtain:
 
-\fig{/assets/milestone3/Stability_explicitEuler.png}
+\fig{/assets/milestone3/Stability_explicit_Euler.png}
 
 > We need that the product $(\Delta t \lambda)$ is within the marked red circle to keep the numerical amplification factor smaller than $1$!
 
@@ -238,7 +238,7 @@ In this simple case, we can directly solve the implicit equation!
 The amplification factor is now $\left| \frac{1}{1- \lambda \Delta t} \right|$, which gives the stability region of
 the implicit Euler method:
 
-\fig{/assets/milestone3/Stability_implicitEuler.png}
+\fig{/assets/milestone3/Stability_implicit_Euler.png}
 
 This shows that the implicit Euler scheme
 is stable for all values of $\lambda \Delta t$, except for the
