@@ -9,7 +9,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
 
-# Milestone 3 - Project Results (ODE Numerics)
+# Milestone 3 - Project Results
 
 \toc
 

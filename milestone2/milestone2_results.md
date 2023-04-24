@@ -8,8 +8,7 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 2 - Project Results (Physical Parametrization)
-
+# Milestone 2 - Project Results
 \toc
 
 ## Expected Results

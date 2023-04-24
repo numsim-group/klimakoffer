@@ -8,7 +8,7 @@ rss_pubdate = Date(2019, 5, 1)
 tags = ["climatesystem"]
 +++
 
-# Milestone 1 - Project Results (Approximate Robinson Projection)
+# Milestone 1 - Project Results
 
 \toc
 
