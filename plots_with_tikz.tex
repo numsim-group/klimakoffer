@@ -15,6 +15,18 @@
 \newcommand{\im}{\text{Im\quad}}
 %A tikz picture as an equation:
 %\ctikzfig{tikzfig}
+
+
+\subsection{Domains}
+\begin{tikzpicture}
+\draw (0,0) ellipse (2cm and 1cm);
+\draw[ <-] (0,0) -- (2,1) node[right]{$\omega$};
+\draw[ <-] (2,0) -- (3,1) node[right]{$\partial\omega$};
+\draw[ ->] (-2,0) -- (-3,0) node[above]{$\vec{n}(x)$};
+\draw[fill=black] (-2,0) circle (0.05) node[right]{$x$};
+
+\end{tikzpicture}
+
 \subsection{Time discretization}
 %\usepgfmodule{decorations}
 \begin{tikzpicture}
@@ -72,6 +84,41 @@
 
 \node[draw,color=violet] at (2,2.5) {$a<0$};
 
+
+\end{tikzpicture}
+
+\subsection{Circles}
+\begin{tikzpicture}
+\draw[thick,->] (-3,0) -- (3,0) node[right] {$\text{Re}(\lambda)\cdot\Delta t$};
+\draw[thick,->] (0,-3) -- (0,3) node[above] {$\text{Im}(\lambda)\cdot\Delta t$};
+
+\draw[fill = red,red,fill opacity=0.2] (-1,0) circle (1);
+
+\draw (-2 ,2pt) -- (-2,-2pt) node[anchor=north east] {$-2$};
+\node at (0.2,-0.3) {$0$};
+\draw[color=red, dotted, line width=0.7pt](-1,1)--(0,1);
+\draw[color=red, dotted, line width=0.7pt](-1,-1)--(0,-1);
+\draw (-2pt ,1) -- (2pt,1) node[right] {$1$};
+\draw (-2pt ,-1) -- (2pt,-1) node[right] {$-1$};
+
+\end{tikzpicture}
+\\
+\begin{tikzpicture}
+\draw[thick,->] (-3,0) -- (3,0) node[right] {$\text{Re}(\lambda)\cdot\Delta t$};
+\draw[thick,->] (0,-3) -- (0,3) node[above] {$\text{Im}(\lambda)\cdot\Delta t$};
+
+\draw[red, dotted, line width=0.7pt] (1,0) circle (1);
+\def\firstcircle{(1,0) circle (1)};
+\draw (2 ,2pt) -- (2,-2pt) node[anchor=north west] {$2$};
+\node at (-0.2,-0.3) {$0$};
+
+\draw (-2pt ,1) -- (2pt,1) node[left] {$1$};
+\draw (-2pt ,-1) -- (2pt,-1) node[left] {$-1$};
+%\draw[fill=red,red, draw opacity=0.2, fill opacity=0.2] (3,3) rectangle (-3,-3);
+\begin{scope}[even odd rule]% first circle without the second
+            \clip \firstcircle (-3,-3) rectangle (3,3);
+        \fill[red, fill opacity=0.2] (3,3) rectangle (-3,-3);
+\end{scope}
 
 \end{tikzpicture}
 \end{document}
