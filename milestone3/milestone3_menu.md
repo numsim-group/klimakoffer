@@ -12,7 +12,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 In the last milestone, we focused
 on the modeling aspect and introduced several
-parametrizations of,e.g., heat capacity, albedo,
+parametrizations of, e.g., heat capacity, albedo,
 radiation, etc.
 
 Before moving on to modeling the diffusion
