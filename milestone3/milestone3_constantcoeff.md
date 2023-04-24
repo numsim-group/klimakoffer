@@ -14,7 +14,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 ---
 
-## The zero-D energy balance model
+## The $0D$ energy balance model
 
 We recall that the EBM we have derived
 so far is given by
