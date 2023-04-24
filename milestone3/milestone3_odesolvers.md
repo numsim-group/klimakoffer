@@ -254,7 +254,7 @@ to be chosen for accuracy reasons.
 @@colbox-blue
 **Remark:** Depending on the stiffness
 of the ODE problem and the computational
-complexity of the implicit equation, either the
+complexity of the implicit equation, either
 the explicit or implicit method is more
 efficient.
 @@
