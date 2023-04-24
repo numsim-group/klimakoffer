@@ -25,5 +25,5 @@ algorithms to solve ordinary differential equations (ODEs) that we will use late
 EBM.
 
 1. [Constant-coefficient EBM](/milestone3/milestone3_constantcoeff/)
-2. [Averages](/milestone3/milestone3_averages/)
-3. [ODE Solvers](/milestone3/milestone3_odesolvers/)
+2. [ODE Solvers](/milestone3/milestone3_odesolvers/)
+3. [Averages](/milestone3/milestone3_averages/)
