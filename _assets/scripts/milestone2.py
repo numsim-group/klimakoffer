@@ -172,7 +172,7 @@ def plot_solar_forcing(solar_forcing, timestep, show_plot=False):
     # Adjust size of plot to viewport to prevent clipping of the legend.
     plt.tight_layout()
 
-    filename = 'solar_forcing_{}.png'.format(ts)
+    filename = 'solar_forcing_{}.png'.format(timestep)
     plt.savefig(filename, dpi=300)
     if show_plot:
         plt.show()

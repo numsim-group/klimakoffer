@@ -58,7 +58,7 @@ $$
 \tilde A_{\text{pole}} = 2 \pi R_E^2 (1-\cos \lat) = 2 \pi R_E^2 \left(1-\cos \left(\frac{\Delta \lat}{2}\right)\right).
 $$
 
-As we will use the area calculation only to compute area averages of quantities on the surface of the sphere, we will directly normalize this value with the surface area of the Earth (spehere), i.e.
+As we will use the area calculation only to compute area averages of quantities on the surface of the sphere, we will directly normalize this value with the surface area of the Earth (sphere), i.e.
 $$\label{eq:cap}
 A_{\text{pole}} = \frac{1}{4\pi R_E^2} \tilde A_{\text{pole}} = \frac{1}{2} \left(1-\cos \left(\frac{\Delta \lat}{2}\right)\right).
 $$
