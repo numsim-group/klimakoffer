@@ -52,7 +52,7 @@ $$
 
 The ordinary differential equation \eqref{eq:constant_coeff_ebm} can be recast into
 $$
-\overline{C} \deriv{T_A}{t} = B {T_{eq}} - T_A(t),
+\overline{C} \deriv{T_A}{t} = B \left( {T_{eq}} - T_A(t) \right),
 $$
 and solved analytically as
 $$
