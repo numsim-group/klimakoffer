@@ -27,7 +27,7 @@ To get a feeling for the analytical behaviour, as a first step, we introduce a s
 We do this by computing area averages in
 space and averages in time to obtain
 $$\label{eq:constant_coeff_ebm}
-\overline{C} \partialderiv{T_A}{t} + A(CO_2) + B\, T_A = \widehat{\overline{S_{sol}}},
+\overline{C} \deriv{T_A}{t} + A(CO_2) + B\, T_A = \widehat{\overline{S_{sol}}},
 $$
 where $\overline{C}$ is the spatial average of the heat capacity coefficient, $\widehat{\overline{S_{sol}}}$ is a spatial and temporal average of the solar forcing term, and $T_A$ is an approximation to the average of Earth's temperature.
 
@@ -41,7 +41,7 @@ Note that spatial averaging needs to account for the spherical shape of Earth, i
 
 ## Analytical solution of the $0D$-EBM
 
-We can define the steady-state solution (also known as constant equilibrium solution) $T_{eq}$ by assuming $\partial T_A / \partial t =0$, to obtain
+We can define the steady-state solution (also known as constant equilibrium solution) $T_{eq}$ by assuming $d T_A / d t =0$, to obtain
 $$
 T_{eq} = \frac{\widehat{\overline{S_{sol}}}- A}{B}.
 $$
@@ -52,7 +52,7 @@ $$
 
 The ordinary differential equation \eqref{eq:constant_coeff_ebm} can be recast into
 $$
-\overline{C} \partialderiv{T_A}{t} = B {T_{eq}} - T_A(t),
+\overline{C} \deriv{T_A}{t} = B {T_{eq}} - T_A(t),
 $$
 and solved analytically as
 $$

@@ -19,7 +19,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 As a next step, we want to incorporate the annual change of the insolation and consider a simplified EBM, where we only average the coefficients in space but not in time. We apply the area averaging to our coefficients to get
 $$
 \label{eq:ODE2}
-\overline{C} \partialderiv{T_A}{t} + A(CO_2) + B\, T_A = \overline{S_{sol}}(t),
+\overline{C} \deriv{T_A}{t} + A(CO_2) + B\, T_A = \overline{S_{sol}}(t),
 $$
 
 where we keep the time dependence of the solar source term.
