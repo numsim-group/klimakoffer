@@ -30,6 +30,8 @@ tags = ["syntax", "code"]
   2. "Implementation phase": Hands-on programing in groups. We are here to help: classes in person or via zoom can be used to sit together and work on the milestones, ask questions, discussions, etc.  
 * In the final part of the lecture, there will be the mysterious milestone 7.
 * For the milestones 1-6 solutions in Julia and Python are available and made accessible. 
+* Below you can find the schedule.
+\fig{/assets/Schedule_ilias.png}
 
 ## Examination
 
