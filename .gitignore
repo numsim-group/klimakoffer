@@ -3,6 +3,3 @@ __site/
 node_modules/
 package-lock.json
 Manifest.toml
-*.bak
-plots_with_tikz.*
-!plots_with_tikz.tex
