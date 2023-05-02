@@ -32,6 +32,7 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\long}{\varphi}
 \newcommand{\scal}[1]{\langle #1 \rangle}
 \newcommand{\partialderiv}[2]{ \frac{\partial {#1}}{\partial {#2} } }
+\newcommand{\mat}[1]{\underline{\mathbf{#1}}}
 \newcommand{\col}[2]{~~~<span style="color:~~~#1~~~">~~~!#2~~~</span>~~~}
 
 <!-- Name of repository for GitHub pages -->
