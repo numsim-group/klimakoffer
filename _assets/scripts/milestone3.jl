@@ -129,8 +129,8 @@ function plot_annual_temperature(annual_temperature, average_temperature, title)
     labels = ["March", "June", "September", "December", "March"]
 
     p = plot(average_temperature * ones(ntimesteps), label="average temperature",
-             xlims=(0, ntimesteps), xticks=(LinRange(0, ntimesteps, 5), labels),
-             ylabel="surface temperature", title=title)
+             xlims=(1, ntimesteps), xticks=(LinRange(1, ntimesteps, 5), labels),
+             ylabel="surface temperature [°C]", title=title)
     plot!(p, annual_temperature, label="annual temperature")
 
     display(p)
