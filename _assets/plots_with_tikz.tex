@@ -16,6 +16,23 @@
 %A tikz picture as an equation:
 %\ctikzfig{tikzfig}
 
+\subsection{Conservation Bathtub}
+
+
+\begin{tikzpicture}
+			\draw [thick] (3,3) ellipse (3 and 0.5);
+			\draw [thick] (0,3) to [out=270,in=180] (2,0);
+			\draw [thick] (2,0) -- (4,0);
+			\draw [thick] (4,0) to [out=0,in=270] (6,3);
+			\draw [thick] (6,3) -- (6,5) -- (4,5) -- (4,4.5);
+			\draw [thick,cyan] (3,1.6) ellipse (2.74 and 0.4);
+			\draw [->,thick, green,dashed] (4,4.5) -- (4,1);
+			\draw [->,thick,red,dashed] (4.5,0.5) -- (8,0.5);
+			\draw [thick, green] (7,5) -- (7.5,5);
+			\node [right] at (7.5,5) { Water in};
+			\draw [thick, red] (7,4) -- (7.5,4);
+			\node [right] at (7.5,4) { Water out};
+\end{tikzpicture}
 
 \subsection{Domains}
 \begin{tikzpicture}
