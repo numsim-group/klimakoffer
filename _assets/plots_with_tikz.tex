@@ -1,0 +1,144 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[backend=biber]{biblatex}
+\usepackage{enumitem}
+\usepackage[left=3cm, right=2cm]{geometry}
+\usepackage[intlimits]{esint}
+%\usepackage{tikzit}
+\usepackage{tikz}
+\setlength{\parindent}{0pt}\begin{document}
+%\input{sample.tikzstyles}
+\usetikzlibrary{decorations.pathreplacing}
+\newcommand{\re}{\text{Re\quad}}
+\newcommand{\im}{\text{Im\quad}}
+%A tikz picture as an equation:
+%\ctikzfig{tikzfig}
+
+\subsection{Conservation Bathtub}
+
+
+\begin{tikzpicture}
+			\draw [thick] (3,3) ellipse (3 and 0.5);
+			\draw [thick] (0,3) to [out=270,in=180] (2,0);
+			\draw [thick] (2,0) -- (4,0);
+			\draw [thick] (4,0) to [out=0,in=270] (6,3);
+			\draw [thick] (6,3) -- (6,5) -- (4,5) -- (4,4.5);
+			\draw [thick,cyan] (3,1.6) ellipse (2.74 and 0.4);
+			\draw [->,thick, green,dashed] (4,4.5) -- (4,1);
+			\draw [->,thick,red,dashed] (4.5,0.5) -- (8,0.5);
+			\draw [thick, green] (7,5) -- (7.5,5);
+			\node [right] at (7.5,5) { Water in};
+			\draw [thick, red] (7,4) -- (7.5,4);
+			\node [right] at (7.5,4) { Water out};
+\end{tikzpicture}
+
+\subsection{Domains}
+\begin{tikzpicture}
+\draw (0,0) ellipse (2cm and 1cm);
+\draw[ <-] (0,0) -- (2,1) node[right]{$\omega$};
+\draw[ <-] (2,0) -- (3,1) node[right]{$\partial\omega$};
+\draw[ ->] (-2,0) -- (-3,0) node[above]{$\vec{n}(x)$};
+\draw[fill=black] (-2,0) circle (0.05) node[right]{$x$};
+
+\end{tikzpicture}
+
+\subsection{Time discretization}
+%\usepgfmodule{decorations}
+\begin{tikzpicture}
+\draw[thick,->] (-1,0) -- (9,0) node[right] {$t$};
+\draw[thick,->] (-1,0) -- (-1,3) node[above] {$y(t)$};
+\foreach \x in {0,1,2,3}
+   \draw (2*\x ,2pt) -- (2*\x,-2pt) node[below] {$t_{\x}$};
+\draw (8 ,2pt) -- (8 ,-2pt) node[below] {$\cdots$};
+
+\draw [decorate,decoration={brace,amplitude=10pt},xshift=0pt,yshift=0pt]
+(0 ,0.6 ) -- (2,0.6 ) node [black,midway,yshift=17pt] 
+{$\Delta t$};
+\end{tikzpicture}
+\subsection{Integral approximation}
+\begin{tikzpicture}
+[domain=-1:6.1]
+\draw[thick,->] (-1,0) -- (9,0) node[right] {$t$};
+\draw[thick,->] (-1,0) -- (-1,7) node[above] {$f(y,t)$};
+\foreach \x in {0,1,2,3}
+   \draw (2*\x ,2pt) -- (2*\x,-2pt) node[below] {$t_{\x}$};
+\draw (8 ,2pt) -- (8 ,-2pt) node[below] {$\cdots$};
+\draw[color=red] plot(\x,{(-3/16)*\x*\x*\x+(11/8)*\x * \x -(3/2)*\x +2});
+\foreach \x in {0,2,4}
+   \draw [color=blue](\x ,{(-3/16)*\x*\x*\x+(11/8)*\x * \x -(3/2)*\x +2}) -- (\x + 2,{(-3/16)*\x*\x*\x+(11/8)*\x * \x -(3/2)*\x +2});
+\foreach \x in {0,2,4}
+   \draw[color=blue, dotted] (\x ,{(-3/16)*\x*\x*\x+(11/8)*\x * \x -(3/2)*\x +2}) -- (\x , 0);
+\draw[color=blue, dotted] (6,6)--(6,0);
+\foreach \x in {0,2,4}
+   \draw [fill=blue,blue, draw opacity=0.2, fill opacity=0.2](\x ,{(-3/16)*\x*\x*\x+(11/8)*\x * \x -(3/2)*\x +2}) rectangle (\x + 2,0);
+
+\end{tikzpicture}
+\subsection{Realteil und Imaginärteil}
+\begin{tikzpicture}
+[domain=0:6]
+\draw[thick,->] (0,0) -- (9,0) node[right] {$t$};
+\draw[thick,->] (0,-3) -- (0,3) node[above] {Im$(y(t))$};
+
+
+\draw[color=red] plot[samples=150](\x,{exp(0.2*\x)*sin(10*\x r)}) node[right] {$e^{at}\sin(bt)=\text{Im}(y(t))$};
+\draw[color=blue, dotted] plot[samples=150](\x,{exp(0.2*\x)}) node[right] {$e^{at}$};
+\draw[color=blue, dotted] plot[samples=150](\x,{-exp(0.2*\x)}) node[right] {$-e^{at}$};
+\node[draw,color=violet] at (2,2.5) {$a>0$};
+
+\end{tikzpicture}
+\\
+\begin{tikzpicture}
+[domain=0:6]
+\draw[thick,->] (0,0) -- (9,0) node[right] {$t$};
+\draw[thick,->] (0,-3) -- (0,3) node[above] {Im$(y(t))$};
+
+
+\draw[color=red] plot[samples=150](\x,{exp(-0.2*\x)*sin(10*\x r)}) node[above, yshift=20 pt] {$e^{at}\sin(bt)=\text{Im}(y(t))$};
+\draw[color=blue, dotted] plot[samples=150](\x,{exp(-0.2*\x)}) node[right] {$e^{at}$};
+\draw[color=blue, dotted] plot[samples=150](\x,{-exp(-0.2*\x)}) node[right] {$-e^{at}$};
+
+\node[draw,color=violet] at (2,2.5) {$a<0$};
+
+
+\end{tikzpicture}
+
+\subsection{Circles}
+\begin{tikzpicture}
+\draw[thick,->] (-3,0) -- (3,0) node[right] {$\text{Re}(\lambda)\cdot\Delta t$};
+\draw[thick,->] (0,-3) -- (0,3) node[above] {$\text{Im}(\lambda)\cdot\Delta t$};
+
+\draw[fill = red,red,fill opacity=0.2] (-1,0) circle (1);
+
+\draw (-2 ,2pt) -- (-2,-2pt) node[anchor=north east] {$-2$};
+\node at (0.2,-0.3) {$0$};
+\draw[color=red, dotted, line width=0.7pt](-1,1)--(0,1);
+\draw[color=red, dotted, line width=0.7pt](-1,-1)--(0,-1);
+\draw (-2pt ,1) -- (2pt,1) node[right] {$1$};
+\draw (-2pt ,-1) -- (2pt,-1) node[right] {$-1$};
+\node[draw,color=violet] at (-1,-2) {$a<0$};
+\node[draw,color=violet] at (1,-2) {$a>0$};
+
+
+\end{tikzpicture}
+\\
+\begin{tikzpicture}
+\draw[thick,->] (-3,0) -- (3,0) node[right] {$\text{Re}(\lambda)\cdot\Delta t$};
+\draw[thick,->] (0,-3) -- (0,3) node[above] {$\text{Im}(\lambda)\cdot\Delta t$};
+
+\draw[red, dotted, line width=0.7pt] (1,0) circle (1);
+\def\firstcircle{(1,0) circle (1)};
+\draw (2 ,2pt) -- (2,-2pt) node[anchor=north west] {$2$};
+\node at (-0.2,-0.3) {$0$};
+
+\draw (-2pt ,1) -- (2pt,1) node[left] {$1$};
+\draw (-2pt ,-1) -- (2pt,-1) node[left] {$-1$};
+%\draw[fill=red,red, draw opacity=0.2, fill opacity=0.2] (3,3) rectangle (-3,-3);
+\begin{scope}[even odd rule]% first circle without the second
+            \clip \firstcircle (-3,-3) rectangle (3,3);
+        \fill[red, fill opacity=0.2] (3,3) rectangle (-3,-3);
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

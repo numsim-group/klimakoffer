@@ -50,7 +50,7 @@ We consider the spherical coordinate system, in which all points in the three-di
 * Longitude: $\varphi \in \R, \, 0 \le \varphi < 2\pi$.
 
 ![](/assets/milestone1/SphereCoord.png)
-
+* **Source**: Wikipedia (User:Ag2gaeh), modified, licensed under [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 We can map any point in absolute Cartesian coordinates ($x,y,z$) to spherical coordinates ($r,\colat,\varphi$) using the following transformations:
 \begin{align}
 x &= r \sin \colat \cos \varphi, & r &= \sqrt{x^2 + y^2 + z^2},\\
