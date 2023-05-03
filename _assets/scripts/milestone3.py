@@ -108,10 +108,10 @@ def plot_annual_temperature(annual_temperature, average_temperature, title):
     plt.plot(average_temperature * np.ones(ntimesteps), label="average temperature")
     plt.plot(annual_temperature, label="annual temperature")
 
-    plt.xlim((0, ntimesteps))
+    plt.xlim((0, ntimesteps - 1))
     labels = ["March", "June", "September", "December", "March"]
-    plt.xticks(np.linspace(0, ntimesteps, 5), labels)
-    ax.set_ylabel("surface temperature")
+    plt.xticks(np.linspace(0, ntimesteps - 1, 5), labels)
+    ax.set_ylabel("surface temperature [°C]")
     plt.grid()
     plt.title(title)
     plt.legend(loc="upper right")
