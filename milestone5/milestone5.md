@@ -89,11 +89,17 @@ We obtain the diffusion operator in spherical coordinates by combining the expre
 In our $2D$ EBM, we neglect the changes in the radial direction, define the _scaled diffusion coefficient_ $\tilde D := D / R_E^2$, and simplify the expression to obtain
 \begin{align}\label{eq:diffterm}
 \Nabla \cdot (D\Nabla T) = 
-\csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) 
+\underbrace{
+    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) 
+}_{\text{Term}~1}
 + 
-\frac{\partial}{\partial \colat}\Bigl(\tilde D\frac{\partial T}{\partial \colat}\Bigr)
+\underbrace{
+    \frac{\partial}{\partial \colat}\Bigl(\tilde D\frac{\partial T}{\partial \colat}\Bigr)
+}_{\text{Term}~2}
 + 
-\cot(\colat)\tilde D\frac{\partial T}{\partial \colat}.
+\underbrace{
+    \cot(\colat)\tilde D\frac{\partial T}{\partial \colat}.
+}_{\text{Term}~3}
 \end{align}
 
 @@colbox-blue
@@ -102,19 +108,117 @@ In our $2D$ EBM, we neglect the changes in the radial direction, define the _sca
 
 ## Spatial Discretization Scheme
 
+The challenge now is to evaluate the diffusion operator in spherical coordinates \eqref{eq:diffterm}, such that we can use it in our $2D$ EBM model.
+To do that, we will obtain a _discrete_ version of the spatial derivatives in \eqref{eq:diffterm} that we can compute using the nodal values for the temperature and diffusion coefficients in our $2D$ latitude/longitude grid.
 
+### Finite Difference Discretization of First and Second-Order Derivatives
 
-### Finite Difference Discretization for Second-Order Derivatives
+The finite difference method is one of the simplest numerical methods to discretize derivatives. 
+There are many ways to derive finite difference formulas, but we will focus on the method of the Taylor expansion, as it will give us information about the approximation errors.
 
+@@colbox-blue
+**Taylor series:** The Taylor series (or Taylor expansion) of a function is an infinite sum of polynomial terms that are expressed in terms of the function's derivatives at a point.
+For instance, the Taylor deries of the function $f(x)$ around the point $x_0$ is defined as
+\begin{align}\label{eq:taylor}
+f(x) 
+&= f(x_0) + \deriv{f(x_0)}{x} (x-x_0) + \frac{1}{2!} \deriv{^2f(x_0)}{x^2} (x-x_0)^2 + \frac{1}{3!}\deriv{^3f(x_0)}{x^3} (x-x_0)^3 + \cdots
+\\ 
+&= f(x_0) + \deriv{f(x_0)}{x} \Delta x + \frac{1}{2!} \deriv{^2f(x_0)}{x^2} \Delta x^2 + \frac{1}{2!} \deriv{^3f(x_0)}{x^3} \Delta x^3 + \cdots
+\\
+&= \sum_{n=1}^{\infty} \frac{f^{(n)}(x_0)}{n!} \Delta x,
+\end{align}
+where $f^{(n)}(x_0)$ is a short-hand notation for the $n^{\text{th}}$ derivative of function $f(x)$ at $x_0$, and the distance between the evaluation point and the point $x$ and $x_0$ is $\Delta x \coloneqq x - x_0$.
+@@
+
+Let us consider a uniform one-dimensional grid containing temperature values.
+
+**TODO: Add figure of grid with $T_{i-1}$, $T_{i}$, and $T_{i+1}$**
+
+Using \eqref{eq:taylor}, we can write Taylor expansions for $T_{i+1}$ around $T_{i}$:
+$$\label{eq:taylortemp1}
+T_{i+1} = T_i + \deriv{T_i}{x} \Delta x + \frac{1}{2} \deriv{^2T_i}{x^2} \Delta x^2 + \frac{1}{6} \deriv{^3T_i}{x^3} \Delta x^3 + \cdots.
+$$
+
+By manipulating \eqref{eq:taylortemp1}, we can obtain an expression for the first-order derivative,
+\begin{align}
+\deriv{T_i}{x} &= \frac{T_{i+1} - T_{i}}{\Delta x} - \frac{1}{2} \deriv{^2T_i}{x^2} \Delta x + \ldots
+\\
+&= \frac{T_{i+1} - T_{i}}{\Delta x} + \mathcal{O}(\Delta x),
+\end{align}
+where $\mathcal{O}(\Delta x)$ indicates that the largest term is of the order of $\Delta x$. 
+Hence, if we truncated the Taylor series there, 
+$$
+\deriv{T_i}{x} \approx \frac{T_{i+1} - T_{i}}{\Delta x} 
+$$
+we would obtain an approximation of the derivative $\d T_i / \d x$, which would converge to the exact value of the derivative with first-order accuracy (i.e., $\text{error} \sim \Delta x^1$) as the grid size is reduced, $\Delta x \rightarrow 0$.
+
+It is also possible to write Taylor expansions of $T_{i-1}$ around $T_{i}$,
+$$\label{eq:taylortemp2}
+T_{i-1} = T_i - \deriv{T_i}{x} \Delta x + \frac{1}{2} \deriv{^2T_i}{x^2} \Delta x^2 - \frac{1}{6} \deriv{^3T_i}{x^3} \Delta x^3 + \cdots,
+$$
+or $T_{i+2}$ around $T_{i}$,
+$$\label{eq:taylortemp3}
+T_{i+2} = T_i + 2 \deriv{T_i}{x} \Delta x + 2 \deriv{^2T_i}{x^2} \Delta x^2 + \frac{4}{3} \deriv{^3T_i}{x^3} \Delta x^3 + \cdots,
+$$
+etc.
+
+Using \eqref{eq:taylortemp1}, \eqref{eq:taylortemp2}, and \eqref{eq:taylortemp3}, we can obtain the following approximations for the **first derivative** at $x_i$:
+* Right-sided finite-difference scheme of first order ($\text{error} \sim \Delta x^1$):
+$$
+\deriv{T_i}{x} \approx \frac{T_{i+1} - T_{i}}{\Delta x}.
+$$
+* Left-sided finite-difference scheme of first order ($\text{error} \sim \Delta x^1$):
+$$
+\deriv{T_i}{x} \approx \frac{T_{i} - T_{i-1}}{\Delta x}.
+$$
+* Central finite-difference scheme of second order ($\text{error} \sim \Delta x^2$):
+$$
+\deriv{T_i}{x} \approx \frac{T_{i+1} - T_{i-1}}{2 \Delta x}.
+$$
+* Right-sided finite-difference scheme of second order ($\text{error} \sim \Delta x^2$):
+$$
+\deriv{T_i}{x} \approx \frac{-3 T_i + 4T_{i+1} - T_{i+2}}{2 \Delta x}.
+$$
+* And many other possibilities.
+
+@@colbox-blue
+**Remark:** High-order approximations are desired as the higher the order, the faster we approach the exact value of the derivative as we refine the grid. However, high-order accuracy sometimes come with the price of more operations to compute.
+@@
+
+@@colbox-blue
+**Remark:** Note that some finite difference approximations are central, and some are left-sided or right-sided. Depending on how the finite-difference formula is defined, it will have some bias as to how information travels in the domain.
+@@
+
+Using \eqref{eq:taylortemp1}, \eqref{eq:taylortemp2}, and \eqref{eq:taylortemp3}, we can also obtain approximations for the **second derivative** at $x_i$:
+* Right-sided finite-difference scheme of first order ($\text{error} \sim \Delta x^1$):
+$$
+\deriv{^2T_i}{x^2} \approx \frac{T_{i+2} - 2T_{i+1} + T_{i}}{\Delta x^2}.
+$$
+* Central finite-difference scheme of second order ($\text{error} \sim \Delta x^2$):
+$$
+\deriv{^2T_i}{x^2} \approx \frac{T_{i+1} - 2T_i + T_{i-1}}{\Delta x^2}.
+$$
+* And many other possibilities.
+
+### Application to the Diffusion Operator in Spherical Coordinates
+ 
+We now have enough tools to obtain a discrete form for the diffusion term of the $2D$ EBM.
 Our goal is to obtain a finite difference scheme to discretize \eqref{eq:diffterm} with the following properties:
 * The scheme must be **central**: To model the parabolic nature of the heat conduction term, we require the scheme to be symmetric.
 * The scheme must be **compact**: To avoid wide stencils, we require the scheme to only use the information from neighboring nodes.
 
-### Application to the Diffusion Operator in Spherical Coordinates
+We want to discretize terms of the form
+$$
+\mathcal{L}(T) = \partialderiv{}{x} \left( D \partialderiv{T}{x} \right)
+$$
+
+One possibility is to use the chain rule of differentiation
 
 * Term 1:
 \begin{align}\label{eq:disc_term1}
-\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(D\frac{\partial T}{\partial \long}\Bigr) &\approx \csc^{2}(\colat)
+\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(D\frac{\partial T}{\partial \long}\Bigr) 
+&\approx 
+\frac{\csc^{2}(\colat)}{h^2}
 \Bigl(-2D_{j,i}T_{j,i}
 +  \Bigl[D_{j,i} - \frac{1}{4}(D_{j,i+1} - D_{j,i-1})\Bigr]T_{j,i-1} \\
 & 
