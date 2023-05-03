@@ -34,9 +34,7 @@ The quantity of $u$ changes, if:
 **Famous example:** Bathtub
 \fig{/assets/milestone2/Bathtub.png}
 
-* Water in: \col{green}{green}
-* Water out: \col{red}{red}
-* Amount of water in bathtub: \col{blue}{blue}
+The amount of water in the bathtub (\col{blue}{blue}) changes due to the sources (\col{green}{green}) and sinks (\col{red}{red}).
 @@
 
 ## Formulation of the mathematical problem
