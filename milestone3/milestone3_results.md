@@ -13,9 +13,9 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 \toc
 
-## Expected Result
+## Expected Results
 
-This is an example for the expected result:
+This is an example for the expected results:
 
 ### Solar Forcing vector
 Spatial averages for every time step as a vector in a .txt file:\\
@@ -25,3 +25,23 @@ Spatial averages for every time step as a vector in a .txt file:\\
 Calculated with the forward Euler method. Plot for the backward Euler is almost identical.
 
 \input{plot}{/assets/scripts/milestone3.jl}
+
+## Files Download
+
+The Julia and Python implementations of milestone 3 can be downloaded here:
+
+* [Julia solution](/assets/scripts/milestone3.jl)
+* [Python solution](/assets/scripts/milestone3.py)
+
+## Scripts for Milestone 3
+
+You can also check out our Julia and Python implementations of milestone 2 in this site.
+
+### Julia implementation of milestone 3
+
+\input{julia}{/assets/scripts/milestone3.jl}
+
+### Python implementation of milestone 3
+
+\input{python}{/assets/scripts/milestone3.py}
+

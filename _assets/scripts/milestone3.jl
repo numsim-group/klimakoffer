@@ -12,7 +12,7 @@ function calc_area(geo_dat)
     area[1] = area[end] = 0.5 * (1 - cos(0.5 * delta_theta))
 
     # Inner cells
-    for j in 2:nlatitude
+    for j in 2:nlatitude-1
         area[j] = sin(0.5 * delta_theta) * sin(delta_theta * (j - 1)) / nlongitude
     end
 
