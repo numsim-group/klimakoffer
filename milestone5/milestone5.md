@@ -12,12 +12,25 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 \toc
 
-## Diffusion Term
+## Planetary Heat Transfer
+
+### Physical Processes in the Atmosphere an Oceans
+
+* Earth's climate is basically the transfer of heat from the (hot) equator to the (cold) poles.
+* Atmospheric currents of Earth follow some patterns: Hadley, Ferrel, and polar cells. 
+* Effect of Coreolis force in large-scale vortices(?)
+* Atmospheric currents are turbulent in nature.
+* Oceanic currents can be classified in surface and deep-ocean currents.
+
+\fig{/assets/milestone5/heat_transfer_north.png}
+* Heat transfer in the northern hemisphere. From "Maslin (2013). 'Climate: A Very Short Introduction'"
 
 ### Modeling Physical Processes with Diffusion
 
-* Atmospheric and oceanic currents of Earth follow some patterns, but are turbulent in nature.
-* Mixing effect in turbulence.
+* Fluid dynamics is very complex.
+* Turbulence is a multi-scale phenomenon that requires resolution of large and small eddies.
+* Unfortunately, a full general recirculation model is out of the scope of the course.
+* Modeling: Mixing effect in turbulence.
 
 ### Diffusion Operator in Spherical Coordinates
 
@@ -306,9 +319,16 @@ To deal with the pole problem, we use the techniques proposed in the following p
 
 \fig{/assets/milestone5/Pole.png}
 
-## Stability Theory for Systems
+### Semi-Discrete EBM
+
+**TODO: Write the discrete equation to solve**
+
+## Stability Theory for Linear Systems of Equations
 
 * TODO: Explain mapping from $\nlat \times \nlong$ operator to a $1D$ vector. Julia command `vec` and numpy (Python) commands `.flatten()` and `reshape`.
+$$
+\mat{R} \rightarrow \mathbf{R}
+$$
 
 ### Computing Jacobian Matrices
 
