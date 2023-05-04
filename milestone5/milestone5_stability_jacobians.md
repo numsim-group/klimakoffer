@@ -8,20 +8,24 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 5
+# Milestone 5 - Stability and Jacobian Matrices
 
 \toc
 
-## Stability Theory for Linear Systems of Equations
+## Mapping from a $2D$ Operator to a $1D$ Vector
 
 * TODO: Explain mapping from $\nlat \times \nlong$ operator to a $1D$ vector. Julia command `vec` and numpy (Python) commands `.flatten()` and `reshape`.
 $$
 \mat{R} \rightarrow \mathbf{R}
 $$
 
-### Computing Jacobian Matrices
+## Stability Theory for Linear Systems of Equations
 
-#### Numerical Jacobian
+Extension of [stability theory presented in Milestone 3](/milestone3/milestone3_odesolvers/#stability_of_the_explicit_and_implicit_euler_methods)
+
+## Computing Jacobian Matrices
+
+### Numerical Jacobian
 
 It is possible to expand a general nonlinear operator, $\mathbf{R}(\mathbf{T})$, with a Taylor series to obtain,
 $$ \label{eq:JacTaylorExpansion}
@@ -64,5 +68,5 @@ $$
 \mat{A}_{\text{EBM}} = \left[ \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{1 \rightarrow (1,1)}, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{2 \rightarrow (1,2)}, \ldots, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{\nlat \times \nlong \rightarrow (\nlat, \nlong)}  \right]
 $$
 
-#### Bonus: Analytical Jacobian
+### Bonus: Analytical Jacobian
 

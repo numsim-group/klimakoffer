@@ -8,16 +8,14 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 5
+# Milestone 5 - Spatial Discretization Scheme
 
 \toc
 
-## Spatial Discretization Scheme
+The challenge now is to evaluate the [diffusion operator in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqdiffterm), such that we can use it in our $2D$ EBM model.
+To do that, we will obtain a _discrete_ version of the spatial derivatives that we can compute using the nodal values for the temperature and diffusion coefficients in our $2D$ latitude/longitude grid.
 
-The challenge now is to evaluate the diffusion operator in spherical coordinates \eqref{eq:diffterm}, such that we can use it in our $2D$ EBM model.
-To do that, we will obtain a _discrete_ version of the spatial derivatives in \eqref{eq:diffterm} that we can compute using the nodal values for the temperature and diffusion coefficients in our $2D$ latitude/longitude grid.
-
-### Finite Difference Discretization of First and Second-Order Derivatives
+## Finite Difference Discretization of First and Second-Order Derivatives
 
 The finite difference method is one of the simplest numerical methods to discretize derivatives. 
 There are many ways to derive finite difference formulas, but we will focus on the method of the Taylor expansion, as it will give us information about the approximation errors.
@@ -106,9 +104,9 @@ $$\label{eq:central_second}
 $$
 * And many other possibilities.
 
-### Application to the Diffusion Operator in Spherical Coordinates
+## Application to the Diffusion Operator in Spherical Coordinates
  
-Our diffusion operator in spherical coordinates \eqref{eq:diffterm} contains a term (Term 3) of the form
+Our [diffusion operator in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqdiffterm) contains a term (Term 3) of the form
 $$
 \mathcal{L}_1(T) = \partialderiv{T}{x},
 $$
@@ -130,8 +128,8 @@ such that it is expressed in terms of first and second-order derivatives.
 **Remark:** Even though we are now dealing with partial derivatives, the finite difference formulas can be applied dimension by dimension.
 @@
 
-We now have enough tools to obtain a discrete form for the diffusion term of the $2D$ EBM \eqref{eq:diffterm}.
-Our goal is to obtain a finite difference scheme to discretize \eqref{eq:diffterm} with the following properties:
+We now have enough tools to obtain a discrete form for the [diffusion term of the $2D$ EBM](/milestone5/milestone5_heat_transfer/#eqdiffterm).
+Our goal is to obtain a finite difference scheme with the following properties:
 * The scheme must be **central**: To model the parabolic nature of the heat conduction term (see [Milestone 2 - Conservation and Balance](/milestone2/milestone2_conservation-and-balance/)), we require the scheme to be symmetric. 
 * The scheme must be **compact**: To avoid wide stencils, we require the scheme to only use the information from neighboring nodes.
 * The scheme must be as **accurate** as possible: We will select a scheme of the highest order possible, such that our approximation is as accurate as possible given our constraints.
@@ -166,7 +164,7 @@ which simplifies to
 \biggr).
 \end{align}
 
-Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the uniform mesh spacing, the central second-order finite-difference discretization of the different terms of the diffusion operator in spherical coordinates \eqref{eq:diffterm} reads
+Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the uniform mesh spacing, the central second-order finite-difference discretization of the different terms of the [diffusion operator in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqdiffterm) reads
 * Term 1:
 \begin{align}\label{eq:disc_term1}
 \left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\tilde D\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
@@ -202,7 +200,7 @@ Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the un
 In fact, \eqref{eq:disc_term1} and \eqref{eq:disc_term3} are not well defined for $\colat = 0$, and the evaluation of \eqref{eq:disc_term2} is complicated because it requires a nodal value across the pole.
 @@
 
-### A Solution to the Pole Problem
+## A Solution to the Pole Problem
 
 To deal with the pole problem, we use the techniques proposed in the following papers:
 
@@ -212,6 +210,6 @@ To deal with the pole problem, we use the techniques proposed in the following p
 
 \fig{/assets/milestone5/Pole.png}
 
-### Semi-Discrete EBM
+## Semi-Discrete EBM
 
 **TODO: Write the discrete equation to solve**

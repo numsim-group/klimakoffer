@@ -8,31 +8,41 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 5
+# Milestone 5 - Planetary Heat Transfer
 
 \toc
 
-## Planetary Heat Transfer
-
-### Physical Processes in the Atmosphere an Oceans
+## Physical Processes in the Atmosphere and Oceans
 
 * Earth's climate is basically the transfer of heat from the (hot) equator to the (cold) poles.
 * Atmospheric currents of Earth follow some patterns: Hadley, Ferrel, and polar cells. 
+~~~
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xqM83_og1Fc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+~~~
 * Effect of Coreolis force in large-scale vortices(?)
+~~~
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PDEcAxfSYaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+~~~
 * Atmospheric currents are turbulent in nature.
 * Oceanic currents can be classified in surface and deep-ocean currents.
+* Heat transfer depends on latitude.
 
 \fig{/assets/milestone5/heat_transfer_north.png}
 * Heat transfer in the northern hemisphere. From "Maslin (2013). 'Climate: A Very Short Introduction'"
 
-### Modeling Physical Processes with Diffusion
+## Modeling Physical Processes with Diffusion
 
 * Fluid dynamics is very complex.
 * Turbulence is a multi-scale phenomenon that requires resolution of large and small eddies.
-* Unfortunately, a full general recirculation model is out of the scope of the course.
 * Modeling: Mixing effect in turbulence.
 
-### Diffusion Operator in Spherical Coordinates
+@@colbox-red
+**Bad news:** Unfortunately, a full general recirculation model is out of the scope of the course.
+@@
+
+
+
+## Diffusion Operator in Spherical Coordinates
 
 The gradient and divergence operators are defined in Cartesian coordiates,
 \begin{align}\label{eq:opsCartesian}
