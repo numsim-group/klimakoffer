@@ -34,12 +34,17 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 * Fluid dynamics is very complex.
 * Turbulence is a multi-scale phenomenon that requires resolution of large and small eddies.
-* Modeling: Mixing effect in turbulence.
+* Mixing effect in turbulence.
 
 @@colbox-red
 **Bad news:** Unfortunately, a full general recirculation model is out of the scope of the course.
 @@
 
+@@colbox-green
+**Good news:** It is possible to model some of the recirculation effects with a diffusion operator.
+@@
+
+> **TODO:** Add references to papers where the diffusion coefficients are tuned. Explain $\sin^5(\lat)$
 
 
 ## Diffusion Operator in Spherical Coordinates
