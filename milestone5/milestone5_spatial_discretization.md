@@ -36,7 +36,7 @@ where $f^{(n)}(x_0)$ is a short-hand notation for the $n^{\text{th}}$ derivative
 
 Let us consider a uniform one-dimensional grid containing temperature values.
 
-**TODO: Add figure of grid with $T_{i-1}$, $T_{i}$, and $T_{i+1}$**
+\fig{/assets/milestone5/spatial_disc_1d.png}
 
 Using \eqref{eq:taylor}, we can write Taylor expansions for $T_{i+1}$ around $T_{i}$:
 $$\label{eq:taylortemp1}

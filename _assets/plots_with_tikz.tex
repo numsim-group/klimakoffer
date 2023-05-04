@@ -57,6 +57,8 @@
 (0 ,0.6 ) -- (2,0.6 ) node [black,midway,yshift=17pt] 
 {$\Delta t$};
 \end{tikzpicture}
+
+
 \subsection{Integral approximation}
 \begin{tikzpicture}
 [domain=-1:6.1]
@@ -141,4 +143,26 @@
 \end{scope}
 
 \end{tikzpicture}
+
+\subsection{Spatial discretization}
+%\usepgfmodule{decorations}
+\begin{tikzpicture}
+\draw[thick,->] (-1,0) -- (9,0) node[right] {$x$};
+\draw[thick,->] (-1,0) -- (-1,4) node[above] {$T(x,t)$};
+\draw (2*0 ,2pt) -- (2*0,-2pt) node[below] {$\cdots$};
+\draw (2*1 ,2pt) -- (2*1,-2pt) node[below] {$x_{i-1}$};
+\draw (2*2 ,2pt) -- (2*2,-2pt) node[below] {$x_{i}$};
+\draw (2*3 ,2pt) -- (2*3,-2pt) node[below] {$x_{i+1}$};
+\draw (8 ,2pt) -- (8 ,-2pt) node[below] {$\cdots$};
+\draw[color=red,domain=-0.5:8.5] plot[samples=92,mark=x,mark indices={27,47,67}](\x,{0.1*((-2/16)*\x*\x*\x+(11/8)*\x * \x -(3/2)*\x)+2});
+
+\node at (2,2.5) {$T_{i-1}$};
+\node at (4,3.2) {$T_{i}$};
+\node at (6,3.7) {$T_{i+1}$};
+
+\draw [decorate,decoration={brace,amplitude=10pt},xshift=0pt,yshift=0pt]
+(0 ,0.6 ) -- (2,0.6 ) node [black,midway,yshift=17pt] 
+{$\Delta x$};
+\end{tikzpicture}
+
 \end{document}
