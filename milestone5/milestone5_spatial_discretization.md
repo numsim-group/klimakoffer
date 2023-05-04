@@ -262,12 +262,12 @@ R_E^2 \int_0^{\frac{h}{2}} \csc(\colat)
 =& 0.
 \end{align}
 
-Similarly, we can use the fundamental theorem of calculus to integrate the second term in the right-hand side of \eqref{eq:difftermpole_weak} over the co-latitude:
+Similarly, we can use the fundamental theorem of calculus to integrate the second term in the right-hand side of \eqref{eq:difftermpole_weak} over the colatitude:
 \begin{align}
 \int_0^{\frac{h}{2}} \int_0^{2\pi} f R_E^2 \sin \colat \d \long \d \colat =&
-    \int_0^{2\pi} \int_0^{\frac{h}{2}} 
+    R_E^2 \int_0^{2\pi} \int_0^{\frac{h}{2}} 
      \frac{\partial }{\partial \colat} \left( \tilde D \sin (\colat) \partialderiv{T}{\colat} \right)
-    R_E^2 \d \colat 
+     \d \colat \d \long
 \\
 =& 
 R_E^2
@@ -282,7 +282,7 @@ R_E^2
 \d \long.
 \end{align}
 
-As a next step, we approximate the integral on the left-hand side with a mid-point rule
+As a next step, we approximate the integral on the left-hand side with a mid-point rule,
 \begin{align}\label{eq:difftermpole_weak2}
 f_{j=1} (\texttt{area[1]}) (4\pi R_E^2)
 =& 
@@ -292,7 +292,7 @@ R_E^2
 \d \long,
 \end{align}
 where $f_{j=1}$ is the nodal value of $f$ at $\colat_j=0$ ($j=1$). This is a first-order approximation of the integral that assumes that the nodal value of the mid-point corresponds to the area-average of $f$ in the polar cell.
-Recall the the first entry of the array $\texttt{area}$ contains the total area of the polar cap normalized with the area of the sphere (see [Milestone 3 - Averages](/milestone3/milestone3_averages/)).
+Recall that the first entry of the array $\texttt{area}$ contains the total area of the polar cap normalized with the area of the sphere (see [Milestone 3 - Averages](/milestone3/milestone3_averages/)).
 
 Now, we approximate the derivative of temperature with respect to colatitude at each discrete longitude, $\long_i$, with a central finite-difference approximation of first-order accuracy,
 $$
