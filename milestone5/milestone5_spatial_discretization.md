@@ -167,7 +167,7 @@ which simplifies to
 Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the uniform mesh spacing, the central second-order finite-difference discretization of the different terms of the [diffusion operator in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqdiffterm) reads
 * Term 1:
 \begin{align}\label{eq:disc_term1}
-\left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\tilde D\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
+\left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
 \approx 
 \frac{\csc^{2}(\colat_{j,i})}{h^2}
 \biggl(-2\tilde D_{j,i}T_{j,i}
@@ -180,7 +180,7 @@ Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the un
 * Term 2:
 \begin{align}\label{eq:disc_term2}
 \left[
-\frac{\partial}{\partial \colat}\Bigl(\tilde D\frac{\partial T}{\partial \colat}\Bigr)
+\frac{\partial}{\partial \colat}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}\Bigr)
 \right]_{j,i}
  \approx \frac{1}{h^{2}}\biggl(-2\tilde D_{j,i}T_{j,i} 
 & + \Bigl[\tilde D_{j,i} - \frac{1}{4}(\tilde D_{j+1,i} - \tilde D_{j-1,i})\Bigr] T_{j-1,i}\\
@@ -190,7 +190,7 @@ Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the un
 * Term 3:
 \begin{align}\label{eq:disc_term3}
 \left[
-\cot(\colat)\tilde D\frac{\partial T}{\partial \colat}
+\cot(\colat)\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}
 \right]_{j,i}
  \approx \cot(\colat_{j,i})\frac{\tilde D_{j,i}}{2h}[T_{j+1,i} - T_{j-1,i}].
 \end{align}
@@ -210,11 +210,11 @@ To deal with the pole problem, we use the techniques proposed in the following p
 
 We start by considering the [diffusion operator in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqdiffterm), but we combine Terms 2 and 3 to obtain
 \begin{align}\label{eq:difftermpole}
-f \coloneqq 
+f(\colat,\long) \coloneqq 
 \Nabla \cdot (D\Nabla T) = 
-    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) 
+    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     +
-    \csc(\colat) \frac{\partial }{\partial \colat} \left( \tilde D \sin (\colat) \partialderiv{T}{\colat} \right),
+    \csc(\colat) \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right),
 \end{align}
 where the newly defined variable $f$ contains the rest of the terms of the EBM, i.e., the heat capacity term, the outgoinglongwave ratiation, and the solar forcing.
 
@@ -222,79 +222,117 @@ Let us consider a _control area_ of the size of the polar cell (green in the fig
 
 \fig{/assets/milestone5/Pole.png}
 
-To avoid the singularity at the pole, we will now consider a so-called _weak form_ of \eqref{eq:difftermpole}, which we obtain by integrating the equation over the polar cell,
+To avoid the singularity at the pole, we will now consider an integral form of \eqref{eq:difftermpole}, which we obtain by integrating the equation over the polar cell,
 \begin{align}\label{eq:difftermpole_weak}
-\int_0^{\frac{h}{2}} \int_0^{2\pi} f R_E^2 \sin \colat \d \long \d \colat =&
+\int_0^{\frac{h}{2}} \int_0^{2\pi}f(\colat,\long)R_E^2 \sin \colat \d \long \d \colat =&
     \int_0^{\frac{h}{2}}  \int_0^{2\pi}
-    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) 
+    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     R_E^2  \d \long \d \colat
     \\
     &+
     \int_0^{\frac{h}{2}}  \int_0^{2\pi}
-     \frac{\partial }{\partial \colat} \left( \tilde D \sin (\colat) \partialderiv{T}{\colat} \right)
+     \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right)
     R_E^2  \d \long \d \colat.
 \end{align}
 
 @@colbox-blue
 **Remark:** In \eqref{eq:difftermpole_weak}, we have used the fact that the differential of area in spherical coordinates is defined as
 $$
-\d S = r^2 \sin \colat \d \long \d \colat.
+\d S = 
+\left| \partialderiv{\mathbf{r}}{\colat} \times \partialderiv{\mathbf{r}}{\varphi}  \right| \d \long \d \colat
+=
+R_E^2 \sin \colat \d \long \d \colat,
 $$
+where $\mathbf{r}$ is a vector that describes the surface of Earth, i.e.,
+\begin{align}
+\mathbf{r} = (\hat{x}, \hat{y}, \hat{z})\vert_{r=R_E}
+\end{align}
+
+To compute a surface integral, we use
+\begin{align}
+\int_S f(\colat,\long) \d S &= \int_0^{\Delta \theta/2} \int_{-\pi}^{\pi}
+f \left| \partialderiv{\mathbf{r}}{\colat} \times \partialderiv{\mathbf{r}}{\varphi}  \right|  \d \varphi \d \colat
+\\
+&= \int_0^{\Delta \theta/2} \int_{-\pi}^{\pi}
+R_E^2 \sin \colat f(\colat,\long) \d \varphi \d \colat.
+\end{align}
 @@
 
 We can show that the first integral in the right-hand side of \eqref{eq:difftermpole_weak} vanishes using the fundamental theorem of calculus:
-\begin{align}
+\begin{align}\label{eq:intform1}
 \int_0^{\frac{h}{2}}  \int_0^{2\pi}
-    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) 
+    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     R_E^2  \d \long \d \colat
 =&
 R_E^2 \int_0^{\frac{h}{2}} \csc(\colat)
     \int_0^{2\pi}
-    \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) \d \long 
+    \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) \d \long 
     \d \colat
 \\
 =&
 R_E^2 \int_0^{\frac{h}{2}} \csc(\colat)
     \underbrace{\left[
-    \tilde D\frac{\partial T}{\partial \long} \right]_0^{2\pi}}_{=0} 
+    \tilde D (\colat,\long)\frac{\partial T}{\partial \long} \right]_0^{2\pi}}_{=0} 
     \d \colat
 \\
 =& 0.
 \end{align}
 
+@@colbox-blue
+**Remark:** As mentioned above, there is a singularity at $\colat = 0$. As shown in \eqref{eq:intform1}, we can deal with the singularity using the integral form of the equation. As can be derived with standard calculus, the value of the integral is well defined.
+@@
+
 Similarly, we can use the fundamental theorem of calculus to integrate the second term in the right-hand side of \eqref{eq:difftermpole_weak} over the colatitude:
 \begin{align}
-\int_0^{\frac{h}{2}} \int_0^{2\pi} f R_E^2 \sin \colat \d \long \d \colat =&
+\int_0^{\frac{h}{2}} \int_0^{2\pi} f(\colat,\long) R_E^2 \sin \colat \d \long \d \colat =&
     R_E^2 \int_0^{2\pi} \int_0^{\frac{h}{2}} 
-     \frac{\partial }{\partial \colat} \left( \tilde D \sin (\colat) \partialderiv{T}{\colat} \right)
+     \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right)
      \d \colat \d \long
 \\
 =& 
 R_E^2
 \int_0^{2\pi} 
-\left[  \tilde D \sin (\colat) \partialderiv{T}{\colat} \right]_0^{\frac{h}{2}} 
+\left[  \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right]_0^{\frac{h}{2}} 
 \d \long
 \\
 =& 
 R_E^2
 \int_0^{2\pi} 
-\tilde D\left( \frac{h}{2} \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
+\tilde D \left( \frac{h}{2} ,\long \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
 \d \long.
 \end{align}
 
-As a next step, we approximate the integral on the left-hand side with a mid-point rule,
+As a next step, we make the assumption that $f(\colat,\long)$ is a constant in the polar cell, such that we can approximate the integral on the left-hand side with a mid-point rule,
+\begin{align}
+\int_0^{\frac{h}{2}} \int_0^{2\pi} f(\colat,\long) R_E^2 \sin \colat \d \long \d \colat
+\approx&
+\int_0^{\frac{h}{2}} \int_0^{2\pi} f_{1,1} R_E^2 \sin \colat \d \long \d \colat
+\\
+=&
+f_{1,1}
+\int_0^{\frac{h}{2}} \int_0^{2\pi}  R_E^2 \sin \colat \d \long \d \colat
+\\
+=&
+f_{1,1}
+\left( 2 \pi R_E^2 \left(1-\cos \left(\frac{\Delta \lat}{2}\right) \right) \right)
+\\
+=&
+f_{1,1} (\texttt{area[1]}) (4\pi R_E^2)
+\end{align}
+where $f_{1,1}$ is the nodal value of $f(\colat,\long)$ at $\colat_j=0$ ($j=1$). This is an approximation of the integral that assumes that the nodal value of the mid-point corresponds to the area-average of $f(\colat,\long)$ in the polar cell.
+Recall that the first entry of the array $\texttt{area}$ contains the total area of the polar cap normalized with the area of the sphere (see [Milestone 3 - Averages](/milestone3/milestone3_averages/)).
+
+We then obtain
 \begin{align}\label{eq:difftermpole_weak2}
-f_{j=1} (\texttt{area[1]}) (4\pi R_E^2)
+f_{1,1} (\texttt{area[1]}) (4\pi R_E^2)
 =& 
 R_E^2
 \int_0^{2\pi} 
-\tilde D\left( \frac{h}{2} \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
-\d \long,
+\tilde D \left( \frac{h}{2},\long \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
+\d \long.
 \end{align}
-where $f_{j=1}$ is the nodal value of $f$ at $\colat_j=0$ ($j=1$). This is a first-order approximation of the integral that assumes that the nodal value of the mid-point corresponds to the area-average of $f$ in the polar cell.
-Recall that the first entry of the array $\texttt{area}$ contains the total area of the polar cap normalized with the area of the sphere (see [Milestone 3 - Averages](/milestone3/milestone3_averages/)).
 
-Now, we approximate the derivative of temperature with respect to colatitude at each discrete longitude, $\long_i$, with a central finite-difference approximation of first-order accuracy,
+Now, we approximate the derivative of temperature with respect to colatitude at each discrete longitude, $\long_i$, with a central finite-difference approximation of second-order accuracy,
 $$
 \left[ 
     \partialderiv{T}{\colat} 
@@ -303,17 +341,18 @@ $$
 $$
 and the diffusion coefficient at $\colat=\frac{h}{2}$ with an area-weighted average,
 $$
-\left[ \tilde D\right]_{\colat=\frac{h}{2},i} \approx
-\frac{\texttt{area[1]}\tilde D_{1,i} + \texttt{area[2]}\tilde D_{2,i}}{\texttt{area[1]} + \texttt{area[2]}}.
+\left[ \tilde D (\colat,\long)\right]_{\colat=\frac{h}{2},i} \approx
+\bar{\tilde{D}}_i =
+\frac{\frac{\texttt{area[1]}}{\nlong} \tilde D_{1,1} + \texttt{area[2]}\tilde D_{2,i}}{\frac{\texttt{area[1]}}{\nlong} + \texttt{area[2]}}.
 $$
 
 Finally, we approximate the integral on the right-hand side of \eqref{eq:difftermpole_weak2} with a rectangular quadrature rule to obtain
 \begin{align}
-f_{j=1} 
+f_{1,1} 
 =& 
 \frac{\sin \left( h/2 \right)}{4\pi \, \texttt{area[1]}}
 \sum_{i=1}^{\nlong}
-\left[ \frac{\texttt{area[1]}\tilde D_{1,i} + \texttt{area[2]}\tilde D_{2,i}}{\texttt{area[1]} + \texttt{area[2]}} \right]
+\bar{\tilde{D}}_i
 \left[ T_{2,i}-T_{1,i} \right].
 \end{align}
 
