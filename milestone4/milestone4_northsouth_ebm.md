@@ -49,9 +49,13 @@ If we use an odd number of points in the latitude direction, one half of the val
 
 @@colbox-blue
 **Remark:** We note that our grid always has an odd number of points in latitude direction. We can thus get the index of the equator grid cells by
-$$
-j_{equator} = (n_{latitude} - 1)/2.
-$$
+\begin{align*}
+j_{\text{equator}} &= (n_{latitude} - 1)/2 + 1 & \text{(1-based indexing)},
+\\
+\text{or} \qquad \qquad & &
+\\
+j_{\text{equator}} &= (n_{latitude} - 1)/2 & \text{(0-based indexing)}.
+\end{align*}
 @@
 
 Let us assume that we have a 2D data field $F[j,i]$, with $j=1,...,\nlat$ and $i=1,...,\nlong$, for which we want to compute an area average over the nothern hemisphere. 

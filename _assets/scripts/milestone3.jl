@@ -61,7 +61,7 @@ function timestep_euler_forward(mean_temperature, t, delta_t, mean_heat_capacity
 end
 
 function compute_equilibrium(timestep_function, mean_heat_capacity, mean_solar_forcing,
-                             radiative_cooling,
+                             radiative_cooling;
                              max_iterations=100, rel_error=2e-5, verbose=true)
     # Number of time steps per year.
     ntimesteps = length(mean_solar_forcing)
@@ -129,8 +129,8 @@ function plot_annual_temperature(annual_temperature, average_temperature, title)
     labels = ["March", "June", "September", "December", "March"]
 
     p = plot(average_temperature * ones(ntimesteps), label="average temperature",
-             xlims=(0, ntimesteps), xticks=(LinRange(0, ntimesteps, 5), labels),
-             ylabel="surface temperature", title=title)
+             xlims=(1, ntimesteps), xticks=(LinRange(1, ntimesteps, 5), labels),
+             ylabel="surface temperature [°C]", title=title)
     plot!(p, annual_temperature, label="annual temperature")
 
     display(p)
