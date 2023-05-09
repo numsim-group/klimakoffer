@@ -25,6 +25,7 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\nlong}{\texttt{n\_longitude}}
 \newcommand{\nlat}{\texttt{n\_latitude}}
+\newcommand{\ndof}{\texttt{NDOF}}
 \newcommand{\ntime}{\texttt{n\_timesteps}}
 \newcommand{\lat}{\theta}
 \newcommand{\Nabla}{\vec{\nabla}}

@@ -410,10 +410,10 @@ where we have gathered the temperature-dependent terms under $R_{j,i}(T)$ and th
 In equation \eqref{eq:semidisc_ebm_point}, $C_{j,i}$ is the point-wise heat capacity that depends on the geography (see [Milestone 2 - Heat Capacity](/milestone2/milestone2_heat-capacity/)); $L_{j,i}$ is the discrete point-wise heat transfer term computed with \eqref{eq:diffop_innernodes} for the interior nodes, with \eqref{eq:diffop_NP} for the north pole ($j=1$), and with \eqref{eq:diffop_SP} for the south pole ($j=\nlat$); $A$ and $B$ are the outgoing longwave radiation parameters (see [Milestone 2 - Radiation Modeling](/milestone2/milestone2_radiation/)); and $S_{sol, j, i} = (1 - \alpha_{j,i}) S_{j,i}$ is the point-wise time-dependent solar forcing term that depends on the [point-wise insolation $S_{j,i}$](/milestone2/milestone2_solar-forcing/#eqinsolation) and the [point-wise albedo $\alpha_{j,i}$](/milestone2/milestone2_albedo/).
 
 We can rewrite \eqref{eq:semidisc_ebm_point} in matrix form as
-$$
+$$\label{eq:semidisc_ebm_matrix}
 \dot{\mat{T}} = 
 \mat{R}(\mat{T})
 +
 \mat{F}(t),
 $$
-where we use the dot operator to note the time derivative term.
+where $\mat{T} \in \R^{\nlat \times \nlong}$ is a matrix that contains all point-wise values of temperature, $\mat{R}(\mat{T}) \in \R^{\nlat \times \nlong}$ is a matrix operator applied on the temperature matrix, $\mat{F}(t) \in \R^{\nlat \times \nlong}$ is the time-dependent matrix containing the sources and sinks of the method, and we use the dot operator to note the time derivative term.
