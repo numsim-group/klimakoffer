@@ -33,11 +33,11 @@ The timescale $\tau$ is the relaxation time and is about $5.9$ years for the oce
 
 To investigate this behaviour we apply our time dependent EBM again, but not for the whole Earth. We are going to use one 0D-EBM for the southern hemisphere and one for the northern hemisphere. Hence, our goal is to get two OD-EBMs: for one we have to do area-averaging over the northern hemisphere
 $$
-C_N\,\frac{\partial T_N}{\partial t}(t) + A(CO_2) + B\, T_N(t) = \overline{Q\alpha\,S}_N(t),
+C_N\,\frac{\partial T_N}{\partial t}(t) + A(CO_2) + B\, T_N(t) = \overline{S}^{sol}_N(t),
 $$
 and for the other we have to do area-averaging over the southern hemisphere
 $$
-C_S\,\frac{\partial T_S}{\partial t}(t) + A(CO_2) + B\, T_S(t) = \overline{Q\alpha\,S}_S(t).
+C_S\,\frac{\partial T_S}{\partial t}(t) + A(CO_2) + B\, T_S(t) = \overline{S}^{sol}_S(t).
 $$
 To compute the special area averages, we remind ourselves about the computational grid and the definition of the area vector that we use to compute the area average:
 
@@ -78,4 +78,4 @@ With these new averages, and the tools we developed before, we are able to now g
 
 \fig{/assets/milestone4/temperatures_northsouth.png}
 
-We can clearly see that the temperature distributions of north and south are phase shifted.  It seems, however, that the phase shift in this simple model is mainly due to the seasonal difference of the solar insolation. There is no clear effect due to the difference in heat capacity visible. The average heat-capacities are $C_N = 5,2$ $[J/Ksm]$ and $C_S=7$ $[J/Ksm]$. If we check the maximum temperature variation in the hemispheres, we get $\Delta T_{N,max} = 5$ and $\Delta T_{S,max} = 4.2$ $[K]$, which shows that a lower heat-capacity allows for a stronger variation in temperature. From our own experience about the annual seasons, it is clear that the seasonal temperature distribution from both, the North and the South, are still off. It seems that averaging our EBM first in the North and in the South, then compute the temperatures is too crude of an approximation to capture the seasonal temperature distribution accurately.
+We can clearly see that the temperature distributions of north and south are phase shifted.  It seems, however, that the phase shift in this simple model is mainly due to the seasonal difference of the solar insolation. There is no clear effect due to the difference in heat capacity visible. The average heat-capacities are $C_N = 5.2$ $[J/Ksm]$ and $C_S=7$ $[J/Ksm]$. If we check the maximum temperature variation in the hemispheres, we get $\Delta T_{N,max} = 5$ and $\Delta T_{S,max} = 4.2$ $[K]$, which shows that a lower heat-capacity allows for a stronger variation in temperature. From our own experience about the annual seasons, it is clear that the seasonal temperature distribution from both, the North and the South, are still off. It seems that averaging our EBM first in the North and in the South, then compute the temperatures is too crude of an approximation to capture the seasonal temperature distribution accurately.
