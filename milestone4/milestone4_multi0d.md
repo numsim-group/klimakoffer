@@ -16,7 +16,7 @@ As a next step, we want to actually use the local information $C(x)$, $\alpha(x)
 
 The local 0D-EBM for a local grid node $i=1, \ldots, \nlong$ and $j=1, \ldots, \nlat$ is given by 
 $$
-C_{ji}\,\frac{\partial T_{ji}}{\partial t}(t) + A(CO_2) + B\, T_{ji}(t) = Q\,(1-\alpha_{ji})\,S_{ji}(t),
+C_{ji}\,\frac{\partial T_{ji}}{\partial t}(t) + A(CO_2) + B\, T_{ji}(t) = \overline{S}^{sol}_{ji}(t),
 $$
 and is solved separately for each node. After solving the ODEs, we can then average the resulting time-dependent temperature field $T[j,i,k]$, over the whole globe, and/or separately for the northern and the southern hemispheres. The results are plotted in the next figure
 

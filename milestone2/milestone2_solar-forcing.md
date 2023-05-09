@@ -154,7 +154,7 @@ $$
 ---
 
 In summary, the insolation is given by the expression
-$$
+$$\label{eq:insolation}
 S(\theta,t) =
 \begin{cases}
 0 & \text{if}~|\lat| + |\delta| \ge \frac{\pi}{2} \,\, \text{with} \,\, \lat \delta < 0,
