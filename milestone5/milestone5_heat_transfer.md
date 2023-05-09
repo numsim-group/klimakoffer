@@ -175,7 +175,7 @@ $$
 C(x) \partialderiv{T}{t} + A(CO_2) + B T - \Nabla \cdot (D\Nabla T) = S_{sol}(x,t).
 $$
 respectively, in spherical coordinates
-\begin{align}
+\begin{align}\label{eq:ebm_spherical}
 C(\colat,\long) \partialderiv{T}{t} &+ A(CO_2) + B T 
 \\
  &- \left[

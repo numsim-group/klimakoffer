@@ -35,6 +35,7 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\mat}[1]{\underline{\mathbf{#1}}}
 \newcommand{\deriv}[2]{ \frac{d {#1}}{d {#2} } }
 \newcommand{\col}[2]{~~~<span style="color:~~~#1~~~">~~~!#2~~~</span>~~~}
+\newcommand{\diffop}{L}
 
 <!-- Name of repository for GitHub pages -->
 @def prepath = "IntroToClimateModeling"

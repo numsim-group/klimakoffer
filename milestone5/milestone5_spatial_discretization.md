@@ -165,6 +165,25 @@ which simplifies to
 \end{align}
 
 Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the uniform mesh spacing, the central second-order finite-difference discretization of the different terms of the [diffusion operator in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqdiffterm) reads
+$$\label{eq:diffop_innernodes}
+\diffop_{j,i} = 
+\underbrace{
+\left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
+}_{\text{Term~1}}
++
+\underbrace{
+\left[
+\frac{\partial}{\partial \colat}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}\Bigr)
+\right]_{j,i}
+}_{\text{Term~2}}
++
+\underbrace{
+\left[
+\cot(\colat)\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}
+\right]_{j,i}
+}_{\text{Term~3}},
+$$
+with the terms
 * Term 1:
 \begin{align}\label{eq:disc_term1}
 \left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
@@ -210,21 +229,22 @@ To deal with the pole problem, we use the techniques proposed in the following p
 
 We start by considering the [diffusion operator in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqdiffterm), but we combine Terms 2 and 3 to obtain
 \begin{align}\label{eq:difftermpole}
-f(\colat,\long) \coloneqq 
+\diffop(\colat,\long) \coloneqq 
 \Nabla \cdot (D\Nabla T) = 
     \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     +
-    \csc(\colat) \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right),
+    \csc(\colat) \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right).
 \end{align}
-where the newly defined variable $f$ contains the rest of the terms of the EBM, i.e., the heat capacity term, the outgoinglongwave ratiation, and the solar forcing.
+<!-- where the newly defined variable $\diffop$ contains the rest of the terms of the EBM, i.e., the heat capacity term, the outgoinglongwave ratiation, and the solar forcing. -->
 
-Let us consider a _control area_ of the size of the polar cell (green in the figure), which spans $\colat \in [0,h/2]$, $\long \in [0, 2\pi]$.
+We will proceed to derive a discretization for the north pole. The discretization for the south pole can be derived in an analogous manner.
+Let us consider a _control area_ of the size of the northern polar cell (green in the figure), which spans $\colat \in [0,h/2]$, $\long \in [0, 2\pi]$.
 
 \fig{/assets/milestone5/Pole.png}
 
 To avoid the singularity at the pole, we will now consider an integral form of \eqref{eq:difftermpole}, which we obtain by integrating the equation over the polar cell,
 \begin{align}\label{eq:difftermpole_weak}
-\int_0^{\frac{h}{2}} \int_0^{2\pi}f(\colat,\long)R_E^2 \sin \colat \d \long \d \colat =&
+\int_0^{\frac{h}{2}} \int_0^{2\pi}\diffop(\colat,\long)R_E^2 \sin \colat \d \long \d \colat =&
     \int_0^{\frac{h}{2}}  \int_0^{2\pi}
     \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     R_E^2  \d \long \d \colat
@@ -250,11 +270,12 @@ where $\mathbf{r}$ is a vector that describes the surface of Earth, i.e.,
 
 To compute a surface integral, we use
 \begin{align}
-\int_S f(\colat,\long) \d S &= \int_0^{\Delta \theta/2} \int_{-\pi}^{\pi}
-f \left| \partialderiv{\mathbf{r}}{\colat} \times \partialderiv{\mathbf{r}}{\varphi}  \right|  \d \varphi \d \colat
+\int_S \diffop(\colat,\long) \d S &= \int_0^{\Delta \theta/2} \int_{-\pi}^{\pi}
+\diffop(\colat,\long) \left| \partialderiv{\mathbf{r}}{\colat} \times \partialderiv{\mathbf{r}}{\varphi}  \right|  \d \varphi \d \colat
 \\
 &= \int_0^{\Delta \theta/2} \int_{-\pi}^{\pi}
-R_E^2 \sin \colat f(\colat,\long) \d \varphi \d \colat.
+\diffop(\colat,\long)
+R_E^2 \sin \colat \d \varphi \d \colat.
 \end{align}
 @@
 
@@ -284,7 +305,7 @@ R_E^2 \int_0^{\frac{h}{2}} \csc(\colat)
 
 Similarly, we can use the fundamental theorem of calculus to integrate the second term in the right-hand side of \eqref{eq:difftermpole_weak} over the colatitude:
 \begin{align}
-\int_0^{\frac{h}{2}} \int_0^{2\pi} f(\colat,\long) R_E^2 \sin \colat \d \long \d \colat =&
+\int_0^{\frac{h}{2}} \int_0^{2\pi} \diffop(\colat,\long) R_E^2 \sin \colat \d \long \d \colat =&
     R_E^2 \int_0^{2\pi} \int_0^{\frac{h}{2}} 
      \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right)
      \d \colat \d \long
@@ -302,29 +323,29 @@ R_E^2
 \d \long.
 \end{align}
 
-As a next step, we make the assumption that $f(\colat,\long)$ is a constant in the polar cell, such that we can approximate the integral on the left-hand side with a mid-point rule,
+As a next step, we make the assumption that $\diffop(\colat,\long)$ is a constant in the polar cell, such that we can approximate the integral on the left-hand side with a mid-point rule,
 \begin{align}
-\int_0^{\frac{h}{2}} \int_0^{2\pi} f(\colat,\long) R_E^2 \sin \colat \d \long \d \colat
+\int_0^{\frac{h}{2}} \int_0^{2\pi} \diffop(\colat,\long) R_E^2 \sin \colat \d \long \d \colat
 \approx&
-\int_0^{\frac{h}{2}} \int_0^{2\pi} f_{1,1} R_E^2 \sin \colat \d \long \d \colat
+\int_0^{\frac{h}{2}} \int_0^{2\pi} \diffop_{1,i} R_E^2 \sin \colat \d \long \d \colat
 \\
 =&
-f_{1,1}
+\diffop_{1,i}
 \int_0^{\frac{h}{2}} \int_0^{2\pi}  R_E^2 \sin \colat \d \long \d \colat
 \\
 =&
-f_{1,1}
+\diffop_{1,i}
 \left( 2 \pi R_E^2 \left(1-\cos \left(\frac{\Delta \lat}{2}\right) \right) \right)
 \\
 =&
-f_{1,1} (\texttt{area[1]}) (4\pi R_E^2)
+\diffop_{1,i} (\texttt{area[1]}) (4\pi R_E^2)
 \end{align}
-where $f_{1,1}$ is the nodal value of $f(\colat,\long)$ at $\colat_j=0$ ($j=1$). This is an approximation of the integral that assumes that the nodal value of the mid-point corresponds to the area-average of $f(\colat,\long)$ in the polar cell.
+where $\diffop_{1,i}$ is the nodal value of $\diffop(\colat,\long)$ at $\colat_j=0$ ($j=1$) for any longitude position $i$. This is an approximation of the integral that assumes that the nodal value of the mid-point corresponds to the area-average of $\diffop(\colat,\long)$ in the polar cell.
 Recall that the first entry of the array $\texttt{area}$ contains the total area of the polar cap normalized with the area of the sphere (see [Milestone 3 - Averages](/milestone3/milestone3_averages/)).
 
 We then obtain
 \begin{align}\label{eq:difftermpole_weak2}
-f_{1,1} (\texttt{area[1]}) (4\pi R_E^2)
+\diffop_{1,i} (\texttt{area[1]}) (4\pi R_E^2)
 =& 
 R_E^2
 \int_0^{2\pi} 
@@ -342,20 +363,57 @@ $$
 and the diffusion coefficient at $\colat=\frac{h}{2}$ with an area-weighted average,
 $$
 \left[ \tilde D (\colat,\long)\right]_{\colat=\frac{h}{2},i} \approx
-\bar{\tilde{D}}_i =
-\frac{\frac{\texttt{area[1]}}{\nlong} \tilde D_{1,1} + \texttt{area[2]}\tilde D_{2,i}}{\frac{\texttt{area[1]}}{\nlong} + \texttt{area[2]}}.
+\bar{\tilde{D}}_i^{\text{NP}} =
+\frac{\frac{\texttt{area[1]}}{\nlong} \tilde D_{1,i} + \texttt{area[2]}\tilde D_{2,i}}{\frac{\texttt{area[1]}}{\nlong} + \texttt{area[2]}}.
 $$
 
 Finally, we approximate the integral on the right-hand side of \eqref{eq:difftermpole_weak2} with a rectangular quadrature rule to obtain
-\begin{align}
-f_{1,1} 
-=& 
+$$\label{eq:diffop_NP}
+\diffop_{1,i} 
+=
 \frac{\sin \left( h/2 \right)}{4\pi \, \texttt{area[1]}}
 \sum_{i=1}^{\nlong}
-\bar{\tilde{D}}_i
+\bar{\tilde{D}}_i^{\text{NP}}
 \left[ T_{2,i}-T_{1,i} \right].
-\end{align}
+$$
+
+Following a similar procedure, we obtain for the south pole
+$$\label{eq:diffop_SP}
+\diffop_{\nlat,i} 
+=
+\frac{\sin \left( h/2 \right)}{4\pi \, \texttt{area[\nlat]}}
+\sum_{i=1}^{\nlong}
+\bar{\tilde{D}}_i^{\text{SP}}
+\left[ T_{\nlat-1,i}-T_{\nlat,i} \right],
+$$
+with
+$$
+\bar{\tilde{D}}_i^{\text{SP}} =
+\frac{\frac{\texttt{area[\nlat]}}{\nlong} \tilde D_{\nlat,i} + \texttt{area[\nlat-1]}\tilde D_{\nlat-1,i}}{\frac{\texttt{area[\nlat]}}{\nlong} + \texttt{area[\nlat-1]}}.
+$$
 
 ## Semi-Discrete EBM
 
-**TODO: Write the discrete equation to solve**
+With the spatial discretization that we derived above, we can rewrite the PDE that describes our [$2D$ EBM in spherical coordinates](/milestone5/milestone5_heat_transfer/#eqebm_spherical) as an ODE for each degree of freedom $(j,i)$:
+$$\label{eq:semidisc_ebm_point}
+\deriv{T_{j,i}}{t} = 
+\underbrace{
+    \frac{L_{j,i}}{C_{j,i}} - \frac{B}{C_{j,i}} T_{j,i}
+ }_{R_{j,i}(T)}
++
+\underbrace{
+    \frac{1}{C_{j,i}} \left(S_{sol, j, i}(t) - A\right)
+}_{F_{j,i}},
+$$
+where we have gathered the temperature-dependent terms under $R_{j,i}(T)$ and the sources and sinks under $F_{j,i}$.
+
+In equation \eqref{eq:semidisc_ebm_point}, $C_{j,i}$ is the point-wise heat capacity that depends on the geography (see [Milestone 2 - Heat Capacity](/milestone2/milestone2_heat-capacity/)); $L_{j,i}$ is the discrete point-wise heat transfer term computed with \eqref{eq:diffop_innernodes} for the interior nodes, with \eqref{eq:diffop_NP} for the north pole ($j=1$), and with \eqref{eq:diffop_SP} for the south pole ($j=\nlat$); $A$ and $B$ are the outgoing longwave radiation parameters (see [Milestone 2 - Radiation Modeling](/milestone2/milestone2_radiation/)); and $S_{sol, j, i} = (1 - \alpha_{j,i}) S_{j,i}$ is the point-wise time-dependent solar forcing term that depends on the [point-wise insolation $S_{j,i}$](/milestone2/milestone2_solar-forcing/#eqinsolation) and the [point-wise albedo $\alpha_{j,i}$](/milestone2/milestone2_albedo/).
+
+We can rewrite \eqref{eq:semidisc_ebm_point} in matrix form as
+$$
+\dot{\mat{T}} = 
+\mat{R}(\mat{T})
++
+\mat{F}(t),
+$$
+where we use the dot operator to note the time derivative term.
