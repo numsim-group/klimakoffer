@@ -110,10 +110,9 @@ $$ \label{eq:NumJacEBM}
 \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^j = \mathbf{R}(\hat{\mathbf{K}}^j)-\mathbf{R}(\mathbf{0}).
 $$
 
-As a result, the whole Jacobian matrix can be recovered by computing \eqref{eq:NumJacEBM} $\nlat \times \nlong + 1$ times:
+The whole Jacobian matrix can be recovered by computing \eqref{eq:NumJacEBM} $\ndof + 1$ times:
 $$
-\mat{A}_{\text{EBM}} = \left[ \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{1 \rightarrow (1,1)}, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{2 \rightarrow (1,2)}, \ldots, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{\nlat \times \nlong \rightarrow (\nlat, \nlong)}  \right]
+\mat{A}_{\text{EBM}} = \left[ \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{1}, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{2}, \ldots, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{\ndof}  \right]
 $$
 
-### Bonus: Analytical Jacobian
 
