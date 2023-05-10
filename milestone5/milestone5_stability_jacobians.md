@@ -17,7 +17,7 @@ In this chapter, we are interested in analyzing the stability properties of our 
 
 ## Mapping from a $2D$ Operator to a $1D$ Vector
 
-As a first step, will first rewrite our [system of ODEs in matrix form](/milestone5/milestone5_spatial_discretization/#eqsemidisc_ebm_matrix) as a system of ODEs in vector form, as that will facilitate the stability analysis for our system.
+As a first step, will first rewrite our [system of ODEs in matrix form](/milestone5/milestone5_spatial_discretization/#eqsemidisc_ebm_matrix) as a system of ODEs in vector form, as that will facilitate the stability analysis of the system.
 
 In particular, we want to concatenate the columns of our operators that are defined in matrix form (with $\nlat \times \nlong$), such that we create a one-dimensional vector with $\ndof = \nlat \times \nlong$ entries, where $\ndof$ stands for _number of degrees of freedom_ (see figure).
 
@@ -43,9 +43,10 @@ $$
 
 ## Stability Theory for Linear Systems of Equations
 
-Extension of [stability theory presented in Milestone 3](/milestone3/milestone3_odesolvers/#stability_of_the_explicit_and_implicit_euler_methods)
+As we saw in [Milestone 3](/milestone3/milestone3_odesolvers/#stability_of_the_explicit_and_implicit_euler_methods), the maximum allowable time-step size depends on the choice of the time discretization method for scalar ODEs.
+In this section, we will apply the stability theory presented in [Milestone 3](/milestone3/milestone3_odesolvers/#stability_of_the_explicit_and_implicit_euler_methods) to systems of ODEs that result from spatial discretizations to study the stability properties of our $2D$ EBM model.
 
-Since our two-dimensional EBM model is linear, we can write our semi-discretization as
+As a first step for our analysis, we will take advantage of the linearity of the term $\mathbf{R}(\mathbf{T})$ to rewrite our system of ODEs \eqref{eq:semidisc_ebm_vector} as
 $$\label{eq:system_linear}
 \dot{\mathbf{T}} = 
 \underbrace{
@@ -56,25 +57,58 @@ $$\label{eq:system_linear}
 $$
 where $\mat{A}$ is the so-called Jacobian matrix of the system.
 
-To analyze the stability properties of our model, it will be useful to rewrite \eqref{eq:system_linear} as a collection of [simple ODE](/milestone3/milestone3_odesolvers/#eqsimpleode). 
+Note that \eqref{eq:system_linear} differs from the [linear scalar homogeneous ODE](/milestone3/milestone3_odesolvers/#eqsimpleode) that we analyzed in Milestone 3. As a matter of fact, \eqref{eq:system_linear} is nonhomegeneous and the different ODEs are coupled through matrix $\mat{A}$.
 
 Assuming that our Jacobian matrix is invertible, we can rewrite it as 
 $$
-\mat{A} = \mat{Q} \mat{\Lambda} \mat{Q}^{-1}
+\mat{A} = \mat{V} \, \mat{\Lambda} \, \mat{V}^{-1},
 $$
-
-$$\label{eq:system_linear}
-\mat{Q}^{-1} \dot{\mathbf{T}} = 
-\mat{\Lambda} \mat{Q}^{-1} \mathbf{T}
+where the dense matrix $\mat{V} = [\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_{\ndof}]$ contains the eigenvectors of $\mat{A}$ in its columns, and $\mat{\Lambda} = \text{diag} (\lambda_1, \lambda_2, \ldots, \lambda_{\ndof})$ is a diagonal matrix that contains the eigenvalues of $\mat{A}$.
+Hence, \eqref{eq:system_linear} is equivalent to the system of ODEs,
+$$\label{eq:system_linear_decoupled}
+\dot{\mathbf{Z}} = 
+\mat{\Lambda} \mathbf{Z}
 +
-\mat{Q}^{-1} \mathbf{F}(t).
+\pmb{\mathcal{F}}(t),
+$$
+where $\mathbf{Z} = \mat{V}^{-1}\mathbf{T}$ and $ \pmb{\mathcal{F}}(t) \coloneqq \mat{V}^{-1} \mathbf{F}(t)$.
+
+Note that the individual variables in \eqref{eq:system_linear_decoupled} are decoupled due to the diagonal matrix $\mat{\Lambda}$. 
+As a result, \eqref{eq:system_linear_decoupled} resembles the [linear scalar homogeneous ODE](/milestone3/milestone3_odesolvers/#eqsimpleode) and the solutions have the form
+$$\label{eq:sol_diag}
+Z_i(t) = a_i e^{\lambda_i t} + Z^p_{i}(t),
+$$
+where $Z^p_{i}$ is a so-called _particular solution_ (also _particular integral_) for the $i^{\text{th}}$ nonhomogeneous problem that depends on $\mathcal{F}_i(t)$ and $\lambda_i$, and $a_i$ is a constant that is adjusted to match the initial condition,
+$$
+a_i = Z_i(t=0) - Z^p_{i}.
 $$
 
-## Computing Jacobian Matrices
+In the case that
+$$
+\lambda_i < 0, \qquad \text{for}~ i=1, 2, \ldots, \ndof,
+$$
+we expect that $\mathbf{Z}(t)$ converges to the _particular solution_ $\mathbf{Z}^p(t)$ as $t \rightarrow \infty$.
 
-### Numerical Jacobian
+@@colbox-blue
+**Remark:** The stability properties of our system of ODEs \eqref{eq:system_linear} are inherited from the linearized system \eqref{eq:system_linear_decoupled}.
+As a matter of fact, we can compute the solutions of \eqref{eq:system_linear} from \eqref{eq:sol_diag} as
+$$\label{eq:sol_linear}
+\mathbf{T}(t) = \mat{V} \mathbf{Z}(t) = \sum_{i=1}^{\ndof} a_i e^{\lambda_i t} \mathbf{v}_i + \underbrace{\mat{V}\mathbf{Z}^p(t)}_{\mathbf{T}^{p}(t)},
+$$
+where $\mathbf{T}_{p}$ is now the _particular_ or _equilibrium_ solution of the original nonhomogeneous problem.
+@@
 
-It is possible to expand a general nonlinear operator, $\mathcal{R}(\mathbf{T})$, with a Taylor series to obtain,
+We can now apply the stability theory presented in [Milestone 3](/milestone3/milestone3_odesolvers/#stability_of_the_explicit_and_implicit_euler_methods) to each scalar ODE of our diagonalized system \eqref{eq:system_linear_decoupled}.
+For systems of ODEs, we require that **all** quantities $\lambda_i \Delta t$, for $i=1, 2, \ldots, \ndof$, lie in the stability region of the time-integration method used.
+
+@@colbox-blue
+**Remark:** The maximum allowable time-step size to solve a system of ODEs that results from a spatial discretization of a PDE depends on the spatial discretization method.
+For instance, note that the eigenvalues $\lambda_i$ of matrix $\mat{A}$ depend on the spatial discretization method and grid size.
+@@
+
+## Computing Jacobian Matrices (Numerical Jacobian)
+
+It is possible to expand a general nonlinear operator, $\mathcal{R}(\mathbf{T})$, with a multi-dimensional Taylor series to obtain,
 $$ \label{eq:JacTaylorExpansion}
 \mathcal{R}(\mathbf{T}) =\mathcal{R}(\mathbf{T}_0) + \mat{A(\mathbf{T}_0)} \Delta \mathbf{T}
 + \mathcal{O} ((\Delta \mathbf{T})^2),
@@ -90,7 +124,7 @@ This Taylor expansion can also be used to approximate the Jacobian matrix. For i
 \begin{equation}
 \mathbf{T} = \mathbf{T}_0 + \epsilon \hat{\mathbf{K}}^j,
 \end{equation}
-where $\hat{\mathbf{K}}$ is a vector whose entries are all zero, except in the $j$ position, where it is equal to one:
+where $\hat{\mathbf{K}}^j = (\hat{k}^j_1, \hat{k}^j_2, \ldots, \hat{k}^j_{\ndof})^T$ is a vector whose entries are defined as
 \begin{equation}
 \hat{k}^j_i = 
 \begin{cases} 
@@ -99,20 +133,21 @@ where $\hat{\mathbf{K}}$ is a vector whose entries are all zero, except in the $
 \end{cases} 
 \end{equation}
 
-Equation \eqref{eq:JacTaylorExpansion} can then be reorganized as
+Equation \eqref{eq:JacTaylorExpansion} can then be rearranged as
 \begin{equation} \label{eq:NumJacOrder1}
 \mat{A} \hat{\mathbf{K}}^j = \frac{\mathcal{R}(\mathbf{T}_0+\epsilon \hat{\mathbf{K}}^j)-\mathcal{R}(\mathbf{T}_0)}{\epsilon} + \mathcal{O}(\epsilon ^ 2).
 \end{equation}
 
 For general nonlinear operators, the quantity $\mat{A} \hat{\mathbf{K}}^j$ is a good approximation for the $j^{\mathrm{th}}$ column of the Jacobian matrix if $\epsilon$ is small enough.
+
 Since the right-hand-side term of our $2D$ EBM is a linear operator, \eqref{eq:NumJacOrder1} is exact for any $\epsilon$ and any linearization temperature $\mathbf{T}_0$, and the second and higher-order terms vanish. As a result, we can write a column of the Jacobian of our $2D$ EBM as
 $$ \label{eq:NumJacEBM}
 \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^j = \mathbf{R}(\hat{\mathbf{K}}^j)-\mathbf{R}(\mathbf{0}).
 $$
 
-The whole Jacobian matrix can be recovered by computing \eqref{eq:NumJacEBM} $\ndof + 1$ times:
+The whole Jacobian matrix can be recovered by computing \eqref{eq:NumJacEBM} $\ndof$ times (i.e., $\ndof + 1$ computations of the right-hand-side operator $\mathbf{R}(\mathbf{T})$):
 $$
-\mat{A}_{\text{EBM}} = \left[ \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{1}, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{2}, \ldots, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{\ndof}  \right]
+\mat{A}_{\text{EBM}} = \left[ \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{1}, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{2}, \ldots, \mat{A}_{\text{EBM}} \hat{\mathbf{K}}^{\ndof}  \right].
 $$
 
 
