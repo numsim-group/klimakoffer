@@ -112,15 +112,15 @@ $$
 $$
 which can be discretized with the first-order derivative finite-difference approximations, and two terms (Terms 1 and 2) of the form
 $$
-\mathcal{L}_2(T) = \partialderiv{}{x} \left( \tilde D \partialderiv{T}{x} \right),
+\mathcal{L}_2(T) = \partialderiv{}{x} \left( \diffcoeff \partialderiv{T}{x} \right),
 $$
 which is slightly more involved.
 
 One possibility to discretize $\mathcal{L}_2(T)$ is to apply the chain rule of differentiation at the continuous level,
 $$
-\mathcal{L}_2(T) = \partialderiv{}{x} \left( \tilde D \partialderiv{T}{x} \right) = 
-\partialderiv{\tilde D}{x} \partialderiv{T}{x} +
-\tilde D \partialderiv{^2T}{x^2},
+\mathcal{L}_2(T) = \partialderiv{}{x} \left( \diffcoeff \partialderiv{T}{x} \right) = 
+\partialderiv{\diffcoeff}{x} \partialderiv{T}{x} +
+\diffcoeff \partialderiv{^2T}{x^2},
 $$
 such that it is expressed in terms of first and second-order derivatives.
 
@@ -136,19 +136,19 @@ Our goal is to obtain a finite difference scheme with the following properties:
 
 Given these criteria, we select the central second-order accurate finite-difference approximations for the first-order \eqref{eq:central_first} and second-order \eqref{eq:central_second} derivatives, to obtain for the degree of freedom $i$
 $$
-\mathcal{L}_1(T_i) = \tilde D_i \partialderiv{T_i}{x} \approx \tilde D_i \frac{T_{i+1} - T_{i-1}}{2 \Delta x},
+\mathcal{L}_1(T_i) = \diffcoeff_i \partialderiv{T_i}{x} \approx \diffcoeff_i \frac{T_{i+1} - T_{i-1}}{2 \Delta x},
 $$
 and
 \begin{align}
-\mathcal{L}_2(T_i) = \partialderiv{}{x} \left( \tilde D_i \partialderiv{T_i}{x} \right) =& 
-\partialderiv{\tilde D}{x} \partialderiv{T}{x} +
-\tilde D \partialderiv{^2T}{x^2}
+\mathcal{L}_2(T_i) = \partialderiv{}{x} \left( \diffcoeff_i \partialderiv{T_i}{x} \right) =& 
+\partialderiv{\diffcoeff}{x} \partialderiv{T}{x} +
+\diffcoeff \partialderiv{^2T}{x^2}
 \\
 \approx &
-\frac{\tilde D_{i+1} - \tilde D_{i-1}}{2 \Delta x}
+\frac{\diffcoeff_{i+1} - \diffcoeff_{i-1}}{2 \Delta x}
 \frac{T_{i+1} - T_{i-1}}{2 \Delta x}
 +
-\tilde D_i \frac{T_{i+1} - 2T_i + T_{i-1}}{\Delta x^2},
+\diffcoeff_i \frac{T_{i+1} - 2T_i + T_{i-1}}{\Delta x^2},
 \end{align}
 which simplifies to
 \begin{align}
@@ -156,11 +156,11 @@ which simplifies to
 \approx 
 \frac{1}{\Delta x^2}
 \biggl(
--2 \tilde D_i T_i 
-&+ \Bigl[\tilde D_i + \frac{1}{4} \left( \tilde D_{i+1} - \tilde D_{i-1} \right)\Bigr] T_{i+1}
+-2 \diffcoeff_i T_i 
+&+ \Bigl[\diffcoeff_i + \frac{1}{4} \left( \diffcoeff_{i+1} - \diffcoeff_{i-1} \right)\Bigr] T_{i+1}
 \\
 &+ 
-\Bigl[\tilde D_i - \frac{1}{4} \left( \tilde D_{i+1} - \tilde D_{i-1} \right)\Bigr] T_{i-1}
+\Bigl[\diffcoeff_i - \frac{1}{4} \left( \diffcoeff_{i+1} - \diffcoeff_{i-1} \right)\Bigr] T_{i-1}
 \biggr).
 \end{align}
 
@@ -168,50 +168,50 @@ Garhering everything, and introducing $h = \Delta \lat = \Delta \long$ as the un
 $$\label{eq:diffop_innernodes}
 \diffop_{j,i} = 
 \underbrace{
-\left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
+\left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
 }_{\text{Term~1}}
 +
 \underbrace{
 \left[
-\frac{\partial}{\partial \colat}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}\Bigr)
+\frac{\partial}{\partial \colat}\Bigl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \colat}\Bigr)
 \right]_{j,i}
 }_{\text{Term~2}}
 +
 \underbrace{
 \left[
-\cot(\colat)\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}
+\cot(\colat)\diffcoeff (\colat,\long)\frac{\partial T}{\partial \colat}
 \right]_{j,i}
 }_{\text{Term~3}},
 $$
 with the terms
 * Term 1:
 \begin{align}\label{eq:disc_term1}
-\left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
+\left[\csc^{2}(\colat)\frac{\partial}{\partial \long}\biggl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \long}\Bigr)\right]_{j,i}
 \approx 
 \frac{\csc^{2}(\colat_{j,i})}{h^2}
-\biggl(-2\tilde D_{j,i}T_{j,i}
+\biggl(-2\diffcoeff_{j,i}T_{j,i}
 &
-+  \Bigl[\tilde D_{j,i} - \frac{1}{4}(\tilde D_{j,i+1} - \tilde D_{j,i-1})\Bigr]T_{j,i-1} \\
++  \Bigl[\diffcoeff_{j,i} - \frac{1}{4}(\diffcoeff_{j,i+1} - \diffcoeff_{j,i-1})\Bigr]T_{j,i-1} \\
 & 
-+ \Bigl[\tilde D_{j,i} + \frac{1}{4}(\tilde D_{j,i+1} - \tilde D_{j,i-1})\Bigr] T_{j,i+1}\biggr)
++ \Bigl[\diffcoeff_{j,i} + \frac{1}{4}(\diffcoeff_{j,i+1} - \diffcoeff_{j,i-1})\Bigr] T_{j,i+1}\biggr)
 \end{align}
 
 * Term 2:
 \begin{align}\label{eq:disc_term2}
 \left[
-\frac{\partial}{\partial \colat}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}\Bigr)
+\frac{\partial}{\partial \colat}\Bigl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \colat}\Bigr)
 \right]_{j,i}
- \approx \frac{1}{h^{2}}\biggl(-2\tilde D_{j,i}T_{j,i} 
-& + \Bigl[\tilde D_{j,i} - \frac{1}{4}(\tilde D_{j+1,i} - \tilde D_{j-1,i})\Bigr] T_{j-1,i}\\
-& + \Bigl[\tilde D_{j,i} + \frac{1}{4}(\tilde D_{j+1,i} - \tilde D_{j-1,i})\Bigr] T_{j+1,i}\biggr)
+ \approx \frac{1}{h^{2}}\biggl(-2\diffcoeff_{j,i}T_{j,i} 
+& + \Bigl[\diffcoeff_{j,i} - \frac{1}{4}(\diffcoeff_{j+1,i} - \diffcoeff_{j-1,i})\Bigr] T_{j-1,i}\\
+& + \Bigl[\diffcoeff_{j,i} + \frac{1}{4}(\diffcoeff_{j+1,i} - \diffcoeff_{j-1,i})\Bigr] T_{j+1,i}\biggr)
 \end{align}
 
 * Term 3:
 \begin{align}\label{eq:disc_term3}
 \left[
-\cot(\colat)\tilde D (\colat,\long)\frac{\partial T}{\partial \colat}
+\cot(\colat)\diffcoeff (\colat,\long)\frac{\partial T}{\partial \colat}
 \right]_{j,i}
- \approx \cot(\colat_{j,i})\frac{\tilde D_{j,i}}{2h}[T_{j+1,i} - T_{j-1,i}].
+ \approx \cot(\colat_{j,i})\frac{\diffcoeff_{j,i}}{2h}[T_{j+1,i} - T_{j-1,i}].
 \end{align}
 
 @@colbox-blue
@@ -231,9 +231,9 @@ We start by considering the [diffusion operator in spherical coordinates](/miles
 \begin{align}\label{eq:difftermpole}
 \diffop(\colat,\long) \coloneqq 
 \Nabla \cdot (D\Nabla T) = 
-    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
+    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     +
-    \csc(\colat) \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right).
+    \csc(\colat) \frac{\partial }{\partial \colat} \left( \diffcoeff (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right).
 \end{align}
 <!-- where the newly defined variable $\diffop$ contains the rest of the terms of the EBM, i.e., the heat capacity term, the outgoinglongwave ratiation, and the solar forcing. -->
 
@@ -246,12 +246,12 @@ To avoid the singularity at the pole, we will now consider an integral form of \
 \begin{align}\label{eq:difftermpole_weak}
 \int_0^{\frac{h}{2}} \int_0^{2\pi}\diffop(\colat,\long)R_E^2 \sin \colat \d \long \d \colat =&
     \int_0^{\frac{h}{2}}  \int_0^{2\pi}
-    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
+    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     R_E^2  \d \long \d \colat
     \\
     &+
     \int_0^{\frac{h}{2}}  \int_0^{2\pi}
-     \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right)
+     \frac{\partial }{\partial \colat} \left( \diffcoeff (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right)
     R_E^2  \d \long \d \colat.
 \end{align}
 
@@ -282,18 +282,18 @@ R_E^2 \sin \colat \d \varphi \d \colat.
 We can show that the first integral in the right-hand side of \eqref{eq:difftermpole_weak} vanishes using the fundamental theorem of calculus:
 \begin{align}\label{eq:intform1}
 \int_0^{\frac{h}{2}}  \int_0^{2\pi}
-    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
+    \csc(\colat) \frac{\partial}{\partial \long}\Bigl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) 
     R_E^2  \d \long \d \colat
 =&
 R_E^2 \int_0^{\frac{h}{2}} \csc(\colat)
     \int_0^{2\pi}
-    \frac{\partial}{\partial \long}\Bigl(\tilde D (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) \d \long 
+    \frac{\partial}{\partial \long}\Bigl(\diffcoeff (\colat,\long)\frac{\partial T}{\partial \long}\Bigr) \d \long 
     \d \colat
 \\
 =&
 R_E^2 \int_0^{\frac{h}{2}} \csc(\colat)
     \underbrace{\left[
-    \tilde D (\colat,\long)\frac{\partial T}{\partial \long} \right]_0^{2\pi}}_{=0} 
+    \diffcoeff (\colat,\long)\frac{\partial T}{\partial \long} \right]_0^{2\pi}}_{=0} 
     \d \colat
 \\
 =& 0.
@@ -307,19 +307,19 @@ Similarly, we can use the fundamental theorem of calculus to integrate the secon
 \begin{align}
 \int_0^{\frac{h}{2}} \int_0^{2\pi} \diffop(\colat,\long) R_E^2 \sin \colat \d \long \d \colat =&
     R_E^2 \int_0^{2\pi} \int_0^{\frac{h}{2}} 
-     \frac{\partial }{\partial \colat} \left( \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right)
+     \frac{\partial }{\partial \colat} \left( \diffcoeff (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right)
      \d \colat \d \long
 \\
 =& 
 R_E^2
 \int_0^{2\pi} 
-\left[  \tilde D (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right]_0^{\frac{h}{2}} 
+\left[  \diffcoeff (\colat,\long) \sin (\colat) \partialderiv{T}{\colat} \right]_0^{\frac{h}{2}} 
 \d \long
 \\
 =& 
 R_E^2
 \int_0^{2\pi} 
-\tilde D \left( \frac{h}{2} ,\long \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
+\diffcoeff \left( \frac{h}{2} ,\long \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
 \d \long.
 \end{align}
 
@@ -349,7 +349,7 @@ We then obtain
 =& 
 R_E^2
 \int_0^{2\pi} 
-\tilde D \left( \frac{h}{2},\long \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
+\diffcoeff \left( \frac{h}{2},\long \right) \sin \left( \frac{h}{2} \right) \partialderiv{T}{\colat} \bigg\rvert_{\colat=\frac{h}{2}}  
 \d \long.
 \end{align}
 
@@ -362,9 +362,9 @@ $$
 $$
 and the diffusion coefficient at $\colat=\frac{h}{2}$ with an area-weighted average,
 $$
-\left[ \tilde D (\colat,\long)\right]_{\colat=\frac{h}{2},i} \approx
+\left[ \diffcoeff (\colat,\long)\right]_{\colat=\frac{h}{2},i} \approx
 \bar{\tilde{D}}_i^{\text{NP}} =
-\frac{\frac{\texttt{area[1]}}{\nlong} \tilde D_{1,i} + \texttt{area[2]}\tilde D_{2,i}}{\frac{\texttt{area[1]}}{\nlong} + \texttt{area[2]}}.
+\frac{\frac{\texttt{area[1]}}{\nlong} \diffcoeff_{1,i} + \texttt{area[2]}\diffcoeff_{2,i}}{\frac{\texttt{area[1]}}{\nlong} + \texttt{area[2]}}.
 $$
 
 Finally, we approximate the integral on the right-hand side of \eqref{eq:difftermpole_weak2} with a rectangular quadrature rule to obtain
@@ -389,7 +389,7 @@ $$
 with
 $$
 \bar{\tilde{D}}_i^{\text{SP}} =
-\frac{\frac{\texttt{area[\nlat]}}{\nlong} \tilde D_{\nlat,i} + \texttt{area[\nlat-1]}\tilde D_{\nlat-1,i}}{\frac{\texttt{area[\nlat]}}{\nlong} + \texttt{area[\nlat-1]}}.
+\frac{\frac{\texttt{area[\nlat]}}{\nlong} \diffcoeff_{\nlat,i} + \texttt{area[\nlat-1]}\diffcoeff_{\nlat-1,i}}{\frac{\texttt{area[\nlat]}}{\nlong} + \texttt{area[\nlat-1]}}.
 $$
 
 ## Semi-Discrete EBM

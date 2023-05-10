@@ -151,20 +151,20 @@ Note that these derivations are in full three-dimensional space. However, in our
 \begin{align}\label{eq:diffterm}
 \Nabla \cdot (D\Nabla T) = 
 \underbrace{
-    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) 
+    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\diffcoeff\frac{\partial T}{\partial \long}\Bigr) 
 }_{\text{Term}~1}
 + 
 \underbrace{
-    \frac{\partial}{\partial \colat}\Bigl(\tilde D\frac{\partial T}{\partial \colat}\Bigr)
+    \frac{\partial}{\partial \colat}\Bigl(\diffcoeff\frac{\partial T}{\partial \colat}\Bigr)
 }_{\text{Term}~2}
 + 
 \underbrace{
-    \cot(\colat)\tilde D\frac{\partial T}{\partial \colat}.
+    \cot(\colat)\diffcoeff\frac{\partial T}{\partial \colat}.
 }_{\text{Term}~3}
 \end{align}
 
 @@colbox-blue
-**Remark:** The diffusion coefficient that we use in our $2D$ EBM model is scaled with the Earth radius: $\tilde D := D / R_E^2$.
+**Remark:** The diffusion coefficient that we use in our $2D$ EBM model is scaled with the Earth radius: $\diffcoeff := D / R_E^2$.
 @@
 
 
@@ -179,22 +179,22 @@ respectively, in spherical coordinates
 C(\colat,\long) \partialderiv{T}{t} &+ A(CO_2) + B T 
 \\
  &- \left[
-    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\tilde D\frac{\partial T}{\partial \long}\Bigr) 
+    \csc^{2}(\colat) \frac{\partial}{\partial \long}\Bigl(\diffcoeff\frac{\partial T}{\partial \long}\Bigr) 
 + 
-    \frac{\partial}{\partial \colat}\Bigl(\tilde D\frac{\partial T}{\partial \colat}\Bigr)
+    \frac{\partial}{\partial \colat}\Bigl(\diffcoeff\frac{\partial T}{\partial \colat}\Bigr)
 + 
-    \cot(\colat)\tilde D\frac{\partial T}{\partial \colat}\right]
+    \cot(\colat)\diffcoeff\frac{\partial T}{\partial \colat}\right]
 = S_{sol}(\colat,\long,t).
 \end{align}
 
 @@colbox-blue
-**Remark:** An analysis of the physical dimension of the diffusion coefficient shows that $D$ has the SI units $\left[\frac{W}{K}\right]$ (Watts per Kelvin), and $\tilde D$ has the SI units $\left[\frac{W}{m^2 K}\right]$ (Watts per Kelvin per square meter).
+**Remark:** An analysis of the physical dimension of the diffusion coefficient shows that $D$ has the SI units $\left[\frac{W}{K}\right]$ (Watts per Kelvin), and $\diffcoeff$ has the SI units $\left[\frac{W}{m^2 K}\right]$ (Watts per Kelvin per square meter).
 @@
 
 As discussed above, the heat diffusion term needs to model the complex mechanism of poleward transport of heat. There are many different choices of $D$ available in literature, from simple global constant values to more complex approximations. Here, again, we follow the paper by Zhuang et al. 
 > [Zhuang, K., North, G. R., & Stevens, M. J. (2017). A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm. SoftwareX, 6, 198-202.](https://www.sciencedirect.com/science/article/pii/S2352711017300262)
 
-We distinguish between oceanic heat transport and heat transport over land and snow/ice covered areas. We also account for a difference of the heat transfer in the northern and southern hemisphere due to the asymmetric distribution and sizes of the land masses. The following figure shows a sketch of the energy fluxes due to heat transfer accounted in our model (here, the diffusion coefficients are denoted with $K$ instead of $\tilde D$) 
+We distinguish between oceanic heat transport and heat transport over land and snow/ice covered areas. We also account for a difference of the heat transfer in the northern and southern hemisphere due to the asymmetric distribution and sizes of the land masses. The following figure shows a sketch of the energy fluxes due to heat transfer accounted in our model (here, the diffusion coefficients are denoted with $K$ instead of $\diffcoeff$) 
 
 \fig{/assets/milestone5/heat_transfer_sketch_ebm.png}
 * Figure from [https://gmd.copernicus.org/articles/14/2843/2021/](https://gmd.copernicus.org/articles/14/2843/2021/).
@@ -203,21 +203,21 @@ Thus, for the actual values of the diffusion coefficients we differentiate betwe
 
 The values for oceanic grid cells in physical unit $[W/K]$ are 
 $$
-\tilde D = \tilde D_{\text{ocean,poles}} + (\tilde D_{\text{ocean,equ}} - \tilde D_{\text{ocean,poles}})\,sin^5(\colat),
+\diffcoeff = \diffcoeff_{\text{ocean,poles}} + (\diffcoeff_{\text{ocean,equ}} - \diffcoeff_{\text{ocean,poles}})\,sin^5(\colat),
 $$
-with $\tilde D_{\text{ocean,poles}} = 0.4$ and $\tilde D_{\text{ocean,equ}} = 0.65$. 
+with $\diffcoeff_{\text{ocean,poles}} = 0.4$ and $\diffcoeff_{\text{ocean,equ}} = 0.65$. 
 
 The values for non oceanic grid cells in the norther hemisphere in physical units $[W/K]$ are
 $$
-\tilde D = \tilde D_{\text{NP}} + (\tilde D_{\text{equ}} - \tilde D_{\text{NP}})\,sin^5(\colat),
+\diffcoeff = \diffcoeff_{\text{NP}} + (\diffcoeff_{\text{equ}} - \diffcoeff_{\text{NP}})\,sin^5(\colat),
 $$
-with $\tilde D_{\text{NP}} = 0.28$ and $\tilde D_{\text{equ}} = 0.65$.
+with $\diffcoeff_{\text{NP}} = 0.28$ and $\diffcoeff_{\text{equ}} = 0.65$.
 
 The values for non oceanic grid cells in the southern hemisphere in physical units $[W/K]$ are
 $$
-\tilde D = \tilde D_{\text{SP}} + (\tilde D_{\text{equ}} - \tilde D_{\text{SP}})\,sin^5(\colat).
+\diffcoeff = \diffcoeff_{\text{SP}} + (\diffcoeff_{\text{equ}} - \diffcoeff_{\text{SP}})\,sin^5(\colat).
 $$
-with $\tilde D_{\text{SP}} = 0.20$ and $\tilde D_{\text{equ}} = 0.65$.
+with $\diffcoeff_{\text{SP}} = 0.20$ and $\diffcoeff_{\text{equ}} = 0.65$.
 
 @@colbox-blue
 **Remark:** We stress again, that the choice of the diffusion coefficients is kind of arbitrary and highly tuned to fit the resulting temperature fields as good as possible. Thus, the choice of a ramp up function between the values at the equator and the values at the poles proportional to $sin^5(\colat)$ has no deeper meaning but is a modeling/tuning choice. The resulting distribution of the diffusion coefficients over ocean and non oceanic grid cells is shown in the following figure 
