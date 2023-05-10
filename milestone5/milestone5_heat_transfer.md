@@ -105,7 +105,7 @@ For instance, for the unit vectors we have
 \\
 \hat{y} &= \sin \colat \sin \long \hat{r} + \cos \colat \sin \long \hat{\colat} + \cos \long \hat{\long}
 \\
-\hat{z} &= \cos \colat \hat{r}+ \sin \colat \hat{\colat},
+\hat{z} &= \cos \colat \hat{r}- \sin \colat \hat{\colat},
 \end{align}
 and for the partial derivatives we have
 \begin{align}\label{eq:partialderivs}
@@ -121,11 +121,11 @@ Inserting \eqref{eq:unitvectors} and \eqref{eq:partialderivs} into \eqref{eq:ops
 \Nabla T &= \frac{\partial T}{\partial r} \hat{r} + \frac{1}{r\sin(\colat)}\frac{\partial T}{\partial \long} \hat{\long} + \frac{1}{r}\frac{\partial T}{\partial \colat} \hat{\colat}
 \\
 \Nabla \cdot \vec{F} &= 
-\frac{1}{r^{2}}\frac{1}{\partial r}({F}_r r^{2})
- + 
-\frac{1}{r\sin(\colat)}\frac{\partial}{\partial \colat}  ({F}_{\colat}\sin(\colat))
+\frac{1}{r^{2}}\partialderiv{}{r}({F}_r r^{2})
 +
 \frac{1}{r\sin(\colat)} \frac{\partial {F}_{\long}}{\partial \long}
++ 
+\frac{1}{r\sin(\colat)}\frac{\partial}{\partial \colat}  ({F}_{\colat}\sin(\colat))
 \end{align}
 
 
@@ -139,7 +139,7 @@ The gradient operator is also commonly written in the vector form $(r,\long,\col
 We obtain the diffusion operator in spherical coordinates by combining the expressions for the gradient and divergence operators to obtain
 \begin{align}
 \Nabla \cdot (D\Nabla T) = 
-\frac{1}{r^2} \left( D r^2 \partialderiv{T}{r} \right)
+\frac{1}{r^2} \partialderiv{}{r} \left( D r^2 \partialderiv{T}{r} \right)
 +
 \frac{\csc^{2}(\colat)}{r^2} \frac{\partial}{\partial \long}\Bigl(D\frac{\partial T}{\partial \long}\Bigr) 
 + 
