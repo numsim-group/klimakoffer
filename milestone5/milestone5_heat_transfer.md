@@ -201,7 +201,7 @@ We distinguish between oceanic heat transport and heat transport over land and s
 
 Thus, for the actual values of the diffusion coefficients we differentiate between grid cells that represent ocean, and all other types. Furthermore, for non oceanic grid cells, we differentiate if we are in the northern or southern hemisphere. 
 
-The values for oceanic grid cells in physical unit $[W/m²/K]$ are 
+The values for oceanic grid cells in physical unit $[W/m^2/K]$ are 
 $$
 \diffcoeff = \diffcoeff_{\text{ocean,poles}} + (\diffcoeff_{\text{ocean,equ}} - \diffcoeff_{\text{ocean,poles}})\,sin^5(\colat),
 $$
