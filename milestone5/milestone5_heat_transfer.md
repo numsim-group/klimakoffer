@@ -15,7 +15,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Transport in the Atmosphere and Oceans
 
 As a next improvement of our EBM, we want to connect the temperatures of the each individual grid cell to form a globally coupled system that models a smooth surface temperature field of the whole Earth. If we consider a fully coupled system where all grid cells are connected (and not independently solved as tested in [milestone 4](/milestone4/milestone4_menu/)), heat will get transported from warm regions to colder regions, i.e., heat will be transported polewards. 
-The [distribution of the solar forcing term](/milestone2/milestone2_results/#solar_forcing_animation) clearly shows that there is more net solar radiation in topical latitudes than in the polar regions. Thus, some heat transfer polewards is expected. On Earth, the atmosphere and the oceans include mechanisms and processes that cause such a poleward heat transport. For the interested reader, we refer for instance to the following introductory videos that discuss some of the important processes.
+The [distribution of the solar forcing term](/milestone2/milestone2_results/#solar_forcing_animation) clearly shows that there is more net solar radiation in tropical latitudes than in the polar regions. Thus, some heat transfer polewards is expected. On Earth, the atmosphere and the oceans include mechanisms and processes that cause such a poleward heat transport. For the interested reader, we refer for instance to the following introductory videos that discuss some of the important processes.
  
 * Global atmospheric circulation on Earth
 ~~~
