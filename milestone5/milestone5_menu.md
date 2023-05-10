@@ -12,4 +12,4 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 1. [Planetary Heat Transfer](/milestone5/milestone5_heat_transfer/)
 2. [Spatial Discretization Scheme](/milestone5/milestone5_spatial_discretization/)
-<!-- 3. [Stability and Jacobian Matrices](/milestone5/milestone5_stability_jacobians/) -->
+3. [Stability and Jacobian Matrices](/milestone5/milestone5_stability_jacobians/)

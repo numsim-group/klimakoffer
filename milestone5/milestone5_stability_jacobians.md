@@ -17,7 +17,7 @@ In this chapter, we are interested in analyzing the stability properties of our 
 
 ## Mapping from a $2D$ Operator to a $1D$ Vector
 
-As a first step, will first rewrite our [system of ODEs in matrix form](/milestone5/milestone5_spatial_discretization/#eqsemidisc_ebm_matrix) as a system of ODEs in vector form, as that will facilitate the stability analysis of the system.
+As a first step, we will first rewrite our [system of ODEs in matrix form](/milestone5/milestone5_spatial_discretization/#eqsemidisc_ebm_matrix) as a system of ODEs in vector form, as that will facilitate the stability analysis of the system.
 
 In particular, we want to concatenate the columns of our operators that are defined in matrix form (with $\nlat \times \nlong$), such that we create a one-dimensional vector with $\ndof = \nlat \times \nlong$ entries, where $\ndof$ stands for _number of degrees of freedom_ (see figure).
 
