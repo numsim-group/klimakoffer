@@ -22,7 +22,7 @@ There are many ways to derive finite difference formulas, but we will focus on t
 
 @@colbox-blue
 **Taylor series:** The Taylor series (or Taylor expansion) of a function is an infinite sum of polynomial terms that are expressed in terms of the function's derivatives at a point.
-For instance, the Taylor deries of the function $f(x)$ around the point $x_0$ is defined as
+For instance, the Taylor series of the function $f(x)$ around the point $x_0$ is defined as
 \begin{align}\label{eq:taylor}
 f(x) 
 &= f(x_0) + \deriv{f(x_0)}{x} (x-x_0) + \frac{1}{2!} \deriv{^2f(x_0)}{x^2} (x-x_0)^2 + \frac{1}{3!}\deriv{^3f(x_0)}{x^3} (x-x_0)^3 + \cdots
@@ -38,7 +38,7 @@ Let us consider a uniform one-dimensional grid containing temperature values.
 
 \fig{/assets/milestone5/spatial_disc_1d.png}
 
-Using \eqref{eq:taylor}, we can write Taylor expansions for $T_{i+1}$ around $T_{i}$:
+Using \eqref{eq:taylor}, we can write Taylor expansion for $T_{i+1}$ around $T_{i}$:
 $$\label{eq:taylortemp1}
 T_{i+1} = T_i + \deriv{T_i}{x} \Delta x + \frac{1}{2} \deriv{^2T_i}{x^2} \Delta x^2 + \frac{1}{6} \deriv{^3T_i}{x^3} \Delta x^3 + \cdots.
 $$
@@ -52,7 +52,7 @@ By manipulating \eqref{eq:taylortemp1}, we can obtain an expression for the firs
 where $\mathcal{O}(\Delta x)$ indicates that the largest term is of the order of $\Delta x$. 
 Hence, if we truncated the Taylor series there, 
 $$
-\deriv{T_i}{x} \approx \frac{T_{i+1} - T_{i}}{\Delta x} 
+\deriv{T_i}{x} \approx \frac{T_{i+1} - T_{i}}{\Delta x},
 $$
 we would obtain an approximation of the derivative $\d T_i / \d x$, which would converge to the exact value of the derivative with first-order accuracy (i.e., $\text{error} \sim \Delta x^1$) as the grid size is reduced, $\Delta x \rightarrow 0$.
 
@@ -265,7 +265,7 @@ R_E^2 \sin \colat \d \long \d \colat,
 $$
 where $\mathbf{r}$ is a vector that describes the surface of Earth, i.e.,
 \begin{align}
-\mathbf{r} = (\hat{x}, \hat{y}, \hat{z})\vert_{r=R_E}
+\mathbf{r} = (\hat{x}, \hat{y}, \hat{z})\bigg\vert_{r=R_E}.
 \end{align}
 
 To compute a surface integral, we use
@@ -416,4 +416,4 @@ $$\label{eq:semidisc_ebm_matrix}
 +
 \mat{F}(t),
 $$
-where $\mat{T} \in \R^{\nlat \times \nlong}$ is a matrix that contains all point-wise values of temperature, $\mat{R}(\mat{T}) \in \R^{\nlat \times \nlong}$ is a matrix operator applied on the temperature matrix, $\mat{F}(t) \in \R^{\nlat \times \nlong}$ is the time-dependent matrix containing the sources and sinks of the method, and we use the dot operator to note the time derivative term.
+where $\mat{T} \in \R^{\nlat \times \nlong}$ is a matrix that contains all point-wise values of temperature, $\mat{R}(\mat{T}) \in \R^{\nlat \times \nlong}$ is a matrix operator applied on the temperature matrix, $\mat{F}(t) \in \R^{\nlat \times \nlong}$ is the time-dependent matrix containing the sources and sinks of the method, and we use the dot operator to denote the time derivative term.
