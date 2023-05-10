@@ -223,7 +223,7 @@ with $\diffcoeff_{\text{SP}} = 0.20$ and $\diffcoeff_{\text{equ}} = 0.65$.
 **Remark:** We stress again, that the choice of the diffusion coefficients is kind of arbitrary and highly tuned to fit the resulting temperature fields as good as possible. Thus, the choice of a ramp up function between the values at the equator and the values at the poles proportional to $sin^5(\colat)$ has no deeper meaning but is a modeling/tuning choice. The resulting distribution of the diffusion coefficients over ocean and non oceanic grid cells is shown in the following figure 
 
 \fig{/assets/milestone5/diffusion_coefficient.png}
-* Figure from [https://gmd.copernicus.org/articles/14/2843/2021/](https://gmd.copernicus.org/articles/14/2843/2021/).
-* **TODO:** NEEDS TO BE REPLACED WITH A PLOT OF ACTUAL DATA
+
+Note that this plot is showing the latitude rather than the colatitude.
 @@
 
