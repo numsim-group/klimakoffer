@@ -213,7 +213,7 @@ $$
 $$
 with $\diffcoeff_{\text{NP}} = 0.28$ and $\diffcoeff_{\text{equ}} = 0.65$.
 
-The values for non oceanic grid cells in the southern hemisphere in physical units $[W/m²/K]$ are
+The values for non oceanic grid cells in the southern hemisphere in physical units $[W/m^2/K]$ are
 $$
 \diffcoeff = \diffcoeff_{\text{SP}} + (\diffcoeff_{\text{equ}} - \diffcoeff_{\text{SP}})\,sin^5(\colat).
 $$
