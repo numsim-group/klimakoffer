@@ -207,7 +207,7 @@ $$
 $$
 with $\diffcoeff_{\text{ocean,poles}} = 0.4$ and $\diffcoeff_{\text{ocean,equ}} = 0.65$. 
 
-The values for non oceanic grid cells in the norther hemisphere in physical units $[W/m²/K]$ are
+The values for non oceanic grid cells in the norther hemisphere in physical units $[W/m^2/K]$ are
 $$
 \diffcoeff = \diffcoeff_{\text{NP}} + (\diffcoeff_{\text{equ}} - \diffcoeff_{\text{NP}})\,sin^5(\colat),
 $$
