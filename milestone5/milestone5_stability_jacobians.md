@@ -63,7 +63,7 @@ Assuming that our Jacobian matrix is invertible, we can rewrite it as
 $$
 \mat{A} = \mat{V} \, \mat{\Lambda} \, \mat{V}^{-1},
 $$
-where the dense matrix $\mat{V} = [\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_{\ndof}]$ contains the eigenvectors of $\mat{A}$ in its columns, and $\mat{\Lambda} = \text{diag} (\lambda_1, \lambda_2, \ldots, \lambda_{\ndof})$ is a diagonal matrix that contains the (possible complex) eigenvalues of $\mat{A}$.
+where the dense matrix $\mat{V} = [\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_{\ndof}]$ contains the eigenvectors of $\mat{A}$ in its columns, and $\mat{\Lambda} = \text{diag} (\lambda_1, \lambda_2, \ldots, \lambda_{\ndof})$ is a diagonal matrix that contains the (possibly complex) eigenvalues of $\mat{A}$.
 Hence, \eqref{eq:system_linear} is equivalent to the system of ODEs,
 $$\label{eq:system_linear_decoupled}
 \dot{\mathbf{Z}} = 
@@ -85,7 +85,7 @@ $$
 
 In the case that
 $$\label{eq:equilibrium_condition}
-Re(\lambda_i) < 0, \qquad \text{for}~ i=1, 2, \ldots, \ndof,
+\text{Re}(\lambda_i) < 0, \qquad \text{for}~ i=1, 2, \ldots, \ndof,
 $$
 we expect that $\mathbf{Z}(t)$ converges to the _particular solution_ $\mathbf{Z}^p(t)$ as $t \rightarrow \infty$. In such a case, we call the particular solution _equilibrium solution_.
 
@@ -138,7 +138,7 @@ Equation \eqref{eq:JacTaylorExpansion} can then be rearranged as
 \R^{\ndof}\ni\mat{A} \hat{\mathbf{K}}^j = \frac{\mathcal{R}(\mathbf{T}_0+\epsilon \hat{\mathbf{K}}^j)-\mathcal{R}(\mathbf{T}_0)}{\epsilon} + \mathcal{O}(\epsilon).
 \end{equation}
 
-For general nonlinear operators, the quantity $\mat{A} \hat{\mathbf{K}}^j$ is a good approximation for the $j^{\mathrm{th}}$ column of the Jacobian matrix if $\epsilon$ is small enough. One has to be careful in choosing the size of $\epsilon$, as very small values (close to machine precision) suffer from cancelation errors, when adding up. Hence, there is some discussion in the literature available about the optimal choice of $\epsilon$. As a starting point, it is good to consider only the square root of the currently used machine precision $\epsilon_m$, i.e., $\epsilon\sim\sqrt{\epsilon_m}$ to have a good balance of accuracy and machine error cancellation issues. For a typical double precision calculation with $\epsilon_m\sim 10^{-16}$ we than have about single precision accuracy, $\epsilon\sim 10^{-8}$.  
+For general nonlinear operators, the quantity $\mat{A} \hat{\mathbf{K}}^j$ is a good approximation for the $j^{\mathrm{th}}$ column of the Jacobian matrix if $\epsilon$ is small enough. One has to be careful in choosing the size of $\epsilon$, as very small values (close to machine precision) suffer from cancelation errors, when adding up. Hence, there is some discussion in the literature available about the optimal choice of $\epsilon$. As a starting point, it is good to consider only the square root of the currently used machine precision $\epsilon_m$, i.e., $\epsilon\sim\sqrt{\epsilon_m}$ to have a good balance of accuracy and machine error cancellation issues. For a typical double precision calculation with $\epsilon_m\sim 10^{-16}$ we then have about single precision accuracy, $\epsilon\sim 10^{-8}$.  
 
 Since the right-hand-side term of our $2D$ EBM is a linear operator, \eqref{eq:NumJacOrder1} is exact for any $\epsilon$ and any linearization temperature $\mathbf{T}_0$, and the second and higher-order terms vanish. As a consequence, we can choose $\epsilon = 1$ and $\mathbf{T}_0 = \mathbf{0}$ to get a column of the Jacobian of our $2D$ EBM
 $$ \label{eq:NumJacEBM}

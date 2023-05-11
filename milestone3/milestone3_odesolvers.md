@@ -179,7 +179,7 @@ $$
 we see that only for non-positive real parts, $a \le 0$,
 the difference stays small in time even
 when considering a small $\delta$ perturbation.
-The problem is called stable for $Re(\lambda) = a \le 0$.
+The problem is called stable for $\text{Re}(\lambda) = a \le 0$.
 We want to have numerical methods that
 are numerically stable when solving stable
 problems!
@@ -244,7 +244,7 @@ This shows that the implicit Euler scheme
 is stable for all values of $\lambda \Delta t$, except for the
 ones inside the blue circle. In particular, the
 scheme is _unconditionally_ stable for **all** choices of $\Delta t$ in
-case $Re(\lambda) = a \le 0$.
+case $\text{Re}(\lambda) = a \le 0$.
 
 Hence, the big advantage of the implicit
 variant is that $\Delta t$ can be chosen arbitrarily
