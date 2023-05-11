@@ -360,12 +360,18 @@ $$
 \right]_{\colat=\frac{h}{2},i} \approx 
 \frac{T_{2,i}-T_{1,i}}{h},
 $$
-and the diffusion coefficient at $\colat=\frac{h}{2}$ with an area-weighted average,
+and the diffusion coefficient at $\colat=\frac{h}{2}$ with a simple average,
 $$
 \left[ \diffcoeff (\colat,\long)\right]_{\colat=\frac{h}{2},i} \approx
-\bar{\tilde{D}}_i^{\text{NP}} =
-\frac{\frac{\texttt{area[1]}}{\nlong} \diffcoeff_{1,i} + \texttt{area[2]}\diffcoeff_{2,i}}{\frac{\texttt{area[1]}}{\nlong} + \texttt{area[2]}}.
+\overline{\diffcoeff}_i^{\text{NP}} = \frac{1}{2} \left( \diffcoeff_{1,i} + \diffcoeff_{2,i} \right).
 $$
+
+@@colbox-blue
+**Remark:** Another possibility is to compute an area-weighted average:
+$$
+\bar{\diffcoeff}_i^{\text{NP}} = \frac{\frac{\texttt{area[1]}}{\nlong} \diffcoeff_{1,i} + \texttt{area[2]}\diffcoeff_{2,i}}{\frac{\texttt{area[1]}}{\nlong} + \texttt{area[2]}}.
+$$
+@@
 
 Finally, we approximate the integral on the right-hand side of \eqref{eq:difftermpole_weak2} with a rectangular quadrature rule to obtain
 $$\label{eq:diffop_NP}
@@ -373,7 +379,7 @@ $$\label{eq:diffop_NP}
 =
 \frac{\sin \left( h/2 \right)}{4\pi \, \texttt{area[1]}}
 \sum_{i=1}^{\nlong}
-\bar{\tilde{D}}_i^{\text{NP}}
+\overline{\diffcoeff}_i^{\text{NP}}
 \left[ T_{2,i}-T_{1,i} \right].
 $$
 
@@ -383,13 +389,14 @@ $$\label{eq:diffop_SP}
 =
 \frac{\sin \left( h/2 \right)}{4\pi \, \texttt{area[\nlat]}}
 \sum_{i=1}^{\nlong}
-\bar{\tilde{D}}_i^{\text{SP}}
+\overline{\diffcoeff}_i^{\text{SP}}
 \left[ T_{\nlat-1,i}-T_{\nlat,i} \right],
 $$
 with
 $$
-\bar{\tilde{D}}_i^{\text{SP}} =
-\frac{\frac{\texttt{area[\nlat]}}{\nlong} \diffcoeff_{\nlat,i} + \texttt{area[\nlat-1]}\diffcoeff_{\nlat-1,i}}{\frac{\texttt{area[\nlat]}}{\nlong} + \texttt{area[\nlat-1]}}.
+\overline{\diffcoeff}_i^{\text{SP}} =
+\frac{1}{2} \left( \diffcoeff_{\nlat,i} + \diffcoeff_{\nlat-1,i}\right).
+% \frac{\frac{\texttt{area[\nlat]}}{\nlong} \diffcoeff_{\nlat,i} + \texttt{area[\nlat-1]}\diffcoeff_{\nlat-1,i}}{\frac{\texttt{area[\nlat]}}{\nlong} + \texttt{area[\nlat-1]}}.
 $$
 
 ## Semi-Discrete EBM
