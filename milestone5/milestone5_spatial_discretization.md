@@ -152,7 +152,7 @@ and
 \end{align}
 which simplifies to
 \begin{align}
-\mathcal{L}_2(T_i) = 
+\mathcal{L}_2(T_i)  
 \approx 
 \frac{1}{\Delta x^2}
 \biggl(
@@ -378,9 +378,9 @@ $$\label{eq:diffop_NP}
 \diffop_{1,i} 
 =
 \frac{\sin \left( h/2 \right)}{4\pi \, \texttt{area[1]}}
-\sum_{i=1}^{\nlong}
-\overline{\diffcoeff}_i^{\text{NP}}
-\left[ T_{2,i}-T_{1,i} \right].
+\sum_{k=1}^{\nlong}
+\overline{\diffcoeff}_k^{\text{NP}}
+\left[ T_{2,k}-T_{1,k} \right].
 $$
 
 Following a similar procedure, we obtain for the south pole
@@ -388,9 +388,9 @@ $$\label{eq:diffop_SP}
 \diffop_{\nlat,i} 
 =
 \frac{\sin \left( h/2 \right)}{4\pi \, \texttt{area[\nlat]}}
-\sum_{i=1}^{\nlong}
-\overline{\diffcoeff}_i^{\text{SP}}
-\left[ T_{\nlat-1,i}-T_{\nlat,i} \right],
+\sum_{k=1}^{\nlong}
+\overline{\diffcoeff}_k^{\text{SP}}
+\left[ T_{\nlat-1,k}-T_{\nlat,k} \right],
 $$
 with
 $$
