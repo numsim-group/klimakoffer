@@ -80,7 +80,7 @@ Z_i(t) = a_i e^{\lambda_i t} + Z^p_{i}(t),
 $$
 where $Z^p_{i}$ is a so-called _particular solution_ (also _particular integral_) for the $i^{\text{th}}$ nonhomogeneous problem that depends on $\mathcal{F}_i(t)$ and $\lambda_i$, and $a_i$ is a constant that is adjusted to match the initial condition,
 $$
-a_i = Z_i(t=0) - Z^p_{i}.
+a_i = Z_i(t=0) - Z^p_{i}(t=0).
 $$
 
 In the case that
@@ -95,7 +95,7 @@ As a matter of fact, we can compute the solutions of \eqref{eq:system_linear} fr
 $$\label{eq:sol_linear}
 \mathbf{T}(t) = \mat{V} \mathbf{Z}(t) = \sum_{i=1}^{\ndof} a_i e^{\lambda_i t} \mathbf{v}_i + \underbrace{\mat{V}\mathbf{Z}^p(t)}_{\mathbf{T}^{p}(t)},
 $$
-where $\mathbf{T}_{p}$ is now the _particular_ solution of the original nonhomogeneous problem. If conditions \eqref{eq:equilibrium_condition} are valid, $\mathbf{T}_{p}$ is the _equilibrium_ temperature.  
+where $\mathbf{T}_{p}$ is now the _particular_ solution of the original nonhomogeneous problem. If conditions \eqref{eq:equilibrium_condition} are valid, $\mathbf{T}_{p}$ is the _equilibrium_ temperature field.  
 @@
 
 We can now apply the stability theory presented in [Milestone 3](/milestone3/milestone3_odesolvers/#stability_of_the_explicit_and_implicit_euler_methods) to each scalar ODE of our diagonalized system \eqref{eq:system_linear_decoupled}.
