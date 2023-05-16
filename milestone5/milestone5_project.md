@@ -17,19 +17,19 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 [(Download *The_World128x65.dat*)](/assets/milestone5/input/The_World128x65.dat)\\
 
 In this milestone, you will build the heart of the climate model: the system matrix for solving the energy balance model.
-The EBM model reads 
+The EBM model reads
 \begin{equation}
-C(x)\frac{\partial T}{\partial t}+A(CO_2)+BT - \underbrace{\vec{\nabla} \cdot (D(x)\nabla T)}_{L} = S_{sol}(x,t)
+C(x)\frac{\partial T}{\partial t}+A(CO_2)+BT - \underbrace{\vec{\nabla} \cdot (D(x)\nabla T)}_{L} = S_\text{sol}(x,t)
 \label{EBM}
 \end{equation}
 in spherical coordinates on the sphere's surface with the pair $ (\tilde{\theta},\varphi)$
 \begin{equation}
-L(\tilde{\theta},\varphi) = csc^2(\tilde{\theta})\frac{\partial}{\partial \varphi}\left(\tilde{D} \frac{\partial T}{\partial \varphi}\right)+\frac{\partial}{\partial \tilde{\theta}}\left(\tilde{D} \frac{\partial T}{\partial \tilde{\theta}}\right)+ \cot(\tilde{\theta})\tilde{D}\frac{\partial T}{\partial \tilde{\theta}}
+L(\tilde{\theta},\varphi) = \csc^2(\tilde{\theta})\frac{\partial}{\partial \varphi}\left(\tilde{D} \frac{\partial T}{\partial \varphi}\right)+\frac{\partial}{\partial \tilde{\theta}}\left(\tilde{D} \frac{\partial T}{\partial \tilde{\theta}}\right)+ \cot(\tilde{\theta})\tilde{D}\frac{\partial T}{\partial \tilde{\theta}}
 \label{Operator}
 \end{equation}
 When we apply the finite difference method, we have for each degree of freedom:
 \begin{equation}
-\frac{\partial T_{j,i}}{\partial t} \approx \underbrace{\frac{L_{j,i}}{C_{j,i}} - \frac{B}{C_{j,i}} T_{j,i}}_{R_{j,i}(T)} + \underbrace{ \frac{1}{C_{j,i}} \left(S_{sol, j, i}(t) - A\right)}_{F_{j,i}}
+\frac{\partial T_{j,i}}{\partial t} \approx \underbrace{\frac{L_{j,i}}{C_{j,i}} - \frac{B}{C_{j,i}} T_{j,i}}_{R_{j,i}(T)} + \underbrace{ \frac{1}{C_{j,i}} \left(S_{\text{sol}, j, i}(t) - A\right)}_{F_{j,i}}
 \label{DoF}
 \end{equation}
 The discretization of the heat conduction term on the surface of a sphere with a Cartesian mesh of cell size $h$ (uniform for latitude and longitude) reads:
@@ -37,10 +37,10 @@ The discretization of the heat conduction term on the surface of a sphere with a
 * For the inner degrees of freedom:
 \begin{equation} \label{innerDoF}
 \begin{split}
-L_{j,i}   = \frac{csc^2(\tilde{\theta}_{j,i})}{h^2}\Big(-2\tilde{D}_{j,i}T_{j,i}&+\left[\tilde{D}_{j,i}-\frac{1}{4}(\tilde{D}_{j,i+1}-\tilde{D}_{j,i-1})\right]T_{j,i-1}  \\
+L_{j,i} = \frac{\csc^2(\tilde{\theta}_{j,i})}{h^2}\Big(-2\tilde{D}_{j,i}T_{j,i}&+\left[\tilde{D}_{j,i}-\frac{1}{4}(\tilde{D}_{j,i+1}-\tilde{D}_{j,i-1})\right]T_{j,i-1}  \\
 & \left. + \left[\tilde{D}_{j,i}+\frac{1}{4}(\tilde{D}_{j,i+1}-\tilde{D}_{j,i-1})\right]T_{j,i+1}\right) \\
 + \frac{1}{h^2}\Big(-2\tilde{D}_{j,i}T_{j,i}&+\left[\tilde{D}_{j,i}-\frac{1}{4}(\tilde{D}_{j+1,i}-\tilde{D}_{j-1,i})\right]T_{j-1,i}  \\
-& \left. +\left[\tilde{D}_{j,i}+\frac{1}{4}(\tilde{D}_{j+1,i}-\tilde{D}_{j-1,i})\right]T_{j+1,i}\right) \\ 
+& \left. +\left[\tilde{D}_{j,i}+\frac{1}{4}(\tilde{D}_{j+1,i}-\tilde{D}_{j-1,i})\right]T_{j+1,i}\right) \\
  + \cot(\tilde{\theta}_{j,i})\frac{\tilde{D}_{j,i}}{2h}&\left[T_{j+1,i}-T_{j-1,i}\right]
 \end{split}
 \end{equation}
@@ -52,7 +52,7 @@ L_{\text{n\_lat},i} = \frac{\sin(\frac{h}{2})}{4 \pi \text{area[n\_lat]}}\sum^{\
 \label{polesDoF}
 \end{align*}
 for all $i \in \{1,\dots,\text{n\_longitude}\}$ where $\texttt{area[1]} := \texttt{area[n\_lat]} := 0.5\left(1-\cos\left(\frac{h}{2}\right)\right)$ contains the normalized area of the polar cap.
-For space reasons the $n\_latitude$ from the script is shortened to $n\_lat$ on the website.
+For space reasons the $n\_latitude$ from the script is shortened to $n\_lat$.
 
 
 To implement the model, proceed as follows:
