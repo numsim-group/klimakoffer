@@ -265,7 +265,7 @@ R_E^2 \sin \colat \d \long \d \colat,
 $$
 where $\mathbf{r}$ is a vector that describes the surface of Earth, i.e.,
 \begin{align}
-\mathbf{r} = (\hat{x}, \hat{y}, \hat{z})\bigg\vert_{r=R_E}.
+\mathbf{r} = r \sin \colat \cos \long \hat{x} +  r \sin \colat \sin \long \hat{y} + r \cos \colat \hat{z} \bigg\vert_{r=R_E}.
 \end{align}
 
 To compute a surface integral, we use
