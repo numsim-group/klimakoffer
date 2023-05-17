@@ -83,7 +83,7 @@ To implement the model, proceed as follows:
 
 The corresponding thermal conductivity coefficient[^1] are as follows:
 
-| **Types** | **Thermal conductivity in $W \degree$C$^{-1}$** |
+| **Types** | **Thermal conductivity in $W/K/m^2$** |
 |-------------|-----------|
 | Ocean at Poles | 0.4 |
 | Ocean at Equator | 0.65 |
