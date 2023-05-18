@@ -66,8 +66,8 @@ To implement the model, proceed as follows:
 | NDOF | Total number of DOFs |
 | h | Grid size in radians |
 | geom | Geometrical parameter at poles with $geom = \sin(\frac{h}{2})/(4\pi\text{ }area[1])$ |
-| csc2 | Metric term for the transformation to spherical coordinates |
-| cot | Metric term for the transformation to spherical coordinates |
+| csc2 | Metric term for the transformation to spherical coordinates, the vector with entries $\csc^2(\theta_j)$|
+| cot | Metric term for the transformation to spherical coordinates, the vector with entries $\cot(\theta_j)$ |
 | area | Area of each cell on the surface of the sphere which only depends on latitude |
 
 2. Calculate the earth surface type dependent heat conduction coefficients $\tilde{D}(\tilde{\theta},\varphi) \in \mathbb{R}^{n_y \times n_x}$ by implementing a function *calc\_diffusion\_coefficients* that maps the following equation:
@@ -83,7 +83,7 @@ To implement the model, proceed as follows:
 
 The corresponding thermal conductivity coefficient[^1] are as follows:
 
-| **Types** | **Thermal conductivity in $W \degree$C$^{-1}$** |
+| **Types** | **Thermal conductivity in $W/(Km^2)$** |
 |-------------|-----------|
 | Ocean at Poles | 0.4 |
 | Ocean at Equator | 0.65 |
