@@ -27,4 +27,4 @@ Plot of the diffusion coefficient:
 
 Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a the upper left part is plotted to make the pattern visible.
 
-\input{plot:2}{/assets/scripts/milestone5.jl}
+\input{plot:22}{/assets/scripts/milestone5.jl}
