@@ -14,7 +14,8 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Constructing a System Matrix with FD Approach
 
 [(Download description in PDF format)](/assets/milestone5/description.pdf)\\
-[(Download *The_World128x65.dat*)](/assets/milestone5/input/The_World128x65.dat)\\
+[(Download *The\_World128x65.dat*)](/assets/milestone5/input/The_World128x65.dat)\\
+[(Download *True\_Longitude.dat*)](/assets/milestone5/input/True_Longitude.dat)\\
 
 In this milestone, you will build the heart of the climate model: the system matrix for solving the energy balance model.
 The EBM model reads
@@ -65,8 +66,8 @@ To implement the model, proceed as follows:
 | NDOF | Total number of DOFs |
 | h | Grid size in radians |
 | geom | Geometrical parameter at poles with $geom = \sin(\frac{h}{2})/(4\pi\text{ }area[1])$ |
-| csc2 | Metric term for the transformation to spherical coordinates, the vector with entries $\csc^2(\theta_j)$|
-| cot | Metric term for the transformation to spherical coordinates, the vector with entries $\cot(\theta_j)$ |
+| csc2 | Metric term for the transformation to spherical coordinates, the vector with entries $\csc^2(\tilde{\theta}_j)$|
+| cot | Metric term for the transformation to spherical coordinates, the vector with entries $\cot(\tilde{\theta}_j)$ |
 | area | Area of each cell on the surface of the sphere which only depends on latitude |
 
 2. Calculate the earth surface type dependent heat conduction coefficients $\tilde{D}(\tilde{\theta},\varphi) \in \mathbb{R}^{n_y \times n_x}$ by implementing a function *calc\_diffusion\_coefficients* that maps the following equation:
@@ -125,7 +126,7 @@ Therefore, this function cannot take the mesh as a parameter and has to take the
 
 5. Examine the sparsity pattern of the Jacobian matrix. What does the matrix look like?
 
-6. Compute the eigenvalues of the Jacobian matrix. Determine a parctical approximation to the largest time step for which the scheme is stable using the forward Euler time integration scheme.
+6. Compute the eigenvalues of the Jacobian matrix. Determine a practical approximation to the largest time step for which the scheme is stable using the forward Euler time integration scheme.
 
 [^1]: K. Zhuang, G.R. North, M.J. Stevens, _A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm_, SoftwareX, Vol. 6, pp. 198-202, July 7, 2017.
 

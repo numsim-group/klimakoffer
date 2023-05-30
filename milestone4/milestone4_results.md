@@ -40,3 +40,21 @@ Annual temperature with the pointwise 0D-EBM:
 
 \fig{/assets/milestone4/annual_temperature.gif}
 
+## Files Download
+
+The Julia and Python implementations of milestone 4 can be downloaded here:
+
+* [Julia solution](/assets/scripts/milestone4.jl)
+* [Python solution](/assets/scripts/milestone4.py)
+
+## Scripts for Milestone 4
+
+You can also check out our Julia and Python implementations of milestone 4 in this site.
+
+### Julia implementation of milestone 4
+
+\input{julia}{/assets/scripts/milestone4.jl}
+
+### Python implementation of milestone 4
+
+\input{python}{/assets/scripts/milestone4.py}
