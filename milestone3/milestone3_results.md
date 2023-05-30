@@ -35,7 +35,7 @@ The Julia and Python implementations of milestone 3 can be downloaded here:
 
 ## Scripts for Milestone 3
 
-You can also check out our Julia and Python implementations of milestone 2 in this site.
+You can also check out our Julia and Python implementations of milestone 3 in this site.
 
 ### Julia implementation of milestone 3
 
