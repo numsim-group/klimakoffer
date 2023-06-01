@@ -126,3 +126,5 @@ Once the matrix is factorized, the linear system $\mat{M} \mathbf{T}^{n+1} = \ma
 
 Since the matrices $\mat{L}$ and $\mat{U}$ are triangular, both linear solves can be done by backward and forward substitution. Therefore, the solving process is very cheap, requiring approximately $\mathcal{O}(\ndof^2/2)$ operations. The expensive part is the factorization of the matrix, which requires around $\mathcal{O} (\ndof^3/3)$ operations. 
 As a result, the LU factorization is a feasible possibility when the factorized matrix can be used for several linear solves with different right-hand-sides, and there is enough storage for $\mat{L}$, $\mat{U}$, $\mat{M}$ and the variables needed to factorize the original system.
+
+**TODO**: Add commands

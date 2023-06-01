@@ -34,4 +34,4 @@ One would use the Klimakoffer in a sequential way, i.e., a chain of equilibrium 
 
 Last but not least, we put a lot of emphasis during the lecture and the modeling sessions to stress that all parameters are empirical and that several authors choose different fitting methods, resulting in another choice of parameters. Thus, another capability of the current Klimakoffer is to investigate the sensitivity of the resulting temperature fields to the choice of certain parameters in the model.
 
-
+**TODO**: Add figure
