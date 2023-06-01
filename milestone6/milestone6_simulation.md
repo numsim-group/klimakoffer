@@ -28,7 +28,7 @@ An immediate application with Klimakoffer is to investigate the sensitivity of t
 
 Another straight forward application is to investigate the temperature response of Klimakoffer throughout the years with changing (increasing) CO2 concentration. Data of average CO2 increase is available, e.g., from NASA. 
 
-ADD FIGURE 
+\fig{/assets/milestone6/co2_nasa.png}
 
 One would use the Klimakoffer in a sequential way, i.e., a chain of equilibrium simulations where for each year and given value of CO2 the equilibrium in the year is found and chained together. 
 
