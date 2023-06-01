@@ -94,4 +94,4 @@ Similar to the task in the pure ODE case, see [milestone 3](/milestone3/mileston
 
 Again, the task is to define a proper stopping criterium when performing the temporal EBM simulations. One could again compute an annual average temperature and stop, when the change of said temperature is smaller than a given threshold. One could also compare directly the full 2D temperature field throughout the year and define a proper norm to define a stopping criterium. 
 
-In summary, analogous to the pure ODE case, we have to compare the yearly tempreature solutions with each other, until the difference from one year to the next is smaller than a given tolerance. Among the different choices of norms to compute the yearly solutions, the simplest option is to compute the Euclidean norm of the data vectors in time.
+In summary, analogous to the pure ODE case, we have to compare the yearly temperature solutions with each other, until the difference from one year to the next is smaller than a given tolerance. Among the different choices of norms to compute the yearly solutions, the simplest option is to compute the Euclidean norm of the data vectors in time.
