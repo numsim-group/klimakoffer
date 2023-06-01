@@ -99,5 +99,30 @@ sparse_jacoban = sparse(dense_jacobian)
 
 ## Solving Sparse Linear Systems
 
-There is a myriad of methods to solve linear systems efficiently
-Solving with LU
+There is a myriad of methods to solve linear systems efficiently. 
+
+Direct methods are the most reliable methods for solving linear systems since they obtain an exact solution to the problem to within rounding/conditioning errors. 
+The most well known direct method is Gaussian elimination, which reduces the system to a triangular one using row operations. 
+Once the system is triangular, the solution can be found via backward substitution. 
+Gaussian elimination is considered to be a very expensive method since it requires $\mathcal{O}(2 \ndof^3/3)$ floating point operations. 
+Many other alternatives are available in the literature, such as the Cholesky decomposition (for Hermitian, positive-definite matrices), the QR decomposition and the LU decomposition (both for general nonsymmetric systems). In next section, LU decomposition is briefly described, as it is the most used and efficient method for real nonsymmetric systems.
+
+### LU Decomposition
+
+The idea of LU decomposition is to factorize the system matrix as the product of non-singular lower- and upper-diagonal matrices $L$ and $U$,
+\begin{equation}
+\mat{M} = \mat{L} \, \mat{U}.
+\end{equation}
+
+Depending on the structure of matriz $\mat{M}$, this is not always possible. However, it a proper reordering of the matrix by rows or columns, also called permutation, is sufficient to enable the LU factorization of general nonsingular matrices,
+\begin{equation}
+\mat{P} \mat{M} = \mat{L} \, \mat{U},
+\end{equation}
+where $\mat{P}$ is known as the permutation matrix.
+
+Once the matrix is factorized, the linear system $\mat{M} \mathbf{T}^{n+1} = \mathbf{Y}^{n+1}$ can be solved in two steps:
+1. Solve the linear system $\mat{L} \mathbf{Z} = \mat{P} \mathbf{Y}^{n+1}$ for $\mathbf{Z}$.
+2. Solve the linear system $\mat{U} \mathbf{T}^{n+1} = \mathbf{Z}$ for $\mathbf{T}^{n+1}$.
+
+Since the matrices $\mat{L}$ and $\mat{U}$ are triangular, both linear solves can be done by backward and forward substitution. Therefore, the solving process is very cheap, requiring approximately $\mathcal{O}(\ndof^2/2)$ operations. The expensive part is the factorization of the matrix, which requires around $\mathcal{O} (\ndof^3/3)$ operations. 
+As a result, the LU factorization is a feasible possibility when the factorized matrix can be used for several linear solves with different right-hand-sides, and there is enough storage for $\mat{L}$, $\mat{U}$, $\mat{M}$ and the variables needed to factorize the original system.
