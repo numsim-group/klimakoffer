@@ -5,11 +5,15 @@ rss = "Description"
 rss_title = "Milestone 6"
 rss_pubdate = Date(2022, 5, 1)
 
-tags = ["ebm", "solar radiation", "orbital parameters"]
+tags = ["discrete ebm"]
 +++
 
-# Milestone 6
+# Milestone 6 - Fully Discrete EBM
 
 \toc
 
 ## First chapter
+
+Forward Euler
+Backward Euler
+Mx = y

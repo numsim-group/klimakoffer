@@ -8,8 +8,8 @@ rss_pubdate = Date(2022, 5, 1)
 tags = ["ebm", "solar radiation", "orbital parameters"]
 +++
 
-# Milestone 6
+# Milestone 6 (Klimakoffer)
 
-Under construction
-
-<!-- 1. [Content](/milestone6/milestone6/) -->
+1. [Fully Discrete EBM](/milestone6/milestone6_discrete_ebm/)
+2. [Solving Systems of Linear Equations](/milestone6/milestone6_linear_systems/)
+3. [Climate Simulations](/milestone6/milestone6_simulation/)
