@@ -18,7 +18,7 @@ The spatial discretization that we derived in [milestone 5](/milestone5/mileston
 As a consequence, we obtain a very sparse system matrix $\mat{M}$ (many of its entries are zeros).
 The sparsity of the system matrix is exactly the same as the sparsity of $\mat{A}$ that we computed in [the assignment of milestone 5](/milestone5/milestone5_results/#sparsity_pattern_of_the_jacobian) because we are only adding values to the diagonal entries of $\mat{A}$:
 $$
-\mat{M} = \frac{1}{\Delta t} \mat{I} - \mat{A}.
+\mat{M} = \mat{I} - \Delta t \, \mat{A}.
 $$
 
 Utilizing a sparse matrix format can significantly enhance efficiency due to the abundance of zero entries in $\mat{M}$. This format optimizes storage space allocation by only storing the non-zero elements.
