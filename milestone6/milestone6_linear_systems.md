@@ -13,6 +13,8 @@ tags = ["linear systems", "linear solvers"]
 \toc
 
 ## Sparse Format
+
+
 ## Solving Sparse Linear Systems
 There is a myriad of methods to solve linear systems efficiently
 Solving with LU
