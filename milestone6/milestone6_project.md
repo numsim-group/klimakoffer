@@ -9,7 +9,7 @@ tags = ["linear systems", "linear solvers"]
 +++
 
 
-# Milestone 6 - Fixing Stability in the spatial 2D Energy Balance Modell
+# Milestone 6 - Fixing Stability in the spatial 2D Energy Balance Model
 
 ## Fixing Stability in the spatial 2D Energy Balance Modell
 
