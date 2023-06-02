@@ -114,7 +114,7 @@ The idea of LU decomposition is to factorize the system matrix as the product of
 \mat{M} = \mat{L} \, \mat{U}.
 \end{equation}
 
-Depending on the structure of matriz $\mat{M}$, this is not always possible. However, it a proper reordering of the matrix by rows or columns, also called permutation, is sufficient to enable the LU factorization of general nonsingular matrices,
+Depending on the structure of matrix $\mat{M}$, this is not always possible. However, it a proper reordering of the matrix by rows or columns, also called permutation, is sufficient to enable the LU factorization of general nonsingular matrices,
 \begin{equation}
 \mat{P} \mat{M} = \mat{L} \, \mat{U},
 \end{equation}
