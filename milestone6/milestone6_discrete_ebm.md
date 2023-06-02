@@ -85,13 +85,17 @@ $$
 where $\mat{I}\in \R^{\ndof\times\ndof}$ is the identity matrix, $\mat{M}\in \R^{\ndof\times\ndof}$ is the system matrix of the linear equation system, and $\mathbf{Y}^{n+1}\in \R^{\ndof}$ is the right-hand side vector of the linear system.
 
 @@colbox-blue
-**Remark:** We note that for the presented 2D EBM, the Jacobian of the operator $\mat{A}$ is constant in time. Hence, it can be computed once in the beginning and does not change throughout the whole simulation. This of course would change, if more complex processes are involved in the EBM, for instance feedback between geography and the resulting temperature field, or in the case of a non-linear raditation model (e.g. Stefan-Boltzmann law). The right-hand side vector $\mathbf{Y}^{n+1}$ on the other hand changed for each time step and needs to be re-computed accordingly. 
+**Remark:** We note that for the presented 2D EBM, the system matrix $\mat{M}$ is constant in time if $\Delta t$ is fixed. Hence, it can be computed once at the beginning of the simulation and does not change throughout the whole computation. 
+This of course would change, if more complex processes are involved in the EBM.
+For instance, feedback between geography and the resulting temperature field, or in the case of a non-linear raditation model (e.g. Stefan-Boltzmann law). The right-hand side vector $\mathbf{Y}^{n+1}$, on the other hand, changes for each time step and needs to be re-computed accordingly. 
 @@
 
 ## Equilibrium simulation
 
-Similar to the task in the pure ODE case, see [milestone 3](/milestone3/milestone3_odesolvers/#temporal_equilibrium_simulation), we are seeking to simulate the equilibrium of the temperature field throughout the year. We emphasize again, that we are not looking for a single steady state temperature field - due to the annual dependence of the solar forcing, no global steady state solution can be reached. Instead, it is possible to reach an annual equilibrium state, where the solution changes in time, but repeats itself every year, such that we call it in equilibrium. 
+Similar to the task in the pure ODE case, see [milestone 3](/milestone3/milestone3_odesolvers/#temporal_equilibrium_simulation), we are seeking to simulate the equilibrium of the temperature field throughout the year. 
+We emphasize again that we are not looking for a single steady-state temperature field - due to the annual dependence of the solar forcing, no global steady state solution can be reached. 
+Instead, it is possible to reach an annual equilibrium state, where the solution changes in time, but repeats itself every year, such that we call it in equilibrium. 
 
-Again, the task is to define a proper stopping criterium when performing the temporal EBM simulations. One could again compute an annual average temperature and stop, when the change of said temperature is smaller than a given threshold. One could also compare directly the full 2D temperature field throughout the year and define a proper norm to define a stopping criterium. 
+Again, the task is to define a proper stopping criterium when performing the temporal EBM simulations. One could again compute an annual average temperature and stop when the change of said temperature is smaller than a given threshold. One could also compare directly the full 2D temperature field throughout the year and define a proper norm to define a stopping criterium. 
 
 In summary, analogous to the pure ODE case, we have to compare the yearly temperature solutions with each other, until the difference from one year to the next is smaller than a given tolerance. Among the different choices of norms to compute the yearly solutions, the simplest option is to compute the Euclidean norm of the data vectors in time.

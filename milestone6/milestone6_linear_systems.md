@@ -101,7 +101,7 @@ sparse_jacoban = sparse(dense_jacobian)
 
 There is a myriad of methods to solve linear systems efficiently. 
 
-Direct methods are the most reliable methods for solving linear systems since they obtain an exact solution to the problem to within rounding/conditioning errors. 
+Direct methods are the most reliable methods for solving _small_ linear systems since they obtain an exact solution to the problem to within rounding/conditioning errors. 
 The most well known direct method is Gaussian elimination, which reduces the system to a triangular one using row operations. 
 Once the system is triangular, the solution can be found via backward substitution. 
 Gaussian elimination is considered to be a very expensive method since it requires $\mathcal{O}(2 \ndof^3/3)$ floating point operations. 
@@ -125,6 +125,28 @@ Once the matrix is factorized, the linear system $\mat{M} \mathbf{T}^{n+1} = \ma
 2. Solve the linear system $\mat{U} \mathbf{T}^{n+1} = \mathbf{Z}$ for $\mathbf{T}^{n+1}$.
 
 Since the matrices $\mat{L}$ and $\mat{U}$ are triangular, both linear solves can be done by backward and forward substitution. Therefore, the solving process is very cheap, requiring approximately $\mathcal{O}(\ndof^2/2)$ operations. The expensive part is the factorization of the matrix, which requires around $\mathcal{O} (\ndof^3/3)$ operations. 
-As a result, the LU factorization is a feasible possibility when the factorized matrix can be used for several linear solves with different right-hand-sides, and there is enough storage for $\mat{L}$, $\mat{U}$, $\mat{M}$ and the variables needed to factorize the original system.
+As a consequence, the LU factorization is a feasible possibility when the factorized matrix can be used for several linear solves with different right-hand-sides, and there is enough storage for $\mat{L}$, $\mat{U}$, $\mat{M}$ and the variables needed to factorize the original system.
 
-**TODO**: Add commands
+@@colbox-blue
+**Note:** The LU decomposition of a sparse matrix can be done in Julia using the `LinearAlgebra` library. To perform the factorization, use the function `lu`:
+```julia
+using LinearAlgebra: lu
+lu_decomposition = lu(sparse_jacobian)
+```
+After this command, the variable `lu_decomposition` stores the factorized matrices $L$ and $U$.
+To solve the system for a particular right-hand side `rhs` and store the solution in the array `sol`, use the function `ldiv!`:
+```julia
+using LinearAlgebra: ldiv!
+ldiv!(sol, lu_decomposition, rhs)
+```
+
+Similarly, LU decomposition of a sparse matrix can be done in Python using the subpackage `linalg` of `scipy.sparse`. 
+To perform the factorization, use the function `factorized`:
+```python
+solve = sparse.linalg.factorized(sparse_jacobian)
+```
+To solve the system for a particular right-hand side `rhs` and store the solution in the array `sol`, we can use the newly defined function `solve`:
+```python
+sol = solve(rhs)
+```
+@@
