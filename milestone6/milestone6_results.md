@@ -1,16 +1,19 @@
 +++
-title = "Milestone 5"
+title = "Milestone 6"
 hascode = true
 rss = "Description"
-rss_title = "Milestone 5"
+rss_title = "Milestone 6"
 rss_pubdate = Date(2022, 5, 1)
 
-tags = ["ebm", "solar radiation", "orbital parameters"]
+tags = ["discrete ebm"]
 +++
 
 
-# Milestone 5 - Project Results
+# Milestone 6 - Project Results
 
+Results will be added soon
+
+<!--
 \toc
 
 ## Expected Results
@@ -27,23 +30,24 @@ Plot of the diffusion coefficient:
 
 Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a the upper left part is plotted to make the pattern visible.
 
-\input{plot:22}{/assets/scripts/milestone5.jl}
+\input{plot:2}{/assets/scripts/milestone5.jl}
 
 ## Files Download
 
 The Python implementation of milestone 5 can be downloaded here (Julia version will be added soon):
 
-<!--* [Julia solution](/assets/scripts/milestone5.jl) -->
-* [Python solution](/assets/scripts/milestone5.py)
+* [Julia solution](/assets/scripts/milestone6.jl)
+* [Python solution](/assets/scripts/milestone6.py)
 
 ## Scripts for Milestone 5
 
 You can also check out our Python implementation of milestone 5 in this site.
 
-<!--*  -- ### Julia implementation of milestone 5
+### Julia implementation of milestone 5
 
-\input{julia}{/assets/scripts/milestone5.jl} -->
+\input{julia}{/assets/scripts/milestone6.jl} 
 
 ### Python implementation of milestone 5
 
 \input{python}{/assets/scripts/milestone5.py}
+-->
