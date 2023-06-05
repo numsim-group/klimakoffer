@@ -18,9 +18,9 @@ We derived the final form of the $2D$ EBM with heat diffusion in [milestone 5 in
 $$
 C(x) \partialderiv{T}{t} + A(CO_2) + B T - \Nabla \cdot (D\Nabla T) = S_{sol}(x,t),
 $$
-where we use the generic version in Cartesian coordinates. 
+where we here use the generic version in Cartesian coordinates for simplicity. 
 
-The so-called semi-discretization of the PDE, derived in [milestone 5](/milestone5/milestone5_spatial_discretization/#semi-discrete_ebm), is given by for a grid node $(j,i)$ as
+The so-called semi-discretization of the PDE (discretization in spatial coordinates), derived in [milestone 5](/milestone5/milestone5_spatial_discretization/#semi-discrete_ebm), is given for a grid node $(j,i)$ as
 $$
 \deriv{T_{j,i}}{t} = 
 \underbrace{
@@ -31,9 +31,9 @@ $$
     \frac{1}{C_{j,i}} \left(S_{sol, j, i}(t) - A\right)
 }_{F_{j,i}},
 $$
-where $L_{j,i}$ denotes the spatial discretization of the diffusion operator $-\Nabla \cdot (D\Nabla T)$. Recall, that for the spatial discretization, due to the pole problem of the spherical coordinates, a special treatment of the diffusion operator in the pole region is necessary. This form is called semi-discretization, as only the spatial directions are discretized, i.e., the formulation does not depend on the spatial coordinates $x$ anymore, but still on the temporal coordinate $t$. 
+where $L_{j,i}$ denotes the spatial discretization of the diffusion operator $\Nabla \cdot (D\Nabla T)$. Recall, that for the spatial discretization, due to the pole problem of the spherical coordinates, a special treatment of the diffusion operator in the pole region is necessary. This form is called semi-discretization, as only the spatial directions are discretized, i.e., the formulation does not depend on the spatial coordinates $x$ anymore, but still on the temporal coordinate $t$. 
 
-The resulting problem is a (system) of ODEs that need to be integrated in time. In particular, we start with the equivalent [form that we derived](/milestone5/milestone5_stability_jacobians/#eqsystem_linear) taking into account the linearity of the diffusion operator and the radiative heat transfer,
+The resulting problem is a (system) of ODEs that need to be integrated in time. In particular, we start with the equivalent [form that we derived](/milestone5/milestone5_stability_jacobians/#eqsystem_linear) taking into account the linearity of the diffusion operator and the linearity of the radiative heat transfer,
 $$\label{eq:system_linear}
 \dot{\mathbf{T}} = 
 \underbrace{
@@ -42,7 +42,7 @@ $$\label{eq:system_linear}
 +
 \mathbf{F}(t).
 $$
-Due to the linearity of the semi-discretization in the unknown variable (temperature in case of the EBM), we can represent the spatial EBM operator $\mathbf{R}(\mathbf{T})$ as a constant matrix times the vector of unknown temperatures, $\mat{A} \mathbf{T}$. The matrix $\mat{A}\in \R^{\ndof\times\ndof}$ is the so-called Jacobian matrix of the spatial operator and its computation is described in [milestone 5](/milestone5/milestone5_stability_jacobians/#computing_jacobian_matrices_numerical_jacobian).
+Due to the linearity of the semi-discretization in the unknown variable (temperature $\mathbf{T}$ in case of the EBM), we can represent the spatial EBM operator $\mathbf{R}(\mathbf{T})$ as a constant matrix times the vector of unknown temperatures, $\mathbf{R}(\mathbf{T}) = \mat{A} \mathbf{T}$. The matrix $\mat{A}\in \R^{\ndof\times\ndof}$ is the so-called Jacobian matrix of the spatial operator and its computation is described in [milestone 5](/milestone5/milestone5_stability_jacobians/#computing_jacobian_matrices_numerical_jacobian).
 
 ## Time Integration
 
@@ -64,8 +64,16 @@ $$\label{eq:forward_euler2}
 \mathbf{F}^n
 \right),
 $$
+or eqvivalently
+$$\label{eq:forward_euler3}
+\mathbf{T}^{n+1} = \mathbf{T}^n + \Delta t \left(\mathbf{R}(\mathbf{T}^n)
++
+\mathbf{F}^n
+\right),
+$$
+i.e. in the case of the explicit method, no Jacobian computation is necessary, instead the operator can be used directly. Thus, per time step, the update with the explicit Euler method is very quick - but the extreme time step restriction for (von Neumann) stability of the fully-discrete scheme of the EBM is to restrictive in practise: although one explicit time step is cheap, the amount of time steps to reach the equilibrium is so high (due to the restrictive time step stability) that the overall simulation takes a very long time. 
 
-* If we use the backward Euler method, the fully discrete scheme reads as
+* As a more efficient alternative, we discussed the backward Euler method, where the fully discrete scheme reads as
 $$\label{eq:backward_euler}
 \frac{\mathbf{T}^{n+1} - \mathbf{T}^n}{\Delta t} = 
     \mat{A} \mathbf{T}^{n+1}
@@ -87,14 +95,14 @@ where $\mat{I}\in \R^{\ndof\times\ndof}$ is the identity matrix, $\mat{M}\in \R^
 @@colbox-blue
 **Remark:** We note that for the presented 2D EBM, the system matrix $\mat{M}$ is constant in time if $\Delta t$ is fixed. Hence, it can be computed once at the beginning of the simulation and does not change throughout the whole computation. 
 This of course would change, if more complex processes are involved in the EBM.
-For instance, feedback between geography and the resulting temperature field, or in the case of a non-linear raditation model (e.g. Stefan-Boltzmann law). The right-hand side vector $\mathbf{Y}^{n+1}$, on the other hand, changes for each time step and needs to be re-computed accordingly. 
+For instance, feedback between geography and the resulting temperature field, or in the case of a non-linear radiation model (e.g. Stefan-Boltzmann law). The right-hand side vector $\mathbf{Y}^{n+1}$, on the other hand, changes for each time step and needs to be re-computed accordingly. 
 @@
 
 ## Equilibrium simulation
 
 Similar to the task in the pure ODE case, see [milestone 3](/milestone3/milestone3_odesolvers/#temporal_equilibrium_simulation), we are seeking to simulate the equilibrium of the temperature field throughout the year. 
 We emphasize again that we are not looking for a single steady-state temperature field - due to the annual dependence of the solar forcing, no global steady state solution can be reached. 
-Instead, it is possible to reach an annual equilibrium state, where the solution changes in time, but repeats itself every year, such that we call it in equilibrium. 
+Instead, it is possible to reach an annual equilibrium state, where the solution changes in time, but repeats itself every year, such that we call it an equilibrium. 
 
 Again, the task is to define a proper stopping criterium when performing the temporal EBM simulations. One could again compute an annual average temperature and stop when the change of said temperature is smaller than a given threshold. One could also compare directly the full 2D temperature field throughout the year and define a proper norm to define a stopping criterium. 
 
