@@ -85,7 +85,7 @@ where $\ndof = 5$ and $nnz = 12$. We have:
 @@
 
 @@colbox-blue
-**Note:** We can convert a dense matrix to CSC sparse format in Python using the SciPy 2-D sparse array package for numeric data:
+**Note:** We can convert a dense matrix to CSC sparse format in Python using the SciPy 2-D sparse array package for numerical data:
 ```python
 from scipy import sparse
 sparse_jacoban = sparse.csc_matrix(dense_jacobian)
@@ -99,13 +99,13 @@ sparse_jacoban = sparse(dense_jacobian)
 
 ## Solving Sparse Linear Systems
 
-There is a myriad of methods to solve linear systems efficiently. 
+There is a myriad of methods to solve linear systems efficiently. The choice of the most efficient variant depends on the size of the system, the sparsity of the matrix, the shape of the matrix and its special properties (symmetric, etc.). For very large problem sizes, typically, iterative linear system solvers are used that solve the problem approximatively up to a (user defined) accuracy threshold. For problem sizes that are relatively small, such as in the case of our 2D EBM with moderate sizes of grids, it is possible to use so-called direct solvers. 
 
-Direct methods are the most reliable methods for solving _small_ linear systems since they obtain an exact solution to the problem to within rounding/conditioning errors. 
+Direct methods are the most reliable methods for solving _moderate size_ linear systems since they obtain an exact solution to the problem to within machine precision rounding/conditioning errors. 
 The most well known direct method is Gaussian elimination, which reduces the system to a triangular one using row operations. 
 Once the system is triangular, the solution can be found via backward substitution. 
 Gaussian elimination is considered to be a very expensive method since it requires $\mathcal{O}(2 \ndof^3/3)$ floating point operations. 
-Many other alternatives are available in the literature, such as the Cholesky decomposition (for Hermitian, positive-definite matrices), the QR decomposition and the LU decomposition (both for general nonsymmetric systems). In next section, LU decomposition is briefly described, as it is the most used and efficient method for real nonsymmetric systems.
+Many other alternatives are available in the literature, such as the Cholesky decomposition (for Hermitian, positive-definite matrices), the QR decomposition and the LU decomposition (both for general nonsymmetric systems). In next section, LU decomposition is briefly described. LU decomposition is very effective in case the system matrix does not change (or changes only very rarely), while the right-hand-side vector changes all the time. As remarked above, in our EBM approach, the Jacobian of the operator does not change in time and stays constant throughout the simulation, while the right-hand-side vector changes in every time step - an ideal scenario for LU decomposition.
 
 ### LU Decomposition
 
@@ -114,11 +114,11 @@ The idea of LU decomposition is to factorize the system matrix as the product of
 \mat{M} = \mat{L} \, \mat{U}.
 \end{equation}
 
-Depending on the structure of matrix $\mat{M}$, this is not always possible. However, it a proper reordering of the matrix by rows or columns, also called permutation, is sufficient to enable the LU factorization of general nonsingular matrices,
+Depending on the structure of the regular matrix $\mat{M}$, this is not always directly possible. However, a proper reordering of the matrix by rows or columns, also called permutation, is sufficient to enable the LU factorization of general nonsingular matrices,
 \begin{equation}
 \mat{P} \mat{M} = \mat{L} \, \mat{U},
 \end{equation}
-where $\mat{P}$ is known as the permutation matrix.
+where $\mat{P}$ is known as the permutation matrix containing only $0$ and $1$ entries at the right positions to perform the row/column swaps.
 
 Once the matrix is factorized, the linear system $\mat{M} \mathbf{T}^{n+1} = \mathbf{Y}^{n+1}$ can be solved in two steps:
 1. Solve the linear system $\mat{L} \mathbf{Z} = \mat{P} \mathbf{Y}^{n+1}$ for $\mathbf{Z}$.
@@ -128,7 +128,17 @@ Since the matrices $\mat{L}$ and $\mat{U}$ are triangular, both linear solves ca
 As a consequence, the LU factorization is a feasible possibility when the factorized matrix can be used for several linear solves with different right-hand-sides, and there is enough storage for $\mat{L}$, $\mat{U}$, $\mat{M}$ and the variables needed to factorize the original system.
 
 @@colbox-blue
-**Note:** The LU decomposition of a sparse matrix can be done in Julia using the `LinearAlgebra` library. To perform the factorization, use the function `lu`:
+**Note:** The LU decomposition of a sparse matrix can be done in Python using the subpackage `linalg` of `scipy.sparse`. 
+To perform the factorization, use the function `factorized`:
+```python
+from scipy import sparse
+solve = sparse.linalg.factorized(sparse_jacobian)
+```
+To solve the system for a particular right-hand side `rhs` and store the solution in the array `sol`, we can use the newly defined function `solve`:
+```python
+sol = solve(rhs)
+```
+The LU decomposition of a sparse matrix in Julia can be done using the `LinearAlgebra` library. To perform the factorization, use the function `lu`:
 ```julia
 using LinearAlgebra: lu
 lu_decomposition = lu(sparse_jacobian)
@@ -140,15 +150,4 @@ using LinearAlgebra: ldiv!
 ldiv!(sol, lu_decomposition, rhs)
 ```
 These Julia commands work for dense or sparse matrices.
-
-Similarly, the LU decomposition of a sparse matrix can be done in Python using the subpackage `linalg` of `scipy.sparse`. 
-To perform the factorization, use the function `factorized`:
-```python
-from scipy import sparse
-solve = sparse.linalg.factorized(sparse_jacobian)
-```
-To solve the system for a particular right-hand side `rhs` and store the solution in the array `sol`, we can use the newly defined function `solve`:
-```python
-sol = solve(rhs)
-```
 @@
