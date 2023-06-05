@@ -18,7 +18,7 @@ tags = ["linear systems", "linear solvers"]
 [(Download *True\_Longitude.dat*)](/assets/milestone6/input/True_Longitude.dat)\\
 [(Download *co2\_nasa.dat*)](/assets/milestone6/input/co2_nasa.dat)\\
 
-1. In the previous milestone you have implemented the diffusive EBM for two spatial dimensions, though the forward Euler method was not able to compute the model in a stable way for a feasably large time step. Adapt the function *calc\_equilibrium\_2d* to use the backward Euler instead of the forward Euler time integration method. Visualize the results as an animation.
+1. In the previous milestone you have implemented the spatial operator of the diffusive EBM for two spatial dimensions. The investigations of the eigenvalues revealed that the stable time step of the explicit Euler method is prohibitively small. Hence, we focus on the implicit Euler method. Adapt the function *calc\_equilibrium\_2d* to use the backward Euler instead of the forward Euler time integration method. Visualize the results as an animation.
 
 2. Use the functions *calc\_area\_mean*, *calc\_area\_mean\_north* and *calc\_area\_mean\_south* from previous milestones to compute the mean temperature values from the EBM in two space dimensions. Compare them with the results in milestone 4. Compare also the results for the temperature in Cologne. What is noticeable?
 
