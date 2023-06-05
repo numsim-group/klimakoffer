@@ -46,21 +46,21 @@ which is much smaller than
 
 There are many different sparse matrix formats available in the literature. 
 Depending on the application, some formats can offer more advantages than others. 
-In this course, we will use the _Compressed Sparse Row_ (CSR) format, which is also known as the _Compressed Row Storage_ (CRS) format.
-In the CSR format we store a sparse matrix using only three one-dimensional vectors:
+In this course, we will use the _Compressed Sparse Column_ (CSC) format.
+In the CSC format we store a sparse matrix using only three one-dimensional vectors:
 * $\texttt{V}$: A vector of real numbers of size $nnz$ that contains the values of the entries of $\mat{M}$ in ascending row and ascending column order.
-* $\texttt{COL\_INDEX}$: A vector of integers of size $nnz$ that contains the column index for each entry in $\texttt{V}$.
-* $\texttt{ROW\_INDEX}$: A vector of integers of size $\ndof + 1$ that contains the index in $\texttt{V}$ and $\texttt{COL\_INDEX}$ where the given row starts. The last entry of $\texttt{ROW\_INDEX}$ contains the fictitious index in $\texttt{V}$ after the last valid index. In other words, it contains $nnz$ in zero-based programming languages (e.g., Python) and $nnz+1$ in one-based programming languages (e.g., Julia).
+* $\texttt{ROW\_INDEX}$: A vector of integers of size $nnz$ that contains the row index for each entry in $\texttt{V}$.
+* $\texttt{COL\_INDEX}$: A vector of integers of size $\ndof + 1$ that contains the index in $\texttt{V}$ and $\texttt{ROW\_INDEX}$ where the given column starts. The last entry of $\texttt{COL\_INDEX}$ contains the fictitious index in $\texttt{V}$ after the last valid index. In other words, it contains $nnz$ in zero-based programming languages (e.g., Python) and $nnz+1$ in one-based programming languages (e.g., Julia).
 
 @@colbox-blue
-**Example:** We want to store the matrix $\mat{M}$ in sparse format:
+**Example:** We want to store the matrix $\mat{M}$ in CSC sparse format:
 $$
 \mat{M} =
 \begin{pmatrix}
-1 & 0 & 0 & 2 & 0 \\
-3 & 4 & 0 & 5 & 0 \\
-6 & 0 & 7 & 8 & 9 \\
-0 & 0 & 10 & 11 & 0 \\
+1 & 0 & 0 & 7 & 0 \\
+2 & 4 & 0 & 8 & 0 \\
+3 & 0 & 5 & 9 & 11 \\
+0 & 0 & 6 & 10 & 0 \\
 0 & 0 & 0 & 0 & 12 
 \end{pmatrix}
 \in \R^{5 \times 5},
@@ -70,27 +70,27 @@ where $\ndof = 5$ and $nnz = 12$. We have:
 \begin{align}
 \texttt{V} &= \left( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 \right)
 \\
-\texttt{COL\_INDEX} &= \left( 0, 3, 0, 1, 3, 0, 2, 3, 4, 2, 3, 4 \right)
+\texttt{ROW\_INDEX} &= \left( 0, 1, 2, 1, 2, 3, 0, 1, 2, 3, 2, 4 \right)
 \\
-\texttt{ROW\_INDEX} &= \left( 0, 2, 5, 9, 11, 12 \right).
+\texttt{COL\_INDEX} &= \left( 0, 3, 4, 6, 10, 12 \right).
 \end{align}
 * In a one-based language (e.g., Julia):
 \begin{align}
 \texttt{V} &= \left( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 \right)
 \\
-\texttt{COL\_INDEX} &= \left( 1, 4, 1, 2, 4, 1, 3, 4, 5, 3, 4, 5 \right)
+\texttt{ROW\_INDEX} &= \left( 1, 2, 3, 2, 3, 4, 1, 2, 3, 4, 3, 5 \right)
 \\
-\texttt{ROW\_INDEX} &= \left( 1, 3, 6, 10, 12, 13 \right).
+\texttt{COL\_INDEX} &= \left( 1, 4, 5, 7, 11, 13 \right).
 \end{align}
 @@
 
 @@colbox-blue
-**Note:** We can convert a dense matrix to sparse format in Python using the SciPy 2-D sparse array package for numeric data:
+**Note:** We can convert a dense matrix to CSC sparse format in Python using the SciPy 2-D sparse array package for numeric data:
 ```python
 from scipy import sparse
-sparse_jacoban = sparse.csr_matrix(dense_jacobian)
+sparse_jacoban = sparse.csc_matrix(dense_jacobian)
 ```
-Similarly, we can convert a dense matrix to sparse format in Julia using the function `sparse` from the library `SparseArrays`:
+Similarly, we can convert a dense matrix to CSC sparse format in Julia using the function `sparse` from the library `SparseArrays`:
 ```julia
 using SparseArrays: sparse
 sparse_jacoban = sparse(dense_jacobian)
@@ -139,10 +139,12 @@ To solve the system for a particular right-hand side `rhs` and store the solutio
 using LinearAlgebra: ldiv!
 ldiv!(sol, lu_decomposition, rhs)
 ```
+These Julia commands work for dense or sparse matrices.
 
-Similarly, LU decomposition of a sparse matrix can be done in Python using the subpackage `linalg` of `scipy.sparse`. 
+Similarly, the LU decomposition of a sparse matrix can be done in Python using the subpackage `linalg` of `scipy.sparse`. 
 To perform the factorization, use the function `factorized`:
 ```python
+from scipy import sparse
 solve = sparse.linalg.factorized(sparse_jacobian)
 ```
 To solve the system for a particular right-hand side `rhs` and store the solution in the array `sol`, we can use the newly defined function `solve`:
