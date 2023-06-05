@@ -11,27 +11,37 @@ tags = ["discrete ebm"]
 
 # Milestone 6 - Project Results
 
-Results will be added soon
-
-<!--
 \toc
 
 ## Expected Results
 
 This is an example for the expected results:
 
-### Diffusion Coefficient Plot
+### Annual Temperature Animation
 
-Plot of the diffusion coefficient:
+Annual Temperature calculated with the 2D-EBM model:
 
-\input{plot:1}{/assets/scripts/milestone5.jl}
+\fig{/assets/milestone6/annual_temperature.gif}
 
-### Sparsity Pattern of the Jacobian
+### Mean Temperature Plot using the 2D-EBM
 
-Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a the upper left part is plotted to make the pattern visible.
+Plot of the mean and average temperature calculated by using the 2D-EBM and then averaging over the results:
 
-\input{plot:2}{/assets/scripts/milestone5.jl}
+\input{plot:1}{/assets/scripts/milestone6.jl}
 
+### Cologne Temperature using the 2D-EBM
+
+Cologne temperature calculated using the 2D-EBM model:
+
+\input{plot:2}{/assets/scripts/milestone6.jl}
+
+### Temperature for the NASA CO2 Data
+
+Annual Temperatures from 1959 to 2020 based on NASA CO2 data:
+
+\input{plot:3}{/assets/scripts/milestone6.jl}
+
+<!--
 ## Files Download
 
 The Python implementation of milestone 5 can be downloaded here (Julia version will be added soon):

@@ -52,7 +52,6 @@ def calc_diffusion_coefficients(geo_dat):
     )
 
 
-# Without: 2.8 µs
 def calc_diffusion_operator(mesh, diffusion_coeff, temperature):
     h = mesh.h
     area = mesh.area
@@ -191,7 +190,7 @@ def compute_equilibrium_2d(timestep_function, mesh, diffusion_coeff, heat_capaci
         else:
             old_avg_temperature = avg_temperature
 
-    return temperature
+    return temperature, area_mean_temp
 
 
 def plot_diffusion_coefficient(diffusion_coeff):
@@ -222,7 +221,10 @@ def calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity):
             test_temperature[j, i] = 1.0
             op = calc_operator_ebm_2d(test_temperature, mesh, diffusion_coeff, heat_capacity)
 
-            # Convert matrix to vector
+            # Convert matrix to vector.
+            # Note that this must be compatible with the loop order, so that `index` is correct.
+            # `flatten` works row-wise, so we must loop over rows first in order to get the correct Jacobian.
+            # To be precise, `test_temperature.flatten()` must be the `index`-th unit vector.
             jacobian[:, index] = op.flatten()
 
             # Reset test_temperature

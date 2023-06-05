@@ -33,16 +33,16 @@ Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a th
 
 The Python implementation of milestone 5 can be downloaded here (Julia version will be added soon):
 
-<!--* [Julia solution](/assets/scripts/milestone5.jl) -->
+* [Julia solution](/assets/scripts/milestone5.jl)
 * [Python solution](/assets/scripts/milestone5.py)
 
 ## Scripts for Milestone 5
 
 You can also check out our Python implementation of milestone 5 in this site.
 
-<!--*  -- ### Julia implementation of milestone 5
+### Julia implementation of milestone 5
 
-\input{julia}{/assets/scripts/milestone5.jl} -->
+\input{julia}{/assets/scripts/milestone5.jl}
 
 ### Python implementation of milestone 5
 
