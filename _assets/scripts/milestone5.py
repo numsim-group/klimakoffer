@@ -131,10 +131,10 @@ def calc_diffusion_operator_inner(h, area, n_latitude, n_longitude, csc2, cot, d
     return result
 
 
-def calc_operator_ebm_2d(temperature, mesh, diffusion_coeff, heat_capacity):
+def calc_operator_ebm_2d(temperature, mesh, diffusion_coeff, heat_capacity, radiative_cooling_feedback=2.15):
     diffusion_op = calc_diffusion_operator(mesh, diffusion_coeff, temperature)
 
-    return (diffusion_op - 2.15 * temperature) / heat_capacity
+    return (diffusion_op - radiative_cooling_feedback * temperature) / heat_capacity
 
 
 def calc_source_terms_ebm_2d(heat_capacity, solar_forcing, radiative_cooling):
@@ -211,7 +211,7 @@ def plot_diffusion_coefficient(diffusion_coeff):
     plt.show()
 
 
-def calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity):
+def calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity, radiative_cooling_feedback=2.15):
     jacobian = np.zeros((mesh.ndof, mesh.ndof))
     test_temperature = np.zeros(diffusion_coeff.shape)
 
@@ -219,7 +219,8 @@ def calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity):
     for j in range(mesh.n_latitude):
         for i in range(mesh.n_longitude):
             test_temperature[j, i] = 1.0
-            op = calc_operator_ebm_2d(test_temperature, mesh, diffusion_coeff, heat_capacity)
+            op = calc_operator_ebm_2d(test_temperature, mesh, diffusion_coeff, heat_capacity,
+                                      radiative_cooling_feedback=radiative_cooling_feedback)
 
             # Convert matrix to vector.
             # Note that this must be compatible with the loop order, so that `index` is correct.

@@ -28,6 +28,8 @@ tags = ["linear systems", "linear solvers"]
 
 \fig{/assets/milestone6/new_parameter.png}
 
+Note that we have corrected the values for the first column to match the parameters used in this lecture and corrected the intervals for the albedo.
+
 Compare your results with the temperatures calculated in 1.
 
 5. Compute the equilibrium temperature from 1980 to present with the NASA $CO_2$ data as in task 3 but with the new parameter. Compare your results.
