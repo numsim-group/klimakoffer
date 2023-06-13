@@ -27,7 +27,7 @@ def timestep_euler_backward_2d(jacobian, delta_t_):
         # We use the fact that R is linear and thus can be written as R(T) = AT, where A is the Jacobian of R.
         # Solving for T_t yields
         # T_t = (I - delta_t * A)^{-1} * (T_{t-1} + delta_t * F(t)).
-        source_terms = calc_source_terms_ebm_2d(heat_capacity, solar_forcing[:, :, t - 1], radiative_cooling)
+        source_terms = calc_source_terms_ebm_2d(heat_capacity, solar_forcing[:, :, t], radiative_cooling)
 
         temperature[:, :, t] = np.reshape(solve((temperature[:, :, t - 1] + delta_t * source_terms).flatten()),
                                           (mesh.n_latitude, mesh.n_longitude))
@@ -51,11 +51,16 @@ def co2_evolution(jacobian, mesh, diffusion_coeff, heat_capacity, solar_forcing)
     average_temperatures = np.zeros(n_years)
     annual_temperatures = np.zeros(ntimesteps * n_years)
 
+    timestep_function = timestep_euler_backward_2d(jacobian, 1 / ntimesteps)
+
+    temperature = np.zeros((mesh.n_latitude, mesh.n_longitude, solar_forcing.shape[2]))
+
     for y in range(n_years):
         radiative_cooling = calc_radiative_cooling_co2(average_co2[y])
-        _, area_mean_temp = compute_equilibrium_2d(timestep_euler_backward_2d(jacobian, 1 / ntimesteps),
+        temperature, area_mean_temp = compute_equilibrium_2d(timestep_function,
                                                    mesh, diffusion_coeff, heat_capacity, solar_forcing,
-                                                   radiative_cooling, rel_error=1e-2)
+                                                   radiative_cooling,
+                                                   initial_temperature=temperature, rel_error=1e-2)
         annual_temperatures[ntimesteps * y:ntimesteps * (y + 1)] = area_mean_temp
         average_temperatures[y] = np.sum(area_mean_temp) / ntimesteps
 

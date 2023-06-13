@@ -41,23 +41,28 @@ Annual Temperatures from 1959 to 2020 based on NASA CO2 data:
 
 \input{plot:3}{/assets/scripts/milestone6.jl}
 
-<!--
+### Mean Temperature Plot for Ziegler's data
+
+Plot of the mean and average temperature calculated by using the 2D-EBM with Ziegler's parameters and then averaging over the results:
+
+\input{plot:4}{/assets/scripts/milestone6.jl}
+
+
 ## Files Download
 
-The Python implementation of milestone 5 can be downloaded here (Julia version will be added soon):
+The Python implementation of milestone 6 can be downloaded here (Julia version will be added soon):
 
 * [Julia solution](/assets/scripts/milestone6.jl)
 * [Python solution](/assets/scripts/milestone6.py)
 
-## Scripts for Milestone 5
+## Scripts for Milestone 6
 
-You can also check out our Python implementation of milestone 5 in this site.
+You can also check out our Python implementation of milestone 6 in this site.
 
-### Julia implementation of milestone 5
+### Julia implementation of milestone 6
 
 \input{julia}{/assets/scripts/milestone6.jl} 
 
-### Python implementation of milestone 5
+### Python implementation of milestone 6
 
-\input{python}{/assets/scripts/milestone5.py}
--->
+\input{python}{/assets/scripts/milestone6.py}

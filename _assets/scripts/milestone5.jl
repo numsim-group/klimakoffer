@@ -178,22 +178,23 @@ function timestep_euler_forward_2d(temperature, t, delta_t,
 
     temperature[:, :, t] = temperature[:, :, t_old] +
                            delta_t * calc_rhs_ebm_2d(temperature[:, :, t_old], mesh,
-                                                     diffusion_coeff, heat_capacity,
-                                                     solar_forcing[:, :, t_old],
-                                                     radiative_cooling)
+                                           diffusion_coeff, heat_capacity,
+                                           solar_forcing[:, :, t_old],
+                                           radiative_cooling)
 end
 
 function compute_equilibrium_2d(timestep_function, mesh, diffusion_coeff, heat_capacity,
                                 solar_forcing, radiative_cooling;
-                                max_iterations=100, rel_error=2e-5, verbose=true)
+                                max_iterations=100, rel_error=2e-5, verbose=true,
+                                initial_temperature=zeros((mesh.n_latitude,
+                                                           mesh.n_longitude,
+                                                           size(solar_forcing, 3))))
     # Number of time steps per year
     ntimesteps = size(solar_forcing, 3)
 
     # Step size
     delta_t = 1 / ntimesteps
-
-    # We start with a constant temperature of 0 in every grid point throughout the year
-    temperature = zeros((mesh.n_latitude, mesh.n_longitude, ntimesteps))
+    temperature = initial_temperature
 
     # Area-mean in every time step
     area_mean_temp = zeros(ntimesteps)
@@ -206,7 +207,7 @@ function compute_equilibrium_2d(timestep_function, mesh, diffusion_coeff, heat_c
             timestep_function(temperature, t, delta_t,
                               mesh, diffusion_coeff, heat_capacity, solar_forcing,
                               radiative_cooling)
-            area_mean_temp[t] = calc_mean(temperature[:, :, t], mesh.area)
+            @views area_mean_temp[t] = calc_mean(temperature[:, :, t], mesh.area)
         end
 
         avg_temperature = sum(area_mean_temp) / ntimesteps

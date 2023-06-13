@@ -158,15 +158,18 @@ def timestep_euler_forward_2d(temperature, t, delta_t,
 
 
 def compute_equilibrium_2d(timestep_function, mesh, diffusion_coeff, heat_capacity, solar_forcing, radiative_cooling,
-                           max_iterations=100, rel_error=2e-5, verbose=True):
+                           max_iterations=100, rel_error=2e-5, verbose=True, initial_temperature=None):
+    if initial_temperature is None:
+        # We start with a constant temperature of 0 in every grid point throughout the year
+        temperature = np.zeros((mesh.n_latitude, mesh.n_longitude, solar_forcing.shape[2]))
+    else:
+        temperature = initial_temperature
+
     # Number of time steps per year
     ntimesteps = solar_forcing.shape[2]
 
     # Step size
     delta_t = 1 / ntimesteps
-
-    # We start with a constant temperature of 0 in every grid point throughout the year
-    temperature = np.zeros((mesh.n_latitude, mesh.n_longitude, ntimesteps))
 
     # Area-mean in every time step
     area_mean_temp = np.zeros(ntimesteps)
