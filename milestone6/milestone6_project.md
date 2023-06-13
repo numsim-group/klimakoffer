@@ -26,7 +26,7 @@ tags = ["linear systems", "linear solvers"]
 
 4. Now we want to investigate the sensitivity of the model to the parameters. Repeat the calculations of the temperature for the year 1950 with the parameters from Ziegler and Rehfeld 2021[^1]
 
-\fig{/assets/milestone6/new_parameter.png}
+\fig{/assets/milestone6/new_parameter2.png}
 
 Note that we have corrected the values for the first column to match the parameters used in this lecture and corrected the intervals for the albedo.
 
