@@ -45,7 +45,6 @@ The following figures show that the albedo is dependent on the latitude $\theta$
 and low values at the equator. We do note, that typically, there is a discontinuity in the albedo when going from ocean/land to ice and snow due to the strong and sudden difference.
 
 \fig{/assets/milestone2/AlbedoLatitude.png}
-* Figure from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=vmukZ7wlEOQAAAAA:tLZuv_xK9eh-w_cB6x2Q2qYFV49fJnV5K3S7nCWoaNs00JYoQoWAf7HQI4aUjhUnZPhM4CXCjMYUTa8). Data from Earth Radiation Budget Experiment (ERBE) of NASA Shows the observed background and albedo for different months.
 
 Due to the U-shape form an approximation with a simple symmetric function as a model seems reasonable. Graves et al. (1993) do not directly use the latitude $\theta$, but the sine of the latitude, $\sin(\theta)$, and then use a quadratic (symmetric) polynomial as their ansatz with coefficients fitted to the data shown in the above figures. We consider such a modification for land, ocean, and lakes ($geo=\{1,4,5\}$), which covers most Earth, except close to the poles. Consider the latitude $\theta$ given at a grid node, we can compute the value 
 $$
@@ -60,3 +59,7 @@ Lake/inland sea ($geo=4$): $\alpha = 0.3 + 0.12\,p(\theta)$,
 Ocean ($geo=5$): $\alpha = 0.29 + 0.12\,p(\theta)$,
 
 while we keep the values for ice and snow as the constants from above. This modification makes the albedo depending on the spatial location, but independent of (constant in) time. 
+
+The following plot shows the quality of the approximation with respect to moderate latitudes.
+
+\fig{/assets/milestone2/ModellingAlbedo.png}

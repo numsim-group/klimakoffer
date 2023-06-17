@@ -14,10 +14,10 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 ## Introduction
 
-The energy balance of Earth is strongly impacted by radiation. The following figure shows the energy fluxes in the global Earth atmosphere system
+The energy balance of Earth is strongly impacted by radiation. The following figure shows the energy fluxes in the global Earth atmosphere system.
 
-\fig{/assets/milestone2/ClimateSystem.png}
-* Figure from [Trenberth, K. E., Fasullo, J. T., & Kiehl, J. (2009). Earth's global energy budget. Bulletin of the American Meteorological Society, 90(3), 311-324](https://journals.ametsoc.org/downloadpdf/journals/bams/90/3/2008bams2634_1.pdf).
+\fig{/assets/milestone2/ClimateSystem.jpg}
+* Source: NASA
 
 In our EBM, we aim to include four effects: 
 
@@ -119,13 +119,14 @@ The ability of these molecules to absorb infrared radiation is significant becau
 **Comment:** The effect of greenhouse gases is very complex and there is a lot of ongoing research. $H_2O$ in particular is very important but ever so complex due to it being dependent on many other components and processes, i.e., the full water cycle. We will consider in our EBM only the effect of $CO_2$ on the radiation. Infrared absorbtion means that the efficiency of our outgoing radiation (cooling effect) decreases (which causes a higher equilibrium temperature). This decrease in efficiency is topic of many investigations and studies, e.g., by the IPCC.
 @@
 
-In this course, we follow the paper by Myhre et al. (1998) to define our parametrization of the greenhouse gas effect. From this paper, we first look at the effect of the amount of greenhouse gases measured in parts per million $[ppm]$, as plotted in the following figure
+In this course, we follow the paper by Myhre et al. (1998) to define our parametrization of the greenhouse gas effect. From this paper, we first look at the effect of the amount of greenhouse gases measured in parts per million $[ppm]$, as plotted in the following figures:
 
-\fig{/assets/milestone2/CO2forcing.png}
-* Figures from Myhre et al. (1998)
-
+\fig{/assets/milestone2/CO2_forcing.png}
+\fig{/assets/milestone2/CH4_forcing.png}
+\fig{/assets/milestone2/N2O_forcing.png}
+ * Source: IPCC (1990)
 The figures show radiative forcing as a function
-of concentration [ppm] for the gases    $CO_2$, $CH_4$, $N_2O$.
+of concentration in [ppm] for $CO_2$ and in [ppb] for $CH_4$ and $N_2O$.
 
 Myhre et al. and also other research groups
 introduced simplified expressions that
