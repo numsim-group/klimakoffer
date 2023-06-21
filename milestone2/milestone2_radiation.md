@@ -18,6 +18,9 @@ The energy balance of Earth is strongly impacted by radiation. The following fig
 
 \fig{/assets/milestone2/ClimateSystem.jpg}
 * Source: NASA
+@@colbox-blue
+**Remark:** Note that this figure is from 2010. By now the net absorbed energy has risen to $1.0\; W/m^2$. ([Loeb et al. (2021). Satellite and Ocean Data Reveal Marked Increase in Earth’s Heating Rate. Geophysical Research Letters, 48(13)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021GL093047))
+@@
 
 In our EBM, we aim to include four effects: 
 
