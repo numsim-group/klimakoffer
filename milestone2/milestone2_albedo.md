@@ -65,3 +65,5 @@ while we keep the values for ice and snow as the constants from above. This modi
 The following plot shows the quality of the approximation with respect to moderate latitudes.
 
 \fig{/assets/milestone2/ModellingAlbedo.png}
+
+Again, this figure was generated with data from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=vmukZ7wlEOQAAAAA:tLZuv_xK9eh-w_cB6x2Q2qYFV49fJnV5K3S7nCWoaNs00JYoQoWAf7HQI4aUjhUnZPhM4CXCjMYUTa8).
