@@ -49,9 +49,9 @@ figsize_rad_feed = (740,670)
 co2_ipcc = readdlm("co2_forcing_ipcc.csv")
 
 p3 = plot(co2_ipcc[:,1], co2_ipcc[:,2], 
-    xlabel = "CO2 [ppm]", ylabel = "Radiative forcing [W/m^2]",
+    xlabel = L"CO_2 \quad [ppm]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 1100], ylims=[0,10],
-    title = "Radiative forcing - CO2", label = "",
+    title = L"Radiative\, forcing\, -\, CO_2", label = "",
     size = figsize_rad_feed
     )
 savefig(p3, "CO2_forcing.png")
@@ -61,9 +61,9 @@ savefig(p3, "CO2_forcing.png")
 ch4_ipcc = readdlm("ch4_forcing_ipcc.csv")
 
 p4 = plot(ch4_ipcc[:,1], ch4_ipcc[:,2], 
-    xlabel = "CH4 [ppb]", ylabel = "Radiative forcing [W/m^2]",
+    xlabel = L"CH_4 \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 5500], ylims=[0,2],
-    title = "Radiative forcing - CH4", label = "",
+    title = L"Radiative\, forcing\, -\, CH_4", label = "",
     size = figsize_rad_feed
     )
 savefig(p4, "CH4_forcing.png")
@@ -72,9 +72,9 @@ savefig(p4, "CH4_forcing.png")
 n2o_ipcc = readdlm("n2o_forcing_ipcc.csv")
 
 p5 = plot(n2o_ipcc[:,1], n2o_ipcc[:,2], 
-    xlabel = "N2O [ppb]", ylabel = "Radiative forcing [W/m^2]",
+    xlabel = L"N_2\,O \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [200, 600], ylims=[0,1],
-    title = "Radiative forcing - N2O", label = "",
+    title = L"Radiative\, forcing\, -\, N_2\,O", label = "",
     size = figsize_rad_feed
     )
 savefig(p5, "N2O_forcing.png")
