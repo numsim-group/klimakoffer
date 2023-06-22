@@ -10,17 +10,26 @@ alb_feb_clear_sky = readdlm("feb_clear.csv")
 
 figsize = (600,640) # Width x Height
 
-# Creating plot 1 for average and clear sky albedo in February
+# Correct x axis considering that the original plot has a sinusoidal axis... And the digitalization was done using reference x values of -60 and 60!
+m = sin(deg2rad(60)) / 60
+for i in 1:size(alb_feb_avg_sky)[1]
+    alb_feb_avg_sky[i,1] *= m
+end
+for i in 1:size(alb_feb_clear_sky)[1]
+    alb_feb_clear_sky[i,1] *= m
+end
 
+# Creating plot 1 for average and clear sky albedo in February
 p1 = plot(alb_feb_avg_sky[:,1], alb_feb_avg_sky[:,2], 
         xlabel = "Latitude [°]", ylabel = "Albedo [%]",
-        xlims = [-70,70 ], ylims=[0,100],
+        ylims=[0,100], #xlims = [-70,70 ], 
         title = "Albedo vs Latitude (February)", label = "Average sky",
         size=figsize)
 
-for i in [alb_feb_clear_sky] # Easy to extend the plotted data; just add it to the list and create a string list as well for the label
-    plot!(p1,i[:,1],i[:,2], label = "Clear sky")
-end
+plot!(p1,alb_feb_clear_sky[:,1],alb_feb_clear_sky[:,2], label = "Clear sky")
+
+# Draw ticks that are consistent with the axis in sinusoidal scale, but write the angle in degrees!
+plot!(xticks = (sin.(deg2rad.([-90,-75,-60,-45,-30,-15,0,15,30,45,60,75,90])), ["-90", "", "-60", "", "-30", "", "0", "", "30", "", "60", "", "90"]))
 
 savefig(p1,"AlbedoLatitude.png")
 
