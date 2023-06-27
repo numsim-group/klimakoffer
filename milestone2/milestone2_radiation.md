@@ -127,7 +127,8 @@ In this course, we follow the paper by Myhre et al. (1998) to define our paramet
 \fig{/assets/milestone2/CO2_forcing.png}
 \fig{/assets/milestone2/CH4_forcing.png}
 \fig{/assets/milestone2/N2O_forcing.png}
- * Source: IPCC (1990)
+ * Figures were generated with data from Myhre et al. (1998).
+ 
 The figures show radiative forcing as a function
 of concentration in [ppm] for $CO_2$ and in [ppb] for $CH_4$ and $N_2O$.
 
