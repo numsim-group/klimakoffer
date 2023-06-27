@@ -40,11 +40,12 @@ y = 100 .*(0.29 .+ (0.12*0.5) .* (3 .* sin.(deg2rad.(x)).^2 .- 1)) # Modelling f
 
 p2 = plot(alb_feb_avg_sky[:,1], alb_feb_avg_sky[:,2], 
     xlabel = "Latitude [°]", ylabel = "Albedo [%]",
-    xlims = [-70,70 ], ylims=[0,100],
+    ylims=[0,100],
     title = "Modelling albedo between the pole regions", label = "Average sky (February)",
     size = figsize)
 
 plot!(p2, x,y,label = "0.3 + 0.12 p(θ)", color = "green")
+plot!(xticks = (sin.(deg2rad.([-90,-75,-60,-45,-30,-15,0,15,30,45,60,75,90])), ["-90", "", "-60", "", "-30", "", "0", "", "30", "", "60", "", "90"]))
 
 savefig(p2,"ModellingAlbedo.png")
 
@@ -53,37 +54,50 @@ savefig(p2,"ModellingAlbedo.png")
 # Creating Radiative forcing plots
 
 figsize_rad_feed = (740,670)
-
+fit_label = L"Fit\; to\; NBM\; data"
+data_label = L"NBM\; (Narrow \;Band\; Model)\; results"
 
 co2_ipcc = readdlm("co2_forcing_ipcc.csv")
+co2_data = readdlm("co2_forcing_data.csv")
 
-p3 = plot(co2_ipcc[:,1], co2_ipcc[:,2], 
+
+p3 = plot(co2_data[:,1],co2_data[:,2], seriestype=:scatter, shape = :+, 
     xlabel = L"CO_2 \quad [ppm]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 1100], ylims=[0,10],
-    title = L"Radiative\, forcing\, -\, CO_2", label = "",
+    title = L"Radiative\, forcing\, -\, CO_2", 
+    label = data_label,
     size = figsize_rad_feed
     )
+
+plot!(p3,co2_ipcc[:,1], co2_ipcc[:,2],label = fit_label)
+
 savefig(p3, "CO2_forcing.png")
 
 
 
 ch4_ipcc = readdlm("ch4_forcing_ipcc.csv")
+ch4_data = readdlm("ch4_forcing_data.csv")
 
-p4 = plot(ch4_ipcc[:,1], ch4_ipcc[:,2], 
+p4 = plot(ch4_data[:,1], ch4_data[:,2],seriestype=:scatter, shape = :+,
     xlabel = L"CH_4 \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 5500], ylims=[0,2],
-    title = L"Radiative\, forcing\, -\, CH_4", label = "",
+    title = L"Radiative\, forcing\, -\, CH_4", label=data_label,
     size = figsize_rad_feed
     )
+
+plot!(p4,ch4_ipcc[:,1], ch4_ipcc[:,2],label = fit_label)
 savefig(p4, "CH4_forcing.png")
 
 
 n2o_ipcc = readdlm("n2o_forcing_ipcc.csv")
+n2o_data = readdlm("n2o_forcing_data.csv")
 
-p5 = plot(n2o_ipcc[:,1], n2o_ipcc[:,2], 
+p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
     xlabel = L"N_2\,O \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
-    xlims = [200, 600], ylims=[0,1],
-    title = L"Radiative\, forcing\, -\, N_2\,O", label = "",
+    xlims = [0, 600], ylims=[0,1],
+    title = L"Radiative\, forcing\, -\, N_2\,O", label = data_label,
     size = figsize_rad_feed
     )
+
+plot!(p5,n2o_ipcc[:,1],n2o_ipcc[:,2], label = fit_label)
 savefig(p5, "N2O_forcing.png")
