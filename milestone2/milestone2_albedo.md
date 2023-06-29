@@ -60,7 +60,7 @@ Lake/inland sea ($geo=4$): $\alpha = 0.3 + 0.12\,p(\theta)$,
 
 Ocean ($geo=5$): $\alpha = 0.29 + 0.12\,p(\theta)$,
 
-while we keep the values for ice and snow as the constants from above. This modification makes the albedo depending on the spatial location, but independent of (constant in) time. 
+while we keep the values for ice and snow as the constants from above. This modification makes the albedo depend on the spatial location while it keeps it independent of (constant in) time. 
 
 The following plot shows the quality of the approximation with respect to moderate latitudes.
 
