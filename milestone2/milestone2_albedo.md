@@ -45,7 +45,7 @@ The following figures show that the albedo is dependent on the latitude $\theta$
 and low values at the equator. We do note, that typically, there is a discontinuity in the albedo when going from ocean/land to ice and snow due to the strong and sudden difference.
 
 \fig{/assets/milestone2/AlbedoLatitude.png}
-* Data from Earth Radiation Budget Experiment (ERBE) of NASA Shows the observed background and albedo for different months.
+* Data from Earth Radiation Budget Experiment (ERBE) of NASA Shows the observed background and albedo for different months. Note, that the x-axis is in fact in _sinusoidal scale_, rather than linear.
 This figure was generated with data from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=vmukZ7wlEOQAAAAA:tLZuv_xK9eh-w_cB6x2Q2qYFV49fJnV5K3S7nCWoaNs00JYoQoWAf7HQI4aUjhUnZPhM4CXCjMYUTa8).
 
 Due to the U-shape form an approximation with a simple symmetric function as a model seems reasonable. Graves et al. (1993) do not directly use the latitude $\theta$, but the sine of the latitude, $\sin(\theta)$, and then use a quadratic polynomial as their ansatz with coefficients fitted to the data shown in the above figures. We consider a similar modification for land, ocean, and lakes ($geo=\{1,4,5\}$), which covers most Earth, except close to the poles. Consider the latitude $\theta$ given at a grid node, we can compute the value 
@@ -66,4 +66,4 @@ The following plot shows the quality of the approximation with respect to modera
 
 \fig{/assets/milestone2/ModellingAlbedo.png}
 
-Again, this figure was generated with data from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=vmukZ7wlEOQAAAAA:tLZuv_xK9eh-w_cB6x2Q2qYFV49fJnV5K3S7nCWoaNs00JYoQoWAf7HQI4aUjhUnZPhM4CXCjMYUTa8).
+Again, this figure is showing the x-axis in sinusoidal scale and was generated with data from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=vmukZ7wlEOQAAAAA:tLZuv_xK9eh-w_cB6x2Q2qYFV49fJnV5K3S7nCWoaNs00JYoQoWAf7HQI4aUjhUnZPhM4CXCjMYUTa8).
