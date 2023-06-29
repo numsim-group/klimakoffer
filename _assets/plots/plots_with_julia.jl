@@ -36,7 +36,9 @@ savefig(p1,"AlbedoLatitude.png")
 # Creating plot comparing the modelling function with the data
 
 x = LinRange(-70,70,140)
-y = 100 .*(0.29 .+ (0.12*0.5) .* (3 .* sin.(deg2rad.(x)).^2 .- 1)) # Modelling function
+y = 100 .*(0.29 .+ (0.12*0.5) .* (3 .* deg2rad.(x).^2 .- 1)) # Modelling function
+
+x =  m .* x
 
 p2 = plot(alb_feb_avg_sky[:,1], alb_feb_avg_sky[:,2], 
     xlabel = "Latitude [°]", ylabel = "Albedo [%]",
