@@ -102,3 +102,27 @@ p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
 
 plot!(p5,n2o_ipcc[:,1],n2o_ipcc[:,2], label = fit_label)
 savefig(p5, "N2O_forcing.png")
+
+
+# Budyko's Linear Model
+
+textbook_curve = readdlm("radiation_physical_model.csv")
+fitting_curve = readdlm("radiation_fitting_curve.csv")
+
+p6 = plot(
+    textbook_curve[:,1],
+    textbook_curve[:,2],
+    label = L"\sigma T^4",
+    xlabel = L"Surface \;  Temperature \;  [°C]",
+    ylabel = L"OLR \;[W/m^2]",
+    title = L"Outgoing\; Longwave\; Radiation\; vs.\; Temperature",
+    size = (600,400),
+    xticks = LinRange(-40,40,9)
+)
+plot!(p6,
+    fitting_curve[:,1],
+    fitting_curve[:,2],
+    label = L"202.1 + 1.90 T"
+)
+
+savefig(p6, "OutgoingLongwaveRadiation.png")
