@@ -142,16 +142,18 @@ f(M,N) = 0.47 \ln \left( 1 + 2.01 \times 10^{-5} (M \, N)^{3/4} + 5.31 \times 10
 \begin{align*}
 \begin{array}{cccc}
 \hline
-\text{Trace gas}   & \text{Radiative forcing}     & \alpha\text{(IPCC)} & \alpha\text{(Myhre et al.)} \\
+\text{Trace gas}   & \text{Radiative forcing $\Delta F$}     & \alpha\text{ (IPCC)} & \alpha\text{ (Myhre et al.)} \\
 \hline
-\text{CO}_2  &   \alpha \ln (C / C_0)      \\
-\text{CH}_4  &   \text{TODO: Finish...}       \\
+\text{CO}_2  &   \alpha \ln (C/C_0) & 6.3 & 5.35      \\
+\text{CH}_4  &   \alpha \left(\sqrt{M}-\sqrt{M_0} \right) - \left(f\left(M,N_0\right)- f\left(M_0,N_0\right) \right) & 0.0036        & 0.0036   \\
+\text{N}_2\text{O} &  \alpha \left(\sqrt{N}-\sqrt{N_0} \right) - \left(f\left(M_0,N\right)- f\left(M_0 ,N_0\right) \right)  &0.14 & 0.12 \\
+\text{CFC-11} & \alpha(X-X_0) & 0.22 & 0.25\\ 
+\text{CFC-12} & \alpha(X-X_0) & 0.28 & 0.33\\ 
 \hline
 \end{array}
 \end{align*}
 
-\fig{/assets/milestone2/CO2e.png}
-* Table from Myhre et al. (1998)
+
 
 As mentioned, we only consider the effect of $CO_2$ in our model and hence choose the approximation 
 $$
