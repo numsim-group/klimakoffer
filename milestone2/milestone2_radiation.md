@@ -138,11 +138,11 @@ The following table gathers simplified expressions to compute (fit) the radiativ
 f(M,N) = 0.47 \ln \left( 1 + 2.01 \times 10^{-5} (M \, N)^{3/4} + 5.31 \times 10^{-15} M (M \, N)^{1.52} \right).
 \end{align}
 
-* **Table:** Simplified expressions for the radiative forcing ($A$) in $W/m^2$ with coefficients of the IPCC report (1990) and Myhre et al. (1998). In the expressions, $C$ is CO$_2$ concentration in ppmv, $M$ is CH$_4$ concentration in ppbv, $N$ is N$_2$O concentration in ppbv, and $X$ is Chlorofluorocarbons (CFCs) concentration in ppbv. The subscript $0$ denotes unperturbed (reference) concentrations. The function $f$ is given in \eqref{eq:ffunciton}. Adapted from Myhre et al. (1998).
+* **Table:** Simplified expressions for the radiative forcing ($\Delta F$) in $W/m^2$ with coefficients of the IPCC report (1990) and Myhre et al. (1998). In the expressions, $C$ is CO$_2$ concentration in ppmv, $M$ is CH$_4$ concentration in ppbv, $N$ is N$_2$O concentration in ppbv, and $X$ is Chlorofluorocarbons (CFCs) concentration in ppbv. The subscript $0$ denotes unperturbed (reference) concentrations. The function $f$ is given in \eqref{eq:ffunciton}. Adapted from Myhre et al. (1998).
 \begin{align*}
 \begin{array}{cccc}
 \hline
-\text{Trace gas}   & \text{Radiative forcing $\Delta F$}     & \alpha\text{ (IPCC)} & \alpha\text{ (Myhre et al.)} \\
+\text{Trace gas}   & \text{Radiative forcing $\Delta F$}     & \alpha_{\text{IPCC}} & \alpha_{\text{Myhre}} \\
 \hline
 \text{CO}_2  &   \alpha \ln (C/C_0) & 6.3 & 5.35      \\
 \text{CH}_4  &   \alpha \left(\sqrt{M}-\sqrt{M_0} \right) - \left(f\left(M,N_0\right)- f\left(M_0,N_0\right) \right) & 0.0036        & 0.0036   \\
