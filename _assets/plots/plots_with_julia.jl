@@ -126,3 +126,38 @@ plot!(p6,
 )
 
 savefig(p6, "OutgoingLongwaveRadiation.png")
+
+
+
+# Heat Transfer Plot
+
+heat_ocean = readdlm("heat_transfer_ocean.csv")
+heat_total = readdlm("heat_transfer_total.csv")
+heat_atmos = readdlm("heat_transfer_atmosphere.csv")
+p7 = plot(
+    heat_total[:,1],
+    heat_total[:,2],
+    title = "Heat transport in the Northern Hemisphere",
+    xlabel = "Latitude [°]",
+    ylabel = "Heat transport north [TW]",
+    label = "Total",
+    size = (600,400),
+    xticks = LinRange(0,90,10),
+    yticks = [-1, 0, 1, 2, 3, 4, 5, 6]
+)
+
+plot!(
+    p7,
+    heat_ocean[:,1],
+    heat_ocean[:,2],
+    label = "Ocean"
+)
+
+plot!(
+    p7,
+    heat_atmos[:,1],
+    heat_atmos[:,2],
+    label = "Atmosphere"
+)
+
+savefig(p7, "heat_transfer_north.png")
