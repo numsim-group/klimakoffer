@@ -133,9 +133,22 @@ In this course, we follow the paper by Myhre et al. (1998) to define our paramet
 The figures show radiative forcing as a function
 of concentration in [ppm] for $CO_2$ and in [ppb] for $CH_4$ and $N_2O$.
 
-Myhre et al. and also other research groups
-introduced simplified expressions that
-parametrize the effect
+The following table gathers simplified expressions to compute (fit) the radiative forcing caused by different greenhouse gases using data from Myhre et al. (1998) and the function
+\begin{align}\label{eq:ffunciton}
+f(M,N) = 0.47 \ln \left( 1 + 2.01 \times 10^{-5} (M \, N)^{3/4} + 5.31 \times 10^{-15} M (M \, N)^{1.52} \right).
+\end{align}
+
+* **Table:** Simplified expressions for the radiative forcing ($A$) in $W/m^2$ with coefficients of the IPCC report (1990) and Myhre et al. (1998). In the expressions, $C$ is CO$_2$ concentration in ppmv, $M$ is CH$_4$ concentration in ppbv, $N$ is N$_2$O concentration in ppbv, and $X$ is Chlorofluorocarbons (CFCs) concentration in ppbv. The subscript $0$ denotes unperturbed (reference) concentrations. The function $f$ is given in \eqref{eq:ffunciton}. Adapted from Myhre et al. (1998).
+\begin{align*}
+\begin{array}{cccc}
+\hline
+\text{Trace gas}   & \text{Radiative forcing}     & \alpha\text{(IPCC)} & \alpha\text{(Myhre et al.)} \\
+\hline
+\text{CO}_2  &   \alpha \ln (C / C_0)      \\
+\text{CH}_4  &   \text{TODO: Finish...}       \\
+\hline
+\end{array}
+\end{align*}
 
 \fig{/assets/milestone2/CO2e.png}
 * Table from Myhre et al. (1998)
