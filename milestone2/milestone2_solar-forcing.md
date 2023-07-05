@@ -52,8 +52,8 @@ To compute the distance from the sun and Earth's axis tilt angle, we need to con
 
 > **NOTE:** In the paper of Berger, the precession distance ($\tilde \omega$) is sometimes defined from the perihelion and sometimes from the aphelion. We use the aphelion in our implementation as it is the one obtained with equation (6) from Berger.
 
-![](/assets/milestone2/part2-earthspin-nolabel.jpg)
-* Figure modified from [https://ugc.berkeley.edu/background-content/earths-spin-tilt-orbit/](https://ugc.berkeley.edu/background-content/earths-spin-tilt-orbit/).
+![](/assets/milestone2/Milankovitch_Cycles.jpg)
+* Figure by "Skeptical Science", [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/).
 
 In the following sections, we will assume that the eccentricity, obliquity and precession distance are constant to derive the total solar irradiance.
 This is a reasonable assumption for climate simulations in which the orbital parameters are updated at the time interval $\Delta t_{\text{orb}} \ll \tau_{\epsilon}$. 
