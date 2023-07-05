@@ -66,7 +66,7 @@ This is a reasonable assumption for climate simulations in which the orbital par
 The inverse-square law states that the total radiation that is received from a source is inversely proportional to the square of the distance from the source.
 
 ![](/assets/milestone2/Inverse_square_law.png)
-* Source: Wikipedia
+* Source: Wikipedia (User:Borb), [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 
 As a result, the total radiation that is received at the top layer of Earth's atmosphere is 
 $$
