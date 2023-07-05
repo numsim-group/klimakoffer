@@ -63,7 +63,7 @@ co2_data = readdlm("co2_forcing_data.csv")
 
 
 p3 = plot(co2_data[:,1],co2_data[:,2], seriestype=:scatter, shape = :+, 
-    xlabel = L"CO_2 \quad [ppm]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
+    xlabel = L"CO_2 \quad [ppmv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 1100], ylims=[0,10],
     title = L"Radiative\, forcing\, -\, CO_2", 
     label = data_label,
@@ -80,7 +80,7 @@ ch4_ipcc = readdlm("ch4_forcing_ipcc.csv")
 ch4_data = readdlm("ch4_forcing_data.csv")
 
 p4 = plot(ch4_data[:,1], ch4_data[:,2],seriestype=:scatter, shape = :+,
-    xlabel = L"CH_4 \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
+    xlabel = L"CH_4 \quad [ppbv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 5500], ylims=[0,2],
     title = L"Radiative\, forcing\, -\, CH_4", label=data_label,
     size = figsize_rad_feed
@@ -94,7 +94,7 @@ n2o_ipcc = readdlm("n2o_forcing_ipcc.csv")
 n2o_data = readdlm("n2o_forcing_data.csv")
 
 p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
-    xlabel = L"N_2\,O \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
+    xlabel = L"N_2\,O \quad [ppbv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 600], ylims=[0,1],
     title = L"Radiative\, forcing\, -\, N_2\,O", label = data_label,
     size = figsize_rad_feed

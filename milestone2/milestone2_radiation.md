@@ -123,7 +123,7 @@ The ability of these molecules to absorb infrared radiation is significant becau
 **Comment:** The effect of greenhouse gases is very complex and there is a lot of ongoing research. $H_2O$ in particular is very important but ever so complex due to it being dependent on many other components and processes, i.e., the full water cycle. We will consider in our EBM only the effect of $CO_2$ on the radiation. Infrared absorbtion means that the efficiency of our outgoing radiation (cooling effect) decreases (which causes a higher equilibrium temperature). This decrease in efficiency is topic of many investigations and studies, e.g., by the IPCC.
 @@
 
-In this course, we follow the paper by Myhre et al. (1998) to define our parametrization of the greenhouse gas effect. From this paper, we first look at the effect of the amount of greenhouse gases measured in parts per million $[ppm]$, as plotted in the following figures:
+In this course, we follow the paper by Myhre et al. (1998) to define our parametrization of the greenhouse gas effect. From this paper, we first look at the effect of the amount of greenhouse gases, as plotted in the following figures:
 
 \fig{/assets/milestone2/CO2_forcing.png}
 \fig{/assets/milestone2/CH4_forcing.png}
@@ -131,14 +131,14 @@ In this course, we follow the paper by Myhre et al. (1998) to define our paramet
  * Figures were generated with data from Myhre et al. (1998).
  
 The figures show radiative forcing as a function
-of concentration in [ppm] for $CO_2$ and in [ppb] for $CH_4$ and $N_2O$.
+of concentration in $[ppmv]$ ("parts per million volume") for $CO_2$ and in $[ppbv]$ ("parts per billion volume") for $CH_4$ and $N_2O$.
 
 The following table gathers simplified expressions to compute (fit) the radiative forcing caused by different greenhouse gases using data from Myhre et al. (1998) and the function
 \begin{align}\label{eq:ffunciton}
 f(M,N) = 0.47 \ln \left( 1 + 2.01 \times 10^{-5} (M \, N)^{3/4} + 5.31 \times 10^{-15} M (M \, N)^{1.52} \right).
 \end{align}
 
-* **Table:** Simplified expressions for the radiative forcing ($\Delta F$) in $W/m^2$ with coefficients of the IPCC report (1990) and Myhre et al. (1998). In the expressions, $C$ is CO$_2$ concentration in ppmv, $M$ is CH$_4$ concentration in ppbv, $N$ is N$_2$O concentration in ppbv, and $X$ is Chlorofluorocarbons (CFCs) concentration in ppbv. The subscript $0$ denotes unperturbed (reference) concentrations. The function $f$ is given in \eqref{eq:ffunciton}. Adapted from Myhre et al. (1998).
+* **Table:** Simplified expressions for the radiative forcing ($\Delta F$) in $W/m^2$ with coefficients of the IPCC report (1990) and Myhre et al. (1998). In the expressions, $C$ is CO$_2$ concentration in $[ppmv]$, $M$ is CH$_4$ concentration in $[ppbv]$, $N$ is N$_2$O concentration in $[ppbv]$, and $X$ is Chlorofluorocarbons (CFCs) concentration in $[ppbv]$. The subscript $0$ denotes unperturbed (reference) concentrations. The function $f$ is given in \eqref{eq:ffunciton}. Adapted from Myhre et al. (1998).
 \begin{align*}
 \begin{array}{cccc}
 \hline
