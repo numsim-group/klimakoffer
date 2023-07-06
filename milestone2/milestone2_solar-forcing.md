@@ -53,7 +53,7 @@ To compute the distance from the sun and Earth's axis tilt angle, we need to con
 > **NOTE:** In the paper of Berger, the precession distance ($\tilde \omega$) is sometimes defined from the perihelion and sometimes from the aphelion. We use the aphelion in our implementation as it is the one obtained with equation (6) from Berger.
 
 ![](/assets/milestone2/Milankovitch_Cycles.jpg)
-* Figure by "Skeptical Science", [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/).
+* Figure by [Skeptical Science](https://skepticalscience.com/print.php?g=342), [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/).
 
 In the following sections, we will assume that the eccentricity, obliquity and precession distance are constant to derive the total solar irradiance.
 This is a reasonable assumption for climate simulations in which the orbital parameters are updated at the time interval $\Delta t_{\text{orb}} \ll \tau_{\epsilon}$. 
@@ -66,7 +66,7 @@ This is a reasonable assumption for climate simulations in which the orbital par
 The inverse-square law states that the total radiation that is received from a source is inversely proportional to the square of the distance from the source.
 
 ![](/assets/milestone2/Inverse_square_law.png)
-* Source: Wikipedia (User:Borb), [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+* Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Inverse_square_law.svg) ([User:Borb](https://commons.wikimedia.org/wiki/User:Borb)), [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 
 As a result, the total radiation that is received at the top layer of Earth's atmosphere is 
 $$

@@ -199,7 +199,7 @@ As discussed above, the heat diffusion term needs to model the complex mechanism
 We distinguish between oceanic heat transport and heat transport over land and snow/ice covered areas. We also account for a difference of the heat transfer in the northern and southern hemisphere due to the asymmetric distribution and sizes of the land masses. The following figure shows a sketch of the energy fluxes due to heat transfer accounted in our model (here, the diffusion coefficients are denoted with $K$ instead of $\diffcoeff$) 
 
 \fig{/assets/milestone5/heat_transfer_sketch_ebm.png}
-* Figure from [https://gmd.copernicus.org/articles/14/2843/2021/](https://gmd.copernicus.org/articles/14/2843/2021/), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+* Figure from [TransEBM v. 1.0: description, tuning, and validation of a transient model of the Earth's energy balance in two dimensions](https://gmd.copernicus.org/articles/14/2843/2021/) by [Elisa Ziegler](https://orcid.org/0000-0002-7252-3332) and [Kira Rehfeld](https://orcid.org/0000-0002-9442-5362), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 Thus, for the actual values of the diffusion coefficients we differentiate between grid cells that represent ocean, and all other types. Furthermore, for non oceanic grid cells, we differentiate if we are in the northern or southern hemisphere. 
 
