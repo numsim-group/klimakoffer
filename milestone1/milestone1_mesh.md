@@ -16,7 +16,7 @@ In numerical methods, we often partition the domain in smaller subdomains using 
 The easiest way to partition a sphere is to use grid cells with uniform radius, latitude/colatitude and longitude spacings:
 
 ![](/assets/milestone1/PolesProblem.png)
-* **Source**: Wikipedia
+* **Source**: [Wikipedia](https://commons.wikimedia.org/wiki/File:Spherical_coordinate_system.svg) ([User: SharkD](https://commons.wikimedia.org/wiki/User:SharkD)), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 We can observe from the figure that the
 grid cells get smaller the closer they are to the
