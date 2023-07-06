@@ -51,7 +51,7 @@ in a special way.
 We need to compute the area of a spherical cap at the angle $\lat = \frac{\Delta \lat}{2}$.
 
 \fig{/assets/milestone3/SphericalCap.png}
-* Source: Wikipedia (User:Jhmadden), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+* Source: Modified from Wikipedia (User:Jhmadden), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 Using standard geometrical formulae, we can derive the area of a spherical cap with radius $R_E$ as
 $$
