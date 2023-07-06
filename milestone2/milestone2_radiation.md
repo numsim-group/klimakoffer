@@ -131,7 +131,7 @@ In this course, we follow the paper by Myhre et al. (1998) to define our paramet
  * Figures were generated with data from Myhre et al. (1998).
  
 The figures show radiative forcing as a function
-of concentration in $[ppmv]$ ("parts per million volume") for $CO_2$ and in $[ppbv]$ ("parts per billion volume") for $CH_4$ and $N_2O$.
+of concentration in $[ppmv]$ ("parts per million by volume") for $CO_2$ and in $[ppbv]$ ("parts per billion by volume") for $CH_4$ and $N_2O$.
 
 The following table gathers simplified expressions to compute (fit) the radiative forcing caused by different greenhouse gases using data from Myhre et al. (1998) and the function
 \begin{align}\label{eq:ffunciton}
