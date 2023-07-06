@@ -153,7 +153,7 @@ p7 = plot(
     heat_total[:,2],
     title = "Heat transport in the Northern Hemisphere",
     xlabel = "Latitude [°]",
-    ylabel = "Heat transport north [TW]",
+    ylabel = "Northward heat transport [10³ TW]",
     label = "Total",
     size = (600,400),
     xticks = LinRange(0,90,10),
