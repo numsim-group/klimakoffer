@@ -108,6 +108,7 @@ savefig(p5, "N2O_forcing.png")
 
 textbook_curve = readdlm("radiation_physical_model.csv")
 fitting_curve = readdlm("radiation_fitting_curve.csv")
+points = readdlm("radiation_points.csv")
 
 p6 = plot(
     textbook_curve[:,1],
@@ -116,9 +117,22 @@ p6 = plot(
     xlabel = L"Surface \;  Temperature \;  [°C]",
     ylabel = L"OLR \;[W/m^2]",
     title = L"Outgoing\; Longwave\; Radiation\; vs.\; Temperature",
-    size = (600,400),
-    xticks = LinRange(-40,40,9)
+    size = (800,600),
+    xticks = LinRange(-40,40,9),
+    legendfontsize = 12,
+    titlefontsize = 20,
+    guidefontsize = 15
 )
+
+plot!(
+    p6,
+    points[:,1],
+    points[:,2],
+    seriestype = :scatter,
+    shape = :+,
+    label = ""
+)
+
 plot!(p6,
     fitting_curve[:,1],
     fitting_curve[:,2],
