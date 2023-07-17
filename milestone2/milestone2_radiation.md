@@ -17,7 +17,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 The energy balance of Earth is strongly impacted by radiation. The following figure shows the energy fluxes in the global Earth atmosphere system.
 
 \fig{/assets/milestone2/ClimateSystem.jpg}
-* Source: [NASA](https://web.archive.org/web/20140421050855/http://science-edu.larc.nasa.gov/energy_budget/), Public domain, quoting Loeb et al., J. Clim 2009 & Trenberth et al, BAMS 2009
+* Earth's Energy Budget. Source: [NASA](https://web.archive.org/web/20140421050855/http://science-edu.larc.nasa.gov/energy_budget/), Public domain, quoting Loeb et al., J. Clim 2009 & Trenberth et al, BAMS 2009.
 
 @@colbox-blue
 **Remark:** Note that this figure is from 2010. By now the net absorbed energy has risen to $1.0\; W/m^2$. ([Loeb et al. (2021). Satellite and Ocean Data Reveal Marked Increase in Earth’s Heating Rate. Geophysical Research Letters, 48(13)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021GL093047))

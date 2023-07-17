@@ -28,7 +28,7 @@ spherical coordinates. In the geographic coordinate system, we speak of latitude
 * **Longitude** ($\varphi$): East-West direction. Longitude lines are perpendicular to the equator with range West -180° to East +180°.
 
 ![](/assets/milestone1/LongLat.png)
-* **Source:** [Wikipedia](https://commons.wikimedia.org/wiki/File:FedStats_Lat_long.svg), Public Domain.
+* Latitude and Longitude. Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:FedStats_Lat_long.svg), Public Domain.
 
 @@colbox-blue
 **Remark 1:** The values of longitude and latitude can be given in radians or degrees.
@@ -50,7 +50,7 @@ We consider the spherical coordinate system, in which all points in the three-di
 * Longitude: $\varphi \in \R, \, 0 \le \varphi < 2\pi$.
 
 ![](/assets/milestone1/SphereCoord.png)
-* **Source**: [Wikipedia](https://commons.wikimedia.org/wiki/File:Kugelkoord-def.svg) ([User:Ag2gaeh](https://de.wikipedia.org/wiki/Benutzer:Ag2gaeh)), modified, [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+* Spherical coordinates. Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Kugelkoord-def.svg) ([User:Ag2gaeh](https://de.wikipedia.org/wiki/Benutzer:Ag2gaeh)), modified, [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 We can map any point in absolute Cartesian coordinates ($x,y,z$) to spherical coordinates ($r,\colat,\varphi$) using the following transformations:
 \begin{align}
 x &= r \sin \colat \cos \varphi, & r &= \sqrt{x^2 + y^2 + z^2},\\
