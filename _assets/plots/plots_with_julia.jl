@@ -63,7 +63,7 @@ co2_data = readdlm("co2_forcing_data.csv")
 
 
 p3 = plot(co2_data[:,1],co2_data[:,2], seriestype=:scatter, shape = :+, 
-    xlabel = L"CO_2 \quad [ppm]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
+    xlabel = L"CO_2 \quad [ppmv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 1100], ylims=[0,10],
     title = L"Radiative\, forcing\, -\, CO_2", 
     label = data_label,
@@ -80,7 +80,7 @@ ch4_ipcc = readdlm("ch4_forcing_ipcc.csv")
 ch4_data = readdlm("ch4_forcing_data.csv")
 
 p4 = plot(ch4_data[:,1], ch4_data[:,2],seriestype=:scatter, shape = :+,
-    xlabel = L"CH_4 \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
+    xlabel = L"CH_4 \quad [ppbv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 5500], ylims=[0,2],
     title = L"Radiative\, forcing\, -\, CH_4", label=data_label,
     size = figsize_rad_feed
@@ -94,7 +94,7 @@ n2o_ipcc = readdlm("n2o_forcing_ipcc.csv")
 n2o_data = readdlm("n2o_forcing_data.csv")
 
 p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
-    xlabel = L"N_2\,O \quad [ppb]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
+    xlabel = L"N_2\,O \quad [ppbv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
     xlims = [0, 600], ylims=[0,1],
     title = L"Radiative\, forcing\, -\, N_2\,O", label = data_label,
     size = figsize_rad_feed
@@ -102,3 +102,76 @@ p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
 
 plot!(p5,n2o_ipcc[:,1],n2o_ipcc[:,2], label = fit_label)
 savefig(p5, "N2O_forcing.png")
+
+
+# Budyko's Linear Model
+
+textbook_curve = readdlm("radiation_physical_model.csv")
+fitting_curve = readdlm("radiation_fitting_curve.csv")
+points = readdlm("radiation_points.csv")
+
+p6 = plot(
+    textbook_curve[:,1],
+    textbook_curve[:,2],
+    label = L"\sigma T^4",
+    xlabel = L"Surface \;  Temperature \;  [°C]",
+    ylabel = L"OLR \;[W/m^2]",
+    title = L"Outgoing\; Longwave\; Radiation\; vs.\; Temperature",
+    size = (800,600),
+    xticks = LinRange(-40,40,9),
+    legendfontsize = 12,
+    titlefontsize = 20,
+    guidefontsize = 15
+)
+
+plot!(
+    p6,
+    points[:,1],
+    points[:,2],
+    seriestype = :scatter,
+    shape = :+,
+    label = ""
+)
+
+plot!(p6,
+    fitting_curve[:,1],
+    fitting_curve[:,2],
+    label = L"202.1 + 1.90 T"
+)
+
+savefig(p6, "OutgoingLongwaveRadiation.png")
+
+
+
+# Heat Transfer Plot
+
+heat_ocean = readdlm("heat_transfer_ocean.csv")
+heat_total = readdlm("heat_transfer_total.csv")
+heat_atmos = readdlm("heat_transfer_atmosphere.csv")
+p7 = plot(
+    heat_total[:,1],
+    heat_total[:,2],
+    title = "Heat transport in the Northern Hemisphere",
+    xlabel = "Latitude [°]",
+    ylabel = "Northward heat transport [10³ TW]",
+    label = "Total",
+    size = (600,400),
+    xticks = LinRange(0,90,10),
+    yticks = [-1, 0, 1, 2, 3, 4, 5, 6]
+)
+
+plot!(
+    p7,
+    heat_ocean[:,1],
+    heat_ocean[:,2],
+    label = "Ocean"
+)
+
+plot!(
+    p7,
+    heat_atmos[:,1],
+    heat_atmos[:,2],
+    label = "Atmosphere"
+)
+
+savefig(p7, "heat_transfer_north.png")

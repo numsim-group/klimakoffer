@@ -17,7 +17,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 The energy balance of Earth is strongly impacted by radiation. The following figure shows the energy fluxes in the global Earth atmosphere system.
 
 \fig{/assets/milestone2/ClimateSystem.jpg}
-* Source: https://web.archive.org/web/20140421050855/http://science-edu.larc.nasa.gov/energy_budget/ quoting Loeb et al., J. Clim 2009 & Trenberth et al, BAMS 2009
+* Earth's Energy Budget. Source: [NASA](https://web.archive.org/web/20140421050855/http://science-edu.larc.nasa.gov/energy_budget/), Public domain, quoting Loeb et al., J. Clim 2009 & Trenberth et al, BAMS 2009.
 
 @@colbox-blue
 **Remark:** Note that this figure is from 2010. By now the net absorbed energy has risen to $1.0\; W/m^2$. ([Loeb et al. (2021). Satellite and Ocean Data Reveal Marked Increase in Earth’s Heating Rate. Geophysical Research Letters, 48(13)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021GL093047))
@@ -72,7 +72,7 @@ $$
 It is in general motivated by available observational data, shown in the next figure
 
 \fig{/assets/milestone2/OutgoingLongwaveRadiation.png}
-* Figure is from the book _North, G. R., & Kim, K. Y. (2017). Energy balance climate models. John Wiley & Sons_ and is originally from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=X0WG_pxk8AUAAAAA:2mvPv6HgmsA467qq44RYKY8WrJZLh_Bl-lN2kzgdBLJi3-xSVh0il6g-p1PSlxda51H8YVdkx1dsxSI).
+* Measured outgoing longwave radiation as a function of the surface temperature between 1975 and 1985. Generated with data from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=X0WG_pxk8AUAAAAA:2mvPv6HgmsA467qq44RYKY8WrJZLh_Bl-lN2kzgdBLJi3-xSVh0il6g-p1PSlxda51H8YVdkx1dsxSI).
 
 The figure shows infrared radiation density plots averaged monthly, measured by satellite compared to the surface temperature at the same month and location. 
 (a) shows the whole sky (including clouds) and (b) shows only the clear (cloudless) sky.
@@ -123,7 +123,7 @@ The ability of these molecules to absorb infrared radiation is significant becau
 **Comment:** The effect of greenhouse gases is very complex and there is a lot of ongoing research. $H_2O$ in particular is very important but ever so complex due to it being dependent on many other components and processes, i.e., the full water cycle. We will consider in our EBM only the effect of $CO_2$ on the radiation. Infrared absorbtion means that the efficiency of our outgoing radiation (cooling effect) decreases (which causes a higher equilibrium temperature). This decrease in efficiency is topic of many investigations and studies, e.g., by the IPCC.
 @@
 
-In this course, we follow the paper by Myhre et al. (1998) to define our parametrization of the greenhouse gas effect. From this paper, we first look at the effect of the amount of greenhouse gases measured in parts per million $[ppm]$, as plotted in the following figures:
+In this course, we follow the paper by Myhre et al. (1998) to define our parametrization of the greenhouse gas effect. From this paper, we first look at the effect of the amount of greenhouse gases, as plotted in the following figures:
 
 \fig{/assets/milestone2/CO2_forcing.png}
 \fig{/assets/milestone2/CH4_forcing.png}
@@ -131,18 +131,33 @@ In this course, we follow the paper by Myhre et al. (1998) to define our paramet
  * Figures were generated with data from Myhre et al. (1998).
  
 The figures show radiative forcing as a function
-of concentration in [ppm] for $CO_2$ and in [ppb] for $CH_4$ and $N_2O$.
+of concentration in $[ppmv]$ ("parts per million by volume") for $CO_2$ and in $[ppbv]$ ("parts per billion by volume") for $CH_4$ and $N_2O$.
 
-Myhre et al. and also other research groups
-introduced simplified expressions that
-parametrize the effect
+The following table gathers simplified expressions to compute (fit) the radiative forcing caused by different greenhouse gases using data from Myhre et al. (1998) and the function
+\begin{align}\label{eq:ffunciton}
+f(M,N) = 0.47 \ln \left( 1 + 2.01 \times 10^{-5} (M \, N)^{3/4} + 5.31 \times 10^{-15} M (M \, N)^{1.52} \right).
+\end{align}
 
-\fig{/assets/milestone2/CO2e.png}
-* Table from Myhre et al. (1998)
+* **Table:** Simplified expressions for the radiative forcing $\Delta A$ in $[W/m^2]$ with coefficients of the IPCC report (1990) and Myhre et al. (1998). In the expressions, $C$ is CO$_2$ concentration in $[ppmv]$, $M$ is CH$_4$ concentration in $[ppbv]$, $N$ is N$_2$O concentration in $[ppbv]$, and $X$ is Chlorofluorocarbons (CFCs) concentration in $[ppbv]$. The subscript $0$ denotes unperturbed (reference) concentrations. The function $f$ is given in \eqref{eq:ffunciton}. Adapted from Myhre et al. (1998).
+\begin{align*}
+\begin{array}{cccc}
+\hline
+\text{Trace gas}   & \text{Radiative forcing $\Delta A$}     & \alpha_{\text{IPCC}} & \alpha_{\text{Myhre}} \\
+\hline
+\text{CO}_2  &   \alpha \ln (C/C_0) & 6.3 & 5.35      \\
+\text{CH}_4  &   \alpha \left(\sqrt{M}-\sqrt{M_0} \right) - \left(f\left(M,N_0\right)- f\left(M_0,N_0\right) \right) & 0.0036        & 0.0036   \\
+\text{N}_2\text{O} &  \alpha \left(\sqrt{N}-\sqrt{N_0} \right) - \left(f\left(M_0,N\right)- f\left(M_0 ,N_0\right) \right)  &0.14 & 0.12 \\
+\text{CFC-11} & \alpha(X-X_0) & 0.22 & 0.25\\ 
+\text{CFC-12} & \alpha(X-X_0) & 0.28 & 0.33\\ 
+\hline
+\end{array}
+\end{align*}
+
+
 
 As mentioned, we only consider the effect of $CO_2$ in our model and hence choose the approximation 
 $$
-\Delta F = \alpha_{\text{Myhre}}\, \ln(CO_2/CO_2(t_0)),
+\Delta A = \alpha_{\text{Myhre}}\, \ln(CO_2/CO_2(t_0)),
 $$
 where 
 $$
@@ -152,7 +167,7 @@ $CO_2$ is the concentration in $[ppm]$, and $CO_2(t_0) = 315\, [ppm]$ is the ref
 
 In summary, we get the following parametrization of our outgoing longwave radiation source term 
 $$
-S_{OLW}(T,x,t,CO_2) = -(A + B\, (T - 273.15) - \Delta F(CO_2)),
+S_{OLW}(T,x,t,CO_2) = -(A + B\, (T - 273.15) - \Delta A(CO_2)),
 $$
 which we reformulate into the shorthand notation
 $$

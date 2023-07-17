@@ -16,7 +16,7 @@ As a next step, we want to investigate the difference of the southern and nother
 see a strong difference regarding the geography:
 
 \fig{/assets/milestone4/map.png}
-* Figure from Blue Marble Next Generation, NASA, 2004.
+* Earth's Surface. Blue Marble Next Generation, [NASA's Goddard Space Flight Center](https://svs.gsfc.nasa.gov/12564), [Reto Stockli](https://svs.gsfc.nasa.gov/search/?people=Reto%20Stockli), 2004, Public Domain.
 
 An obvious difference is that there is more ocean area in the south and more land area in the north. This is an important difference for our EBM
 as the heat capacity coefficient $C(x)$ has strong variations: in particular, ocean grid cells (water) have a much larger value of $C$, which indicates that the thermodynamic time scales are much longer, which means that the ocean reacts much "slower" compared to the soil. 

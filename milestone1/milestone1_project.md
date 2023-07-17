@@ -37,7 +37,7 @@ where $\varphi$ is the longitude and $\theta$ the latitude in radians.
 This function should return two matrices $X = x_{ij}$ and $Y = y_{ij}$, where $x_{ij} = x(\theta_i, \varphi_j), y_{ij} = y(\theta_i, \varphi_j)$.
 
 ![](/assets/milestone1/Robinson_projection.jpg)
-* **Source**: Daniel R. Strebe, [Wikipedia](https://en.wikipedia.org/wiki/File:Robinson_projection_SW.jpg)
+* The world on Robinson projection. Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Robinson_projection_SW.jpg) ([Daniel R. Strebe](https://commons.wikimedia.org/wiki/User:Strebe)), 15th August 2011, [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 
 3. Write a function *plot_geo* that creates a plot of the Earth surface type $g_{ij}$ against the mapped coordinates $(x_{ij}, y_{ij})$.
 4. Use these functions in a program and run it to check your results.
