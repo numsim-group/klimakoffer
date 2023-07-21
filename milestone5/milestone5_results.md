@@ -23,6 +23,9 @@ Plot of the diffusion coefficient:
 
 \input{plot:1}{/assets/scripts/milestone5.jl}
 
+~~~
+<iframe src="/assets/milestone5/diffusion_coeff.html" seamless width=800 height=600></iframe>
+~~~
 ### Sparsity Pattern of the Jacobian
 
 Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a the upper left part is plotted to make the pattern visible.

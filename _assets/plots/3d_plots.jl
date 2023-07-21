@@ -80,7 +80,7 @@ function plot_earth(X,Y,Z,surface_data)
                 ),
     )
 
-    return PlotlyJS.plot(fig1, layout)   
+    return Plot(fig1, layout)   
 end
 
 function get_outlines(geo_dat)
@@ -129,12 +129,12 @@ function plot_albedo_3d(X,Y,Z, albedo, surface_data)
                 color = "rgb(255,255,255)",
                 size = 15
                 ),
-            #=    
+                
             title="albedo",
             titlefont = (
                 color = "rgb(255,255,255)",
                 size = 15
-            ) =#  
+            )  
         )
     )
     
@@ -163,8 +163,7 @@ function plot_albedo_3d(X,Y,Z, albedo, surface_data)
             )
 
 
-    return PlotlyJS.plot([fig1,fig2], layout)   
-
+    return Plot([fig1,fig2], layout)   
 end
 
 function plot_heatcapacity_3d(X,Y,Z, heat_capacity, surface_data)
@@ -242,8 +241,7 @@ function plot_heatcapacity_3d(X,Y,Z, heat_capacity, surface_data)
                 ),
     )
 
-    return PlotlyJS.plot([fig1,fig2], layout)   
-
+    return Plot([fig1,fig2], layout)   
 end
 
 function plot_solar_forcing_3d_anim(X,Y,Z,solar_forcing, surface_data)
@@ -483,7 +481,7 @@ function plot_diffusioncoefficient_3d(X,Y,Z, diffusion_coefficient, surface_data
             )
 
 
-    return PlotlyJS.plot([fig1,fig2], layout)   
+    return Plot([fig1,fig2], layout)   
 end
 
 function annual_temperature_pointwise(nlatitude, nlongitude, ntimesteps, heat_capacity, solar_forcing, radiative_cooling)
@@ -677,11 +675,11 @@ end
 
 
 
-geo = readdlm("input/The_World128x65.dat")
+geo = readdlm("milestones/input/The_World128x65.dat")
 
 albedo = calc_albedo(geo)
 heat_capacity = calc_heat_capacity(geo)
-true_lon = read_true_longitude("input/True_Longitude.dat")
+true_lon = read_true_longitude("milestones/input/True_Longitude.dat")
 solar_forcing = calc_solar_forcing(albedo,true_lon)
 X,Y,Z = parametrisation(geo)
 area = calc_area(geo) # Compute area-mean quantities
@@ -703,14 +701,43 @@ jacobian = calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity)
 temperature,_ = compute_equilibrium_2d(timestep_euler_backward_2d(jacobian, 1/48), mesh, diffusion_coefficient, heat_capacity, solar_forcing, radiative_cooling)
 
 
-display(plot_earth(X,Y,Z,geo)) # earth
-display(plot_albedo_3d(X,Y,Z, albedo, get_outlines(geo)))# albedo
-display(plot_heatcapacity_3d(X,Y,Z, heat_capacity, get_outlines(geo))) # heat capacity
-display(plot_diffusioncoefficient_3d(X,Y,Z, diffusion_coefficient, outlines))
+# display(plot_earth(X,Y,Z,geo)) # earth
+# display(plot_albedo_3d(X,Y,Z, albedo, outlines))# albedo
+# display(plot_heatcapacity_3d(X,Y,Z, heat_capacity, outlines)) # heat capacity
+# display(plot_diffusioncoefficient_3d(X,Y,Z, diffusion_coefficient, outlines))
 
 
-display(plot_solar_forcing_3d_anim(X,Y,Z,solar_forcing,get_outlines(geo)))
+# display(plot_solar_forcing_3d_anim(X,Y,Z,solar_forcing,outlines))
 
-display(plot_temperature_3d_anim(X,Y,Z,temperature,outlines))
+# display(plot_temperature_3d_anim(X,Y,Z,temperature,outlines))
 
-# writedlm("earth_plot.json"json(plot_earth(X,Y,Z,geo)))
+earth = plot_earth(X,Y,Z,geo)
+open("./earth.html", "w") do io
+    PlotlyBase.to_html(io, earth)
+end
+
+albedo_plot = plot_albedo_3d(X,Y,Z, albedo, outlines)
+# Plots.savefig(albedo_plot, "savealb.html")
+open("./albedo.html", "w") do io
+    PlotlyBase.to_html(io, albedo_plot)
+end
+
+solar_forcing_plot = plot_solar_forcing_3d_anim(X,Y,Z,solar_forcing, outlines)
+open("./sf.html", "w") do io
+    PlotlyBase.to_html(io, solar_forcing_plot)
+end
+
+heat_capacity_plot = plot_heatcapacity_3d(X,Y,Z, heat_capacity, outlines)
+open("./heat_capacity.html", "w") do io
+    PlotlyBase.to_html(io, heat_capacity_plot)
+end
+
+diff_coeff_plot = plot_diffusioncoefficient_3d(X,Y,Z, diffusion_coefficient, outlines)
+open("./diffusion_coeff.html", "w") do io
+    PlotlyBase.to_html(io, diff_coeff_plot)
+end
+
+temperature_plot = plot_temperature_3d_anim(X,Y,Z,temperature,outlines)
+open("./temperature.html", "w") do io
+    PlotlyBase.to_html(io, temperature_plot)
+end
