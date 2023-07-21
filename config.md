@@ -4,7 +4,7 @@ Add here global page variables to use throughout your website.
 +++
 author = "Gregor Gassner and Andrés Rueda-Ramírez"
 mintoclevel = 2
-#@def hasplotly = false
+
 # Add here files or directories that should be ignored by Franklin, otherwise
 # these files might be copied and, if markdown, processed by Franklin which
 # you might not want. Indicate directories by ending the name with a `/`.
@@ -40,4 +40,3 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\diffcoeff}{\widetilde D}
 <!-- Name of repository for GitHub pages -->
 @def prepath = "IntroToClimateModeling"
-@def hasplotly = false
