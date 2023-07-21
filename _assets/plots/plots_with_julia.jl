@@ -4,7 +4,8 @@ using LaTeXStrings
 
 linewidth = 2 # linewidth of plots
 markersize = 10 # Radius of scatter plot symbols in px
-
+guidefontsize = 14 # Size of text
+dpi = 300 # resolution
 
 # Data digitalised with https://apps.automeris.io/wpd/
 
@@ -25,10 +26,13 @@ end
 # Creating plot 1 for average and clear sky albedo in February
 p1 = plot(alb_feb_avg_sky[:,1], alb_feb_avg_sky[:,2], 
         xlabel = "Latitude [°]", ylabel = "Albedo [%]",
-        ylims=[0,100], #xlims = [-70,70 ], 
+        ylims=[0,100],
+        # xlims = [-70,70 ], 
         title = "Albedo vs Latitude (February)", label = "Average sky",
         size=figsize,
-        linewidth = linewidth)
+        linewidth = linewidth,
+        guidefontsize = guidefontsize,
+        dpi = dpi)
 
 plot!(p1,alb_feb_clear_sky[:,1],alb_feb_clear_sky[:,2], label = "Clear sky", linewidth = linewidth)
 
@@ -48,7 +52,7 @@ p2 = plot(alb_feb_avg_sky[:,1], alb_feb_avg_sky[:,2],
     ylims=[0,100],
     title = "Modelling albedo between the pole regions", label = "Average sky (February)",
     size = figsize,
-    linewidth = linewidth)
+    linewidth = linewidth,guidefontsize = guidefontsize, dpi = dpi)
 
 plot!(p2, x,y,label = "0.29 + 0.12 p(θ)", color = "green", linewidth = linewidth)
 plot!(xticks = (sin.(deg2rad.([-90,-75,-60,-45,-30,-15,0,15,30,45,60,75,90])), ["-90", "", "-60", "", "-30", "", "0", "", "30", "", "60", "", "90"]))
@@ -73,7 +77,7 @@ p3 = plot(co2_data[:,1],co2_data[:,2], seriestype=:scatter, shape = :+,
     title = L"Radiative\, forcing\, -\, CO_2", 
     label = data_label,
     size = figsize_rad_feed,
-    markersize = markersize
+    markersize = markersize,guidefontsize = guidefontsize, dpi = dpi
     )
 
 plot!(p3,co2_ipcc[:,1], co2_ipcc[:,2],label = fit_label, linewidth = linewidth)
@@ -90,7 +94,7 @@ p4 = plot(ch4_data[:,1], ch4_data[:,2],seriestype=:scatter, shape = :+,
     xlims = [0, 5500], ylims=[0,2],
     title = L"Radiative\, forcing\, -\, CH_4", label=data_label,
     size = figsize_rad_feed,
-    markersize = markersize
+    markersize = markersize,guidefontsize = guidefontsize, dpi = dpi
     )
 
 plot!(p4,ch4_ipcc[:,1], ch4_ipcc[:,2],label = fit_label, linewidth = linewidth)
@@ -105,7 +109,7 @@ p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
     xlims = [0, 600], ylims=[0,1],
     title = L"Radiative\, forcing\, -\, N_2\,O", label = data_label,
     size = figsize_rad_feed,
-    markersize = markersize
+    markersize = markersize,guidefontsize = guidefontsize, dpi = dpi
     )
 
 plot!(p5,n2o_ipcc[:,1],n2o_ipcc[:,2], label = fit_label, linewidth = linewidth)
@@ -129,7 +133,7 @@ p6 = plot(
     xticks = LinRange(-40,40,9),
     legendfontsize = 12,
     titlefontsize = 20,
-    guidefontsize = 15,
+    guidefontsize = guidefontsize, dpi = dpi,
     linewidth = linewidth
 )
 
@@ -169,7 +173,7 @@ p7 = plot(
     size = (600,400),
     xticks = LinRange(0,90,10),
     yticks = [-1, 0, 1, 2, 3, 4, 5, 6],
-    linewidth = linewidth
+    linewidth = linewidth,guidefontsize = guidefontsize, dpi = dpi
 )
 
 plot!(
@@ -189,3 +193,61 @@ plot!(
 )
 
 savefig(p7, "heat_transfer_north.png")
+
+# Diffusion coefficients by surface type
+
+lats = LinRange(-90,90,181)
+
+D_ocean_poles = 0.4
+D_ocean_equ = 0.65
+D_equ = 0.65
+D_NP = 0.28
+D_SP = 0.2
+
+function diff_coeff(latitude, type)
+    colatitude = deg2rad(90 - latitude) # convert to radians
+    if type=="ocean"
+        return D_ocean_poles + (D_ocean_equ - D_ocean_poles) * sin(colatitude)^5
+    elseif latitude > 0
+        return D_NP + (D_equ-D_NP)*sin(colatitude)^5
+    else
+        return D_SP + (D_equ-D_SP)* sin(colatitude)^5
+    end
+end
+
+p8 = plot(
+    lats,
+    diff_coeff.(lats, "ocean"),
+    xticks = LinRange(-90,90,7),
+    yticks = [0,0.2,0.4,0.6,0.8,1],
+    yrange = (0,1),
+    xrange = (-90,90), 
+    # label = L"\textsf{over} \quad ocean",
+    label = "over ocean",
+    guidefontsize = guidefontsize,
+    xlabel = L"Latitude \; [°]",
+    ylabel = L"\widetilde{D} \; [W/m^2/K]",
+    size = (700,550),
+    linewidth = linewidth,
+    dpi = 300
+)
+
+plot!(
+    p8,
+    lats[1:91],
+    diff_coeff.(lats[1:91],"not ocean"),
+    linewidth = linewidth,
+    color = "red",
+    label = "over land, snow, sea ice"
+
+)
+
+plot!(
+    p8,
+    lats[91:end],
+    diff_coeff.(lats[91:end],"not ocean"),
+    linewidth = linewidth,
+    color = "red",
+    label =""
+)
+savefig(p8, "diffusion.png")
