@@ -2,7 +2,7 @@ using PlotlyJS
 using DelimitedFiles
 using LaTeXStrings
 
-include("milestone6.jl")
+include("milestones/milestone6.jl")
 
 
 function parametrisation(surface_data, radius=10)
