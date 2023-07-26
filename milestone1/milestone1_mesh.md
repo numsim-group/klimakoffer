@@ -42,7 +42,9 @@ there are many alternative ways of constructing
 meshes for sphere:
 
 ![](/assets/milestone1/GridsSphere.png)
-* **Source**: [https://www.encyclopedie-environnement.org](https://www.encyclopedie-environnement.org)
+* **Source**:  Example of horizontal grid types used by atmospheric models. [Weather forecasting models](https://www.encyclopedie-environnement.org/en/air-en/weather-forecasting-models/), Sylvie Malardel, Encyclopedia of the Environment, [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+
 
 For instance, the famous ICON (Icosahedral Nonhydrostatic) model from the German weather service (DWD: Deutscher Wetterdienst) uses triangle
 surface grids:
