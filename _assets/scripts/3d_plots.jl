@@ -2,7 +2,7 @@ using PlotlyJS
 using DelimitedFiles
 using LaTeXStrings
 
-include("milestones/milestone6.jl")
+include("milestone6.jl")
 
 
 function parametrisation(surface_data, radius=10)
@@ -675,11 +675,11 @@ end
 
 
 
-geo = readdlm("milestones/input/The_World128x65.dat")
+geo = readdlm("The_World128x65.dat")
 
 albedo = calc_albedo(geo)
 heat_capacity = calc_heat_capacity(geo)
-true_lon = read_true_longitude("milestones/input/True_Longitude.dat")
+true_lon = read_true_longitude("True_Longitude.dat")
 solar_forcing = calc_solar_forcing(albedo,true_lon)
 X,Y,Z = parametrisation(geo)
 area = calc_area(geo) # Compute area-mean quantities
