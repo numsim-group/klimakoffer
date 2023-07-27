@@ -141,7 +141,7 @@ gives a curvilinear mesh a shown in the
 figure:
 
 ![](/assets/milestone1/Robinson.png)
-* **Source**: Ipbuker, C. (2005). A computational approach to the Robinson projection. Survey Review, 38(297), 204-217.
+* Map of the world in a Robinson projection with Tissot's Indicatrix of deformation. Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Tissot_indicatrix_world_map_Robinson_proj.svg) (Eric Gaba - [User:Sting](https://commons.wikimedia.org/wiki/User:Sting)), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 As can be seen in the figure, the
 geographic map can be used to
