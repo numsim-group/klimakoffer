@@ -18,21 +18,14 @@ This is an example for the expected results:
 ### Albedo Plot
 \input{plot:1}{/assets/scripts/milestone2.jl}
 
-~~~
-<iframe src="/assets/milestone2/albedo.html" seamless width=800 height=600></iframe>
-~~~
+
 ### Heat Capacity Plot
 \input{plot:2}{/assets/scripts/milestone2.jl}
 
-~~~
-<iframe src="/assets/milestone2/heat_capacity.html" seamless width=800 height=600></iframe>
-~~~
+
 ### Solar Forcing Animation
 \fig{/assets/milestone2/solar_forcing.gif}
 
-~~~
-<iframe src="/assets/milestone2/sf.html" seamless width=800 height=600></iframe>
-~~~
 
 
 
@@ -42,6 +35,21 @@ The Julia and Python implementations of milestone 2 can be downloaded here:
 
 * [Julia solution](/assets/scripts/milestone2.jl)
 * [Python solution](/assets/scripts/milestone2.py)
+
+## Bonus - 3D plots
+
+~~~
+<iframe src="/assets/milestone2/albedo.html" seamless width=800 height=600></iframe>
+~~~
+
+~~~
+<iframe src="/assets/milestone2/heat_capacity.html" seamless width=800 height=600></iframe>
+~~~
+
+~~~
+<iframe src="/assets/milestone2/sf.html" seamless width=800 height=600></iframe>
+~~~
+
 
 ## Scripts for Milestone 2
 

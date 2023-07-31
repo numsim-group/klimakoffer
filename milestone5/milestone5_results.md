@@ -23,9 +23,7 @@ Plot of the diffusion coefficient:
 
 \input{plot:1}{/assets/scripts/milestone5.jl}
 
-~~~
-<iframe src="/assets/milestone5/diffusion_coeff.html" seamless width=800 height=600></iframe>
-~~~
+
 ### Sparsity Pattern of the Jacobian
 
 Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a the upper left part is plotted to make the pattern visible.
@@ -39,9 +37,15 @@ The Python implementation of milestone 5 can be downloaded here (Julia version w
 * [Julia solution](/assets/scripts/milestone5.jl)
 * [Python solution](/assets/scripts/milestone5.py)
 
+## Bonus - 3D plot
+
+~~~
+<iframe src="/assets/milestone5/diffusion_coeff.html" seamless width=800 height=600></iframe>
+~~~
+
 ## Scripts for Milestone 5
 
-You can also check out our Python implementation of milestone 5 in this site.
+You can also check out our Julia and Python implementations of milestone 5 in this site.
 
 ### Julia implementation of milestone 5
 

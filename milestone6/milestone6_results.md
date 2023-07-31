@@ -60,7 +60,7 @@ The Python implementation of milestone 6 can be downloaded here (Julia version w
 
 ## Scripts for Milestone 6
 
-You can also check out our Python implementation of milestone 6 in this site.
+You can also check out our Julia and Python implementations of milestone 6 in this site.
 
 ### Julia implementation of milestone 6
 

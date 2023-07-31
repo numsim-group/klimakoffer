@@ -18,15 +18,20 @@ This is an example for the expected result:
 
 \input{plot}{/assets/scripts/milestone1.jl}
 
-~~~
-<iframe src="/assets/milestone1/earth.html" seamless width=800 height=600></iframe>
-~~~
+
+
 ## Files Download
 
 The Julia and Python implementations of milestone 1 can be downloaded here:
 
 * [Julia solution](/assets/scripts/milestone1.jl)
 * [Python solution](/assets/scripts/milestone1.py)
+
+## Bonus - 3D plot
+
+~~~
+<iframe src="/assets/milestone1/earth.html" seamless width=800 height=600></iframe>
+~~~
 
 ## Scripts for Milestone 1
 
