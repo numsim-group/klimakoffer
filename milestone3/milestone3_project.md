@@ -13,8 +13,8 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Solving a zero-dimensional Energy Balance Model
 
 [(Download description in PDF format)](/assets/milestone3/description.pdf)\\
-[(Download *The_World128x65.dat*)](/assets/milestone3/input/The_World128x65.dat)\\
-[(Download *True_Longitude.dat*)](/assets/milestone3/input/True_Longitude.dat)
+[(Download *The_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *True_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)
 
 In the previous milestones you have already implemented some routines that are part of an energy balance model. Now you have the opportunity to combine your results into a zero-dimensional ($0D$) energy balance model (EBM) and solve the model using an ODE solver. Note that for zero-dimensional EBMs, spatial dependence is neglected, and $T$ is a global time-dependent averaged surface temperature. Let the following equation be given for the energy balance model:
 

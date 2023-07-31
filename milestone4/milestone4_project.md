@@ -13,7 +13,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## The pointwise zero-dimensional Energy Balance Model
 
 [(Download description in PDF format)](/assets/milestone4/description.pdf)\\
-[(Download *The_World128x65.dat*)](/assets/milestone4/input/The_World128x65.dat)\\
+[(Download *The_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
 
 In the previous milestone you have implemented the zero-dimensional EBM for the global mean temperature. In this milestone you will use this model to compute the mean temperature for the northern and southern hemisphere. Furthermore you will implement the EBM model pointwise for each grid point.
 

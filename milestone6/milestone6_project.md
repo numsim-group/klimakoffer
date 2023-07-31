@@ -14,9 +14,9 @@ tags = ["linear systems", "linear solvers"]
 ## Fixing Stability in the spatial 2D Energy Balance Modell
 
 [(Download description in PDF format)](/assets/milestone6/description.pdf)\\
-[(Download *The\_World128x65.dat*)](/assets/milestone6/input/The_World128x65.dat)\\
-[(Download *True\_Longitude.dat*)](/assets/milestone6/input/True_Longitude.dat)\\
-[(Download *co2\_nasa.dat*)](/assets/milestone6/input/co2_nasa.dat)\\
+[(Download *The\_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *True\_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)\\
+[(Download *co2\_nasa.dat*)](/assets/scripts/input/co2_nasa.dat)\\
 
 1. In the previous milestone you have implemented the spatial operator of the diffusive EBM for two spatial dimensions. The investigations of the eigenvalues revealed that the stable time step of the explicit Euler method is prohibitively small. Hence, we focus on the implicit Euler method. Adapt the function *calc\_equilibrium\_2d* to use the backward Euler instead of the forward Euler time integration method. Visualize the results as an animation.
 
