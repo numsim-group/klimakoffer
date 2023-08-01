@@ -510,7 +510,7 @@ function plot_temperature_3d_anim(X,Y,Z,temp, surface_data)
         cmax = -cmin
     end
 
-    n_frames = size(temp, 3) #Länge von true longs, aber dartauf können wir hier nicht zugreifen, deswegen solar
+    n_frames = size(temp, 3)
     
     fig1 = PlotlyJS.surface(
         x = X,
