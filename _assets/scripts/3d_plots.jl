@@ -248,7 +248,7 @@ function plot_solar_forcing_3d_anim(X,Y,Z,solar_forcing, surface_data)
 
     cmin, cmax = extrema(solar_forcing)
     
-    n_frames = size(solar_forcing, 3) #Länge von true longs, aber dartauf können wir hier nicht zugreifen, deswegen solar
+    n_frames = size(solar_forcing, 3)
     
     fig1 = PlotlyJS.surface(
         x = X,
