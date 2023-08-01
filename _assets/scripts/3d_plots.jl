@@ -675,7 +675,7 @@ end
 
 
 
-geo = readdlm("The_World128x65.dat")
+geo = readdlm("input/The_World128x65.dat")
 
 albedo = calc_albedo(geo)
 heat_capacity = calc_heat_capacity(geo)
