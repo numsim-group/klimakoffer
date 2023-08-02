@@ -13,8 +13,8 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Compute Albedo and Solar Forcing Terms and Visualize in Time
 
 [(Download description in PDF format)](/assets/milestone2/description.pdf)\\
-[(Download *The_World128x65.dat*)](/assets/milestone2/input/The_World128x65.dat)\\
-[(Download *True_Longitude.dat*)](/assets/milestone2/input/True_Longitude.dat)
+[(Download *The_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *True_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)
 
 In milestone 2 you will program the calculation of all necessary parameters for the calculation of the time and space dependent solar forcing and then visualize it as an animation over a period of one year in 48 time steps. For this you will need the functions *read_geography* and *robinson_projection* from milestone 1.
 
@@ -39,7 +39,7 @@ For $P_2(x)=\frac{(3x^2-1)}{2}$ and $x=\sin(\lat)$, where $\lat$ is the latitude
 | Land | 1350 | 750 | 1.0 |
 | Snow | 400 | 880 | 0.5  |
 
-3. Implement a function *read\_true\_longitude* to read in the true longitude $\lambda$ for each time step from the input file [True_Longitude.dat](/assets/milestone2/input/True_Longitude.dat) and output it as a vector $\lambda \in \mathbb{R}^{48}$.
+3. Implement a function *read\_true\_longitude* to read in the true longitude $\lambda$ for each time step from the input file [True_Longitude.dat](/assets/scripts/input/True_Longitude.dat) and output it as a vector $\lambda \in \mathbb{R}^{48}$.
 
 4. Write a function *insolation* that calculates the insolation $S\left(\lat,t\right)$ as in Berger[^2]. Input arguments of the function should be:
 
@@ -94,7 +94,7 @@ The solar forcing is given by
 Here, $S$ is the insolation defined above and $\alpha_c$ is the coalbedo given by $\alpha_c = 1 - \alpha$, where $\alpha$ is the albedo.
 
 
-6. To visualize the solar forcing as an animation, calculate the albedo and the solar forcing for a grid size of $65 \times 128$ (with the [data file](/assets/milestone2/input/The_World128x65.dat) from milestone 1) and $48$ time steps within a year. Then plot your result using the function
+6. To visualize the solar forcing as an animation, calculate the albedo and the solar forcing for a grid size of $65 \times 128$ (with the [data file](/assets/scripts/input/The_World128x65.dat) from milestone 1) and $48$ time steps within a year. Then plot your result using the function
 *robinson_projection* from milestone 1.
 
 [^1]: K. Zhuang, G.R. North, M.J. Stevens, _A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm_, SoftwareX, Vol. 6, pp. 198-202, July 7, 2017.

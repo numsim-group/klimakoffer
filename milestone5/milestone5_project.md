@@ -14,8 +14,8 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Constructing a System Matrix with FD Approach
 
 [(Download description in PDF format)](/assets/milestone5/description.pdf)\\
-[(Download *The\_World128x65.dat*)](/assets/milestone5/input/The_World128x65.dat)\\
-[(Download *True\_Longitude.dat*)](/assets/milestone5/input/True_Longitude.dat)\\
+[(Download *The\_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *True\_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)\\
 
 In this milestone, you will build the heart of the climate model: the system matrix for solving the energy balance model.
 The EBM model reads

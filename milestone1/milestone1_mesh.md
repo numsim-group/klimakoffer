@@ -16,7 +16,7 @@ In numerical methods, we often partition the domain in smaller subdomains using 
 The easiest way to partition a sphere is to use grid cells with uniform radius, latitude/colatitude and longitude spacings:
 
 ![](/assets/milestone1/PolesProblem.png)
-* Spherical_coordinate_system. Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Spherical_coordinate_system.svg) ([User: SharkD](https://commons.wikimedia.org/wiki/User:SharkD)), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+* Spherical coordinate system. Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Spherical_coordinate_system.svg) ([User: SharkD](https://commons.wikimedia.org/wiki/User:SharkD)), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 We can observe from the figure that the
 grid cells get smaller the closer they are to the
@@ -42,7 +42,9 @@ there are many alternative ways of constructing
 meshes for sphere:
 
 ![](/assets/milestone1/GridsSphere.png)
-* **Source**: [https://www.encyclopedie-environnement.org](https://www.encyclopedie-environnement.org)
+* **Source**:  Example of horizontal grid types used by atmospheric models. [Weather forecasting models](https://www.encyclopedie-environnement.org/en/air-en/weather-forecasting-models/), Sylvie Malardel, Encyclopedia of the Environment, [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+
 
 For instance, the famous ICON (Icosahedral Nonhydrostatic) model from the German weather service (DWD: Deutscher Wetterdienst) uses triangle
 surface grids:
@@ -139,7 +141,7 @@ gives a curvilinear mesh a shown in the
 figure:
 
 ![](/assets/milestone1/Robinson.png)
-* **Source**: Ipbuker, C. (2005). A computational approach to the Robinson projection. Survey Review, 38(297), 204-217.
+* Map of the world in a Robinson projection with Tissot's Indicatrix of deformation. Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Tissot_indicatrix_world_map_Robinson_proj.svg) (Eric Gaba - [User:Sting](https://commons.wikimedia.org/wiki/User:Sting)), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 As can be seen in the figure, the
 geographic map can be used to

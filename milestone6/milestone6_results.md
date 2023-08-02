@@ -23,6 +23,9 @@ Annual Temperature calculated with the 2D-EBM model:
 
 \fig{/assets/milestone6/annual_temperature.gif}
 
+~~~
+<iframe src="/assets/milestone6/temperature.html" seamless width=800 height=600></iframe>
+~~~
 ### Mean Temperature Plot using the 2D-EBM
 
 Plot of the mean and average temperature calculated by using the 2D-EBM and then averaging over the results:
@@ -57,7 +60,7 @@ The Python implementation of milestone 6 can be downloaded here (Julia version w
 
 ## Scripts for Milestone 6
 
-You can also check out our Python implementation of milestone 6 in this site.
+You can also check out our Julia and Python implementations of milestone 6 in this site.
 
 ### Julia implementation of milestone 6
 
