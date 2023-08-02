@@ -675,11 +675,11 @@ end
 
 
 
-geo = readdlm("input/The_World128x65.dat")
+geo = readdlm(joinpath(@__DIR__,"input","The_World128x65.dat"))
 
 albedo = calc_albedo(geo)
 heat_capacity = calc_heat_capacity(geo)
-true_lon = read_true_longitude("input/True_Longitude.dat")
+true_lon = read_true_longitude(joinpath(@__DIR__,"input","True_Longitude.dat"))
 solar_forcing = calc_solar_forcing(albedo,true_lon)
 X,Y,Z = parametrisation(geo)
 area = calc_area(geo) # Compute area-mean quantities

@@ -9,8 +9,8 @@ dpi = 300 # resolution
 
 # Data digitalised with https://apps.automeris.io/wpd/
 
-alb_feb_avg_sky = readdlm("feb_avg.csv")
-alb_feb_clear_sky = readdlm("feb_clear.csv")
+alb_feb_avg_sky = readdlm(joinpath(@__DIR__,"feb_avg.csv"))
+alb_feb_clear_sky = readdlm(joinpath(@__DIR__,"feb_clear.csv"))
 
 figsize = (600,640) # Width x Height
 
@@ -39,7 +39,7 @@ plot!(p1,alb_feb_clear_sky[:,1],alb_feb_clear_sky[:,2], label = "Clear sky", lin
 # Draw ticks that are consistent with the axis in sinusoidal scale, but write the angle in degrees!
 plot!(xticks = (sin.(deg2rad.([-90,-75,-60,-45,-30,-15,0,15,30,45,60,75,90])), ["-90", "", "-60", "", "-30", "", "0", "", "30", "", "60", "", "90"]))
 
-savefig(p1,"AlbedoLatitude.png")
+savefig(p1,joinpath(@__DIR__,"AlbedoLatitude.png"))
 
 # Creating plot comparing the modelling function with the data
 
@@ -57,7 +57,7 @@ p2 = plot(alb_feb_avg_sky[:,1], alb_feb_avg_sky[:,2],
 plot!(p2, x,y,label = "0.29 + 0.12 p(θ)", color = "green", linewidth = linewidth)
 plot!(xticks = (sin.(deg2rad.([-90,-75,-60,-45,-30,-15,0,15,30,45,60,75,90])), ["-90", "", "-60", "", "-30", "", "0", "", "30", "", "60", "", "90"]))
 
-savefig(p2,"ModellingAlbedo.png")
+savefig(p2,joinpath(@__DIR__,"ModellingAlbedo.png"))
 
 
 
@@ -67,8 +67,8 @@ figsize_rad_feed = (740,670)
 fit_label = L"Fit\; to\; NBM\; data"
 data_label = L"NBM\; (Narrow \;Band\; Model)\; results"
 
-co2_ipcc = readdlm("co2_forcing_ipcc.csv")
-co2_data = readdlm("co2_forcing_data.csv")
+co2_ipcc = readdlm(joinpath(@__DIR__,"co2_forcing_ipcc.csv"))
+co2_data = readdlm(joinpath(@__DIR__,"co2_forcing_data.csv"))
 
 
 p3 = plot(co2_data[:,1],co2_data[:,2], seriestype=:scatter, shape = :+, 
@@ -82,12 +82,12 @@ p3 = plot(co2_data[:,1],co2_data[:,2], seriestype=:scatter, shape = :+,
 
 plot!(p3,co2_ipcc[:,1], co2_ipcc[:,2],label = fit_label, linewidth = linewidth)
 
-savefig(p3, "CO2_forcing.png")
+savefig(p3, joinpath(@__DIR__,"CO2_forcing.png"))
 
 
 
-ch4_ipcc = readdlm("ch4_forcing_ipcc.csv")
-ch4_data = readdlm("ch4_forcing_data.csv")
+ch4_ipcc = readdlm(joinpath(@__DIR__,"ch4_forcing_ipcc.csv"))
+ch4_data = readdlm(joinpath(@__DIR__,"ch4_forcing_data.csv"))
 
 p4 = plot(ch4_data[:,1], ch4_data[:,2],seriestype=:scatter, shape = :+,
     xlabel = L"CH_4 \quad [ppbv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
@@ -98,11 +98,11 @@ p4 = plot(ch4_data[:,1], ch4_data[:,2],seriestype=:scatter, shape = :+,
     )
 
 plot!(p4,ch4_ipcc[:,1], ch4_ipcc[:,2],label = fit_label, linewidth = linewidth)
-savefig(p4, "CH4_forcing.png")
+savefig(p4, joinpath(@__DIR__,"CH4_forcing.png"))
 
 
-n2o_ipcc = readdlm("n2o_forcing_ipcc.csv")
-n2o_data = readdlm("n2o_forcing_data.csv")
+n2o_ipcc = readdlm(joinpath(@__DIR__,"n2o_forcing_ipcc.csv"))
+n2o_data = readdlm(joinpath(@__DIR__,"n2o_forcing_data.csv"))
 
 p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
     xlabel = L"N_2\,O \quad [ppbv]", ylabel = L"Radiative\, forcing \quad [W/m^2]",
@@ -113,14 +113,14 @@ p5 = plot(n2o_data[:,1], n2o_data[:,2], seriestype=:scatter, shape=:+,
     )
 
 plot!(p5,n2o_ipcc[:,1],n2o_ipcc[:,2], label = fit_label, linewidth = linewidth)
-savefig(p5, "N2O_forcing.png")
+savefig(p5, joinpath(@__DIR__,"N2O_forcing.png"))
 
 
 # Budyko's Linear Model
 
-textbook_curve = readdlm("radiation_physical_model.csv")
-fitting_curve = readdlm("radiation_fitting_curve.csv")
-points = readdlm("radiation_points.csv")
+textbook_curve = readdlm(joinpath(@__DIR__,"radiation_physical_model.csv"))
+fitting_curve = readdlm(joinpath(@__DIR__,"radiation_fitting_curve.csv"))
+points = readdlm(joinpath(@__DIR__,"radiation_points.csv"))
 
 p6 = plot(
     textbook_curve[:,1],
@@ -154,15 +154,15 @@ plot!(p6,
     linewidth = linewidth
 )
 
-savefig(p6, "OutgoingLongwaveRadiation.png")
+savefig(p6, joinpath(@__DIR__,"OutgoingLongwaveRadiation.png"))
 
 
 
 # Heat Transfer Plot
 
-heat_ocean = readdlm("heat_transfer_ocean.csv")
-heat_total = readdlm("heat_transfer_total.csv")
-heat_atmos = readdlm("heat_transfer_atmosphere.csv")
+heat_ocean = readdlm(joinpath(@__DIR__,"heat_transfer_ocean.csv"))
+heat_total = readdlm(joinpath(@__DIR__,"heat_transfer_total.csv"))
+heat_atmos = readdlm(joinpath(@__DIR__,"heat_transfer_atmosphere.csv"))
 p7 = plot(
     heat_total[:,1],
     heat_total[:,2],
@@ -192,7 +192,7 @@ plot!(
     linewidth = linewidth
 )
 
-savefig(p7, "heat_transfer_north.png")
+savefig(p7, joinpath(@__DIR__,"heat_transfer_north.png"))
 
 # Diffusion coefficients by surface type
 
@@ -250,4 +250,4 @@ plot!(
     color = "red",
     label =""
 )
-savefig(p8, "diffusion.png")
+savefig(p8, joinpath(@__DIR__,"diffusion.png"))
