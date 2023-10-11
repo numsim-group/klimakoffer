@@ -3,7 +3,7 @@
 
 # An Introduction to Climate Modeling
 
-\fig{/assets/earth_heating.gif}
+\fig{/assets/temp.gif}
 
 ## Course Description
 
