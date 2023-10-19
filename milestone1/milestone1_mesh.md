@@ -51,7 +51,7 @@ surface grids:
 
 
 ![](/assets/milestone1/ICONgrid.png)
-* **Source**: [www.dwd.de](http://www.dwd.de)
+* **Source**: Conway dcccD. [Wikipedia](https://commons.wikimedia.org/wiki/File:Conway_dcccD.png) ([User:Tomruen](https://commons.wikimedia.org/wiki/User:Tomruen)), [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 Although we have identified some issues with grids that are regular in latitude/colatitude and longitude, we have decided to use this type of grid in our model. Despite its limitations, it is the simplest grid to construct and work with. To address the singularities at the poles, we will develop and implement a special fix.
 
