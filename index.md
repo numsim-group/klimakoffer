@@ -1,7 +1,7 @@
 @def title = "Klimakoffer: How to make your own Climate Model"
 @def tags = ["syntax", "code"]
 
-# Klimakoffer: How to make your own Climate Model
+# Klimakoffer: Build Your Own Climate Model
 
 \fig{/assets/temp.gif}
 
