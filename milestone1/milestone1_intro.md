@@ -19,7 +19,7 @@ Understanding how these components interact with each other is essential to comp
 
 \fig{/assets/milestone1/ClimateSystem.png}
 <!-- ![](/assets/milestone1/ClimateSystem.png) -->
-* Figure from lecture notes: [Stocker, "Introduction to Climate Modeling". Universität Bern](https://link.springer.com/book/10.1007/978-3-642-00773-6).
+* Figure from lecture notes: [Stocker, "Introduction to Climate Modeling". Universität Bern](https://climatehomes.unibe.ch/~stocker/papers/stocker18icm.pdf), published by [Springer](https://link.springer.com/book/10.1007/978-3-642-00773-6).
 
 ### Atmosphere
 
@@ -105,7 +105,7 @@ answers that are scientifically robust.
 **Comment**: For the interested student, we
 recommend to attend other specialized courses
 available at UoC or read detailed
-lecture notes such as for instance: ["Introduction to Climate Modeling" by Prof. Stocker, Physikalisches Institut, University of Bern (2011)](https://link.springer.com/book/10.1007/978-3-642-00773-6).
+lecture notes such as for instance: [Stocker, "Introduction to Climate Modeling". Universität Bern](https://climatehomes.unibe.ch/~stocker/papers/stocker18icm.pdf), published by [Springer (closed access, not available on the university network)](https://link.springer.com/book/10.1007/978-3-642-00773-6).
 
 With this introductory discussion on the climate
 system, we come to the conclusion that to achieve
@@ -179,7 +179,7 @@ Here is, for instance, a figure that lists a matrix
 of simplifications with focus on Atmosphere+Hydrosphere:
 
 ![](/assets/milestone1/Models.png)
-* Figure from lecture notes: [Stocker, "Introduction to Climate Modeling". Universität Bern](https://link.springer.com/book/10.1007/978-3-642-00773-6).
+* Figure from lecture notes: [Stocker, "Introduction to Climate Modeling". Universität Bern](https://climatehomes.unibe.ch/~stocker/papers/stocker18icm.pdf), published by [Springer](https://link.springer.com/book/10.1007/978-3-642-00773-6).
 
 ## How did we choose a model for this course?
 
