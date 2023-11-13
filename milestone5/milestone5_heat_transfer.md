@@ -103,7 +103,7 @@ For instance, for the unit vectors we have
 \hat{\long} &= -\sin \long \hat x+ \cos \long \hat y
 \end{align*} -->
 \begin{align}\label{eq:unitvectors}
-\hat{x} &= \sin \colat \cos \long \hat{r} + \cos \colat \cos \long \hat{\colat} - \sin \colat \hat{\long}
+\hat{x} &= \sin \colat \cos \long \hat{r} + \cos \colat \cos \long \hat{\colat} - \sin \long \hat{\long}
 \\
 \hat{y} &= \sin \colat \sin \long \hat{r} + \cos \colat \sin \long \hat{\colat} + \cos \long \hat{\long}
 \\
