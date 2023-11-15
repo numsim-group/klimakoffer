@@ -201,13 +201,3 @@ In our course, we will mainly follow the paper (although we changed the numerics
 > [Zhuang, K., North, G. R., & Stevens, M. J. (2017). A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm. SoftwareX, 6, 198-202.](https://www.sciencedirect.com/science/article/pii/S2352711017300262)
 
 
-<!-- **See if we keep the following:**
-We note that in this open source
-publication the authors published a Fortran
-code of there model Klimakofter jeand
-the reference solutions of the milestones
-are in many poetsvery close translations of this
-code with differences in the numerics Strongest
-deviation is the solver strategy for the linear
-algebraicsystem that is not based on multigrid
-but uses direct solver packages instead -->
