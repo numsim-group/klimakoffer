@@ -1,9 +1,9 @@
-@def title = "An Introduction to Climate Modeling"
+@def title = "Klimakoffer: How to make your own Climate Model"
 @def tags = ["syntax", "code"]
 
-# An Introduction to Climate Modeling
+# Klimakoffer: Build Your Own Climate Model
 
-\fig{/assets/earth_heating.gif}
+\fig{/assets/milestone6/annual_temperature.gif}
 
 ## Course Description
 

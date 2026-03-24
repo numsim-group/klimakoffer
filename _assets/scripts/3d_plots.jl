@@ -524,6 +524,34 @@ function plot_temperature_3d_anim(X,Y,Z,temp, surface_data)
         ],
     )
 
+    function colors()
+        function percentage_temp(temperature_to_be_colored)
+            return (temperature_to_be_colored+40)/80
+        end
+        function temp_color(T)
+            if T ==0
+                return "102, 163, 255"
+            elseif T== -10
+                return "0, 0, 102"
+            elseif T==-40
+                return "102, 0, 204"
+            elseif T==10
+                return "255, 153, 153"
+            elseif T==15
+                return "255, 102, 102"
+            elseif T==25
+                return "255, 0, 0"
+            elseif T==40
+                return "102, 0, 51"
+            end
+        end
+        out=[]
+        for temp in [-40,-10,0,10,15,25, 40]
+            push!(out, [percentage_temp(temp), "rgb("*temp_color(temp)*")"])
+        end
+        return out
+    end
+
     fig2 = PlotlyJS.surface(
         x = 1.01 .* X,
         y = 1.01 .* Y,
@@ -531,7 +559,7 @@ function plot_temperature_3d_anim(X,Y,Z,temp, surface_data)
         surfacecolor = temp[:,:,1]',
         showscale = true,
         opacity = 0.8,
-        colorscale = "RdBu",
+        colorscale = colors(),
         cmax = cmax,
         cmin = cmin,
         colorbar = (
@@ -539,12 +567,12 @@ function plot_temperature_3d_anim(X,Y,Z,temp, surface_data)
             tickcolor = 888,
             tickfont = (
                 color = "rgb(255,255,255)",
-                size = 20
+                size = 40
             ),
             title="[ ° C ]",
             titlefont = (
                 color = "rgb(255,255,255)",
-                size = 20
+                size = 40
             ),
             titleside = "right"   
         )
@@ -665,7 +693,7 @@ function plot_temperature_3d_anim(X,Y,Z,temp, surface_data)
         ),
         titlefont = (
             color = "rgb(255,255,255)",
-            size = 40
+            size = 80
             ),
         updatemenus = updatemenus
     )
