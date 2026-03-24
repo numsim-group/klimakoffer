@@ -3,7 +3,7 @@
 
 # Klimakoffer: Build Your Own Climate Model
 
-\fig{/assets/temp.gif}
+\fig{/assets/milestone6/annual_temperature.gif}
 
 ## Course Description
 
