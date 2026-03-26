@@ -1,0 +1,102 @@
+\documentclass[10pt]{scrartcl}
+\usepackage{amsmath,amsthm,amssymb,mathtools,xfrac}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+%\usepackage{german}
+\usepackage{a4wide}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{epsfig}
+\usepackage{libertine}
+\usepackage[pdftex]{hyperref}
+\usepackage{refcount}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{gensymb}
+\usepackage[export]{adjustbox}
+
+
+\topmargin-.5in \textheight9in \oddsidemargin0in \textwidth6.5in
+
+\begin{document}
+
+
+\begin{minipage}{.5\textwidth}
+{\scshape Department of Mathematics and Informatics \\
+University of Cologne\\}
+\small Prof. Dr. Gregor Gassner \\
+\small Dr. Andrés Rueda-Ramírez \\
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+\begin{flushright}
+\includegraphics[width=3cm]{figs/logo-uni-koeln.jpg}\\
+\today
+\end{flushright}
+\end{minipage}
+
+\begin{center}
+{\Large\bfseries
+An Introduction to Climate Modeling}\\
+\vspace{0.2cm}
+{\bfseries Milestone 1 - Geography and Visualization}
+\end{center}
+
+\section{Read-in and Plot Geography}
+
+In this milestone, the goal is to read-in the geography information of planet Earth and plot it as a two-dimensional world map.
+We consider an equirectangular grid of the Earth, i.e., an equidistant rectangular grid in spherical coordinates, where the grid point $(i, j)$ has the spherical coordinates $(\theta_i, \varphi_j)$, where $\theta_i$ is the latitude between $-90\degree$ south and $90\degree$ north (including the poles) and $\varphi_j$ the longitude between $-180\degree$ west and $180\degree$ east.
+The basis for this is the input file
+\small\texttt{\detokenize{The_World128x65.dat}}\normalsize, which describes the distribution of the different Earth surface types.
+This file contains a matrix $G \in \mathbb{N}^{65 \times 128}$ with entries $g_{ij} \in \{1,2,3,5\}$, where the entry $g_{ij}$ stores the Earth surface type at grid point $(i, j)$.
+Here, $1$ represents the Earth surface type \textit{land}, $2$ represents \textit{sea ice}, $3$ represents \textit{snow}, and $5$ represents \textit{ocean}. The grid resolution in longitude and latitude direction is $2.8125^{\circ}$.
+The basis for this distribution and grid is from Zhuang et al.\footnote{K. Zhuang, G.R. North, M.J. Stevens, {\em A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm}, SoftwareX, Vol. 6, pp. 198-202, July 7, 2017.}
+You can proceed as follows:
+
+\begin{enumerate}
+\item Write a function \small\texttt{\detokenize{read_geography}}\normalsize, which reads the file \small\texttt{\detokenize{The_World128x65.dat}} \normalsize from the folder \small\texttt{\detokenize{input}} \normalsize and outputs a matrix $T \in \mathbb{N}^{65 \times 128}$  with the classification of the earth surface types.
+
+\item Write a function \small\texttt{\detokenize{robinson_projection}}\normalsize, which maps an equirectangular grid in spherical coordinates to the plane.
+For simplicity use the approximate formula by Beineke for the Robinson projection,
+\begin{align*}
+	&x\left(\theta, \varphi \right) = \frac{\varphi}{\pi}\left(0.0379\hspace{0.05cm}\theta^6 - 0.15\hspace{0.05cm}\theta^4 - 0.367\hspace{0.05cm}\theta^2 + 2.666 \right),\\
+	&y\left( \theta, \varphi \right) = 0.96047\hspace{0.05cm}\theta - 0.00857\hspace{0.05cm}\text{sign}\left(\theta\right)\left|\theta\right|^{6.41},
+\end{align*}
+where $\varphi$ is the longitude and $\theta$ the latitude in radians.
+This function should return two matrices $X = x_{ij}$ and $Y = y_{ij}$, where $x_{ij} = x(\theta_i, \varphi_j), y_{ij} = y(\theta_i, \varphi_j)$.
+
+\begin{figure}[h]
+\includegraphics[width=0.55\linewidth, center]{figs/Robinson_projection.jpg}
+\caption{Robinson projection of the world \protect\footnotemark}
+\end{figure}
+\footnotetext{Daniel R. Strebe, \url{https://en.wikipedia.org/wiki/File:Robinson_projection_SW.jpg}}
+
+\item[3.] Write a function \small\texttt{\detokenize{plot_geo}} \normalsize that creates a plot of the Earth surface type $g_{ij}$ against the mapped coordinates $(x_{ij}, y_{ij})$.
+\item[4.] Use these functions in a program and run it to check your results.
+\end{enumerate}
+
+
+%\newpage
+
+%\section{Bonus}
+%
+%\begin{enumerate}
+%\item Implement the Winkel Tripel projection as an alternative to the Robinson projection.
+%\item Implement a 3D visualization.
+%\item Write a function to read in NASA satellite images, which categorizes the earth surface types $g_{ij} \in \{1;2;3;5\}$ based on RGB color values.
+%Plot a map mesh design based on the satellite image using a projection method of your choice.
+%\end{enumerate}
+
+\section{Control Solutions}
+
+
+\begin{figure}[!htb]
+\includegraphics[width=0.99\linewidth]{figs/Robinson_projection_output.png}
+\caption{Robinson projection output}
+\end{figure}
+
+\end{document}

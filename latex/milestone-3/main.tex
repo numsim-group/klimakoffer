@@ -1,0 +1,102 @@
+\documentclass[10pt]{scrartcl}
+\usepackage{amsmath,amsthm,amssymb,mathtools,xfrac}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+%\usepackage{german}
+\usepackage{a4wide}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{epsfig}
+\usepackage{libertine}
+\usepackage[pdftex]{hyperref}
+\usepackage{refcount}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{gensymb}
+\usepackage[export]{adjustbox}
+
+\topmargin-.5in \textheight9in \oddsidemargin0in \textwidth6.5in
+
+\begin{document}
+
+
+\begin{minipage}{.5\textwidth}
+{\scshape Department of Mathematics and Informatics \\
+University of Cologne\\}
+\small Prof. Dr. Gregor Gassner \\
+\small Dr. Andrés Rueda-Ramírez \\
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+\begin{flushright}
+\includegraphics[width=3cm]{figs/logo-uni-koeln.jpg}\\
+\today
+\end{flushright}
+\end{minipage}
+
+\begin{center}
+{\Large\bfseries
+An Introduction to Climate Modeling}\\
+\vspace{0.2cm}
+{\bfseries Milestone 3 - Solving a zero-dimensional Energy Balance Model}
+\end{center}
+
+
+\section{Solving a zero-dimensional Energy Balance Model}
+
+
+In the previous milestones you have already implemented some routines that are part of an energy balance model. Now you have the opportunity to combine your results into a zero-dimensional ($0D$) energy balance model (EBM) and solve the model using an ODE solver. Note that for zero-dimensional EBMs, spatial dependence is neglected, and $T$ is a global time-dependent averaged surface temperature. Let the following equation be given for the energy balance model:
+
+\begin{align}
+\overline{C}\frac{\partial {T}_A(t)}{\partial t}+A+B{T}_A(t)=\overline{S_\text{sol}}(t),
+\label{EBM}
+\end{align}
+where $\overline{C}$ is the mean heat capacity, ${T}_A$ is an approximation to the area-average of the time dependent temperature, $A$ the $CO_2$ dependent radiative cooling, $B = 2.15$ the feedback effects such as water vapor cycles, lapse rate and cloud cover, $\overline{S_\text{sol}}(t)$ is the area-averaged solar forcing.
+To solve the zero-dimensional EBM you should proceed as described in the next steps.
+
+\begin{enumerate}
+\item Implement a function \small\texttt{\detokenize{calc_area}}\normalsize, which determines the area fraction of each grid cell as a function of latitude, with an equidistant step size $h=\frac{\pi}{64}$ for a $128 \times 65$ grid, and returns the values as a vector.
+\item Implement a \small\texttt{\detokenize{calc_mean}} \normalsize function, using the results from the first task, which takes a matrix of values of a given parameter like albedo or solar forcing for each grid cell and returns the mean value over the whole area.
+\item Write a function \small\texttt{\detokenize{calc_radiative_cooling_co2}}\normalsize, which returns the $CO_2$ dependent radiative cooling~$A$ for a given $CO_2$ concentration $c$. As default value use the $CO_2$ concentration of the year 1950: $c_0 = 315.0$. The radiative cooling $A$ is given by
+\begin{align}
+A (c) = 210.3-5.35 \log\left(\frac{c}{c_0}\right).
+\label{A}
+\end{align}
+\item In a function \small\texttt{\detokenize{compute_equilibrium}}\normalsize, solve the above equation (\ref{EBM}) using the forward Euler method and calculate an average temperature per year until equilibrium is reached.
+\item Write a new function or adapt your existing one to add an option to solve the equation with the backward Euler method instead. Plot your results.
+
+\end{enumerate}
+
+
+
+% \section{Bonus}
+
+% \begin{enumerate}
+% \item Calculate the temperature evolution with a function \small\texttt{\detokenize{calc_evolution}} \normalsize similar to the function in task 4. This time use for the parameter $A$ transient $CO_2$ concentrations, which you can take from the input file \small\texttt{\detokenize{co2_mm_mlo.txt}} \normalsize containing NASA $CO_2$-Data from 1958 to 2021, which means that you have to solve following equation with the backward Euler method:
+
+% \begin{align}
+% C\frac{\partial T(t)}{\partial t}+A(t)+BT(t)=QS(t)(1-a),
+% \label{EBM2}
+% \end{align}
+
+% Thereafter plot your results.
+
+% \end{enumerate}
+
+\pagebreak
+
+\section{Control Solutions}
+
+
+\begin{figure}[!htb]
+\includegraphics[width=0.7\linewidth,center]{figs/average_temperature_forward.png}
+\caption{EBM results calculated with forward Euler method (results calculated with backward Euler method are similar)}
+\end{figure}
+
+
+
+\end{document}

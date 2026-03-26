@@ -1,0 +1,5 @@
+# Use SciML style: https://github.com/SciML/SciMLStyle
+style = "sciml"
+
+# No whitespaces in kwargs because this is more common in Julia
+whitespace_in_kwargs = false
