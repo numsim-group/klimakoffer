@@ -31,7 +31,7 @@ tags = ["syntax", "code"]
 * In the final part of the lecture, there will be the mysterious milestone 7.
 * For the milestones 1-6 solutions in Julia and Python are available and made accessible.
 * Below you can find the schedule.
-[Schedule](/assets/schedule.pdf)
+![Schedule](/assets/schedule.pdf)
 
 ## Examination
 
