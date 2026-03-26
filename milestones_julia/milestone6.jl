@@ -90,7 +90,7 @@ function plot_co2_evolution(jacobian, mesh, diffusion_coeff, heat_capacity, sola
              title="Annual temperature with CO2 data from NASA")
     plot!(p, annual_temperatures, label="annual temperature")
 
-    display(p)
+    return p
 end
 
 # Run code
@@ -120,7 +120,7 @@ function milestone6()
                                             solar_forcing,
                                             radiative_cooling)
 
-    plot_temperature(temperature, geo_dat, 1)
+    plot_mean_temperature = plot_temperature(temperature, geo_dat, 1)
 
     # Copied from MS4
     # Area mean of pointwise annual temperature
@@ -135,12 +135,12 @@ function milestone6()
     average_temperature_south = sum(annual_mean_temperature_south) / ntimesteps
     average_temperature_total = sum(annual_mean_temperature_total) / ntimesteps
 
-    plot_annual_temperature_north_south(annual_mean_temperature_north,
-                                        annual_mean_temperature_south,
-                                        annual_mean_temperature_total,
-                                        average_temperature_north,
-                                        average_temperature_south,
-                                        average_temperature_total)
+    plot_temperature_ = plot_annual_temperature_north_south(annual_mean_temperature_north,
+                                                            annual_mean_temperature_south,
+                                                            annual_mean_temperature_total,
+                                                            average_temperature_north,
+                                                            average_temperature_south,
+                                                            average_temperature_total)
 
     # Compute temperature in Cologne.
     # Cologne lies about halfway between these two grid points.
@@ -148,15 +148,27 @@ function milestone6()
                                   temperature[15, 69, :]) / 2
     average_temperature_cologne = sum(annual_temperature_cologne) / ntimesteps
 
-    plot_annual_temperature(annual_temperature_cologne, average_temperature_cologne,
-                            "Annual temperature with CO2 = $co2_ppm [ppm] in Cologne")
+    plot_cologne = plot_annual_temperature(annual_temperature_cologne,
+                                           average_temperature_cologne,
+                                           "Annual temperature with CO2 = $co2_ppm [ppm] in Cologne")
 
-    plot_co2_evolution(jacobian, mesh, diffusion_coeff, heat_capacity, solar_forcing)
+    plot_temperature_co2 = plot_co2_evolution(jacobian, mesh, diffusion_coeff,
+                                              heat_capacity, solar_forcing)
 
     # Animate annual temperature
     anim = @animate for ts in 1:ntimesteps
         plot_temperature(temperature, geo_dat, ts)
     end
 
-    gif(anim, joinpath(@__DIR__, "annual_temperature.gif"), fps=7)
+    gif_temperature = gif(anim, joinpath(@__DIR__, "annual_temperature.gif"), fps=7)
+
+    # Show the plots
+    display(plot_mean_temperature)
+    display(plot_temperature_)
+    display(plot_cologne)
+    display(plot_temperature_co2)
+    display(gif_temperature)
+
+    return plot_mean_temperature, plot_temperature_, plot_cologne,
+           plot_temperature_co2, gif_temperature
 end

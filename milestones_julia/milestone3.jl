@@ -133,7 +133,7 @@ function plot_annual_temperature(annual_temperature, average_temperature, title)
              ylabel="surface temperature [°C]", title=title)
     plot!(p, annual_temperature, label="annual temperature")
 
-    display(p)
+    return p
 end
 
 # Run code
@@ -167,14 +167,20 @@ function milestone3()
                                                                     mean_heat_capacity_,
                                                                     mean_solar_forcing_,
                                                                     radiative_cooling_)
-    plot_annual_temperature(annual_temperature_, average_temperature_,
-                            "Annual temperature with CO2 = $co2_ppm [ppm]")
+    plot_forward = plot_annual_temperature(annual_temperature_, average_temperature_,
+                                           "Annual temperature with CO2 = $co2_ppm [ppm]")
 
     # Compute and plot temperature with Euler backward
     annual_temperature_, average_temperature_ = compute_equilibrium(timestep_euler_backward,
                                                                     mean_heat_capacity_,
                                                                     mean_solar_forcing_,
                                                                     radiative_cooling_)
-    plot_annual_temperature(annual_temperature_, average_temperature_,
-                            "Annual temperature with CO2 = $co2_ppm [ppm]")
+    plot_backward = plot_annual_temperature(annual_temperature_, average_temperature_,
+                                            "Annual temperature with CO2 = $co2_ppm [ppm]")
+
+    # Show both plots
+    display(plot_forward)
+    display(plot_backward)
+
+    return plot_forward, plot_backward
 end

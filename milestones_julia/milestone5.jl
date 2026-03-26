@@ -232,18 +232,18 @@ function plot_diffusion_coefficient(diffusion_coeff)
     nlatitude, nlongitude = size(diffusion_coeff)
     x, y = robinson_projection(nlatitude, nlongitude)
 
-    plot = contourf(x, y, diffusion_coeff,
-                    clims=(vmin, vmax),
-                    levels=LinRange(vmin, vmax, 100),
-                    aspect_ratio=1,
-                    title="Diffusion Coefficients of the 2D EBM",
-                    c=:cividis,
-                    colorbar_title="diffusion coefficient",
-                    colorbar_ticks=([vmin, 0.5 * (vmin + vmax), vmax]),
-                    axis=([], false),
-                    dpi=300)
+    p = contourf(x, y, diffusion_coeff,
+                 clims=(vmin, vmax),
+                 levels=LinRange(vmin, vmax, 100),
+                 aspect_ratio=1,
+                 title="Diffusion Coefficients of the 2D EBM",
+                 c=:cividis,
+                 colorbar_title="diffusion coefficient",
+                 colorbar_ticks=([vmin, 0.5 * (vmin + vmax), vmax]),
+                 axis=([], false),
+                 dpi=300)
 
-    display(plot)
+    return p
 end
 
 function calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity)
@@ -286,7 +286,7 @@ function milestone5()
 
     # Compute and plot diffusion coefficient
     diffusion_coeff = calc_diffusion_coefficients(geo_dat)
-    plot_diffusion_coefficient(diffusion_coeff)
+    plot_diffusion_coeff = plot_diffusion_coefficient(diffusion_coeff)
 
     co2_ppm = 315.0
     radiative_cooling = calc_radiative_cooling_co2(co2_ppm)
@@ -298,7 +298,7 @@ function milestone5()
     # The Jacobian has three diagonals of non-zero entries and two blocks of non-zero entries for the poles.
     # We only show a subset of the entries, otherwise the two side diagonals are not visible.
     jacobian = calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity)
-    display(spy(jacobian[1:300, 1:300]))
+    plot_jacobian = spy(jacobian[1:300, 1:300])
 
     println("Done with Jacobian")
 
@@ -307,4 +307,10 @@ function milestone5()
 
     # The maximum absolute value of the eigenvalues is too high for an efficient explicit time integration scheme.
     print(max(maximum(real.(eigenvalues)), -minimum(real.(eigenvalues))))
+
+    # Show the plots
+    display(plot_diffusion_coeff)
+    display(plot_jacobian)
+
+    return plot_diffusion_coeff, plot_jacobian
 end

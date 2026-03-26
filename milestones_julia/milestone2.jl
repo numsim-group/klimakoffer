@@ -195,11 +195,11 @@ function milestone2()
 
     # Plot albedo
     albedo = calc_albedo(geo_dat)
-    display(plot_albedo(albedo))
+    plot_albedo_ = plot_albedo(albedo)
 
     # Plot heat capacity
     heat_capacity = calc_heat_capacity(geo_dat)
-    display(plot_heat_capacity(heat_capacity))
+    plot_heat_capacity_ = plot_heat_capacity(heat_capacity)
 
     # Compute solar forcing
     true_longitude = read_true_longitude(joinpath(@__DIR__, "input", "True_Longitude.dat"))
@@ -210,5 +210,12 @@ function milestone2()
         plot_solar_forcing(solar_forcing, ts)
     end
 
-    gif(anim, joinpath(@__DIR__, "solar_forcing.gif"), fps=7)
+    gif_solar_forcing = gif(anim, joinpath(@__DIR__, "solar_forcing.gif"), fps=7)
+
+    # Show all plots and the animation
+    display(plot_albedo_)
+    display(plot_heat_capacity_)
+    display(gif_solar_forcing)
+
+    return plot_albedo_, plot_heat_capacity_, gif_solar_forcing
 end

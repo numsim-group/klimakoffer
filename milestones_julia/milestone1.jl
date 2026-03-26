@@ -40,22 +40,27 @@ function plot_geo(geo_dat)
     # Instead, we got the colors that we want by experimenting with the levels.
     # We tried to make the range for ocean only slightly larger than the others to avoid
     # a weird looking colorbar.
-    plot = contourf(x, y, geo_dat,
-                    levels=[0.5, 1.7, 2.9, 4.1, 5.5],
-                    clims=(1, 5),
-                    aspect_ratio=1,
-                    title="Earth Geography",
-                    c=cgrad([:darkgreen, :lightsteelblue, :lavender, :navy]),
-                    colorbar_ticks=([1.1, 2.3, 3.5, 4.8],
-                                    ["land", "sea ice", "snow cover", "ocean"]),
-                    axis=([], false),
-                    dpi=300)
+    p = contourf(x, y, geo_dat,
+                 levels=[0.5, 1.7, 2.9, 4.1, 5.5],
+                 clims=(1, 5),
+                 aspect_ratio=1,
+                 title="Earth Geography",
+                 c=cgrad([:darkgreen, :lightsteelblue, :lavender, :navy]),
+                 colorbar_ticks=([1.1, 2.3, 3.5, 4.8],
+                                 ["land", "sea ice", "snow cover", "ocean"]),
+                 axis=([], false),
+                 dpi=300)
 
-    return plot
+    return p
 end
 
 # Run code
 function milestone1()
     geo_dat = read_geography(joinpath(@__DIR__, "input", "The_World128x65.dat"))
-    plot_geo(geo_dat)
+    p = plot_geo(geo_dat)
+
+    # Show the plot
+    display(p)
+
+    return p
 end

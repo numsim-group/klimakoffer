@@ -21,14 +21,14 @@ This is an example for the expected results:
 
 Plot of the diffusion coefficient:
 
-\input{plot:1}{/assets/scripts/milestone5.jl}
+[Diffusion coefficient plot](/assets/milestone_results/milestone5_diffusion_coeff.png)
 
 
 ### Sparsity Pattern of the Jacobian
 
 Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a the upper left part is plotted to make the pattern visible.
 
-\input{plot:22}{/assets/scripts/milestone5.jl}
+[Sparsity pattern of the Jacobian](/assets/milestone_results/milestone5_jacobian.png)
 
 ## Files Download
 

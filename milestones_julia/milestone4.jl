@@ -68,7 +68,7 @@ function plot_annual_temperature_north_south(annual_temperature_north,
     plot!(p, annual_temperature_north, label="temperature (north)")
     plot!(p, annual_temperature_south, label="temperature (south)")
 
-    display(p)
+    return p
 end
 
 function plot_temperature(temperature, geo_dat, timestep)
@@ -80,21 +80,21 @@ function plot_temperature(temperature, geo_dat, timestep)
 
     ntimesteps = size(temperature, 3)
     day = (round(Int, (timestep - 1) / ntimesteps * 365) + 80) % 365
-    plot = contourf(x, y, temperature[:, :, timestep],
-                    clims=(vmin, vmax),
-                    levels=LinRange(vmin, vmax, 200),
-                    aspect_ratio=1,
-                    title="Temperature for Day $day",
-                    c=:seismic,
-                    colorbar_title="temperature [°C]",
-                    axis=([], false),
-                    dpi=300)
+    p = contourf(x, y, temperature[:, :, timestep],
+                 clims=(vmin, vmax),
+                 levels=LinRange(vmin, vmax, 200),
+                 aspect_ratio=1,
+                 title="Temperature for Day $day",
+                 c=:seismic,
+                 colorbar_title="temperature [°C]",
+                 axis=([], false),
+                 dpi=300)
 
     # Add contour lines
-    contour!(plot, x, y, geo_dat, levels=[0.5, 1.5, 2.5, 3.5, 6.5],
+    contour!(p, x, y, geo_dat, levels=[0.5, 1.5, 2.5, 3.5, 6.5],
              color=[:black], linewidth=0.6)
 
-    return plot
+    return p
 end
 
 # Run code
@@ -151,12 +151,12 @@ function milestone4()
                                                                                 mean_solar_forcing_total,
                                                                                 radiative_cooling)
 
-    plot_annual_temperature_north_south(annual_temperature_north_,
-                                        annual_temperature_south_,
-                                        annual_temperature_total_,
-                                        average_temperature_north_,
-                                        average_temperature_south_,
-                                        average_temperature_total_)
+    plot_mean = plot_annual_temperature_north_south(annual_temperature_north_,
+                                                    annual_temperature_south_,
+                                                    annual_temperature_total_,
+                                                    average_temperature_north_,
+                                                    average_temperature_south_,
+                                                    average_temperature_total_)
 
     # Calculate annual temperature for every grid point
     annual_temperature_pointwise = Array{Float64, 3}(undef, nlatitude, nlongitude,
@@ -186,12 +186,12 @@ function milestone4()
     average_temperature_south_ = sum(annual_mean_temperature_south) / ntimesteps
     average_temperature_total_ = sum(annual_mean_temperature_total) / ntimesteps
 
-    plot_annual_temperature_north_south(annual_mean_temperature_north,
-                                        annual_mean_temperature_south,
-                                        annual_mean_temperature_total,
-                                        average_temperature_north_,
-                                        average_temperature_south_,
-                                        average_temperature_total_)
+    plot_pointwise = plot_annual_temperature_north_south(annual_mean_temperature_north,
+                                                         annual_mean_temperature_south,
+                                                         annual_mean_temperature_total,
+                                                         average_temperature_north_,
+                                                         average_temperature_south_,
+                                                         average_temperature_total_)
 
     # Compute temperature in Cologne.
     # Cologne lies about halfway between these two grid points.
@@ -199,13 +199,22 @@ function milestone4()
                                   annual_temperature_pointwise[15, 69, :]) / 2
     average_temperature_cologne = sum(annual_temperature_cologne) / ntimesteps
 
-    plot_annual_temperature(annual_temperature_cologne, average_temperature_cologne,
-                            "Annual temperature with CO2 = $co2_ppm [ppm] in Cologne")
+    plot_cologne = plot_annual_temperature(annual_temperature_cologne,
+                                           average_temperature_cologne,
+                                           "Annual temperature with CO2 = $co2_ppm [ppm] in Cologne")
 
     # Animate annual temperature
     anim = @animate for ts in 1:ntimesteps
         plot_temperature(annual_temperature_pointwise, geo_dat, ts)
     end
 
-    gif(anim, joinpath(@__DIR__, "annual_temperature.gif"), fps=7)
+    gif_annual_temperature = gif(anim, joinpath(@__DIR__, "annual_temperature.gif"), fps=7)
+
+    # Show all plots and the animation
+    display(plot_mean)
+    display(plot_pointwise)
+    display(plot_cologne)
+    display(gif_annual_temperature)
+
+    return plot_mean, plot_pointwise, plot_cologne, gif_annual_temperature
 end

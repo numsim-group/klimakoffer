@@ -45,6 +45,9 @@ jobs:
       with:
         version: '1' # Latest stable Julia release.
     - uses: julia-actions/cache@v2
+    - name: Generate Results
+      run: |
+        cd milestones_julia && julia --project=@. -e 'using Pkg; Pkg.instantiate(); include("generate_results.jl")'
     # NOTE
     #   The steps below ensure that NodeJS and Franklin are loaded then it
     #   installs highlight.js which is needed for the prerendering step

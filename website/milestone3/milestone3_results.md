@@ -24,7 +24,7 @@ Spatial averages for every time step as a vector in a .txt file:\\
 ### Annual Temperature Plot
 Calculated with the forward Euler method. Plot for the backward Euler is almost identical.
 
-\input{plot}{/assets/scripts/milestone3.jl}
+[Annual temperature plot](/assets/milestone_results/milestone3_forward.png)
 
 ## Files Download
 
@@ -44,4 +44,3 @@ You can also check out our Julia and Python implementations of milestone 3 in th
 ### Python implementation of milestone 3
 
 \input{python}{/assets/scripts/milestone3.py}
-

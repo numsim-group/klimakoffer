@@ -21,24 +21,24 @@ This is an example for the expected results:
 
 Plot of the mean and average temperature calculated by averaging over the regions first and then using the 0D-EBM.
 
-\input{plot:1}{/assets/scripts/milestone4.jl}
+[Mean temperature plot](/assets/milestone_results/milestone4_mean.png)
 
 ### Mean Temperature Plot using Pointwise EBM
 
 Plot of the mean and average temperature calculated by using a 0D-EBM for every point of the discretization and then averaging over the results.
 
-\input{plot:2}{/assets/scripts/milestone4.jl}
+[Pointwise temperature plot](/assets/milestone_results/milestone4_pointwise.png)
 
 ### Cologne Temperature
 
 Cologne temperature calculated via the pointwise 0D-EBM
 
-\input{plot:3}{/assets/scripts/milestone4.jl}
+[Cologne temperature plot](/assets/milestone_results/milestone4_cologne.png)
 
 ### Annual Temperature Animation
 Annual temperature with the pointwise 0D-EBM:
 
-\fig{/assets/milestone4/annual_temperature.gif}
+[Annual temperature animation](/assets/milestone_results/milestone4_annual_temperature.gif)
 
 ## Files Download
 
