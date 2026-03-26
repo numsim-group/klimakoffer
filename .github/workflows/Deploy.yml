@@ -17,6 +17,7 @@ jobs:
     - name: Compile LaTeX documents
       uses: xu-cheng/latex-action@v4
       with:
+        working_directory: latex
         root_file: |
           latex/milestone-1/main.tex
           latex/milestone-2/main.tex
