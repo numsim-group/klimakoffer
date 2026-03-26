@@ -25,11 +25,13 @@ jobs:
           latex/milestone-4/main.tex
           latex/milestone-5/main.tex
           latex/milestone-6/main.tex
+          latex/schedule.tex
     - name: Copy generated PDF files
       run: |
         for i in {1..6}; do
           cp "latex/milestone-$i/main.pdf" "website/_assets/milestone$i/description.pdf"
         done
+        cp "latex/schedule.pdf" "website/_assets/schedule.pdf"
     # NOTE: Python is necessary for the pre-rendering (minification) step
     - name: Install python
       uses: actions/setup-python@v2

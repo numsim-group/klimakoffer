@@ -1,0 +1,95 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[margin=2cm, top=1cm, bottom=1cm]{geometry}
+
+% Week alternating row colors
+\definecolor{weekA}{gray}{0.95}
+\definecolor{weekB}{gray}{0.90}
+
+% Activity colors
+\definecolor{lecturecolor}{HTML}{FFE0B2}
+\definecolor{handsoncolor}{HTML}{C8E6C9}
+\definecolor{presentationcolor}{HTML}{E1BEE7}
+
+\newcommand{\lec}{\cellcolor{lecturecolor}Lecture}
+\newcommand{\hon}{\cellcolor{handsoncolor}Hands-on}
+\newcommand{\lecthon}{\cellcolor{lecturecolor}Lecture/Hands-on}
+\newcommand{\pres}{\cellcolor{presentationcolor}Presentations}
+
+% Rules wider than the table
+\newlength{\ruleextra}
+\setlength{\ruleextra}{6pt}
+\newcommand{\widetoprule}{\noalign{\vskip-\abovetopsep\vskip\aboverulesep\moveleft\ruleextra\vbox{\hrule width\dimexpr\linewidth+2\ruleextra\relax height\heavyrulewidth}\vskip\belowrulesep}}
+\newcommand{\widemidrule}{\noalign{\vskip\aboverulesep\moveleft\ruleextra\vbox{\hrule width\dimexpr\linewidth+2\ruleextra\relax height\lightrulewidth}\vskip\belowrulesep}}
+\newcommand{\widebottomrule}{\noalign{\vskip\aboverulesep\moveleft\ruleextra\vbox{\hrule width\dimexpr\linewidth+2\ruleextra\relax height\heavyrulewidth}\vskip\belowbottomsep}}
+
+\begin{document}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[ht]
+\centering
+\begin{tabular*}{\textwidth}{@{} l @{\hspace{0.8em}} c @{\extracolsep{\fill}} c @{\hspace{1em}} c l @{}}
+\widetoprule
+Week & Milestone & Date & Room & Activity \\
+\widemidrule
+\cellcolor{weekA} 1  & 1 & 15.04.2026, 12:00 & HS & \lec \\
+\cellcolor{weekA}    &   & 15.04.2026, 14:00 & CV & \lec \\
+\cellcolor{weekA}    &   & 16.04.2026, 12:00 & HS & \hon \\
+\cellcolor{weekB} 2  &   & 22.04.2026, 12:00 & HS & \hon \\
+\cmidrule(l){2-5}
+\cellcolor{weekB}    & 2 & 22.04.2026, 14:00 & CV & \lec \\
+\cellcolor{weekB}    &   & 23.04.2026, 12:00 & HS & \lec \\
+\cellcolor{weekA} 3  &   & 29.04.2026, 12:00 & HS & \lec \\
+\cellcolor{weekA}    &   & 29.04.2026, 14:00 & CV & \hon \\
+\cellcolor{weekA}    &   & 30.04.2026, 12:00 & HS & \hon \\
+\cellcolor{weekB} 4  &   & 06.05.2026, 12:00 & HS & \hon \\
+\cmidrule(l){2-5}
+\cellcolor{weekB}    & 3 & 06.05.2026, 14:00 & CV & \lec \\
+\cellcolor{weekB}    &   & 07.05.2026, 12:00 & HS & \lec \\
+\cellcolor{weekA} 5  &   & 13.05.2026, 12:00 & HS & \hon \\
+\cellcolor{weekA}    &   & 13.05.2026, 14:00 & CV & \hon \\
+\cmidrule(l){2-5}
+\cellcolor{weekB} 6  & 4 & 20.05.2026, 12:00 & HS & \lec \\
+\cellcolor{weekB}    &   & 20.05.2026, 14:00 & CV & \hon \\
+\cellcolor{weekB}    &   & 21.05.2026, 12:00 & HS & \hon \\
+\cmidrule(l){2-5}
+\cellcolor{weekA} 8  & 5 & 03.06.2026, 12:00 & HS & \lec \\
+\cellcolor{weekA}    &   & 03.06.2026, 14:00 & CV & \lec \\
+\cellcolor{weekB} 9  &   & 10.06.2026, 12:00 & HS & \hon \\
+\cellcolor{weekB}    &   & 10.06.2026, 14:00 & CV & \hon \\
+\cellcolor{weekB}    &   & 11.06.2026, 12:00 & HS & \hon \\
+\cellcolor{weekA} 10 &   & 17.06.2026, 12:00 & HS & \hon \\
+\cmidrule(l){2-5}
+\cellcolor{weekA}    & 6 & 17.06.2026, 14:00 & CV & \lec \\
+\cellcolor{weekA}    &   & 18.06.2026, 12:00 & HS & \hon \\
+\cellcolor{weekB} 11 &   & 24.06.2026, 12:00 & HS & \hon \\
+\cellcolor{weekB}    &   & 24.06.2026, 14:00 & CV & \hon \\
+\cmidrule(l){2-5}
+\cellcolor{weekB}    & 7 & 25.06.2026, 12:00 & HS & \lec \\
+\cellcolor{weekA} 12 &   & 01.07.2026, 12:00 & HS & \lec \\
+\cellcolor{weekA}    &   & 01.07.2026, 14:00 & CV & \lecthon \\
+\cellcolor{weekA}    &   & 02.07.2026, 12:00 & HS & \hon \\
+\cellcolor{weekB} 13 &   & 08.07.2026, 12:00 & HS & \hon \\
+\cellcolor{weekB}    &   & 08.07.2026, 14:00 & CV & \hon \\
+\cellcolor{weekB}    &   & 09.07.2026, 12:00 & HS & \hon \\
+\cellcolor{weekA} 14 &   & 15.07.2026, 12:00 & HS & \hon \\
+\cellcolor{weekA}    &   & 15.07.2026, 14:00 & CV & \hon \\
+\cellcolor{weekA}    &   & 16.07.2026, 12:00 & HS & \pres \\
+\cellcolor{weekB} 15 &   & 22.07.2026, 12:00 & HS & \pres \\
+\cellcolor{weekB}    &   & 23.07.2026, 12:00 & HS & \pres \\
+\widebottomrule
+\end{tabular*}
+\end{table}
+
+\smallskip\noindent\small
+HS\,=\,H\"orsaal des Mathematischen Instituts (Raum~203)\\
+CV\,=\,Cohn-Vossen-Raum (Raum~313)
+
+\end{document}
