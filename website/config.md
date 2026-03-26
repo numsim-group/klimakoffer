@@ -15,7 +15,7 @@ ignore = ["node_modules/"]
 generate_rss = false
 website_title = "An Introduction to Climate Modeling"
 website_descr = "In this course, you will learn how to implement an energy balance model for climate simulations"
-website_url   = "https://www.mi.uni-koeln.de/IntroToClimateModeling/"
+website_url   = "https://numsim-group.github.io/klimakoffer/"
 +++
 
 <!--
