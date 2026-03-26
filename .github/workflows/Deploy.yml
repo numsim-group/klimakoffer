@@ -19,12 +19,12 @@ jobs:
       with:
         working_directory: latex
         root_file: |
-          latex/milestone-1/main.tex
-          latex/milestone-2/main.tex
-          latex/milestone-3/main.tex
-          latex/milestone-4/main.tex
-          latex/milestone-5/main.tex
-          latex/milestone-6/main.tex
+          milestone-1/main.tex
+          milestone-2/main.tex
+          milestone-3/main.tex
+          milestone-4/main.tex
+          milestone-5/main.tex
+          milestone-6/main.tex
     # NOTE: Python is necessary for the pre-rendering (minification) step
     - name: Install python
       uses: actions/setup-python@v2
