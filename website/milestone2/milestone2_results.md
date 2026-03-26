@@ -24,7 +24,7 @@ This is an example for the expected results:
 
 
 ### Solar Forcing Animation
-\fig{/assets/milestone2/solar_forcing.gif}
+\input{plot:3}{/assets/scripts/milestone2.jl}
 
 
 
