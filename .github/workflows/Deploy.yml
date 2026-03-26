@@ -14,6 +14,17 @@ jobs:
       uses: actions/checkout@v2
       with:
         persist-credentials: false
+        - name: Compile LaTeX documents
+    - name: Compile LaTeX documents
+      uses: xu-cheng/latex-action@v4
+      with:
+        root_file: |
+          latex/milestone-1/main.tex
+          latex/milestone-2/main.tex
+          latex/milestone-3/main.tex
+          latex/milestone-4/main.tex
+          latex/milestone-5/main.tex
+          latex/milestone-6/main.tex
     # NOTE: Python is necessary for the pre-rendering (minification) step
     - name: Install python
       uses: actions/setup-python@v2
