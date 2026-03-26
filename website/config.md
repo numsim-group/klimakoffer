@@ -39,4 +39,4 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\diffop}{L}
 \newcommand{\diffcoeff}{\widetilde D}
 <!-- Name of repository for GitHub pages -->
-@def prepath = "IntroToClimateModeling"
+@def prepath = "klimakoffer"
