@@ -16,15 +16,15 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 This is an example for the expected results:
 
 ### Albedo Plot
-[Albedo plot](/assets/milestone_results/milestone2_albedo.png)
+![Albedo plot](/assets/milestone_results/milestone2_albedo.png)
 
 
 ### Heat Capacity Plot
-[Heat capacity plot](/assets/milestone_results/milestone2_heat_capacity.png)
+![Heat capacity plot](/assets/milestone_results/milestone2_heat_capacity.png)
 
 
 ### Solar Forcing Animation
-[Solar forcing animation](/assets/milestone_results/milestone2_solar_forcing.gif)
+![Solar forcing animation](/assets/milestone_results/milestone2_solar_forcing.gif)
 
 
 

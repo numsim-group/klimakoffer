@@ -24,7 +24,7 @@ Spatial averages for every time step as a vector in a .txt file:\\
 ### Annual Temperature Plot
 Calculated with the forward Euler method. Plot for the backward Euler is almost identical.
 
-[Annual temperature plot](/assets/milestone_results/milestone3_forward.png)
+![Annual temperature plot](/assets/milestone_results/milestone3_forward.png)
 
 ## Files Download
 

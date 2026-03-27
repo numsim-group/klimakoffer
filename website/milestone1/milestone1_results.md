@@ -16,7 +16,7 @@ tags = ["climatesystem"]
 
 This is an example for the expected result:
 
-[Geography plot](/assets/milestone_results/milestone1_geo.png)
+![Geography plot](/assets/milestone_results/milestone1_geo.png)
 
 
 
