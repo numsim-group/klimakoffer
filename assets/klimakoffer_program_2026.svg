@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+<rect x="0.00" y="0.00" width="210.00" height="297.00" fill="white"/>
+<rect x="20.00" y="10.00" width="170.00" height="8.00" fill="#f2f2f2"/>
+<text x="22.00" y="15.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Week</text>
+<text x="44.00" y="15.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">Milestone</text>
+<text x="79.00" y="15.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">Date</text>
+<text x="112.00" y="15.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">Room</text>
+<text x="122.00" y="15.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Activity</text>
+<rect x="20.00" y="18.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="18.00" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="24.50" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="24.50" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="31.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="31.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="37.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="37.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="44.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="44.00" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="50.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="50.50" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="57.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="57.00" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="63.50" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="63.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="70.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="70.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="76.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="76.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="83.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="83.00" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="89.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="89.50" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="96.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="96.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="102.50" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="102.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="109.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="109.00" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="115.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="115.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="122.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="122.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="128.50" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="128.50" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="135.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="135.00" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="141.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="141.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="148.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="148.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="154.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="154.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="161.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="161.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="167.50" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="167.50" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="174.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="174.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="180.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="180.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="187.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="187.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="193.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="193.50" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="200.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="200.00" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="206.50" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="206.50" width="70.00" height="6.50" fill="#FFE0B2"/>
+<rect x="20.00" y="213.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="213.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="219.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="219.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="226.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="226.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="232.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="232.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="239.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="239.00" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="245.50" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="245.50" width="70.00" height="6.50" fill="#C8E6C9"/>
+<rect x="20.00" y="252.00" width="14.00" height="6.50" fill="#e6e6e6"/>
+<rect x="120.00" y="252.00" width="70.00" height="6.50" fill="#C5CAE9"/>
+<rect x="20.00" y="258.50" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="258.50" width="70.00" height="6.50" fill="#C5CAE9"/>
+<rect x="20.00" y="265.00" width="14.00" height="6.50" fill="#f2f2f2"/>
+<rect x="120.00" y="265.00" width="70.00" height="6.50" fill="#C5CAE9"/>
+<line x1="34.00" y1="44.00" x2="190.00" y2="44.00" stroke="#aaa" stroke-width="0.35"/>
+<line x1="34.00" y1="83.00" x2="190.00" y2="83.00" stroke="#aaa" stroke-width="0.35"/>
+<line x1="34.00" y1="109.00" x2="190.00" y2="109.00" stroke="#aaa" stroke-width="0.35"/>
+<line x1="34.00" y1="128.50" x2="190.00" y2="128.50" stroke="#aaa" stroke-width="0.35"/>
+<line x1="34.00" y1="167.50" x2="190.00" y2="167.50" stroke="#aaa" stroke-width="0.35"/>
+<line x1="34.00" y1="193.50" x2="190.00" y2="193.50" stroke="#aaa" stroke-width="0.35"/>
+<text x="22.00" y="22.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">1</text>
+<text x="44.00" y="22.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">1</text>
+<text x="79.00" y="22.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">15.04.2026, 12:00</text>
+<text x="112.00" y="22.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="22.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="29.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">15.04.2026, 14:00</text>
+<text x="112.00" y="29.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="29.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="35.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">16.04.2026, 12:00</text>
+<text x="112.00" y="35.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="35.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="42.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">2</text>
+<text x="79.00" y="42.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">22.04.2026, 12:00</text>
+<text x="112.00" y="42.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="42.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="44.00" y="48.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">2</text>
+<text x="79.00" y="48.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">22.04.2026, 14:00</text>
+<text x="112.00" y="48.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="48.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="55.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">23.04.2026, 12:00</text>
+<text x="112.00" y="55.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="55.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="22.00" y="61.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">3</text>
+<text x="79.00" y="61.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">29.04.2026, 12:00</text>
+<text x="112.00" y="61.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="61.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="68.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">29.04.2026, 14:00</text>
+<text x="112.00" y="68.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="68.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="74.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">30.04.2026, 12:00</text>
+<text x="112.00" y="74.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="74.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="81.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">4</text>
+<text x="79.00" y="81.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">06.05.2026, 12:00</text>
+<text x="112.00" y="81.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="81.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="44.00" y="87.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">3</text>
+<text x="79.00" y="87.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">06.05.2026, 14:00</text>
+<text x="112.00" y="87.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="87.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="94.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">07.05.2026, 12:00</text>
+<text x="112.00" y="94.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="94.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="22.00" y="100.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">5</text>
+<text x="79.00" y="100.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">13.05.2026, 12:00</text>
+<text x="112.00" y="100.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="100.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="107.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">13.05.2026, 14:00</text>
+<text x="112.00" y="107.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="107.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="113.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">6</text>
+<text x="44.00" y="113.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">4</text>
+<text x="79.00" y="113.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">20.05.2026, 12:00</text>
+<text x="112.00" y="113.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="113.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="120.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">20.05.2026, 14:00</text>
+<text x="112.00" y="120.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="120.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="126.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">21.05.2026, 12:00</text>
+<text x="112.00" y="126.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="126.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="133.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">8</text>
+<text x="44.00" y="133.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">5</text>
+<text x="79.00" y="133.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">03.06.2026, 12:00</text>
+<text x="112.00" y="133.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="133.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="139.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">03.06.2026, 14:00</text>
+<text x="112.00" y="139.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="139.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="22.00" y="146.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">9</text>
+<text x="79.00" y="146.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">10.06.2026, 12:00</text>
+<text x="112.00" y="146.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="146.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="152.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">10.06.2026, 14:00</text>
+<text x="112.00" y="152.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="152.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="159.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">11.06.2026, 12:00</text>
+<text x="112.00" y="159.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="159.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="165.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">10</text>
+<text x="79.00" y="165.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">17.06.2026, 12:00</text>
+<text x="112.00" y="165.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="165.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="44.00" y="172.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">6</text>
+<text x="79.00" y="172.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">17.06.2026, 14:00</text>
+<text x="112.00" y="172.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="172.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="178.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">18.06.2026, 12:00</text>
+<text x="112.00" y="178.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="178.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="185.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">11</text>
+<text x="79.00" y="185.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">24.06.2026, 12:00</text>
+<text x="112.00" y="185.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="185.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="191.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">24.06.2026, 14:00</text>
+<text x="112.00" y="191.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="191.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="44.00" y="198.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">7</text>
+<text x="79.00" y="198.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">25.06.2026, 12:00</text>
+<text x="112.00" y="198.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="198.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="22.00" y="204.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">12</text>
+<text x="79.00" y="204.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">01.07.2026, 12:00</text>
+<text x="112.00" y="204.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="204.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture</text>
+<text x="79.00" y="211.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">01.07.2026, 14:00</text>
+<text x="112.00" y="211.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="211.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Lecture/Hands-on</text>
+<text x="79.00" y="217.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">02.07.2026, 12:00</text>
+<text x="112.00" y="217.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="217.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="224.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">13</text>
+<text x="79.00" y="224.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">08.07.2026, 12:00</text>
+<text x="112.00" y="224.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="224.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="230.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">08.07.2026, 14:00</text>
+<text x="112.00" y="230.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="230.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="237.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">09.07.2026, 12:00</text>
+<text x="112.00" y="237.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="237.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="22.00" y="243.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">14</text>
+<text x="79.00" y="243.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">15.07.2026, 12:00</text>
+<text x="112.00" y="243.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="243.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="250.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">15.07.2026, 14:00</text>
+<text x="112.00" y="250.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">CV</text>
+<text x="122.00" y="250.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Hands-on</text>
+<text x="79.00" y="256.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">16.07.2026, 12:00</text>
+<text x="112.00" y="256.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="256.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Presentations</text>
+<text x="22.00" y="263.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">15</text>
+<text x="79.00" y="263.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">22.07.2026, 12:00</text>
+<text x="112.00" y="263.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="263.20" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Presentations</text>
+<text x="79.00" y="269.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">23.07.2026, 12:00</text>
+<text x="112.00" y="269.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="middle" dominant-baseline="auto">HS</text>
+<text x="122.00" y="269.70" font-family="Helvetica, Arial, sans-serif" font-size="3.40" font-weight="normal" text-anchor="start" dominant-baseline="auto">Presentations</text>
+<line x1="20.00" y1="10.00" x2="190.00" y2="10.00" stroke="#aaa" stroke-width="0.53"/>
+<line x1="20.00" y1="18.00" x2="190.00" y2="18.00" stroke="#aaa" stroke-width="0.53"/>
+<line x1="20.00" y1="271.63" x2="190.00" y2="271.63" stroke="#aaa" stroke-width="0.53"/>
+<text x="22.00" y="277.50" font-family="Helvetica, Arial, sans-serif" font-size="3.06" font-weight="normal" text-anchor="start" dominant-baseline="auto">HS = Hörsaal des Mathematischen Instituts (Raum 203)</text>
+<text x="22.00" y="282.06" font-family="Helvetica, Arial, sans-serif" font-size="3.06" font-weight="normal" text-anchor="start" dominant-baseline="auto">CV = Cohn-Vossen-Raum (Raum 313)</text>
+</svg>
