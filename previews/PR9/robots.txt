@@ -1,0 +1,4 @@
+Sitemap: https://numsim-group.github.io/klimakoffer/previews/PR9/sitemap.xml
+
+User-agent: *
+Disallow:
