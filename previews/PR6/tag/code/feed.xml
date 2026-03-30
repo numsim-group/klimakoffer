@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss">
+
+  <channel>
+    <title>
+      <![CDATA[  An Introduction to Climate Modeling  ]]>
+    </title>
+    <link> https://numsim-group.github.io/previews/PR6/ </link>
+    <description>
+      <![CDATA[  In this course, you will learn how to implement an energy balance model for climate simulations  ]]>
+    </description>
+    <atom:link
+      href="https://numsim-group.github.io/previews/PR6/feed.xml"
+      rel="self"
+      type="application/rss+xml" />
+
+
+<item>
+  <title>
+    <![CDATA[  0 Literature  ]]>
+  </title>
+  <link> https://numsim-group.github.io/previews/PR6/literature/index.html </link>
+  <guid> https://numsim-group.github.io/previews/PR6/literature/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Fri, 22 Mar 2019 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  0 General Info  ]]>
+  </title>
+  <link> https://numsim-group.github.io/previews/PR6/general_info/index.html </link>
+  <guid> https://numsim-group.github.io/previews/PR6/general_info/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Fri, 22 Mar 2019 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  0 Programming Info  ]]>
+  </title>
+  <link> https://numsim-group.github.io/previews/PR6/programming_info/index.html </link>
+  <guid> https://numsim-group.github.io/previews/PR6/programming_info/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Fri, 22 Mar 2019 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+</channel></rss>
