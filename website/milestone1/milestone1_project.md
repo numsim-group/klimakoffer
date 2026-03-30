@@ -17,5 +17,5 @@ tags = ["climatesystem"]
 [(Download *The_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)
 
 ~~~
-<embed src="/assets/milestone1/description.pdf" width="1000" height="1000" type="application/pdf" style="width: 100%;">
+<embed src="/assets/milestone1/description.pdf" width="1000" height="1000" type="application/pdf" style="width: 100%; height: 80vh;"/>
 ~~~
