@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -102,7 +103,7 @@ jobs:
       with:
         message: |
           Preview this PR here: https://numsim-group.github.io/klimakoffer/previews/PR${{ github.event.number }}/'
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         comment-tag: preview-link # Use tag to update the same comment instead of posting a new one for every build
     - name: Deploy (main)
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
