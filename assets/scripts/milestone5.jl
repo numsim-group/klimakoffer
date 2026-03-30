@@ -302,6 +302,10 @@ function milestone5()
     # The Jacobian has three diagonals of non-zero entries and two blocks of non-zero entries for the poles.
     # We only show a subset of the entries, otherwise the two side diagonals are not visible.
     jacobian = calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity)
+
+    # Warning: Plotting the whole matrix with the PythonPlot backend is very slow.
+    # Use the GR backend when examining the whole Jacobian.
+    gr()
     plot_jacobian = spy(jacobian[1:300, 1:300])
 
     println("Done with Jacobian")
