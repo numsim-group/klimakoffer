@@ -93,7 +93,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
           branch: gh-pages
-          folder: __site
+          folder: website/__site
           token: ${{ secrets.GITHUB_TOKEN }}
           target-folder: "previews/PR${{ github.event.number }}" # The website preview is going to be stored in the previews subfolder
     - name: Deploy (main)
@@ -102,6 +102,6 @@ jobs:
       with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: __site
+          folder: website/__site
           clean-exclude: |  # This makes sure that the previews are not wiped out during regular builds
             previews/*
