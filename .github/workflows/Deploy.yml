@@ -72,8 +72,8 @@ jobs:
     - name: Fix URLs for PR preview deployment (pull request previews)
       if: github.event_name == 'pull_request'
       run: | # "previews" below is the folder name where your PR previews are stored
-        echo "PREVIEW_FRANKLIN_WEBSITE_URL=https://numsim-group.github.io/previews/PR${{ github.event.number }}/" >> $GITHUB_ENV
-        echo "PREVIEW_FRANKLIN_PREPATH=previews/PR${{ github.event.number }}" >> $GITHUB_ENV
+        echo "PREVIEW_FRANKLIN_WEBSITE_URL=https://numsim-group.github.io/klimakoffer/previews/PR${{ github.event.number }}/" >> $GITHUB_ENV
+        echo "PREVIEW_FRANKLIN_PREPATH=klimakoffer/previews/PR${{ github.event.number }}" >> $GITHUB_ENV
     # NOTE
     #   The steps below ensure that NodeJS and Franklin are loaded then it
     #   installs highlight.js which is needed for the prerendering step
