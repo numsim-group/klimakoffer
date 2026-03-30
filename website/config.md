@@ -41,5 +41,7 @@ Add here global latex commands to use throughout your pages.
 <!-- warning from https://github.com/JuliaDocs/Franklin.jl/blob/master/docs/config.md
 -->
 \newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
+
 <!-- Name of repository for GitHub pages -->
-@def prepath = "klimakoffer"
+@def prepath     = get(ENV, "PREVIEW_FRANKLIN_PREPATH", "klimakoffer")
+@def website_url = get(ENV, "PREVIEW_FRANKLIN_WEBSITE_URL", "numsim-group.github.io")
