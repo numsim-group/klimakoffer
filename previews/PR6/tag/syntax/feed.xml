@@ -11,12 +11,12 @@
     <title>
       <![CDATA[  An Introduction to Climate Modeling  ]]>
     </title>
-    <link> https://numsim-group.github.io/previews/PR6/ </link>
+    <link> https://numsim-group.github.io/klimakoffer/previews/PR6/ </link>
     <description>
       <![CDATA[  In this course, you will learn how to implement an energy balance model for climate simulations  ]]>
     </description>
     <atom:link
-      href="https://numsim-group.github.io/previews/PR6/feed.xml"
+      href="https://numsim-group.github.io/klimakoffer/previews/PR6/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  0 Literature  ]]>
   </title>
-  <link> https://numsim-group.github.io/previews/PR6/literature/index.html </link>
-  <guid> https://numsim-group.github.io/previews/PR6/literature/index.html </guid>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR6/literature/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR6/literature/index.html </guid>
   <description>
     <![CDATA[  Description  ]]>
   </description>  
@@ -44,8 +44,8 @@
   <title>
     <![CDATA[  0 General Info  ]]>
   </title>
-  <link> https://numsim-group.github.io/previews/PR6/general_info/index.html </link>
-  <guid> https://numsim-group.github.io/previews/PR6/general_info/index.html </guid>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR6/general_info/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR6/general_info/index.html </guid>
   <description>
     <![CDATA[  Description  ]]>
   </description>  
@@ -63,8 +63,8 @@
   <title>
     <![CDATA[  0 Programming Info  ]]>
   </title>
-  <link> https://numsim-group.github.io/previews/PR6/programming_info/index.html </link>
-  <guid> https://numsim-group.github.io/previews/PR6/programming_info/index.html </guid>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR6/programming_info/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR6/programming_info/index.html </guid>
   <description>
     <![CDATA[  Description  ]]>
   </description>  
