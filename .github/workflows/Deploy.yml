@@ -69,6 +69,11 @@ jobs:
         mkdir website/_assets/scripts
         cp -r milestones_julia/* website/_assets/scripts
         cp -r milestones_python/* website/_assets/scripts
+    - name: Fix URLs for PR preview deployment (pull request previews)
+      if: github.event_name == 'pull_request'
+      run: | # "previews" below is the folder name where your PR previews are stored
+        echo "PREVIEW_FRANKLIN_WEBSITE_URL=https://numsim-group.github.io/previews/PR${{ github.event.number }}/" >> $GITHUB_ENV
+        echo "PREVIEW_FRANKLIN_PREPATH=previews/PR${{ github.event.number }}" >> $GITHUB_ENV
     # NOTE
     #   The steps below ensure that NodeJS and Franklin are loaded then it
     #   installs highlight.js which is needed for the prerendering step
@@ -83,11 +88,6 @@ jobs:
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
             using Franklin;
             optimize()'
-    - name: Fix URLs for PR preview deployment (pull request previews)
-      if: github.event_name == 'pull_request'
-      run: | # "previews" below is the folder name where your PR previews are stored
-        echo "PREVIEW_FRANKLIN_WEBSITE_URL=https://numsim-group.github.io/previews/PR${{ github.event.number }}/" >> $GITHUB_ENV
-        echo "PREVIEW_FRANKLIN_PREPATH=previews/PR${{ github.event.number }}" >> $GITHUB_ENV
     - name: Deploy (preview)
       if: github.event_name == 'pull_request' && github.repository == github.event.pull_request.head.repo.full_name # if this build is a PR build and the PR is NOT from a fork
       uses: JamesIves/github-pages-deploy-action@releases/v4
@@ -97,7 +97,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           target-folder: "previews/PR${{ github.event.number }}" # The website preview is going to be stored in the previews subfolder
     - name: Deploy (main)
-      if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -105,9 +105,3 @@ jobs:
           folder: __site
           clean-exclude: |  # This makes sure that the previews are not wiped out during regular builds
             previews/*
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v4
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: website/__site
