@@ -11,12 +11,12 @@
     <title>
       <![CDATA[  An Introduction to Climate Modeling  ]]>
     </title>
-    <link> https://numsim-group.github.io/klimakoffer/ </link>
+    <link> numsim-group.github.io </link>
     <description>
       <![CDATA[  In this course, you will learn how to implement an energy balance model for climate simulations  ]]>
     </description>
     <atom:link
-      href="https://numsim-group.github.io/klimakoffer/feed.xml"
+      href="numsim-group.github.io/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  0 Literature  ]]>
   </title>
-  <link> https://numsim-group.github.io/klimakoffer/literature/index.html </link>
-  <guid> https://numsim-group.github.io/klimakoffer/literature/index.html </guid>
+  <link> numsim-group.github.io/literature/index.html </link>
+  <guid> numsim-group.github.io/literature/index.html </guid>
   <description>
     <![CDATA[  Description  ]]>
   </description>  
@@ -44,8 +44,8 @@
   <title>
     <![CDATA[  0 General Info  ]]>
   </title>
-  <link> https://numsim-group.github.io/klimakoffer/general_info/index.html </link>
-  <guid> https://numsim-group.github.io/klimakoffer/general_info/index.html </guid>
+  <link> numsim-group.github.io/general_info/index.html </link>
+  <guid> numsim-group.github.io/general_info/index.html </guid>
   <description>
     <![CDATA[  Description  ]]>
   </description>  
@@ -63,8 +63,8 @@
   <title>
     <![CDATA[  0 Programming Info  ]]>
   </title>
-  <link> https://numsim-group.github.io/klimakoffer/programming_info/index.html </link>
-  <guid> https://numsim-group.github.io/klimakoffer/programming_info/index.html </guid>
+  <link> numsim-group.github.io/programming_info/index.html </link>
+  <guid> numsim-group.github.io/programming_info/index.html </guid>
   <description>
     <![CDATA[  Description  ]]>
   </description>  
