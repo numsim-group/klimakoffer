@@ -101,7 +101,7 @@ jobs:
       uses: thollander/actions-comment-pull-request@v3
       with:
         message: |
-          Preview this PR at this URL: https://numsim-group.github.io/klimakoffer/previews/PR${{ github.event.number }}/'
+          Preview this PR here: https://numsim-group.github.io/klimakoffer/previews/PR${{ github.event.number }}/'
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         comment-tag: preview-link # Use tag to update the same comment instead of posting a new one for every build
     - name: Deploy (main)
