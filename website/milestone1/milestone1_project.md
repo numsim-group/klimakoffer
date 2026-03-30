@@ -17,10 +17,5 @@ tags = ["climatesystem"]
 [(Download *The_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)
 
 ~~~
-<!-- For some reason, we can't use % in the height -->
-<object data="/assets/milestone1/description.pdf" type="application/pdf" width="100%" height="1000px">
-    <embed src="/assets/milestone1/description.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/assets/milestone1/description.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<embed src="/assets/milestone1/description.pdf" width="1000" height="1000" type="application/pdf" style="width: 100%;">
 ~~~
