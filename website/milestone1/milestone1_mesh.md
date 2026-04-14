@@ -53,7 +53,7 @@ surface grids:
 ![](/assets/milestone1/ICONgrid.png)
 * **Source**: Conway dcccD. [Wikipedia](https://commons.wikimedia.org/wiki/File:Conway_dcccD.png) ([User:Tomruen](https://commons.wikimedia.org/wiki/User:Tomruen)), [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-Although we have identified some issues with grids that are regular in latitude/colatitude and longitude, we have decided to use this type of grid in our model. Despite its limitations, it is the simplest grid to construct and work with. To address the singularities at the poles, we will develop and implement a special fix in the numerical method [milestone 5](../../milestone5/milestone5_spatial_discretization/#a_solution_to_the_pole_problem).
+Although we have identified some issues with grids that are regular in latitude/colatitude and longitude, we have decided to use this type of grid in our model. Despite its limitations, it is the simplest grid to construct and work with. To address the singularities at the poles, we will develop and implement a special fix in the numerical method in [milestone 5](../../milestone5/milestone5_spatial_discretization/#a_solution_to_the_pole_problem).
 
 The grid that we use in this course is illustrated below:
 
