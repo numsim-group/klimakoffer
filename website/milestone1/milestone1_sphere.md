@@ -54,7 +54,7 @@ We consider the spherical coordinate system, in which all points in the three-di
 We can map any point in absolute Cartesian coordinates ($x,y,z$) to spherical coordinates ($r,\colat,\varphi$) using the following transformations:
 \begin{align}
 x &= r \sin \colat \cos \varphi, & r &= \sqrt{x^2 + y^2 + z^2},\\
-y &= r \sin \colat \sin \varphi, & \colat &= \arctan \left(\frac{x^2 + y^2}{z} \right),\\
+y &= r \sin \colat \sin \varphi, & \colat &= \arctan \left(\frac{\sqrt{x^2 + y^2}}{z} \right),\\
 z &= r \cos \colat, & \varphi &= \arctan(y/z).
 \end{align}
 

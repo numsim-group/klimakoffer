@@ -53,17 +53,17 @@ surface grids:
 ![](/assets/milestone1/ICONgrid.png)
 * **Source**: Conway dcccD. [Wikipedia](https://commons.wikimedia.org/wiki/File:Conway_dcccD.png) ([User:Tomruen](https://commons.wikimedia.org/wiki/User:Tomruen)), [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-Although we have identified some issues with grids that are regular in latitude/colatitude and longitude, we have decided to use this type of grid in our model. Despite its limitations, it is the simplest grid to construct and work with. To address the singularities at the poles, we will develop and implement a special fix.
+Although we have identified some issues with grids that are regular in latitude/colatitude and longitude, we have decided to use this type of grid in our model. Despite its limitations, it is the simplest grid to construct and work with. To address the singularities at the poles, we will develop and implement a special fix in the numerical method [milestone 5](../../milestone5/milestone5_spatial_discretization/#a_solution_to_the_pole_problem).
 
 The grid that we use in this course is illustrated below:
 
 ![](/assets/milestone1/OurGrid.png)
 
-In the illustration, the boundaries of our domain are marked in blue, the grid lines of the mesh are marked in gray and the grid points of the mesh (the positions where we will store our numerical solution) are marked as purple circles.
+In the illustration, the boundaries of our domain are marked in black, the grid lines of the mesh are marked in gray and the grid points of the mesh (the positions where we will store our numerical solution) are marked as purple circles.
 
 Since our domain is periodic in the longitude direction, we do not need to store the last column of grid points ($\varphi = \pi$), as their position on the surface of the sphere is the same as for the first column ($\varphi = -\pi$).
 
-Note that all the points in the first row ($\lat = \pi/2$) correspond to the same position (north pole), and all the points in the last row ($\lat = -\pi/2$) too (south pole).
+Note that all the points in the first row ($\lat = \pi/2$) correspond to the same position (north pole), and all the points in the last row ($\lat = -\pi/2$) too (south pole). So all these values are supposed to be the same. 
 Nevertheless, we will keep these duplicated grid points in our model to simplify the storage (we can use a matrix format to store the values).
 
 We define the number of grid points as
