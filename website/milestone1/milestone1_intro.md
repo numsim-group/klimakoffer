@@ -13,7 +13,7 @@ tags = ["climatesystem"]
 
 ## Components of the Climate System
 
-The Earth's climate is a complex system that redistributes the energy from the sun throughout the planet. This energy transfer is carried out by various components, including the atmosphere, hydrosphere, cryosphere, land surface, and biosphere. Each of these components plays a crucial role in regulating the Earth's climate, and changes to any one of them can have far-reaching effects on the system as a whole. 
+The Earth's climate is a complex system that redistributes the energy from the sun throughout the planet. This energy transfer is carried out by various components, including the atmosphere, hydrosphere, cryosphere, land surface, and biosphere. Each of these components plays a crucial role in regulating the Earth's climate, and changes to any one of them can have far-reaching effects on the system as a whole.
 In addition, human activities affect climate on Earth significantly and are nowadays considered an additional component: the anthroposphere.
 Understanding how these components interact with each other is essential to comprehending the complex processes that govern the Earth's climate.
 
@@ -34,7 +34,7 @@ Some of the important atmospheric processes include:
 
 Overall, these processes work together to create a complex and dynamic atmosphere that is vital for sustaining life on Earth.
 
-### Hydrosphere 
+### Hydrosphere
 
 The hydrosphere comprises all forms of water on and below the Earth's surface, including oceans, rivers, lakes, and groundwater reservoirs. It also includes the entire global water cycle, which begins when precipitation reaches the surface.
 
@@ -51,11 +51,11 @@ Several important processes occur within the hydrosphere, some of which are:
 The cryosphere refers to all forms of ice in the Earth's climate system, including ice masses, ice shelves, sea ice, glaciers, and permafrost. The amount of ice present in the cryosphere has a significant impact on the hydrosphere, as it serves as a long-term water reserve that can affect water availability in different regions of the world. In addition, the cryosphere plays a crucial role in regulating the Earth's radiation balance through its effect on the planet's albedo, or the reflection of incoming solar radiation. Changes in the cryosphere can lead to alterations in the planet's albedo, which can have significant consequences for global temperature and climate patterns. Therefore, understanding the dynamics of the cryosphere and its relationship with other components of the climate system is essential for predicting and mitigating the effects of climate change.
 
 
-### Land Surface 
+### Land Surface
 
 The Land Surface refers to the solid portion of the Earth's crust. The location and positioning of the continents have a significant impact on the distribution of climatic zones across the planet, as well as the formation and direction of ocean currents. Additionally, the Land Surface plays a critical role in regulating the Earth's radiation balance through its effect on the planet's albedo, which can vary depending on the type of terrain (e.g., sand versus rocks). The Land Surface also acts as a reservoir of dust particles that can interact with the atmosphere and affect weather patterns. Understanding the Land Surface and its interactions with the other components of the Earth's climate system is essential for predicting and mitigating the effects of climate change.
 
-### Biosphere 
+### Biosphere
 The Biosphere refers to the organic cover of the Earth's land masses, including vegetation, soil, and marine organisms. It has a strong impact on carbon exchange between different parts of the Earth and can significantly affect the concentration of CO2 in the atmosphere. Some of the key processes that the Biosphere is involved in include:
 
 * Changing the reflectivity (Albedo) of the Earth's surface, which can have a significant impact on the planet's radiation balance.
@@ -66,7 +66,7 @@ Understanding the role of the Biosphere in the Earth's climate system is critica
 
 ### Anthroposphere
 
-The Anthroposphere is the term used to describe all the interactions and activities of humans that change existing processes or create new ones within the Earth's climate system. This includes activities such as the high-rate emission of substances, changes in land use, including deforestation, desertification, the conversion of natural habitats into constructed areas, and the drainage of marshes. These human activities can have significant impacts on the Earth's climate and ecosystems, affecting factors such as greenhouse gas emissions, water availability, and the balance of biodiversity. 
+The Anthroposphere is the term used to describe all the interactions and activities of humans that change existing processes or create new ones within the Earth's climate system. This includes activities such as the high-rate emission of substances, changes in land use, including deforestation, desertification, the conversion of natural habitats into constructed areas, and the drainage of marshes. These human activities can have significant impacts on the Earth's climate and ecosystems, affecting factors such as greenhouse gas emissions, water availability, and the balance of biodiversity.
 
 Apart from the components mentioned earlier, there are additional components that can significantly impact the Earth's climate system. These components are based on rare and extreme events, such as volcanic eruptions, which can release large amounts of gases and particles into the atmosphere. These emissions can have short-term effects on the planet's temperature and weather patterns by altering the amount of solar radiation that reaches the Earth's surface. Volcanic eruptions can also have long-term impacts by contributing to changes in the Earth's albedo and carbon cycle. Therefore, while such events may be infrequent, they play an important role in shaping the Earth's climate system.
 
@@ -83,7 +83,7 @@ Every single process requires expert level
 of research to understand the physics
 and to generate model abstractions. We
 could easily fill full lecture courses
-on the individual components: the physics, 
+on the individual components: the physics,
 the mathematical model, the numerical
 algorithms and their implementation, etc.
 
@@ -159,7 +159,7 @@ the missing so called subgrid scales.
 @@colbox-blue
 **Remark 3:** In the climate weather prediction
 community, the modeling of components, processes
-and subgrid sale effects is often called "parametrization".
+and subgrid scale effects is often called "parametrization".
 The "model" often refers to the whole package:
 PDEs+Numerics+Implementation (code/software).
 @@
@@ -199,5 +199,3 @@ of the atmosphere at the surface of Earth using a second order _partial differen
 
 In our course, we will mainly follow the paper (although we changed the numerics a little bit):
 > [Zhuang, K., North, G. R., & Stevens, M. J. (2017). A NetCDF version of the two-dimensional energy balance model based on the full multigrid algorithm. SoftwareX, 6, 198-202.](https://www.sciencedirect.com/science/article/pii/S2352711017300262)
-
-
