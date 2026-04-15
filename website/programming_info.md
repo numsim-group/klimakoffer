@@ -40,7 +40,7 @@ We recommend using Pluto Notebooks to present your results.
 
 We recommend using PyCharm Professional, which is [free for students](https://www.jetbrains.com/community/education/#students). It is useful to enable "Scientific Mode", which allows you to show plots in the IDE ([Matplotlib tutorial](https://www.jetbrains.com/help/pycharm/matplotlib-tutorial.html)).
 
-We provide a setup that you can use to implement the milestones. The zip file contains a requirement.txt file listing all dependecies, a subfolder with the necessary input files and a skeleton for milestone 1.
+We provide a setup that you can use to implement the milestones. The zip file contains a requirement.txt file listing all dependencies, a subfolder with the necessary input files and a skeleton for milestone 1.
 
 [Download python_skeleton.zip](/assets/python_skeleton.zip)
 

@@ -17,7 +17,7 @@ There are several conventions for
 spherical coordinates. In the geographic coordinate system, we speak of latitude/colatitude and longitude:
 
 * **Latitude** ($\lat$): North-south direction. Latitude lines are parallel to the equator and are assigned the angle from the equator.
-* **Colatitude** ($\colat$): Complementary angle from a given latitude (meassured from the north pole).
+* **Colatitude** ($\colat$): Complementary angle from a given latitude (measured from the north pole).
 
 | Location   | Latitude| Colatitude|
 | -----------|---------|-----------|

@@ -99,7 +99,7 @@ sparse_jacoban = sparse(dense_jacobian)
 
 ## Solving Sparse Linear Systems
 
-There is a myriad of methods to solve linear systems efficiently. The choice of the most efficient variant depends on the size of the system, the sparsity of the matrix, the shape of the matrix and its special properties (symmetric, etc.). For very large problem sizes, typically, iterative linear system solvers are used that solve the problem approximatively up to a (user defined) accuracy threshold. For problem sizes that are relatively small, such as in the case of our 2D EBM with moderate sizes of grids, it is possible to use so-called direct solvers. 
+There is a myriad of methods to solve linear systems efficiently. The choice of the most efficient variant depends on the size of the system, the sparsity of the matrix, the shape of the matrix and its special properties (symmetric, etc.). For very large problem sizes, typically, iterative linear system solvers are used that solve the problem approximately up to a (user defined) accuracy threshold. For problem sizes that are relatively small, such as in the case of our 2D EBM with moderate sizes of grids, it is possible to use so-called direct solvers. 
 
 Direct methods are the most reliable methods for solving _moderate size_ linear systems since they obtain an exact solution to the problem to within machine precision rounding/conditioning errors. 
 The most well known direct method is Gaussian elimination, which reduces the system to a triangular one using row operations. 
