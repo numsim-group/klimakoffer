@@ -172,7 +172,7 @@ def calc_diffusion_coefficients_ziegler(geo_dat):
             return coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
         else:  # land, sea ice, etc
             if j <= j_equator:  # northern hemisphere
-                # on the equator colat=1 -> coefficients for norhern/southern hemisphere cancels out
+                # on the equator colat=1 -> coefficients for northern/southern hemisphere cancels out
                 return coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
             else:  # southern hemisphere
                 return coeff_south_pole + (coeff_equator - coeff_south_pole) * colat

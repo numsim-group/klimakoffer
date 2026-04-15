@@ -50,7 +50,7 @@ function calc_diffusion_coefficients(geo_dat)
             return coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
         else  # land, sea ice, etc
             if j <= j_equator  # northern hemisphere
-                # on the equator colat=1 -> coefficients for norhern/southern hemisphere cancels out
+                # on the equator colat=1 -> coefficients for northern/southern hemisphere cancels out
                 return coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
             else  # southern hemisphere
                 return coeff_south_pole + (coeff_equator - coeff_south_pole) * colat
@@ -92,7 +92,7 @@ function calc_diffusion_operator!(diffusion_op, mesh, diffusion_coeff, temperatu
             # There are the special cases of i=1 and i=mesh.n_longitude.
             # We have a periodic boundary condition, so for i=1, we want i-1 to be the last entry.
             # For i=mesh.n_longitude, we want i+1 to be 1.
-            # For this, we define variables ip1 (i plus 1) abd im1 (i minus 1)
+            # For this, we define variables ip1 (i plus 1) and im1 (i minus 1)
             # to avoid duplicating code.
             if i == mesh.n_longitude
                 ip1 = 1

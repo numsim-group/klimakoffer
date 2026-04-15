@@ -50,7 +50,7 @@ include(<span class=hljs-string >&quot;milestone3.jl&quot;</span>)
             <span class=hljs-keyword >return</span> coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
         <span class=hljs-keyword >else</span>  <span class=hljs-comment ># land, sea ice, etc</span>
             <span class=hljs-keyword >if</span> j &lt;= j_equator  <span class=hljs-comment ># northern hemisphere</span>
-                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for norhern/southern hemisphere cancels out</span>
+                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for northern/southern hemisphere cancels out</span>
                 <span class=hljs-keyword >return</span> coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
             <span class=hljs-keyword >else</span>  <span class=hljs-comment ># southern hemisphere</span>
                 <span class=hljs-keyword >return</span> coeff_south_pole + (coeff_equator - coeff_south_pole) * colat
@@ -92,7 +92,7 @@ include(<span class=hljs-string >&quot;milestone3.jl&quot;</span>)
             <span class=hljs-comment ># There are the special cases of i=1 and i=mesh.n_longitude.</span>
             <span class=hljs-comment ># We have a periodic boundary condition, so for i=1, we want i-1 to be the last entry.</span>
             <span class=hljs-comment ># For i=mesh.n_longitude, we want i+1 to be 1.</span>
-            <span class=hljs-comment ># For this, we define variables ip1 (i plus 1) abd im1 (i minus 1)</span>
+            <span class=hljs-comment ># For this, we define variables ip1 (i plus 1) and im1 (i minus 1)</span>
             <span class=hljs-comment ># to avoid duplicating code.</span>
             <span class=hljs-keyword >if</span> i == mesh.n_longitude
                 ip1 = <span class=hljs-number >1</span>
@@ -365,7 +365,7 @@ include(<span class=hljs-string >&quot;milestone3.jl&quot;</span>)
             <span class=hljs-keyword >return</span> coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
         <span class=hljs-keyword >else</span>:  <span class=hljs-comment ># land, sea ice, etc</span>
             <span class=hljs-keyword >if</span> j &lt;= j_equator:  <span class=hljs-comment ># northern hemisphere</span>
-                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for norhern/southern hemisphere cancels out</span>
+                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for northern/southern hemisphere cancels out</span>
                 <span class=hljs-keyword >return</span> coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
             <span class=hljs-keyword >else</span>:  <span class=hljs-comment ># southern hemisphere</span>
                 <span class=hljs-keyword >return</span> coeff_south_pole + (coeff_equator - coeff_south_pole) * colat
