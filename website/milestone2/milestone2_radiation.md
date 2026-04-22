@@ -82,7 +82,7 @@ $$
 I_{IR/OLW} = A + B\,(T - 273.15).
 $$
 If we use simple linear regression for the particular set of data shown above in
-the figure, we get $A=202.1$ as the radiative cooling in units $[W/m^2]$,  and $B=1.9$ as the radiative cooling feedback with units $[W/m^2/K]$. 
+the figure, we get $A=202.1$ as the radiative cooling in units $[W/m^2]$, and $B=1.9$ as the radiative cooling feedback with units $[W/m^2/K]$. 
 It is important to note that the choice of these parameters has a direct impact on the outgoing radiation and hence on the cooling. Several other authors in the literature have fitted the data differently, hence some range of choices for $A$ and $B$ is available. 
 The values we choose for our implementation are from the paper by Zhuang et al. (2017): $A=210.3$ and $B=2.15$.
 
