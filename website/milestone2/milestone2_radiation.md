@@ -75,7 +75,7 @@ It is in general motivated by available observational data, shown in the next fi
 * Measured outgoing longwave radiation as a function of the surface temperature between 1975 and 1985. Generated with data from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=X0WG_pxk8AUAAAAA:2mvPv6HgmsA467qq44RYKY8WrJZLh_Bl-lN2kzgdBLJi3-xSVh0il6g-p1PSlxda51H8YVdkx1dsxSI).
 
 The figure shows infrared radiation density plots averaged monthly, measured by satellite compared to the surface temperature at the same month and location.
-There are many measurements available, with for instant whole sky (including clouds) and also selected measures with clear sky (cloudless). 
+There are many measurements available in this paper, for instance whole sky (including clouds) and selected measurements with clear sky (cloudless). 
 
 If we consider the temperature in units Kelvin, we can fit the observed data with the linear model by choosing good constants $A$ and $B$ to get
 $$
