@@ -145,7 +145,7 @@ plot!(
     points[:,2],
     seriestype = :scatter,
     shape = :+,
-    label = "",
+    label = "Graves et al. (1993)",
     markersize = 5 # We manually set the markersize here, so the plot does not look super crammed.
 )
 
