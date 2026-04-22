@@ -122,7 +122,7 @@ def plot_annual_temperature(annual_temperature, average_temperature, title):
 
 # Run code
 if __name__ == "__main__":
-    geo_dat_ = read_geography("input/The_World128x65.dat")
+    geo_dat_ = read_geography("input/The_World65x128.dat")
 
     albedo = calc_albedo(geo_dat_)
     heat_capacity = calc_heat_capacity(geo_dat_)

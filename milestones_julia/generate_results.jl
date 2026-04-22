@@ -10,7 +10,7 @@ include("milestone2.jl")
 plot_albedo_, plot_heat_capacity_, gif_solar_forcing = milestone2()
 
 # Plot solar forcing for day 80 of the year
-geo_dat = read_geography(joinpath(@__DIR__, "input", "The_World128x65.dat"))
+geo_dat = read_geography(joinpath(@__DIR__, "input", "The_World65x128.dat"))
 
 # Plot albedo
 albedo = calc_albedo(geo_dat)
@@ -79,7 +79,7 @@ function calc_jacobian_row_major(mesh, diffusion_coeff, heat_capacity,
 end
 
 function plot_jacobian_row_major()
-    geo_dat = read_geography(joinpath(@__DIR__, "input", "The_World128x65.dat"))
+    geo_dat = read_geography(joinpath(@__DIR__, "input", "The_World65x128.dat"))
     mesh = Mesh(geo_dat)
 
     albedo = calc_albedo(geo_dat)

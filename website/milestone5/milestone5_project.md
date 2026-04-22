@@ -14,7 +14,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Constructing a System Matrix with FD Approach
 
 [(Download description in PDF format)](/assets/milestone5/description.pdf)\\
-[(Download *The\_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *The\_World65x128.dat*)](/assets/scripts/input/The_World65x128.dat)\\
 [(Download *True\_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)\\
 
 ~~~

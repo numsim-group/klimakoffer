@@ -216,7 +216,7 @@ def simulation_ziegler(geo_dat, mesh, true_longitude):
 
 # Run code
 if __name__ == '__main__':
-    geo_dat_ = read_geography("input/The_World128x65.dat")
+    geo_dat_ = read_geography("input/The_World65x128.dat")
     mesh_ = Mesh(geo_dat_)
 
     albedo_ = calc_albedo(geo_dat_)

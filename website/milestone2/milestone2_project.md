@@ -13,7 +13,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Compute Albedo and Solar Forcing Terms and Visualize in Time
 
 [(Download description in PDF format)](/assets/milestone2/description.pdf)\\
-[(Download *The_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *The_World65x128.dat*)](/assets/scripts/input/The_World65x128.dat)\\
 [(Download *True_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)
 
 ~~~

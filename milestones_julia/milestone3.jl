@@ -138,7 +138,7 @@ end
 
 # Run code
 function milestone3()
-    geo_dat_ = read_geography(joinpath(@__DIR__, "input", "The_World128x65.dat"))
+    geo_dat_ = read_geography(joinpath(@__DIR__, "input", "The_World65x128.dat"))
 
     albedo = calc_albedo(geo_dat_)
     heat_capacity = calc_heat_capacity(geo_dat_)

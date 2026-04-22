@@ -142,7 +142,7 @@ def plot_temperature(temperature, geo_dat, timestep, show_plot=False):
 
 # Run code
 if __name__ == '__main__':
-    geo_dat_ = read_geography("input/The_World128x65.dat")
+    geo_dat_ = read_geography("input/The_World65x128.dat")
     nlatitude_, nlongitude_ = geo_dat_.shape
 
     albedo = calc_albedo(geo_dat_)

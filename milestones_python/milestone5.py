@@ -240,7 +240,7 @@ def calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity, radiative_cooling
 
 # Run code
 if __name__ == '__main__':
-    geo_dat_ = read_geography("input/The_World128x65.dat")
+    geo_dat_ = read_geography("input/The_World65x128.dat")
     mesh_ = Mesh(geo_dat_)
 
     albedo = calc_albedo(geo_dat_)
