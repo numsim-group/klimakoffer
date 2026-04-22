@@ -12,7 +12,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 
 \toc
 
-As a next step, we want to investigate the difference of the southern and nothern hemisphere. If we visualize again the surface of Earth we
+As a next step, we want to investigate the difference of the southern and northern hemisphere. If we visualize again the surface of Earth we
 see a strong difference regarding the geography:
 
 \fig{/assets/milestone4/map.png}
@@ -58,7 +58,7 @@ j_{\text{equator}} &= (n_{latitude} - 1)/2 & \text{(0-based indexing)}.
 \end{align*}
 @@
 
-Let us assume that we have a 2D data field $F[j,i]$, with $j=1,...,\nlat$ and $i=1,...,\nlong$, for which we want to compute an area average over the nothern hemisphere. 
+Let us assume that we have a 2D data field $F[j,i]$, with $j=1,...,\nlat$ and $i=1,...,\nlong$, for which we want to compute an area average over the northern hemisphere. 
 We assume that we have our area vector $area[j]$, with $j=1,...,\nlat$, from [milestone 3](/milestone3/milestone3_averages/). 
 With the assumption that along the longitude direction $i$, all values at the north pole of $F[1,i]$ are the same, we can compute the area average as 
 \begin{align}

@@ -29,7 +29,7 @@ where analysis of the physical units reveal that the Earth's surface area normal
 
 @@colbox-blue
 **Remark 10:** The term heat capacity hints towards a process of "storing the heat". From our observation (and every day experience) we know that depending on the material, the
-storage capabilities of heat can be different: For instance when we compare the heat in air and the heat stored in water, or the heat stored in the solid walls of our appartment rooms. For our
+storage capabilities of heat can be different: For instance when we compare the heat in air and the heat stored in water, or the heat stored in the solid walls of our apartment rooms. For our
 full EBM model we want to take this into account and want to have different values of $C$ depending on the location, i.e., if the location is on land, ocean, snow covered
 or with sea ice. We want to make it dependent on the geography (from milestone 1).
 @@

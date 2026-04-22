@@ -74,7 +74,7 @@ S_r(t) = \frac{r_0^2}{r^2} S_0,
 $$
 where $r$ is the (time-dependent) Earth-sun distance, $r_0 \approx a$ is roughly the mean Earth-sun distance (defined as one anstronomical unit), and $S_0$ is the so-called solar constant, the mean solar elecromagnetic radiation per unit area measured on a surface perpendicular to the solar rays at a distance $r_0$. 
 
-Since Earth's orbit is an ellipse and the sun sits in one focus, we can calulate the Earth-sun distance as
+Since Earth's orbit is an ellipse and the sun sits in one focus, we can calculate the Earth-sun distance as
 $$\label{eq:r}
 r = \frac{a (1-e^2)}{1 - e \cos (\nu)},
 $$

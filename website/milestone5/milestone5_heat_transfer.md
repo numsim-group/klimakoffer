@@ -21,14 +21,14 @@ The [distribution of the solar forcing term](/milestone2/milestone2_results/#sol
 ~~~
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xqM83_og1Fc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ~~~
-* Effect of Coreolis force in large-scale vortices
+* Effect of Coriolis force in large-scale vortices
 ~~~
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PDEcAxfSYaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <br>
 <br>
 ~~~
 
-An important property of moving fluid flows is turbulent motion. Most flows in nature (and engineering) are turbulent, which means multiscale in space and time. From very small eddies in the range of milimeters up to large vortical structures of size hundreds or thousands of meters. Turbulent flows are highly sensitive to small scale disturbances (this is known as the butterfly effect), almost chaotic and thus hard to predict. One of the very important mechanisms of turbulent flows is increased mixing efficiency of cold and warm fluids, i.e., an enhanced heat transfer and heat distribution. This formally requires the numerical resolution (very small grid cells) of all small and large eddies. Small grid cells of course make the simulations very computationally intense and unfortunately for realistic flow scenarios too expensive, even on today's largest super computers. Hence, the full resolution of turbulent fluids is an unsolved problem in fluid mechanics. The current strategy in computational fluid dynamics (and also atmospheric science) to deal with this problem is to introduce additional parametrizations (also often coined turbulence models) that account for the effects of small eddies that cannot be resolved by the grid, so-called subgrid effects. Hence, all modern ESM include a full atmosphere simulation model, which itself includes parametrization for subgrid scale turbulence.
+An important property of moving fluid flows is turbulent motion. Most flows in nature (and engineering) are turbulent, which means multiscale in space and time. From very small eddies in the range of millimeters up to large vortical structures of size hundreds or thousands of meters. Turbulent flows are highly sensitive to small scale disturbances (this is known as the butterfly effect), almost chaotic and thus hard to predict. One of the very important mechanisms of turbulent flows is increased mixing efficiency of cold and warm fluids, i.e., an enhanced heat transfer and heat distribution. This formally requires the numerical resolution (very small grid cells) of all small and large eddies. Small grid cells of course make the simulations very computationally intense and unfortunately for realistic flow scenarios too expensive, even on today's largest super computers. Hence, the full resolution of turbulent fluids is an unsolved problem in fluid mechanics. The current strategy in computational fluid dynamics (and also atmospheric science) to deal with this problem is to introduce additional parametrizations (also often coined turbulence models) that account for the effects of small eddies that cannot be resolved by the grid, so-called subgrid effects. Hence, all modern ESM include a full atmosphere simulation model, which itself includes parametrization for subgrid scale turbulence.
 
 @@colbox-red
 **Bad news:** Unfortunately, a full atmospheric model is out of the scope of the course.
@@ -42,7 +42,7 @@ An important property of moving fluid flows is turbulent motion. Most flows in n
 
 In his pioneering work, Budyko
 > [Budyko, M. I. (1969). The effect of solar radiation variations on the climate of the Earth. tellus, 21(5), 611-619.](https://www.tandfonline.com/doi/pdf/10.3402/tellusa.v21i5.10109)
-considered a simple 1D (latitude dependent) EBM that included a simple term that models heat transfer accross latitude zones. From satellite data one can reconstruct that the main heat transfer depends on the latitude and is polewards. The next figure, for instance, shows the heat transfer in the northern hemisphere. It is also worth noting that the heat transfer in the atmosphere is different compared to the ocean.
+considered a simple 1D (latitude dependent) EBM that included a simple term that models heat transfer across latitude zones. From satellite data one can reconstruct that the main heat transfer depends on the latitude and is polewards. The next figure, for instance, shows the heat transfer in the northern hemisphere. It is also worth noting that the heat transfer in the atmosphere is different compared to the ocean.
 
 \fig{/assets/julia_plots_out/heat_transfer_north.png}
 * Heat transfer in the northern hemisphere. Generated with data from "Maslin (2013). 'Climate: A Very Short Introduction'"
@@ -84,7 +84,7 @@ It is important to understand that this type of modeling is driven by data of th
 
 As we solve our EBM on the surface of Earth, i.e., in spherical coordinates, we need to define the gradient operators and the divergence operators in our natural coordinate system.
 
-The gradient and divergence operators defined in Cartesian coordiates read as,
+The gradient and divergence operators defined in Cartesian coordinates read as,
 \begin{align}\label{eq:opsCartesian}
 \Nabla T &:= \partialderiv{T}{x} \hat{x} + \partialderiv{T}{y} \hat{y} +  \partialderiv{T}{z} \hat{z},
 \\
