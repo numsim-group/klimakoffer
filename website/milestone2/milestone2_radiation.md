@@ -75,14 +75,16 @@ It is in general motivated by available observational data, shown in the next fi
 * Measured outgoing longwave radiation as a function of the surface temperature between 1975 and 1985. Generated with data from [Graves, C. E., Lee, W. H., & North, G. R. (1993). New parameterizations and sensitivities for simple climate models. Journal of Geophysical Research: Atmospheres, 98(D3), 5025-5036](https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/92JD02666?casa_token=X0WG_pxk8AUAAAAA:2mvPv6HgmsA467qq44RYKY8WrJZLh_Bl-lN2kzgdBLJi3-xSVh0il6g-p1PSlxda51H8YVdkx1dsxSI).
 
 The figure shows infrared radiation density plots averaged monthly, measured by satellite compared to the surface temperature at the same month and location.
-(a) shows the whole sky (including clouds) and (b) shows only the clear (cloudless) sky.
+There are many measurements available in this paper, for instance whole sky (including clouds) and selected measurements with clear sky (cloudless). 
 
 If we consider the temperature in units Kelvin, we can fit the observed data with the linear model by choosing good constants $A$ and $B$ to get
 $$
-I_{IR/OLW} = A + B\,(T - 273.15),
+I_{IR/OLW} = A + B\,(T - 273.15).
 $$
-with $A=210.3$ as the radiative cooling in units $[W/m^2]$, and $B=2.15$ the radiative cooling feedback with units $[W/m^2/K]$.
-It is important to note that the choice of these parameters has a direct impact on the outgoing radiation and hence on the cooling. Several others have fitted the data differently, hence some range of choices for $A$ and $B$ is available. The values we select are from the paper by Zhuang et al. (2017).
+If we use simple linear regression for the particular set of data shown above in
+the figure, we get $A=202.1$ as the radiative cooling in units $[W/m^2]$, and $B=1.9$ as the radiative cooling feedback with units $[W/m^2/K]$. 
+It is important to note that the choice of these parameters has a direct impact on the outgoing radiation and hence on the cooling. Several other authors in the literature have fitted the data differently, hence some range of choices for $A$ and $B$ is available. 
+The values we choose for our implementation are from the paper by Zhuang et al. (2017): $A=210.3$ and $B=2.15$.
 
 We are now able to consider a second, but hopefully improved toy EBM. We replace the crude black-body radiation with a phenomenological approximation of the outgoing radiation (the Budyko model) to get
 $$
