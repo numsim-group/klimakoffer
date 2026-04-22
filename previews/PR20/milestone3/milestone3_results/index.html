@@ -1,0 +1,346 @@
+<!doctype html> <html lang=en > <meta http-equiv=Cache-control  content="no-cache, no-store, must-revalidate"> <meta http-equiv=Pragma  content=no-cache > <meta http-equiv=Expires  content=0 > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/klimakoffer/previews/PR20/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/klimakoffer/previews/PR20/css/jtd.css"> <link rel=icon  href="/klimakoffer/previews/PR20/assets/earth_logo.png"> <style> /* #148 wrap long header */ .franklin-content a.header-anchor, .franklin-toc li a { word-wrap: break-word; white-space: normal; } </style> <title>Milestone 3</title> <div class=page-wrap > <div class=side-bar > <div class=header > <a href="/klimakoffer/previews/PR20/" class=title > Klimakoffer </a> </div> <label for=show-menu  class=show-menu >MENU</label> <input type=checkbox  id=show-menu  role=button > <div class=menu  id=side-menu > <ul class=menu-list > <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/" class="menu-list-link ">Home</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/general_info/" class="menu-list-link ">General Information</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/programming_info/" class="menu-list-link ">Programming<br>Info</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone1/milestone1_menu/" class="menu-list-link ">Milestone 1</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone1/milestone1_intro/" class="menu-list-link ">Introduction</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone1/milestone1_sphere/" class="menu-list-link ">Spherical coordinates</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone1/milestone1_mesh/" class="menu-list-link ">Meshes</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone1/milestone1_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone1/milestone1_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_menu/" class="menu-list-link ">Milestone 2</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_conservation-and-balance/" class="menu-list-link ">Conservation and balance</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_ebm/" class="menu-list-link ">Energy Balance Model</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_radiation/" class="menu-list-link ">Radiation modeling</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_heat-capacity/" class="menu-list-link ">Heat capacity</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_albedo/" class="menu-list-link ">Albedo</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_solar-forcing/" class="menu-list-link ">Solar forcing</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_time-disc/" class="menu-list-link ">Time discretization</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone2/milestone2_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item active"><a href="/klimakoffer/previews/PR20/milestone3/milestone3_menu/" class="menu-list-link active">Milestone 3</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone3/milestone3_constantcoeff/" class="menu-list-link ">Constant-coefficient EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone3/milestone3_odesolvers/" class="menu-list-link ">ODE Solvers</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone3/milestone3_averages/" class="menu-list-link ">Averages</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone3/milestone3_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item active"><a href="/klimakoffer/previews/PR20/milestone3/milestone3_results/" class="menu-list-link active">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone4/milestone4_menu/" class="menu-list-link ">Milestone 4</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone4/milestone4_northsouth_ebm/" class="menu-list-link ">North/South EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone4/milestone4_multi0d/" class="menu-list-link ">Multiple 0D-EBMs</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone4/milestone4_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone4/milestone4_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone5/milestone5_menu/" class="menu-list-link ">Milestone 5</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone5/milestone5_heat_transfer/" class="menu-list-link ">Planetary Heat Transfer</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone5/milestone5_spatial_discretization/" class="menu-list-link ">Spatial Discretization</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone5/milestone5_stability_jacobians/" class="menu-list-link ">Stability and Jacobians</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone5/milestone5_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone5/milestone5_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone6/milestone6_menu/" class="menu-list-link ">Milestone 6</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone6/milestone6_discrete_ebm/" class="menu-list-link ">Discrete EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone6/milestone6_linear_systems/" class="menu-list-link ">Solving Linear Systems</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone6/milestone6_simulation/" class="menu-list-link ">Climate Simulations</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone6/milestone6_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/milestone6/milestone6_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR20/literature/" class="menu-list-link ">Literature</a> </ul> </div> <div class=footer > <img src="/klimakoffer/previews/PR20/assets/earth_logo.png" alt=earth_logo > </div> </div> <div class=main-content-wrap > <div class=main-content > <div class=main-header > <!-- <a id=ilias  href="https://www.ilias.uni-koeln.de/ilias/goto_uk_crs_6744928.html">ILIAS</a> --> </div> <div class=franklin-content > <h1 id=milestone_3_-_project_results ><a href="#milestone_3_-_project_results" class=header-anchor >Milestone 3 - Project Results</a></h1> <div class=franklin-toc ><ol><li><a href="#expected_results">Expected Results</a><ol><li><a href="#solar_forcing_vector">Solar Forcing vector</a><li><a href="#annual_temperature_plot">Annual Temperature Plot</a></ol><li><a href="#files_download">Files Download</a><li><a href="#scripts_for_milestone_3">Scripts for Milestone 3</a><ol><li><a href="#julia_implementation_of_milestone_3">Julia implementation of milestone 3</a><li><a href="#python_implementation_of_milestone_3">Python implementation of milestone 3</a></ol></ol></div> <h2 id=expected_results ><a href="#expected_results" class=header-anchor >Expected Results</a></h2> <p>This is an example for the expected results:</p> <h3 id=solar_forcing_vector ><a href="#solar_forcing_vector" class=header-anchor >Solar Forcing vector</a></h3> <p>Spatial averages for every time step as a vector in a .txt file:<br/> <a href="/klimakoffer/previews/PR20/assets/milestone3/solar_forcing_averages.txt">&#40;Download <em>solar&#95;forcing&#95;averages.txt</em>&#41;</a></p> <h3 id=annual_temperature_plot ><a href="#annual_temperature_plot" class=header-anchor >Annual Temperature Plot</a></h3> <p>Calculated with the forward Euler method. Plot for the backward Euler is almost identical.</p> <p><img src="/klimakoffer/previews/PR20/assets/milestone_results/milestone3_forward.png" alt="Annual temperature plot" /></p> <p><div class=warning ><div class=title >⚠ Warning&#33;</div> <div class=content >We strongly suggest to first work on the solutions on your own/within your group without checking directly for the reference solutions.</div></div> </p> <h2 id=files_download ><a href="#files_download" class=header-anchor >Files Download</a></h2> <p>The Julia and Python implementations of milestone 3 can be downloaded here:</p> <ul> <li><p><a href="/klimakoffer/previews/PR20/assets/scripts/milestone3.jl">Julia solution</a></p> <li><p><a href="/klimakoffer/previews/PR20/assets/scripts/milestone3.py">Python solution</a></p> </ul> <h2 id=scripts_for_milestone_3 ><a href="#scripts_for_milestone_3" class=header-anchor >Scripts for Milestone 3</a></h2> <p>You can also check out our Julia and Python implementations of milestone 3 in this site.</p> <h3 id=julia_implementation_of_milestone_3 ><a href="#julia_implementation_of_milestone_3" class=header-anchor >Julia implementation of milestone 3</a></h3> <pre><code class="julia hljs"><span class=hljs-keyword >using</span> LinearAlgebra
+
+include(<span class=hljs-string >&quot;milestone1.jl&quot;</span>)
+include(<span class=hljs-string >&quot;milestone2.jl&quot;</span>)
+
+<span class=hljs-keyword >function</span> calc_area(geo_dat)
+    nlatitude, nlongitude = size(geo_dat)
+    area = zeros(nlatitude)
+    delta_theta = <span class=hljs-literal >pi</span> / (nlatitude - <span class=hljs-number >1</span>)
+
+    <span class=hljs-comment ># Poles</span>
+    area[<span class=hljs-number >1</span>] = area[<span class=hljs-keyword >end</span>] = <span class=hljs-number >0.5</span> * (<span class=hljs-number >1</span> - cos(<span class=hljs-number >0.5</span> * delta_theta))
+
+    <span class=hljs-comment ># Inner cells</span>
+    <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-number >2</span>:(nlatitude - <span class=hljs-number >1</span>)
+        area[j] = sin(<span class=hljs-number >0.5</span> * delta_theta) * sin(delta_theta * (j - <span class=hljs-number >1</span>)) / nlongitude
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> area
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_mean(data, area)
+    nlatitude, nlongitude = size(data)
+
+    mean_data = area[<span class=hljs-number >1</span>] * data[<span class=hljs-number >1</span>, <span class=hljs-number >1</span>] + area[<span class=hljs-keyword >end</span>] * data[<span class=hljs-keyword >end</span>, <span class=hljs-keyword >end</span>]
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >2</span>:(nlatitude - <span class=hljs-number >1</span>)
+        <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlongitude
+            mean_data += area[i] * data[i, j]
+        <span class=hljs-keyword >end</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> mean_data
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_radiative_cooling_co2(co2_concentration, co2_concentration_base=<span class=hljs-number >315.0</span>,
+                                    radiative_cooling_base=<span class=hljs-number >210.3</span>)
+    <span class=hljs-keyword >return</span> radiative_cooling_base - <span class=hljs-number >5.35</span> * log(co2_concentration / co2_concentration_base)
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> timestep_euler_forward(mean_temperature, t, delta_t, mean_heat_capacity,
+                                mean_solar_forcing, radiative_cooling)
+    <span class=hljs-comment ># Rearrange the energy balance equation to</span>
+    <span class=hljs-comment ># d/dt T = f(T, t),</span>
+    <span class=hljs-comment ># where f(T, t) = (S_sol(t) - A - BT) / C.</span>
+    <span class=hljs-comment ># This function is the right-hand side f,</span>
+    <span class=hljs-comment ># where t is not the time but the array index for the corresponding time.</span>
+    <span class=hljs-keyword >function</span> rhs(mean_temp, t_)
+        <span class=hljs-keyword >return</span> (mean_solar_forcing[t_] - radiative_cooling - <span class=hljs-number >2.15</span> * mean_temp) /
+               mean_heat_capacity
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-comment ># Calculate T_t = T_{t-1} + delta_t * rhs(T_{t-1}, t-1) (forward Euler).</span>
+    <span class=hljs-keyword >if</span> t &gt; <span class=hljs-number >1</span>
+        <span class=hljs-keyword >return</span> mean_temperature[t - <span class=hljs-number >1</span>] + delta_t * rhs(mean_temperature[t - <span class=hljs-number >1</span>], t - <span class=hljs-number >1</span>)
+    <span class=hljs-keyword >else</span>
+        <span class=hljs-comment ># In the first iteration, we access the last entry of mean_temperature.</span>
+        <span class=hljs-comment ># Therefore, we start in each iteration with the last temperature of the previous iteration.</span>
+        ntimesteps = length(mean_temperature)
+        <span class=hljs-keyword >return</span> mean_temperature[<span class=hljs-keyword >end</span>] + delta_t * rhs(mean_temperature[<span class=hljs-keyword >end</span>], ntimesteps)
+    <span class=hljs-keyword >end</span>
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> compute_equilibrium(timestep_function, mean_heat_capacity, mean_solar_forcing,
+                             radiative_cooling;
+                             max_iterations=<span class=hljs-number >100</span>, rel_error=<span class=hljs-number >2e-5</span>, verbose=<span class=hljs-literal >true</span>)
+    <span class=hljs-comment ># Number of time steps per year.</span>
+    ntimesteps = length(mean_solar_forcing)
+
+    <span class=hljs-comment ># Step size</span>
+    delta_t = <span class=hljs-number >1</span> / ntimesteps
+
+    <span class=hljs-comment ># We start with a constant area-mean temperature of 0 throughout the year.</span>
+    mean_temperature = zeros(ntimesteps)
+    year_avg_temperature = <span class=hljs-number >0</span>
+
+    <span class=hljs-comment ># Mean temperature from the previous iteration to approximate the error.</span>
+    old_mean_temperature = copy(mean_temperature)
+
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:max_iterations
+        <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps
+            mean_temperature[t] = timestep_function(mean_temperature, t, delta_t,
+                                                    mean_heat_capacity, mean_solar_forcing,
+                                                    radiative_cooling)
+        <span class=hljs-keyword >end</span>
+
+        year_avg_temperature = sum(mean_temperature) / ntimesteps
+        verbose &amp;&amp;
+            println(<span class=hljs-string >&quot;Average annual temperature in iteration <span class=hljs-variable >$i</span> is <span class=hljs-variable >$year_avg_temperature</span>.&quot;</span>)
+
+        <span class=hljs-keyword >if</span> norm(mean_temperature - old_mean_temperature) &lt; rel_error
+            <span class=hljs-comment ># We can assume that the error is sufficiently small now.</span>
+            verbose &amp;&amp; println(<span class=hljs-string >&quot;Equilibrium reached!&quot;</span>)
+            <span class=hljs-keyword >break</span>
+        <span class=hljs-keyword >else</span>
+            <span class=hljs-comment ># Note that we need to write the values from mean_temperature to old_mean_temperature</span>
+            <span class=hljs-comment ># in order to get two arrays with the same values.</span>
+            <span class=hljs-comment ># We can&#x27;t omit the [:] or we would only have one array with two pointers to it.</span>
+            old_mean_temperature[:] = mean_temperature
+        <span class=hljs-keyword >end</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> mean_temperature, year_avg_temperature
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> timestep_euler_backward(mean_temperature, t, delta_t, mean_heat_capacity,
+                                 mean_solar_forcing, radiative_cooling)
+    <span class=hljs-comment ># This time, we have to solve the equation</span>
+    <span class=hljs-comment ># T_t = T_{t-1} + delta_t * f(T_t, t),</span>
+    <span class=hljs-comment ># where f(T, t) = (S_sol(t) - A - BT) / C.</span>
+    <span class=hljs-comment ># For this, we have to separate the terms that depend on T and the source terms that only depend on t.</span>
+    <span class=hljs-comment ># Solving for T_t yields</span>
+    <span class=hljs-comment ># T_t = (T_{t-1} + delta_t * (S_sol[t] - A) / C) / (1 + delta_t * B / C).</span>
+    <span class=hljs-comment ># Note that in the first iteration, we access mean_temperature[-1], which is the last entry.</span>
+    <span class=hljs-comment ># Therefore, we start in each iteration with the last temperature of the previous iteration.</span>
+    source_terms = (mean_solar_forcing[t] - radiative_cooling) / mean_heat_capacity
+
+    <span class=hljs-keyword >if</span> t &gt; <span class=hljs-number >1</span>
+        previous_mean_temperature = mean_temperature[t - <span class=hljs-number >1</span>]
+    <span class=hljs-keyword >else</span>
+        previous_mean_temperature = mean_temperature[<span class=hljs-keyword >end</span>]
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> (previous_mean_temperature + delta_t * source_terms) /
+           (<span class=hljs-number >1</span> + delta_t * <span class=hljs-number >2.15</span> / mean_heat_capacity)
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> plot_annual_temperature(annual_temperature, average_temperature, title)
+    ntimesteps = length(annual_temperature)
+    labels = [<span class=hljs-string >&quot;March&quot;</span>, <span class=hljs-string >&quot;June&quot;</span>, <span class=hljs-string >&quot;September&quot;</span>, <span class=hljs-string >&quot;December&quot;</span>, <span class=hljs-string >&quot;March&quot;</span>]
+
+    p = plot(average_temperature * ones(ntimesteps), label=<span class=hljs-string >&quot;average temperature&quot;</span>,
+             xlims=(<span class=hljs-number >1</span>, ntimesteps), xticks=(<span class=hljs-built_in >LinRange</span>(<span class=hljs-number >1</span>, ntimesteps, <span class=hljs-number >5</span>), labels),
+             ylabel=<span class=hljs-string >&quot;surface temperature [°C]&quot;</span>, title=title)
+    plot!(p, annual_temperature, label=<span class=hljs-string >&quot;annual temperature&quot;</span>)
+
+    <span class=hljs-keyword >return</span> p
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-comment ># Run code</span>
+<span class=hljs-keyword >function</span> milestone3()
+    geo_dat_ = read_geography(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;The_World65x128.dat&quot;</span>))
+
+    albedo = calc_albedo(geo_dat_)
+    heat_capacity = calc_heat_capacity(geo_dat_)
+
+    <span class=hljs-comment ># Compute solar forcing</span>
+    true_longitude = read_true_longitude(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;True_Longitude.dat&quot;</span>))
+    solar_forcing = calc_solar_forcing(albedo, true_longitude)
+
+    <span class=hljs-comment ># Compute area-mean quantities</span>
+    area_ = calc_area(geo_dat_)
+
+    mean_albedo = calc_mean(albedo, area_)
+    print(<span class=hljs-string >&quot;Mean albedo = <span class=hljs-variable >$mean_albedo</span>&quot;</span>)
+
+    mean_heat_capacity_ = calc_mean(heat_capacity, area_)
+    print(<span class=hljs-string >&quot;Mean heat capacity = <span class=hljs-variable >$mean_heat_capacity_</span>&quot;</span>)
+
+    ntimesteps_ = length(true_longitude)
+    mean_solar_forcing_ = [calc_mean(solar_forcing[:, :, t], area_) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps_]
+
+    co2_ppm = <span class=hljs-number >315.0</span>
+    radiative_cooling_ = calc_radiative_cooling_co2(co2_ppm)
+
+    <span class=hljs-comment ># Compute and plot temperature with Euler forward</span>
+    (annual_temperature_,
+     average_temperature_) = compute_equilibrium(timestep_euler_forward,
+                                                 mean_heat_capacity_,
+                                                 mean_solar_forcing_,
+                                                 radiative_cooling_)
+    plot_forward = plot_annual_temperature(annual_temperature_, average_temperature_,
+                                           <span class=hljs-string >&quot;Annual temperature with CO2 = <span class=hljs-variable >$co2_ppm</span> [ppm]&quot;</span>)
+
+    <span class=hljs-comment ># Compute and plot temperature with Euler backward</span>
+    (annual_temperature_,
+     average_temperature_) = compute_equilibrium(timestep_euler_backward,
+                                                 mean_heat_capacity_,
+                                                 mean_solar_forcing_,
+                                                 radiative_cooling_)
+    plot_backward = plot_annual_temperature(annual_temperature_, average_temperature_,
+                                            <span class=hljs-string >&quot;Annual temperature with CO2 = <span class=hljs-variable >$co2_ppm</span> [ppm]&quot;</span>)
+
+    <span class=hljs-comment ># Show both plots</span>
+    display(plot_forward)
+    display(plot_backward)
+
+    <span class=hljs-keyword >return</span> plot_forward, plot_backward
+<span class=hljs-keyword >end</span></code></pre> <h3 id=python_implementation_of_milestone_3 ><a href="#python_implementation_of_milestone_3" class=header-anchor >Python implementation of milestone 3</a></h3> <pre><code class="python hljs"><span class=hljs-keyword >import</span> matplotlib.pyplot <span class=hljs-keyword >as</span> plt
+<span class=hljs-keyword >import</span> numpy <span class=hljs-keyword >as</span> np
+
+<span class=hljs-keyword >from</span> milestone1 <span class=hljs-keyword >import</span> read_geography
+<span class=hljs-keyword >from</span> milestone2 <span class=hljs-keyword >import</span> calc_albedo, calc_heat_capacity, calc_solar_forcing, read_true_longitude
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_area</span>(<span class=hljs-params >geo_dat</span>):
+    nlatitude, nlongitude = geo_dat.shape
+    area = np.zeros(nlatitude, dtype=np.float64)
+    delta_theta = np.pi / (nlatitude - <span class=hljs-number >1</span>)
+
+    <span class=hljs-comment ># Poles</span>
+    area[<span class=hljs-number >0</span>] = area[-<span class=hljs-number >1</span>] = <span class=hljs-number >0.5</span> * (<span class=hljs-number >1</span> - np.cos(<span class=hljs-number >0.5</span> * delta_theta))
+
+    <span class=hljs-comment ># Inner cells</span>
+    <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >1</span>, nlatitude - <span class=hljs-number >1</span>):
+        area[j] = np.sin(<span class=hljs-number >0.5</span> * delta_theta) * np.sin(delta_theta * j) / nlongitude
+
+    <span class=hljs-keyword >return</span> area
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_mean</span>(<span class=hljs-params >data, area</span>):
+    nlatitude, nlongitude = data.shape
+
+    mean_data = area[<span class=hljs-number >0</span>] * data[<span class=hljs-number >0</span>, <span class=hljs-number >0</span>] + area[-<span class=hljs-number >1</span>] * data[-<span class=hljs-number >1</span>, -<span class=hljs-number >1</span>]
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >1</span>, nlatitude - <span class=hljs-number >1</span>):
+        <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlongitude):
+            mean_data += area[i] * data[i, j]
+
+    <span class=hljs-keyword >return</span> mean_data
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_radiative_cooling_co2</span>(<span class=hljs-params >co2_concentration, co2_concentration_base=<span class=hljs-number >315.0</span>,
+                               radiative_cooling_base=<span class=hljs-number >210.3</span></span>):
+    <span class=hljs-keyword >return</span> radiative_cooling_base - <span class=hljs-number >5.35</span> * np.log(co2_concentration / co2_concentration_base)
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">timestep_euler_forward</span>(<span class=hljs-params >mean_temperature, t, delta_t, mean_heat_capacity, mean_solar_forcing, radiative_cooling</span>):
+    <span class=hljs-comment ># Rearrange the energy balance equation to</span>
+    <span class=hljs-comment ># d/dt T = f(T, t),</span>
+    <span class=hljs-comment ># where f(T, t) = (S_sol(t) - A - BT) / C.</span>
+    <span class=hljs-comment ># This function is the right-hand side f,</span>
+    <span class=hljs-comment ># where t is not the time but the array index for the corresponding time.</span>
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">rhs</span>(<span class=hljs-params >mean_temp, t_</span>):
+        <span class=hljs-keyword >return</span> (mean_solar_forcing[t_] - radiative_cooling - <span class=hljs-number >2.15</span> * mean_temp) / mean_heat_capacity
+
+    <span class=hljs-comment ># Calculate T_t = T_{t-1} + delta_t * rhs(T_{t-1}, t-1) (forward Euler).</span>
+    <span class=hljs-comment ># Note that in the first iteration, we access mean_temperature[-1], which is the last entry.</span>
+    <span class=hljs-comment ># Therefore, we start in each iteration with the last temperature of the previous iteration.</span>
+    <span class=hljs-keyword >return</span> mean_temperature[t - <span class=hljs-number >1</span>] + delta_t * rhs(mean_temperature[t - <span class=hljs-number >1</span>], t - <span class=hljs-number >1</span>)
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">compute_equilibrium</span>(<span class=hljs-params >timestep_function, mean_heat_capacity, mean_solar_forcing, radiative_cooling,
+                        max_iterations=<span class=hljs-number >100</span>, rel_error=<span class=hljs-number >2e-5</span>, verbose=<span class=hljs-literal >True</span></span>):
+    <span class=hljs-comment ># Number of time steps per year.</span>
+    ntimesteps = <span class=hljs-built_in >len</span>(mean_solar_forcing)
+
+    <span class=hljs-comment ># Step size</span>
+    delta_t = <span class=hljs-number >1</span> / ntimesteps
+
+    <span class=hljs-comment ># We start with a constant area-mean temperature of 0 throughout the year.</span>
+    mean_temperature = np.zeros(ntimesteps)
+    year_avg_temperature = <span class=hljs-number >0</span>
+
+    <span class=hljs-comment ># Mean temperature from the previous iteration to approximate the error.</span>
+    old_mean_temperature = np.copy(mean_temperature)
+
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(max_iterations):
+        <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps):
+            mean_temperature[t] = timestep_function(mean_temperature, t, delta_t,
+                                                    mean_heat_capacity, mean_solar_forcing, radiative_cooling)
+
+        year_avg_temperature = np.<span class=hljs-built_in >sum</span>(mean_temperature) / ntimesteps
+        verbose <span class=hljs-keyword >and</span> <span class=hljs-built_in >print</span>(<span class=hljs-string >f&quot;Average annual temperature in iteration <span class=hljs-subst >{i}</span> is <span class=hljs-subst >{year_avg_temperature}</span>.&quot;</span>)
+
+        <span class=hljs-keyword >if</span> np.linalg.norm(mean_temperature - old_mean_temperature) &lt; rel_error:
+            <span class=hljs-comment ># We can assume that the error is sufficiently small now.</span>
+            verbose <span class=hljs-keyword >and</span> <span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;Equilibrium reached!&quot;</span>)
+            <span class=hljs-keyword >break</span>
+        <span class=hljs-keyword >else</span>:
+            <span class=hljs-comment ># Note that we need to write the values from mean_temperature to old_mean_temperature</span>
+            <span class=hljs-comment ># in order to get two arrays with the same values.</span>
+            <span class=hljs-comment ># We can&#x27;t omit the [:] or we would only have one array with two pointers to it.</span>
+            old_mean_temperature[:] = mean_temperature
+
+    <span class=hljs-keyword >return</span> mean_temperature, year_avg_temperature
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">timestep_euler_backward</span>(<span class=hljs-params >mean_temperature, t, delta_t, mean_heat_capacity, mean_solar_forcing, radiative_cooling</span>):
+    <span class=hljs-comment ># This time, we have to solve the equation</span>
+    <span class=hljs-comment ># T_t = T_{t-1} + delta_t * f(T_t, t),</span>
+    <span class=hljs-comment ># where f(T, t) = (S_sol(t) - A - BT) / C.</span>
+    <span class=hljs-comment ># For this, we have to separate the terms that depend on T and the source terms that only depend on t.</span>
+    <span class=hljs-comment ># Solving for T_t yields</span>
+    <span class=hljs-comment ># T_t = (T_{t-1} + delta_t * (S_sol[t] - A) / C) / (1 + delta_t * B / C).</span>
+    <span class=hljs-comment ># Note that in the first iteration, we access mean_temperature[-1], which is the last entry.</span>
+    <span class=hljs-comment ># Therefore, we start in each iteration with the last temperature of the previous iteration.</span>
+    source_terms = (mean_solar_forcing[t] - radiative_cooling) / mean_heat_capacity
+
+    <span class=hljs-keyword >return</span> (mean_temperature[t - <span class=hljs-number >1</span>] + delta_t * source_terms) / (<span class=hljs-number >1</span> + delta_t * <span class=hljs-number >2.15</span> / mean_heat_capacity)
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">plot_annual_temperature</span>(<span class=hljs-params >annual_temperature, average_temperature, title</span>):
+    fig, ax = plt.subplots()
+
+    ntimesteps = <span class=hljs-built_in >len</span>(annual_temperature)
+    plt.plot(average_temperature * np.ones(ntimesteps), label=<span class=hljs-string >&quot;average temperature&quot;</span>)
+    plt.plot(annual_temperature, label=<span class=hljs-string >&quot;annual temperature&quot;</span>)
+
+    plt.xlim((<span class=hljs-number >0</span>, ntimesteps - <span class=hljs-number >1</span>))
+    labels = [<span class=hljs-string >&quot;March&quot;</span>, <span class=hljs-string >&quot;June&quot;</span>, <span class=hljs-string >&quot;September&quot;</span>, <span class=hljs-string >&quot;December&quot;</span>, <span class=hljs-string >&quot;March&quot;</span>]
+    plt.xticks(np.linspace(<span class=hljs-number >0</span>, ntimesteps - <span class=hljs-number >1</span>, <span class=hljs-number >5</span>), labels)
+    ax.set_ylabel(<span class=hljs-string >&quot;surface temperature [°C]&quot;</span>)
+    plt.grid()
+    plt.title(title)
+    plt.legend(loc=<span class=hljs-string >&quot;upper right&quot;</span>)
+
+    plt.tight_layout()
+    plt.show()
+
+
+<span class=hljs-comment ># Run code</span>
+<span class=hljs-keyword >if</span> __name__ == <span class=hljs-string >&quot;__main__&quot;</span>:
+    geo_dat_ = read_geography(<span class=hljs-string >&quot;input/The_World65x128.dat&quot;</span>)
+
+    albedo = calc_albedo(geo_dat_)
+    heat_capacity = calc_heat_capacity(geo_dat_)
+
+    <span class=hljs-comment ># Compute solar forcing</span>
+    true_longitude = read_true_longitude(<span class=hljs-string >&quot;input/True_Longitude.dat&quot;</span>)
+    solar_forcing = calc_solar_forcing(albedo, true_longitude)
+
+    <span class=hljs-comment ># Compute area-mean quantities</span>
+    area_ = calc_area(geo_dat_)
+
+    mean_albedo = calc_mean(albedo, area_)
+    <span class=hljs-built_in >print</span>(<span class=hljs-string >f&quot;Mean albedo = <span class=hljs-subst >{mean_albedo}</span>&quot;</span>)
+
+    mean_heat_capacity_ = calc_mean(heat_capacity, area_)
+    <span class=hljs-built_in >print</span>(<span class=hljs-string >f&quot;Mean heat capacity = <span class=hljs-subst >{mean_heat_capacity_}</span>&quot;</span>)
+
+    ntimesteps_ = <span class=hljs-built_in >len</span>(true_longitude)
+    mean_solar_forcing_ = [calc_mean(solar_forcing[:, :, t], area_) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps_)]
+
+    co2_ppm = <span class=hljs-number >315.0</span>
+    radiative_cooling_ = calc_radiative_cooling_co2(co2_ppm)
+
+    <span class=hljs-comment ># Compute and plot temperature with Euler forward</span>
+    annual_temperature_, average_temperature_ = compute_equilibrium(timestep_euler_forward,
+                                                                    mean_heat_capacity_, mean_solar_forcing_,
+                                                                    radiative_cooling_)
+    plot_annual_temperature(annual_temperature_, average_temperature_, <span class=hljs-string >f&quot;Annual temperature with CO2 = <span class=hljs-subst >{co2_ppm}</span> [ppm]&quot;</span>)
+
+    <span class=hljs-comment ># Compute and plot temperature with Euler backward</span>
+    annual_temperature_, average_temperature_ = compute_equilibrium(timestep_euler_backward,
+                                                                    mean_heat_capacity_, mean_solar_forcing_,
+                                                                    radiative_cooling_)
+    plot_annual_temperature(annual_temperature_, average_temperature_, <span class=hljs-string >f&quot;Annual temperature with CO2 = <span class=hljs-subst >{co2_ppm}</span> [ppm]&quot;</span>)</code></pre> <div class=page-foot > <hr> Created by <a href="https://www.mi.uni-koeln.de/NumSim/gregor-gassner/">Gregor Gassner</a> and <a href="https://andres.rueda-ramirez.com/">Andrés Rueda-Ramírez</a> with contributions by <a href="https://www.mi.uni-koeln.de/NumSim/dr-simone-chiocchetti/">Simone Chiocchetti</a>, <a href="https://www.mi.uni-koeln.de/NumSim/daniel-bach/">Daniel Bach</a>, <a href="https://www.mi.uni-koeln.de/NumSim/sophia-schmickler/">Sophia Horak</a>, <a href="https://www.mi.uni-koeln.de/NumSim/philipp-baasch/">Philipp Baasch</a>, <a href="https://www.mi.uni-koeln.de/NumSim/benjamin-bolm/">Benjamin Bolm</a>, <a href="https://www.mi.uni-koeln.de/NumSim/erik-faulhaber/">Erik Faulhaber</a>, and <a>Luca Sommer</a>. Last modified: April 22, 2026. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> </div> <!-- end of class page-wrap--> <script src="/klimakoffer/previews/PR20/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>

@@ -1,0 +1,10 @@
+# Use the following commands to run the files:
+
+# Create a virtual environment in the `venv` subdirectory
+python3 -m venv venv
+# Activate the virtual environment
+source venv/bin/activate
+# Install the required packages
+pip install -r requirements.txt
+# Run the Python script
+python3 milestone1.py
