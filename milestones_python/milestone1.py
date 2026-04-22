@@ -87,7 +87,7 @@ def plot_geo(geo_dat):
 
 # Run the code.
 if __name__ == "__main__":
-    file = "input/The_World128x65.dat"
+    file = "input/The_World65x128.dat"
     geo_dat_ = read_geography(file)
     plot_geo(geo_dat_)
 

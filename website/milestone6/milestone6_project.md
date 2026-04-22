@@ -14,7 +14,7 @@ tags = ["linear systems", "linear solvers"]
 ## Fixing Stability in the spatial 2D Energy Balance Model
 
 [(Download description in PDF format)](/assets/milestone6/description.pdf)\\
-[(Download *The\_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *The\_World65x128.dat*)](/assets/scripts/input/The_World65x128.dat)\\
 [(Download *True\_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)\\
 [(Download *co2\_nasa.dat*)](/assets/scripts/input/co2_nasa.dat)\\
 

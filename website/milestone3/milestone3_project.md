@@ -13,7 +13,7 @@ tags = ["ebm", "solar radiation", "orbital parameters"]
 ## Solving a zero-dimensional Energy Balance Model
 
 [(Download description in PDF format)](/assets/milestone3/description.pdf)\\
-[(Download *The_World128x65.dat*)](/assets/scripts/input/The_World128x65.dat)\\
+[(Download *The_World65x128.dat*)](/assets/scripts/input/The_World65x128.dat)\\
 [(Download *True_Longitude.dat*)](/assets/scripts/input/True_Longitude.dat)
 
 ~~~

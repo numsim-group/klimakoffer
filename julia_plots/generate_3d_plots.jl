@@ -704,7 +704,7 @@ end
 
 
 
-geo = readdlm(joinpath(@__DIR__, "..", "milestones_julia","input","The_World128x65.dat"))
+geo = readdlm(joinpath(@__DIR__, "..", "milestones_julia","input","The_World65x128.dat"))
 
 albedo = calc_albedo(geo)
 heat_capacity = calc_heat_capacity(geo)

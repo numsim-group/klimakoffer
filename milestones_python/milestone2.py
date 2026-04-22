@@ -183,7 +183,7 @@ def plot_solar_forcing(solar_forcing, timestep, show_plot=False):
 
 # Run code
 if __name__ == '__main__':
-    geo_dat_ = read_geography("input/The_World128x65.dat")
+    geo_dat_ = read_geography("input/The_World65x128.dat")
 
     # Plot albedo
     albedo_ = calc_albedo(geo_dat_)

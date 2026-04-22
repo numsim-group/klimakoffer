@@ -56,7 +56,7 @@ end
 
 # Run code
 function milestone1()
-    geo_dat = read_geography(joinpath(@__DIR__, "input", "The_World128x65.dat"))
+    geo_dat = read_geography(joinpath(@__DIR__, "input", "The_World65x128.dat"))
     p = plot_geo(geo_dat)
 
     # Show the plot
