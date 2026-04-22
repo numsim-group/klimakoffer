@@ -63,7 +63,7 @@ In the illustration, the boundaries of our domain are marked in black, the grid 
 
 Since our domain is periodic in the longitude direction, we do not need to store the last column of grid points ($\varphi = \pi$), as their position on the surface of the sphere is the same as for the first column ($\varphi = -\pi$).
 
-Note that all the points in the first row ($\lat = \pi/2$) correspond to the same position (north pole), and all the points in the last row ($\lat = -\pi/2$) too (south pole). So all these values are supposed to be the same. 
+Note that all the points in the first row ($\lat = \pi/2$) correspond to the same position (north pole), and all the points in the last row ($\lat = -\pi/2$) too (south pole). So all these values are supposed to be the same.
 Nevertheless, we will keep these duplicated grid points in our model to simplify the storage (we can use a matrix format to store the values).
 
 We define the number of grid points as
@@ -126,13 +126,13 @@ curvilinear grid as
 \end{align}
 with the parameters
 \begin{align}
-a =&  0.96047, &
-    b =& -0.00857, &
-    c =&  6.41, \\
-    d =&  2.6666, &
-    e =& -0.367, &
-    f =& -0.150 \\
-    g =&  0.0379.
+    a &=  0.96047, &
+    b &= -0.00857, &
+    c &=  6.41, \\
+    d &=  2.6666, &
+    e &= -0.367, &
+    f &= -0.150 \\
+    g &=  0.0379.
 \end{align}
 
 Applying the simplified Robinson
