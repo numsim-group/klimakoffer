@@ -4,7 +4,7 @@ pythonplot()
 
 <span class=hljs-comment ># Creates an nlatitude x nlongitude = 65 x 128 array with integer digits decoding the geography.</span>
 <span class=hljs-keyword >function</span> read_geography(filepath)
-    <span class=hljs-keyword >return</span> readdlm(filepath)
+    <span class=hljs-keyword >return</span> readdlm(filepath, <span class=hljs-built_in >Int</span>)
 <span class=hljs-keyword >end</span>
 
 <span class=hljs-keyword >function</span> robinson_projection(nlatitude, nlongitude)
@@ -41,11 +41,10 @@ pythonplot()
     <span class=hljs-comment ># We tried to make the range for ocean only slightly larger than the others to avoid</span>
     <span class=hljs-comment ># a weird looking colorbar.</span>
     p = contourf(x, y, geo_dat,
-                 levels=[<span class=hljs-number >0.5</span>, <span class=hljs-number >1.7</span>, <span class=hljs-number >2.9</span>, <span class=hljs-number >4.1</span>, <span class=hljs-number >5.5</span>],
-                 clims=(<span class=hljs-number >1</span>, <span class=hljs-number >5</span>),
                  aspect_ratio=<span class=hljs-number >1</span>,
                  title=<span class=hljs-string >&quot;Earth Geography&quot;</span>,
                  c=cgrad([:darkgreen, :lightsteelblue, :lavender, :navy]),
+                 levels=[<span class=hljs-number >0.5</span>, <span class=hljs-number >1.7</span>, <span class=hljs-number >2.9</span>, <span class=hljs-number >4.1</span>, <span class=hljs-number >5.5</span>],
                  colorbar_ticks=([<span class=hljs-number >1.1</span>, <span class=hljs-number >2.3</span>, <span class=hljs-number >3.5</span>, <span class=hljs-number >4.8</span>],
                                  [<span class=hljs-string >&quot;land&quot;</span>, <span class=hljs-string >&quot;sea ice&quot;</span>, <span class=hljs-string >&quot;snow cover&quot;</span>, <span class=hljs-string >&quot;ocean&quot;</span>]),
                  axis=([], <span class=hljs-literal >false</span>),
@@ -57,12 +56,8 @@ pythonplot()
 <span class=hljs-comment ># Run code</span>
 <span class=hljs-keyword >function</span> milestone1()
     geo_dat = read_geography(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;The_World128x65.dat&quot;</span>))
-    p = plot_geo(geo_dat)
 
-    <span class=hljs-comment ># Show the plot</span>
-    display(p)
-
-    <span class=hljs-keyword >return</span> p
+    <span class=hljs-keyword >return</span> plot_geo(geo_dat)
 <span class=hljs-keyword >end</span></code></pre> <h3 id=python_implementation_of_milestone_1 ><a href="#python_implementation_of_milestone_1" class=header-anchor >Python implementation of milestone 1</a></h3> <pre><code class="python hljs"><span class=hljs-keyword >import</span> matplotlib <span class=hljs-keyword >as</span> mpl
 <span class=hljs-keyword >import</span> matplotlib.pyplot <span class=hljs-keyword >as</span> plt
 <span class=hljs-keyword >import</span> numpy <span class=hljs-keyword >as</span> np
@@ -158,4 +153,4 @@ pythonplot()
 
     nlatitude_, nlongitude_ = geo_dat_.shape
     <span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;nlatitude  = &quot;</span>, nlatitude_)
-    <span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;nlongitude =&quot;</span>, nlongitude_)</code></pre> <div class=page-foot > <hr> Created by <a href="https://www.mi.uni-koeln.de/NumSim/gregor-gassner/">Gregor Gassner</a> and <a href="https://andres.rueda-ramirez.com/">Andrés Rueda-Ramírez</a> with contributions by <a href="https://www.mi.uni-koeln.de/NumSim/dr-simone-chiocchetti/">Simone Chiocchetti</a>, <a href="https://www.mi.uni-koeln.de/NumSim/daniel-bach/">Daniel Bach</a>, <a href="https://www.mi.uni-koeln.de/NumSim/sophia-schmickler/">Sophia Horak</a>, <a href="https://www.mi.uni-koeln.de/NumSim/philipp-baasch/">Philipp Baasch</a>, <a href="https://www.mi.uni-koeln.de/NumSim/benjamin-bolm/">Benjamin Bolm</a>, <a href="https://www.mi.uni-koeln.de/NumSim/erik-faulhaber/">Erik Faulhaber</a>, and <a>Luca Sommer</a>. Last modified: April 22, 2026. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> </div> <!-- end of class page-wrap--> <script src="/klimakoffer/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
+    <span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;nlongitude =&quot;</span>, nlongitude_)</code></pre> <div class=page-foot > <hr> Created by <a href="https://www.mi.uni-koeln.de/NumSim/gregor-gassner/">Gregor Gassner</a> and <a href="https://andres.rueda-ramirez.com/">Andrés Rueda-Ramírez</a> with contributions by <a href="https://www.mi.uni-koeln.de/NumSim/dr-simone-chiocchetti/">Simone Chiocchetti</a>, <a href="https://www.mi.uni-koeln.de/NumSim/daniel-bach/">Daniel Bach</a>, <a href="https://www.mi.uni-koeln.de/NumSim/sophia-schmickler/">Sophia Horak</a>, <a href="https://www.mi.uni-koeln.de/NumSim/philipp-baasch/">Philipp Baasch</a>, <a href="https://www.mi.uni-koeln.de/NumSim/benjamin-bolm/">Benjamin Bolm</a>, <a href="https://www.mi.uni-koeln.de/NumSim/erik-faulhaber/">Erik Faulhaber</a>, and <a>Luca Sommer</a>. Last modified: April 27, 2026. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> </div> <!-- end of class page-wrap--> <script src="/klimakoffer/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
