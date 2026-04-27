@@ -4,7 +4,7 @@ pythonplot()
 
 # Creates an nlatitude x nlongitude = 65 x 128 array with integer digits decoding the geography.
 function read_geography(filepath)
-    return readdlm(filepath, Int64)
+    return readdlm(filepath, Int)
 end
 
 function robinson_projection(nlatitude, nlongitude)
