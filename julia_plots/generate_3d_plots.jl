@@ -9,9 +9,11 @@ include(joinpath(@__DIR__, "..", "milestones_julia", "milestone6.jl"))
 function parametrisation(surface_data, radius=10)
 
     lat_resolution, long_resolution = size(surface_data)
+    # Add duplicate first column to end to close the surface
+    long_resolution += 1
 
     latitude = range(0, pi, lat_resolution)
-    longitude = range(0, 2*pi, long_resolution + 1)
+    longitude = range(0, 2*pi, long_resolution)
 
     lat_grid = latitude'.*ones(long_resolution)
     long_grid = ones(lat_resolution)'.*longitude
