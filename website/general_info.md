@@ -39,7 +39,7 @@ tags = ["syntax", "code"]
 * Milestone 1-6 are not graded. Their purpose is to learn the climate model and prepare for milestone 7.
 * Milestone 7 is free style and the topic chosen by students with a final (Jupyter/Pluto notebook) presentation at the end of the semester that will be graded (pass/fail). Again, we are here to help: we will guide and supervise the selection of topics for milestone 7, and give advice and support during the hands-on phase.
 * Admission criterion for oral exam: Pass milestone 7.
-* Per person oral exam (most likely in the first week of August).
+* Per person oral exam (in the last week of July).
 <!-- (10 - 15 minutes) -->
 
 ## Organization of the course
