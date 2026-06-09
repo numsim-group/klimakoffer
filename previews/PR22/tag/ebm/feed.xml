@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss">
+
+  <channel>
+    <title>
+      <![CDATA[  An Introduction to Climate Modeling  ]]>
+    </title>
+    <link> https://numsim-group.github.io/klimakoffer/previews/PR22/ </link>
+    <description>
+      <![CDATA[  In this course, you will learn how to implement an energy balance model for climate simulations  ]]>
+    </description>
+    <atom:link
+      href="https://numsim-group.github.io/klimakoffer/previews/PR22/feed.xml"
+      rel="self"
+      type="application/rss+xml" />
+
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_radiation/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_radiation/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 4  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_results/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_results/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 4  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_project/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_project/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 5  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_spatial_discretization/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_spatial_discretization/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_heat-capacity/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_heat-capacity/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 4 - North/South EBM  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_northsouth_ebm/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_northsouth_ebm/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_time-disc/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_time-disc/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 5  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_project/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_project/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_solar-forcing/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_solar-forcing/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 3  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_constantcoeff/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_constantcoeff/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 5  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_stability_jacobians/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_stability_jacobians/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 6  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone6/milestone6_simulation/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone6/milestone6_simulation/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_project/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_project/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_conservation-and-balance/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_conservation-and-balance/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_ebm/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_ebm/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 5  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_menu/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_menu/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 4  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_multi0d/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_multi0d/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 3  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_results/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_results/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_albedo/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_albedo/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 5  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_heat_transfer/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_heat_transfer/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_menu/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_menu/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 3  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_project/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_project/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 3  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_odesolvers/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_odesolvers/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 3  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_averages/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_averages/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 4  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_menu/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone4/milestone4_menu/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 6  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone6/milestone6_menu/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone6/milestone6_menu/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 5  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_results/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone5/milestone5_results/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 3  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_menu/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone3/milestone3_menu/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 1  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone1/milestone1_menu/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone1/milestone1_menu/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Milestone 2  ]]>
+  </title>
+  <link> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_results/index.html </link>
+  <guid> https://numsim-group.github.io/klimakoffer/previews/PR22/milestone2/milestone2_results/index.html </guid>
+  <description>
+    <![CDATA[  Description  ]]>
+  </description>  
+    
+  <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Gregor Gassner and Andrés Rueda-Ramírez</atom:name>
+  </atom:author>
+        
+</item>
+</channel></rss>

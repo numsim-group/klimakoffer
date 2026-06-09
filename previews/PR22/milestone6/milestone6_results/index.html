@@ -1,0 +1,591 @@
+<!doctype html> <html lang=en > <meta http-equiv=Cache-control  content="no-cache, no-store, must-revalidate"> <meta http-equiv=Pragma  content=no-cache > <meta http-equiv=Expires  content=0 > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/klimakoffer/previews/PR22/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/klimakoffer/previews/PR22/css/jtd.css"> <link rel=icon  href="/klimakoffer/previews/PR22/assets/earth_logo.png"> <style> /* #148 wrap long header */ .franklin-content a.header-anchor, .franklin-toc li a { word-wrap: break-word; white-space: normal; } </style> <title>Milestone 6</title> <div class=page-wrap > <div class=side-bar > <div class=header > <a href="/klimakoffer/previews/PR22/" class=title > Klimakoffer </a> </div> <label for=show-menu  class=show-menu >MENU</label> <input type=checkbox  id=show-menu  role=button > <div class=menu  id=side-menu > <ul class=menu-list > <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/" class="menu-list-link ">Home</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/general_info/" class="menu-list-link ">General Information</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/programming_info/" class="menu-list-link ">Programming<br>Info</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_menu/" class="menu-list-link ">Milestone 1</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_intro/" class="menu-list-link ">Introduction</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_sphere/" class="menu-list-link ">Spherical coordinates</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_mesh/" class="menu-list-link ">Meshes</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_menu/" class="menu-list-link ">Milestone 2</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_conservation-and-balance/" class="menu-list-link ">Conservation and balance</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_ebm/" class="menu-list-link ">Energy Balance Model</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_radiation/" class="menu-list-link ">Radiation modeling</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_heat-capacity/" class="menu-list-link ">Heat capacity</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_albedo/" class="menu-list-link ">Albedo</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_solar-forcing/" class="menu-list-link ">Solar forcing</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_time-disc/" class="menu-list-link ">Time discretization</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_menu/" class="menu-list-link ">Milestone 3</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_constantcoeff/" class="menu-list-link ">Constant-coefficient EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_odesolvers/" class="menu-list-link ">ODE Solvers</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_averages/" class="menu-list-link ">Averages</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_menu/" class="menu-list-link ">Milestone 4</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_northsouth_ebm/" class="menu-list-link ">North/South EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_multi0d/" class="menu-list-link ">Multiple 0D-EBMs</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_menu/" class="menu-list-link ">Milestone 5</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_heat_transfer/" class="menu-list-link ">Planetary Heat Transfer</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_spatial_discretization/" class="menu-list-link ">Spatial Discretization</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_stability_jacobians/" class="menu-list-link ">Stability and Jacobians</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item active"><a href="/klimakoffer/previews/PR22/milestone6/milestone6_menu/" class="menu-list-link active">Milestone 6</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_discrete_ebm/" class="menu-list-link ">Discrete EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_linear_systems/" class="menu-list-link ">Solving Linear Systems</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_simulation/" class="menu-list-link ">Climate Simulations</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item active"><a href="/klimakoffer/previews/PR22/milestone6/milestone6_results/" class="menu-list-link active">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/literature/" class="menu-list-link ">Literature</a> </ul> </div> <div class=footer > <img src="/klimakoffer/previews/PR22/assets/earth_logo.png" alt=earth_logo > </div> </div> <div class=main-content-wrap > <div class=main-content > <div class=main-header > <!-- <a id=ilias  href="https://www.ilias.uni-koeln.de/ilias/goto_uk_crs_6744928.html">ILIAS</a> --> </div> <div class=franklin-content > <h1 id=milestone_6_-_project_results ><a href="#milestone_6_-_project_results" class=header-anchor >Milestone 6 - Project Results</a></h1> <div class=franklin-toc ><ol><li><a href="#expected_results">Expected Results</a><ol><li><a href="#annual_temperature_animation">Annual Temperature Animation</a><li><a href="#mean_temperature_plot_using_the_2d-ebm">Mean Temperature Plot using the 2D-EBM</a><li><a href="#cologne_temperature_using_the_2d-ebm">Cologne Temperature using the 2D-EBM</a><li><a href="#temperature_for_the_nasa_co2_data">Temperature for the NASA CO2 Data</a><li><a href="#mean_temperature_plot_for_zieglers_data">Mean Temperature Plot for Ziegler&#39;s data</a></ol><li><a href="#files_download">Files Download</a><li><a href="#scripts_for_milestone_6">Scripts for Milestone 6</a><ol><li><a href="#julia_implementation_of_milestone_6">Julia implementation of milestone 6</a><li><a href="#python_implementation_of_milestone_6">Python implementation of milestone 6</a></ol></ol></div> <h2 id=expected_results ><a href="#expected_results" class=header-anchor >Expected Results</a></h2> <p>This is an example for the expected results:</p> <h3 id=annual_temperature_animation ><a href="#annual_temperature_animation" class=header-anchor >Annual Temperature Animation</a></h3> <p>Annual Temperature calculated with the 2D-EBM model:</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone6_annual_temperature.gif" alt="Annual temperature animation" /></p> <iframe src="/klimakoffer/previews/PR22/assets/julia_plots_out/temperature.html" seamless width=800 height=600></iframe> <h3 id=mean_temperature_plot_using_the_2d-ebm ><a href="#mean_temperature_plot_using_the_2d-ebm" class=header-anchor >Mean Temperature Plot using the 2D-EBM</a></h3> <p>Plot of the mean and average temperature calculated by using the 2D-EBM and then averaging over the results:</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone6_temperature.png" alt="Mean temperature plot" /></p> <h3 id=cologne_temperature_using_the_2d-ebm ><a href="#cologne_temperature_using_the_2d-ebm" class=header-anchor >Cologne Temperature using the 2D-EBM</a></h3> <p>Cologne temperature calculated using the 2D-EBM model:</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone6_cologne.png" alt="Cologne temperature plot" /></p> <h3 id=temperature_for_the_nasa_co2_data ><a href="#temperature_for_the_nasa_co2_data" class=header-anchor >Temperature for the NASA CO2 Data</a></h3> <p>Annual Temperatures from 1959 to 2020 based on NASA CO2 data:</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone6_temperature_co2.png" alt="Temperature for NASA CO2 data" /></p> <h3 id=mean_temperature_plot_for_zieglers_data ><a href="#mean_temperature_plot_for_zieglers_data" class=header-anchor >Mean Temperature Plot for Ziegler&#39;s data</a></h3> <p>Plot of the mean and average temperature calculated by using the 2D-EBM with Ziegler&#39;s parameters and then averaging over the results:</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone6_ziegler.png" alt="Mean temperature plot for Ziegler&#39;s data" /></p> <div class=warning ><div class=title >⚠ Warning&#33;</div> <div class=content >We strongly suggest to first work on the solutions on your own/within your group without checking directly for the reference solutions.</div></div> <h2 id=files_download ><a href="#files_download" class=header-anchor >Files Download</a></h2> <p>The Python implementation of milestone 6 can be downloaded here &#40;Julia version will be added soon&#41;:</p> <ul> <li><p><a href="/klimakoffer/previews/PR22/assets/scripts/milestone6.jl">Julia solution</a></p> <li><p><a href="/klimakoffer/previews/PR22/assets/scripts/milestone6.py">Python solution</a></p> </ul> <h2 id=scripts_for_milestone_6 ><a href="#scripts_for_milestone_6" class=header-anchor >Scripts for Milestone 6</a></h2> <p>You can also check out our Julia and Python implementations of milestone 6 in this site.</p> <h3 id=julia_implementation_of_milestone_6 ><a href="#julia_implementation_of_milestone_6" class=header-anchor >Julia implementation of milestone 6</a></h3> <pre><code class="julia hljs">include(<span class=hljs-string >&quot;milestone1.jl&quot;</span>)
+include(<span class=hljs-string >&quot;milestone2.jl&quot;</span>)
+include(<span class=hljs-string >&quot;milestone3.jl&quot;</span>)
+include(<span class=hljs-string >&quot;milestone4.jl&quot;</span>)
+include(<span class=hljs-string >&quot;milestone5.jl&quot;</span>)
+
+<span class=hljs-keyword >using</span> SparseArrays
+
+<span class=hljs-keyword >function</span> timestep_euler_backward_2d(jacobian, delta_t)
+    A = factorize(sparse(I - delta_t * jacobian))
+
+    <span class=hljs-keyword >function</span> timestep_function(temperature, t, delta_t,
+                               mesh, diffusion_coeff, heat_capacity, solar_forcing,
+                               radiative_cooling)
+        <span class=hljs-keyword >if</span> t == <span class=hljs-number >1</span>
+            t_old = size(temperature, <span class=hljs-number >3</span>)
+        <span class=hljs-keyword >else</span>
+            t_old = t - <span class=hljs-number >1</span>
+        <span class=hljs-keyword >end</span>
+        <span class=hljs-comment ># Similar to MS3, we have to solve the equation</span>
+        <span class=hljs-comment ># T_t = T_{t-1} + delta_t * f(T_t, t),</span>
+        <span class=hljs-comment ># where f(T, t) = R(T) + F(t).</span>
+        <span class=hljs-comment ># We use the fact that R is linear and thus can be written as R(T) = AT, where A is the Jacobian of R.</span>
+        <span class=hljs-comment ># Solving for T_t yields</span>
+        <span class=hljs-comment ># T_t = (I - delta_t * A)^{-1} * (T_{t-1} + delta_t * F(t)).</span>
+        <span class=hljs-meta >@views</span> source_terms = calc_source_terms_ebm_2d(heat_capacity,
+                                                       solar_forcing[:, :, t],
+                                                       radiative_cooling)
+
+        <span class=hljs-keyword >return</span> <span class=hljs-meta >@views</span> temperature[:, :, t] = reshape(A \ vec(temperature[:, :, t_old] +
+                                                         delta_t * source_terms),
+                                                     (mesh.n_latitude, mesh.n_longitude))
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> timestep_function
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> co2_evolution(jacobian, mesh, diffusion_coeff, heat_capacity, solar_forcing)
+    <span class=hljs-comment ># Read CO2 data</span>
+    co2_data = readdlm(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;co2_nasa.dat&quot;</span>))
+
+    <span class=hljs-comment ># Assume that only data for full years is available</span>
+    n_years = <span class=hljs-built_in >Int</span>(size(co2_data, <span class=hljs-number >1</span>) / <span class=hljs-number >12</span>)
+
+    average_co2 = [sum(co2_data[(<span class=hljs-number >12</span>y + <span class=hljs-number >1</span>):(<span class=hljs-number >12</span>y + <span class=hljs-number >12</span>), <span class=hljs-number >4</span>]) / <span class=hljs-number >12</span> <span class=hljs-keyword >for</span> y <span class=hljs-keyword >in</span> <span class=hljs-number >0</span>:(n_years - <span class=hljs-number >1</span>)]
+
+    ntimesteps = size(solar_forcing, <span class=hljs-number >3</span>)
+
+    average_temperatures = zeros(n_years)
+    annual_temperatures = zeros(ntimesteps * n_years)
+
+    timestep_function = timestep_euler_backward_2d(jacobian, <span class=hljs-number >1</span> / ntimesteps)
+
+    temperature_grid = <span class=hljs-number >15</span> *
+                       ones((mesh.n_latitude, mesh.n_longitude, size(solar_forcing, <span class=hljs-number >3</span>)))
+
+    <span class=hljs-keyword >for</span> y <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:n_years
+        radiative_cooling = calc_radiative_cooling_co2(average_co2[y])
+        (temperature_grid,
+         area_mean_temp) = compute_equilibrium_2d(timestep_function,
+                                                  mesh, diffusion_coeff,
+                                                  heat_capacity,
+                                                  solar_forcing,
+                                                  radiative_cooling,
+                                                  rel_error=<span class=hljs-number >1.0e-2</span>,
+                                                  initial_temperature=temperature_grid)
+        annual_temperatures[(ntimesteps * (y - <span class=hljs-number >1</span>) + <span class=hljs-number >1</span>):(ntimesteps * y)] = area_mean_temp
+        average_temperatures[y] = sum(area_mean_temp) / ntimesteps
+    <span class=hljs-keyword >end</span>
+
+    first_year = <span class=hljs-built_in >Int</span>(co2_data[<span class=hljs-number >1</span>, <span class=hljs-number >1</span>])
+    last_year = <span class=hljs-built_in >Int</span>(co2_data[<span class=hljs-keyword >end</span>, <span class=hljs-number >1</span>])
+
+    <span class=hljs-keyword >return</span> annual_temperatures, average_temperatures, first_year, last_year
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> plot_co2_evolution(jacobian, mesh, diffusion_coeff, heat_capacity, solar_forcing)
+    (annual_temperatures, average_temperatures, first_year,
+     last_year) = co2_evolution(jacobian, mesh, diffusion_coeff,
+                                heat_capacity, solar_forcing)
+
+    n_timesteps = length(annual_temperatures)
+
+    average_temperatures_per_month = [average_temperatures[floor(<span class=hljs-built_in >Int</span>,
+                                                                                      (t - <span class=hljs-number >1</span>) / <span class=hljs-number >48</span>) + <span class=hljs-number >1</span>]
+                                      <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:n_timesteps]
+
+    labels = first_year:<span class=hljs-number >10</span>:last_year
+
+    p = plot(average_temperatures_per_month, label=<span class=hljs-string >&quot;average temperature&quot;</span>,
+             xlims=(<span class=hljs-number >1</span>, n_timesteps), xticks=(<span class=hljs-number >1</span>:<span class=hljs-number >480</span>:n_timesteps, labels),
+             ylabel=<span class=hljs-string >&quot;surface temperature [°C]&quot;</span>,
+             title=<span class=hljs-string >&quot;Annual temperature with CO2 data from NASA&quot;</span>)
+    plot!(p, annual_temperatures, label=<span class=hljs-string >&quot;annual temperature&quot;</span>)
+
+    <span class=hljs-keyword >return</span> p
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_albedo_ziegler(geo_dat)
+    <span class=hljs-keyword >function</span> legendre(latitude)
+        <span class=hljs-keyword >return</span> <span class=hljs-number >0.5</span> * (<span class=hljs-number >3</span> * sin(latitude)^<span class=hljs-number >2</span> - <span class=hljs-number >1</span>)
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >function</span> albedo(surface_type, latitude)
+        <span class=hljs-keyword >if</span> surface_type == <span class=hljs-number >1</span>
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.32</span> + <span class=hljs-number >0.05</span> * legendre(latitude)
+        <span class=hljs-keyword >elseif</span> surface_type == <span class=hljs-number >2</span>
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.6</span>
+        <span class=hljs-keyword >elseif</span> surface_type == <span class=hljs-number >3</span>
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.7</span>
+        <span class=hljs-keyword >elseif</span> surface_type == <span class=hljs-number >5</span>
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.289</span> + <span class=hljs-number >0.08</span> * legendre(latitude)
+        <span class=hljs-keyword >else</span>
+            error(<span class=hljs-string >&quot;Unknown surface type <span class=hljs-variable >$surface_type</span>.&quot;</span>)
+        <span class=hljs-keyword >end</span>
+    <span class=hljs-keyword >end</span>
+
+    nlatitude, nlongitude = size(geo_dat)
+    y_lat = range(<span class=hljs-literal >pi</span> / <span class=hljs-number >2</span>, -<span class=hljs-literal >pi</span> / <span class=hljs-number >2</span>, length=nlatitude)
+
+    <span class=hljs-comment ># Map surface type to albedo.</span>
+    <span class=hljs-keyword >return</span> [albedo(geo_dat[i, j], y_lat[i]) <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlatitude, j <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlongitude]
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_heat_capacity_ziegler(geo_dat)
+    sec_per_yr = <span class=hljs-number >3.15576e7</span>  <span class=hljs-comment ># seconds per year</span>
+
+    c_atmos = <span class=hljs-number >0.79e6</span>
+    c_ocean = <span class=hljs-number >394.47e6</span>
+    c_seaice = <span class=hljs-number >4.83e6</span>
+    c_land = <span class=hljs-number >1.87e6</span>
+    c_snow = <span class=hljs-number >1.52e6</span>
+
+    <span class=hljs-keyword >function</span> heat_capacity(surface_type)
+        <span class=hljs-keyword >if</span> surface_type == <span class=hljs-number >1</span>
+            capacity_surface = c_land
+        <span class=hljs-keyword >elseif</span> surface_type == <span class=hljs-number >2</span>
+            capacity_surface = c_seaice
+        <span class=hljs-keyword >elseif</span> surface_type == <span class=hljs-number >3</span>
+            capacity_surface = c_snow
+        <span class=hljs-keyword >elseif</span> surface_type == <span class=hljs-number >5</span>
+            capacity_surface = c_ocean
+        <span class=hljs-keyword >else</span>
+            error(<span class=hljs-string >&quot;Unknown surface type <span class=hljs-variable >$surface_type</span>.&quot;</span>)
+        <span class=hljs-keyword >end</span>
+
+        <span class=hljs-keyword >return</span> (capacity_surface + c_atmos) / sec_per_yr
+    <span class=hljs-keyword >end</span>
+
+    nlatitude, nlongitude = size(geo_dat)
+    <span class=hljs-keyword >return</span> [heat_capacity(geo_dat[i, j]) <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlatitude, j <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlongitude]
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_diffusion_coefficients_ziegler(geo_dat)
+    nlatitude, nlongitude = size(geo_dat)
+
+    coeff_ocean_poles = <span class=hljs-number >0.4</span>
+    coeff_ocean_equator = <span class=hljs-number >0.9</span>
+    coeff_equator = <span class=hljs-number >0.9</span>
+    coeff_north_pole = <span class=hljs-number >0.45</span>
+    coeff_south_pole = <span class=hljs-number >0.12</span>
+
+    <span class=hljs-keyword >function</span> diffusion_coefficient(i, j)
+        <span class=hljs-comment ># Compute the i value of the equator</span>
+        i_equator = div(nlatitude, <span class=hljs-number >2</span>) + <span class=hljs-number >1</span>
+
+        theta = <span class=hljs-literal >pi</span> * (i - <span class=hljs-number >1</span>) / (nlatitude - <span class=hljs-number >1</span>)
+        colat = sin(theta)^<span class=hljs-number >5</span>
+
+        geo = geo_dat[i, j]
+        <span class=hljs-keyword >if</span> geo == <span class=hljs-number >5</span>  <span class=hljs-comment ># ocean</span>
+            <span class=hljs-keyword >return</span> coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
+        <span class=hljs-keyword >else</span>  <span class=hljs-comment ># land, sea ice, etc</span>
+            <span class=hljs-keyword >if</span> i &lt;= i_equator  <span class=hljs-comment ># northern hemisphere</span>
+                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for northern/southern hemisphere cancels out</span>
+                <span class=hljs-keyword >return</span> coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
+            <span class=hljs-keyword >else</span>  <span class=hljs-comment ># southern hemisphere</span>
+                <span class=hljs-keyword >return</span> coeff_south_pole + (coeff_equator - coeff_south_pole) * colat
+            <span class=hljs-keyword >end</span>
+        <span class=hljs-keyword >end</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> [diffusion_coefficient(i, j) <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlatitude, j <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlongitude]
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> simulation_ziegler(geo_dat, mesh, true_longitude)
+    albedo = calc_albedo_ziegler(geo_dat)
+    heat_capacity = calc_heat_capacity_ziegler(geo_dat)
+
+    solar_forcing = calc_solar_forcing(albedo, true_longitude)
+    ntimesteps = length(true_longitude)
+    diffusion_coeff = calc_diffusion_coefficients_ziegler(geo_dat)
+
+    co2_ppm = <span class=hljs-number >315.0</span>
+    radiative_cooling = calc_radiative_cooling_co2(co2_ppm, <span class=hljs-number >315.0</span>, <span class=hljs-number >210.2</span>)
+
+    jacobian = calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity, <span class=hljs-number >2.13</span>)
+
+    (temperature,
+     area_mean_temp) = compute_equilibrium_2d(timestep_euler_backward_2d(jacobian,
+                                                                         <span class=hljs-number >1</span> / ntimesteps),
+                                              mesh, diffusion_coeff, heat_capacity,
+                                              solar_forcing,
+                                              radiative_cooling)
+
+    <span class=hljs-comment ># Copied from MS4</span>
+    <span class=hljs-comment ># Area mean of pointwise annual temperature</span>
+    annual_mean_temperature_north = [calc_mean_north(temperature[:, :, t], mesh.area)
+                                     <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps]
+    annual_mean_temperature_south = [calc_mean_south(temperature[:, :, t], mesh.area)
+                                     <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps]
+    annual_mean_temperature_total = [calc_mean(temperature[:, :, t], mesh.area)
+                                     <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps]
+
+    average_temperature_north = sum(annual_mean_temperature_north) / ntimesteps
+    average_temperature_south = sum(annual_mean_temperature_south) / ntimesteps
+    average_temperature_total = sum(annual_mean_temperature_total) / ntimesteps
+
+    p = plot_annual_temperature_north_south(annual_mean_temperature_north,
+                                            annual_mean_temperature_south,
+                                            annual_mean_temperature_total,
+                                            average_temperature_north,
+                                            average_temperature_south,
+                                            average_temperature_total)
+
+    <span class=hljs-keyword >return</span> p
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-comment ># Run code</span>
+<span class=hljs-keyword >function</span> milestone6()
+    geo_dat = read_geography(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;The_World128x65.dat&quot;</span>))
+    mesh = Mesh(geo_dat)
+
+    albedo = calc_albedo(geo_dat)
+    heat_capacity = calc_heat_capacity(geo_dat)
+
+    <span class=hljs-comment ># Compute solar forcing</span>
+    true_longitude = read_true_longitude(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;True_Longitude.dat&quot;</span>))
+    solar_forcing = calc_solar_forcing(albedo, true_longitude)
+    ntimesteps = length(true_longitude)
+
+    <span class=hljs-comment ># Compute and plot diffusion coefficient</span>
+    diffusion_coeff = calc_diffusion_coefficients(geo_dat)
+
+    co2_ppm = <span class=hljs-number >315.0</span>
+    radiative_cooling = calc_radiative_cooling_co2(co2_ppm)
+
+    jacobian = calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity)
+
+    (temperature,
+     _) = compute_equilibrium_2d(timestep_euler_backward_2d(jacobian,
+                                                            <span class=hljs-number >1</span> / ntimesteps),
+                                 mesh, diffusion_coeff, heat_capacity,
+                                 solar_forcing,
+                                 radiative_cooling)
+
+    plot_mean_temperature = plot_temperature(temperature, geo_dat, <span class=hljs-number >1</span>)
+
+    <span class=hljs-comment ># Copied from MS4</span>
+    <span class=hljs-comment ># Area mean of pointwise annual temperature</span>
+    annual_mean_temperature_north = [calc_mean_north(temperature[:, :, t], mesh.area)
+                                     <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps]
+    annual_mean_temperature_south = [calc_mean_south(temperature[:, :, t], mesh.area)
+                                     <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps]
+    annual_mean_temperature_total = [calc_mean(temperature[:, :, t], mesh.area)
+                                     <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps]
+
+    average_temperature_north = sum(annual_mean_temperature_north) / ntimesteps
+    average_temperature_south = sum(annual_mean_temperature_south) / ntimesteps
+    average_temperature_total = sum(annual_mean_temperature_total) / ntimesteps
+
+    plot_temperature_ = plot_annual_temperature_north_south(annual_mean_temperature_north,
+                                                            annual_mean_temperature_south,
+                                                            annual_mean_temperature_total,
+                                                            average_temperature_north,
+                                                            average_temperature_south,
+                                                            average_temperature_total)
+
+    <span class=hljs-comment ># Compute temperature in Cologne.</span>
+    <span class=hljs-comment ># Cologne lies about halfway between these two grid points.</span>
+    annual_temperature_cologne = (temperature[<span class=hljs-number >15</span>, <span class=hljs-number >68</span>, :] +
+                                  temperature[<span class=hljs-number >15</span>, <span class=hljs-number >69</span>, :]) / <span class=hljs-number >2</span>
+    average_temperature_cologne = sum(annual_temperature_cologne) / ntimesteps
+
+    plot_cologne = plot_annual_temperature(annual_temperature_cologne,
+                                           average_temperature_cologne,
+                                           <span class=hljs-string >&quot;Annual temperature with CO2 = <span class=hljs-variable >$co2_ppm</span> [ppm] in Cologne&quot;</span>)
+
+    plot_temperature_co2 = plot_co2_evolution(jacobian, mesh, diffusion_coeff,
+                                              heat_capacity, solar_forcing)
+
+    plot_ziegler = simulation_ziegler(geo_dat, mesh, true_longitude)
+
+    <span class=hljs-comment ># Animate annual temperature</span>
+    anim = <span class=hljs-meta >@animate</span> <span class=hljs-keyword >for</span> ts <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps
+        plot_temperature(temperature, geo_dat, ts)
+    <span class=hljs-keyword >end</span>
+
+    plot_temperature_day_80 = plot_temperature(temperature, geo_dat, <span class=hljs-number >1</span>)
+    gif_temperature = gif(anim, joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;annual_temperature.gif&quot;</span>), fps=<span class=hljs-number >7</span>)
+
+    <span class=hljs-comment ># Show the plots</span>
+    display(plot_mean_temperature)
+    display(plot_temperature_)
+    display(plot_cologne)
+    display(plot_temperature_co2)
+    display(plot_ziegler)
+    display(gif_temperature)
+
+    <span class=hljs-keyword >return</span> plot_mean_temperature, plot_temperature_, plot_cologne,
+           plot_temperature_co2, plot_ziegler, plot_temperature_day_80, gif_temperature
+<span class=hljs-keyword >end</span></code></pre> <h3 id=python_implementation_of_milestone_6 ><a href="#python_implementation_of_milestone_6" class=header-anchor >Python implementation of milestone 6</a></h3> <pre><code class="python hljs"><span class=hljs-keyword >import</span> os
+
+<span class=hljs-keyword >import</span> imageio
+<span class=hljs-keyword >import</span> numpy <span class=hljs-keyword >as</span> np
+<span class=hljs-keyword >from</span> matplotlib <span class=hljs-keyword >import</span> pyplot <span class=hljs-keyword >as</span> plt
+<span class=hljs-keyword >from</span> scipy <span class=hljs-keyword >import</span> sparse
+
+<span class=hljs-keyword >from</span> milestone1 <span class=hljs-keyword >import</span> read_geography
+<span class=hljs-keyword >from</span> milestone2 <span class=hljs-keyword >import</span> calc_albedo, calc_heat_capacity, calc_solar_forcing, read_true_longitude
+<span class=hljs-keyword >from</span> milestone3 <span class=hljs-keyword >import</span> calc_radiative_cooling_co2, calc_mean, plot_annual_temperature
+<span class=hljs-keyword >from</span> milestone4 <span class=hljs-keyword >import</span> plot_annual_temperature_north_south, calc_mean_north, calc_mean_south, plot_temperature
+<span class=hljs-keyword >from</span> milestone5 <span class=hljs-keyword >import</span> calc_diffusion_coefficients, calc_source_terms_ebm_2d, Mesh, compute_equilibrium_2d, \
+    calc_jacobian_ebm_2d
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">timestep_euler_backward_2d</span>(<span class=hljs-params >jacobian, delta_t_</span>):
+    m, n = jacobian.shape
+    eye = sparse.eye(m, n, <span class=hljs-built_in >format</span>=<span class=hljs-string >&quot;csc&quot;</span>)
+    jacobian = sparse.csc_matrix(jacobian)
+    solve = sparse.linalg.factorized(eye - delta_t_ * jacobian)
+
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">timestep_function</span>(<span class=hljs-params >temperature, t, delta_t,
+                          mesh, _, heat_capacity, solar_forcing, radiative_cooling</span>):
+        <span class=hljs-comment ># Similar to MS3, we have to solve the equation</span>
+        <span class=hljs-comment ># T_t = T_{t-1} + delta_t * f(T_t, t),</span>
+        <span class=hljs-comment ># where f(T, t) = R(T) + F(t).</span>
+        <span class=hljs-comment ># We use the fact that R is linear and thus can be written as R(T) = AT, where A is the Jacobian of R.</span>
+        <span class=hljs-comment ># Solving for T_t yields</span>
+        <span class=hljs-comment ># T_t = (I - delta_t * A)^{-1} * (T_{t-1} + delta_t * F(t)).</span>
+        source_terms = calc_source_terms_ebm_2d(heat_capacity, solar_forcing[:, :, t], radiative_cooling)
+
+        temperature[:, :, t] = np.reshape(solve((temperature[:, :, t - <span class=hljs-number >1</span>] + delta_t * source_terms).flatten()),
+                                          (mesh.n_latitude, mesh.n_longitude))
+
+    <span class=hljs-keyword >return</span> timestep_function
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">co2_evolution</span>(<span class=hljs-params >jacobian, mesh, diffusion_coeff, heat_capacity, solar_forcing</span>):
+    <span class=hljs-comment ># Read CO2 data</span>
+    co2_data = np.genfromtxt(<span class=hljs-string >&quot;input/co2_nasa.dat&quot;</span>)
+
+    <span class=hljs-comment ># Assume that only data for full years is available</span>
+    n_years = <span class=hljs-built_in >int</span>(co2_data.shape[<span class=hljs-number >0</span>] / <span class=hljs-number >12</span>)
+
+    average_co2 = np.array(
+        [np.<span class=hljs-built_in >sum</span>(co2_data[<span class=hljs-number >12</span> * y:<span class=hljs-number >12</span> * (y + <span class=hljs-number >1</span>), <span class=hljs-number >3</span>]) / <span class=hljs-number >12</span> <span class=hljs-keyword >for</span> y <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(n_years)]
+    )
+
+    ntimesteps = solar_forcing.shape[<span class=hljs-number >2</span>]
+
+    average_temperatures = np.zeros(n_years)
+    annual_temperatures = np.zeros(ntimesteps * n_years)
+
+    timestep_function = timestep_euler_backward_2d(jacobian, <span class=hljs-number >1</span> / ntimesteps)
+
+    temperature = np.zeros((mesh.n_latitude, mesh.n_longitude, solar_forcing.shape[<span class=hljs-number >2</span>]))
+
+    <span class=hljs-keyword >for</span> y <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(n_years):
+        radiative_cooling = calc_radiative_cooling_co2(average_co2[y])
+        temperature, area_mean_temp = compute_equilibrium_2d(timestep_function,
+                                                   mesh, diffusion_coeff, heat_capacity, solar_forcing,
+                                                   radiative_cooling,
+                                                   initial_temperature=temperature, rel_error=<span class=hljs-number >1e-2</span>)
+        annual_temperatures[ntimesteps * y:ntimesteps * (y + <span class=hljs-number >1</span>)] = area_mean_temp
+        average_temperatures[y] = np.<span class=hljs-built_in >sum</span>(area_mean_temp) / ntimesteps
+
+    first_year = <span class=hljs-built_in >int</span>(co2_data[<span class=hljs-number >0</span>, <span class=hljs-number >0</span>])
+    last_year = <span class=hljs-built_in >int</span>(co2_data[-<span class=hljs-number >1</span>, <span class=hljs-number >0</span>])
+
+    <span class=hljs-keyword >return</span> annual_temperatures, average_temperatures, first_year, last_year
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">plot_co2_evolution</span>(<span class=hljs-params >jacobian, mesh, diffusion_coeff, heat_capacity, solar_forcing</span>):
+    fig, ax = plt.subplots()
+
+    annual_temperatures, average_temperatures, first_year, last_year = co2_evolution(jacobian, mesh, diffusion_coeff,
+                                                                                     heat_capacity, solar_forcing)
+    n_timesteps = <span class=hljs-built_in >len</span>(annual_temperatures)
+
+    average_temperatures_per_month = np.array(
+        [average_temperatures[<span class=hljs-built_in >int</span>(t / <span class=hljs-number >48</span>)] <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(n_timesteps)]
+    )
+
+    plt.plot(average_temperatures_per_month, label=<span class=hljs-string >&quot;average temperature&quot;</span>)
+    plt.plot(annual_temperatures, label=<span class=hljs-string >&quot;annual temperature&quot;</span>)
+
+    plt.xlim((<span class=hljs-number >0</span>, n_timesteps - <span class=hljs-number >1</span>))
+    labels = np.arange(first_year, last_year, <span class=hljs-number >10</span>)
+    plt.xticks(np.arange(<span class=hljs-number >0</span>, n_timesteps - <span class=hljs-number >1</span>, <span class=hljs-number >480</span>), labels)
+    ax.set_ylabel(<span class=hljs-string >&quot;surface temperature [°C]&quot;</span>)
+    plt.grid()
+    plt.title(<span class=hljs-string >&quot;Annual temperature with CO2 data from NASA&quot;</span>)
+    plt.legend(loc=<span class=hljs-string >&quot;upper right&quot;</span>)
+
+    plt.tight_layout()
+    plt.show()
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_albedo_ziegler</span>(<span class=hljs-params >geo_dat</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">legendre</span>(<span class=hljs-params >latitude</span>):
+        <span class=hljs-keyword >return</span> <span class=hljs-number >0.5</span> * (<span class=hljs-number >3</span> * np.sin(latitude) ** <span class=hljs-number >2</span> - <span class=hljs-number >1</span>)
+
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">albedo</span>(<span class=hljs-params >surface_type, latitude</span>):
+        <span class=hljs-keyword >if</span> surface_type == <span class=hljs-number >1</span>:
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.32</span> + <span class=hljs-number >0.05</span> * legendre(latitude)
+        <span class=hljs-keyword >elif</span> surface_type == <span class=hljs-number >2</span>:
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.6</span>
+        <span class=hljs-keyword >elif</span> surface_type == <span class=hljs-number >3</span>:
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.7</span>
+        <span class=hljs-keyword >elif</span> surface_type == <span class=hljs-number >5</span>:
+            <span class=hljs-keyword >return</span> <span class=hljs-number >0.289</span> + <span class=hljs-number >0.08</span> * legendre(latitude)
+        <span class=hljs-keyword >else</span>:
+            <span class=hljs-keyword >raise</span> ValueError(<span class=hljs-string >f&quot;Unknown surface type <span class=hljs-subst >{surface_type}</span>.&quot;</span>)
+
+    nlatitude, nlongitude = geo_dat.shape
+    y_lat = np.linspace(np.pi / <span class=hljs-number >2</span>, -np.pi / <span class=hljs-number >2</span>, nlatitude)
+
+    <span class=hljs-comment ># Map surface type to albedo.</span>
+    <span class=hljs-keyword >return</span> np.array([[albedo(geo_dat[i, j], y_lat[i])
+                      <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlongitude)]
+                     <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlatitude)])
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_heat_capacity_ziegler</span>(<span class=hljs-params >geo_dat</span>):
+    sec_per_yr = <span class=hljs-number >3.15576e7</span>  <span class=hljs-comment ># seconds per year</span>
+
+    c_atmos = <span class=hljs-number >0.79e6</span>
+    c_ocean = <span class=hljs-number >394.47e6</span>
+    c_seaice = <span class=hljs-number >4.83e6</span>
+    c_land = <span class=hljs-number >1.87e6</span>
+    c_snow = <span class=hljs-number >1.52e6</span>
+
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">heat_capacity</span>(<span class=hljs-params >surface_type</span>):
+        <span class=hljs-keyword >if</span> surface_type == <span class=hljs-number >1</span>:
+            capacity_surface = c_land
+        <span class=hljs-keyword >elif</span> surface_type == <span class=hljs-number >2</span>:
+            capacity_surface = c_seaice
+        <span class=hljs-keyword >elif</span> surface_type == <span class=hljs-number >3</span>:
+            capacity_surface = c_snow
+        <span class=hljs-keyword >elif</span> surface_type == <span class=hljs-number >5</span>:
+            capacity_surface = c_ocean
+        <span class=hljs-keyword >else</span>:
+            <span class=hljs-keyword >raise</span> ValueError(<span class=hljs-string >f&quot;Unknown surface type <span class=hljs-subst >{surface_type}</span>.&quot;</span>)
+
+        <span class=hljs-keyword >return</span> (capacity_surface + c_atmos) / sec_per_yr
+
+    <span class=hljs-comment ># Map surface type to heat capacity.</span>
+    nlatitude, nlongitude = geo_dat.shape
+    <span class=hljs-keyword >return</span> np.array([[heat_capacity(geo_dat[i, j])
+                      <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlongitude)]
+                     <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlatitude)])
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_diffusion_coefficients_ziegler</span>(<span class=hljs-params >geo_dat</span>):
+    nlatitude, nlongitude = geo_dat.shape
+
+    coeff_ocean_poles = <span class=hljs-number >0.4</span>
+    coeff_ocean_equator = <span class=hljs-number >0.9</span>
+    coeff_equator = <span class=hljs-number >0.9</span>
+    coeff_north_pole = <span class=hljs-number >0.45</span>
+    coeff_south_pole = <span class=hljs-number >0.12</span>
+
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">diffusion_coefficient</span>(<span class=hljs-params >j, i</span>):
+        <span class=hljs-comment ># Compute the j value of the equator</span>
+        j_equator = <span class=hljs-built_in >int</span>(nlatitude / <span class=hljs-number >2</span>)
+
+        theta = np.pi * j / np.real(nlatitude - <span class=hljs-number >1</span>)
+        colat = np.sin(theta) ** <span class=hljs-number >5</span>
+
+        geo = geo_dat[j, i]
+        <span class=hljs-keyword >if</span> geo == <span class=hljs-number >5</span>:  <span class=hljs-comment ># ocean</span>
+            <span class=hljs-keyword >return</span> coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
+        <span class=hljs-keyword >else</span>:  <span class=hljs-comment ># land, sea ice, etc</span>
+            <span class=hljs-keyword >if</span> j &lt;= j_equator:  <span class=hljs-comment ># northern hemisphere</span>
+                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for northern/southern hemisphere cancels out</span>
+                <span class=hljs-keyword >return</span> coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
+            <span class=hljs-keyword >else</span>:  <span class=hljs-comment ># southern hemisphere</span>
+                <span class=hljs-keyword >return</span> coeff_south_pole + (coeff_equator - coeff_south_pole) * colat
+
+    <span class=hljs-keyword >return</span> np.array(
+        [[diffusion_coefficient(j, i) <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlongitude)] <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlatitude)]
+    )
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">simulation_ziegler</span>(<span class=hljs-params >geo_dat, mesh, true_longitude</span>):
+    albedo = calc_albedo_ziegler(geo_dat)
+    heat_capacity = calc_heat_capacity_ziegler(geo_dat)
+
+    solar_forcing = calc_solar_forcing(albedo, true_longitude)
+    ntimesteps = <span class=hljs-built_in >len</span>(true_longitude)
+    diffusion_coeff = calc_diffusion_coefficients_ziegler(geo_dat)
+
+    co2_ppm = <span class=hljs-number >315.0</span>
+    radiative_cooling = calc_radiative_cooling_co2(co2_ppm, radiative_cooling_base=<span class=hljs-number >210.2</span>)
+
+    jacobian = calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity, radiative_cooling_feedback=<span class=hljs-number >2.13</span>)
+
+    temperature, area_mean_temp = compute_equilibrium_2d(timestep_euler_backward_2d(jacobian, <span class=hljs-number >1</span> / ntimesteps),
+                                                         mesh, diffusion_coeff, heat_capacity, solar_forcing,
+                                                         radiative_cooling)
+
+    <span class=hljs-comment ># Copied from MS4</span>
+    <span class=hljs-comment ># Area mean of pointwise annual temperature</span>
+    annual_mean_temperature_north = [calc_mean_north(temperature[:, :, t], mesh_.area) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps)]
+    annual_mean_temperature_south = [calc_mean_south(temperature[:, :, t], mesh_.area) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps)]
+    annual_mean_temperature_total = [calc_mean(temperature[:, :, t], mesh_.area) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps)]
+
+    average_temperature_north = np.<span class=hljs-built_in >sum</span>(annual_mean_temperature_north) / ntimesteps
+    average_temperature_south = np.<span class=hljs-built_in >sum</span>(annual_mean_temperature_south) / ntimesteps
+    average_temperature_total = np.<span class=hljs-built_in >sum</span>(annual_mean_temperature_total) / ntimesteps
+
+    plot_annual_temperature_north_south(annual_mean_temperature_north, annual_mean_temperature_south,
+                                        annual_mean_temperature_total, average_temperature_north,
+                                        average_temperature_south, average_temperature_total)
+
+
+<span class=hljs-comment ># Run code</span>
+<span class=hljs-keyword >if</span> __name__ == <span class=hljs-string >&#x27;__main__&#x27;</span>:
+    geo_dat_ = read_geography(<span class=hljs-string >&quot;input/The_World128x65.dat&quot;</span>)
+    mesh_ = Mesh(geo_dat_)
+
+    albedo_ = calc_albedo(geo_dat_)
+    heat_capacity_ = calc_heat_capacity(geo_dat_)
+
+    <span class=hljs-comment ># Compute solar forcing</span>
+    true_longitude_ = read_true_longitude(<span class=hljs-string >&quot;input/True_Longitude.dat&quot;</span>)
+    solar_forcing_ = calc_solar_forcing(albedo_, true_longitude_)
+    ntimesteps_ = <span class=hljs-built_in >len</span>(true_longitude_)
+
+    diffusion_coeff_ = calc_diffusion_coefficients(geo_dat_)
+
+    co2_ppm_ = <span class=hljs-number >315.0</span>
+    radiative_cooling_ = calc_radiative_cooling_co2(co2_ppm_)
+
+    jacobian_ = calc_jacobian_ebm_2d(mesh_, diffusion_coeff_, heat_capacity_)
+
+    temperature_, area_mean_temp_ = compute_equilibrium_2d(timestep_euler_backward_2d(jacobian_, <span class=hljs-number >1</span> / ntimesteps_),
+                                                           mesh_, diffusion_coeff_, heat_capacity_, solar_forcing_,
+                                                           radiative_cooling_)
+
+    <span class=hljs-comment ># Copied from MS4</span>
+    <span class=hljs-comment ># Area mean of pointwise annual temperature</span>
+    annual_mean_temperature_north_ = [calc_mean_north(temperature_[:, :, t], mesh_.area) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps_)]
+    annual_mean_temperature_south_ = [calc_mean_south(temperature_[:, :, t], mesh_.area) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps_)]
+    annual_mean_temperature_total_ = [calc_mean(temperature_[:, :, t], mesh_.area) <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps_)]
+
+    average_temperature_north_ = np.<span class=hljs-built_in >sum</span>(annual_mean_temperature_north_) / ntimesteps_
+    average_temperature_south_ = np.<span class=hljs-built_in >sum</span>(annual_mean_temperature_south_) / ntimesteps_
+    average_temperature_total_ = np.<span class=hljs-built_in >sum</span>(annual_mean_temperature_total_) / ntimesteps_
+
+    plot_annual_temperature_north_south(annual_mean_temperature_north_, annual_mean_temperature_south_,
+                                        annual_mean_temperature_total_, average_temperature_north_,
+                                        average_temperature_south_, average_temperature_total_)
+
+    <span class=hljs-comment ># Compute temperature in Cologne.</span>
+    <span class=hljs-comment ># Cologne lies about halfway between these two grid points.</span>
+    annual_temperature_cologne = (temperature_[<span class=hljs-number >14</span>, <span class=hljs-number >67</span>, :] +
+                                  temperature_[<span class=hljs-number >14</span>, <span class=hljs-number >68</span>, :]) / <span class=hljs-number >2</span>
+    average_temperature_cologne = np.<span class=hljs-built_in >sum</span>(annual_temperature_cologne) / ntimesteps_
+
+    plot_annual_temperature(annual_temperature_cologne, average_temperature_cologne,
+                            <span class=hljs-string >f&quot;Annual temperature_ with CO2 = <span class=hljs-subst >{co2_ppm_}</span> [ppm] in Cologne&quot;</span>)
+
+    plot_co2_evolution(jacobian_, mesh_, diffusion_coeff_, heat_capacity_, solar_forcing_)
+
+    simulation_ziegler(geo_dat_, mesh_, true_longitude_)
+
+    <span class=hljs-comment ># Plot temperature for each time step</span>
+    filenames = []
+    <span class=hljs-keyword >for</span> ts <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >48</span>):
+        filename_ = plot_temperature(temperature_, geo_dat_, ts, show_plot=<span class=hljs-literal >False</span>)
+        filenames.append(filename_)
+
+    <span class=hljs-comment ># Build GIF</span>
+    frames = [imageio.v3.imread(filename_) <span class=hljs-keyword >for</span> filename_ <span class=hljs-keyword >in</span> filenames]
+    imageio.mimsave(<span class=hljs-string >&quot;annual_temperature.gif&quot;</span>, frames)
+
+    <span class=hljs-comment ># Remove files</span>
+    <span class=hljs-keyword >for</span> filename_ <span class=hljs-keyword >in</span> <span class=hljs-built_in >set</span>(filenames):
+        os.remove(filename_)</code></pre> <div class=page-foot > <hr> Created by <a href="https://www.mi.uni-koeln.de/NumSim/gregor-gassner/">Gregor Gassner</a> and <a href="https://andres.rueda-ramirez.com/">Andrés Rueda-Ramírez</a> with contributions by <a href="https://www.mi.uni-koeln.de/NumSim/dr-simone-chiocchetti/">Simone Chiocchetti</a>, <a href="https://www.mi.uni-koeln.de/NumSim/daniel-bach/">Daniel Bach</a>, <a href="https://www.mi.uni-koeln.de/NumSim/sophia-schmickler/">Sophia Horak</a>, <a href="https://www.mi.uni-koeln.de/NumSim/philipp-baasch/">Philipp Baasch</a>, <a href="https://www.mi.uni-koeln.de/NumSim/benjamin-bolm/">Benjamin Bolm</a>, <a href="https://www.mi.uni-koeln.de/NumSim/erik-faulhaber/">Erik Faulhaber</a>, and <a>Luca Sommer</a>. Last modified: June 09, 2026. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> </div> <!-- end of class page-wrap--> <script src="/klimakoffer/previews/PR22/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>

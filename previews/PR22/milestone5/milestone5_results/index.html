@@ -1,0 +1,597 @@
+<!doctype html> <html lang=en > <meta http-equiv=Cache-control  content="no-cache, no-store, must-revalidate"> <meta http-equiv=Pragma  content=no-cache > <meta http-equiv=Expires  content=0 > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/klimakoffer/previews/PR22/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/klimakoffer/previews/PR22/css/jtd.css"> <link rel=icon  href="/klimakoffer/previews/PR22/assets/earth_logo.png"> <style> /* #148 wrap long header */ .franklin-content a.header-anchor, .franklin-toc li a { word-wrap: break-word; white-space: normal; } </style> <title>Milestone 5</title> <div class=page-wrap > <div class=side-bar > <div class=header > <a href="/klimakoffer/previews/PR22/" class=title > Klimakoffer </a> </div> <label for=show-menu  class=show-menu >MENU</label> <input type=checkbox  id=show-menu  role=button > <div class=menu  id=side-menu > <ul class=menu-list > <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/" class="menu-list-link ">Home</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/general_info/" class="menu-list-link ">General Information</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/programming_info/" class="menu-list-link ">Programming<br>Info</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_menu/" class="menu-list-link ">Milestone 1</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_intro/" class="menu-list-link ">Introduction</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_sphere/" class="menu-list-link ">Spherical coordinates</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_mesh/" class="menu-list-link ">Meshes</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone1/milestone1_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_menu/" class="menu-list-link ">Milestone 2</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_conservation-and-balance/" class="menu-list-link ">Conservation and balance</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_ebm/" class="menu-list-link ">Energy Balance Model</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_radiation/" class="menu-list-link ">Radiation modeling</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_heat-capacity/" class="menu-list-link ">Heat capacity</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_albedo/" class="menu-list-link ">Albedo</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_solar-forcing/" class="menu-list-link ">Solar forcing</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_time-disc/" class="menu-list-link ">Time discretization</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone2/milestone2_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_menu/" class="menu-list-link ">Milestone 3</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_constantcoeff/" class="menu-list-link ">Constant-coefficient EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_odesolvers/" class="menu-list-link ">ODE Solvers</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_averages/" class="menu-list-link ">Averages</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone3/milestone3_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_menu/" class="menu-list-link ">Milestone 4</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_northsouth_ebm/" class="menu-list-link ">North/South EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_multi0d/" class="menu-list-link ">Multiple 0D-EBMs</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone4/milestone4_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item active"><a href="/klimakoffer/previews/PR22/milestone5/milestone5_menu/" class="menu-list-link active">Milestone 5</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_heat_transfer/" class="menu-list-link ">Planetary Heat Transfer</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_spatial_discretization/" class="menu-list-link ">Spatial Discretization</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_stability_jacobians/" class="menu-list-link ">Stability and Jacobians</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone5/milestone5_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item active"><a href="/klimakoffer/previews/PR22/milestone5/milestone5_results/" class="menu-list-link active">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_menu/" class="menu-list-link ">Milestone 6</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_discrete_ebm/" class="menu-list-link ">Discrete EBM</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_linear_systems/" class="menu-list-link ">Solving Linear Systems</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_simulation/" class="menu-list-link ">Climate Simulations</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_project/" class="menu-list-link ">Project Description</a> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/milestone6/milestone6_results/" class="menu-list-link ">Project Results</a> </ul> <li class="menu-list-item "><a href="/klimakoffer/previews/PR22/literature/" class="menu-list-link ">Literature</a> </ul> </div> <div class=footer > <img src="/klimakoffer/previews/PR22/assets/earth_logo.png" alt=earth_logo > </div> </div> <div class=main-content-wrap > <div class=main-content > <div class=main-header > <!-- <a id=ilias  href="https://www.ilias.uni-koeln.de/ilias/goto_uk_crs_6744928.html">ILIAS</a> --> </div> <div class=franklin-content > <h1 id=milestone_5_-_project_results ><a href="#milestone_5_-_project_results" class=header-anchor >Milestone 5 - Project Results</a></h1> <div class=franklin-toc ><ol><li><a href="#expected_results">Expected Results</a><ol><li><a href="#diffusion_coefficient_plot">Diffusion Coefficient Plot</a><li><a href="#sparsity_pattern_of_the_jacobian">Sparsity Pattern of the Jacobian</a></ol><li><a href="#files_download">Files Download</a><li><a href="#bonus_-_3d_plot">Bonus - 3D plot</a><li><a href="#scripts_for_milestone_5">Scripts for Milestone 5</a><ol><li><a href="#julia_implementation_of_milestone_5">Julia implementation of milestone 5</a><li><a href="#python_implementation_of_milestone_5">Python implementation of milestone 5</a></ol></ol></div> <h2 id=expected_results ><a href="#expected_results" class=header-anchor >Expected Results</a></h2> <p>This is an example for the expected results:</p> <h3 id=diffusion_coefficient_plot ><a href="#diffusion_coefficient_plot" class=header-anchor >Diffusion Coefficient Plot</a></h3> <p>Plot of the diffusion coefficient:</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone5_diffusion_coeff.png" alt="Diffusion coefficient plot" /></p> <h3 id=sparsity_pattern_of_the_jacobian ><a href="#sparsity_pattern_of_the_jacobian" class=header-anchor >Sparsity Pattern of the Jacobian</a></h3> <p>Plot of the upper left corner of the sparsity pattern of the Jacobian. Only a the upper left part is plotted to make the pattern visible.</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone5_jacobian.png" alt="Sparsity pattern of the Jacobian" /></p> <p>In a row-major language like Python, the sparsity pattern looks different:</p> <p><img src="/klimakoffer/previews/PR22/assets/milestone_results/milestone5_jacobian_row_major.png" alt="Sparsity pattern of the Jacobian in a row-major language like Python" /></p> <div class=warning ><div class=title >⚠ Warning&#33;</div> <div class=content >We strongly suggest to first work on the solutions on your own/within your group without checking directly for the reference solutions.</div></div> <h2 id=files_download ><a href="#files_download" class=header-anchor >Files Download</a></h2> <p>The Python implementation of milestone 5 can be downloaded here &#40;Julia version will be added soon&#41;:</p> <ul> <li><p><a href="/klimakoffer/previews/PR22/assets/scripts/milestone5.jl">Julia solution</a></p> <li><p><a href="/klimakoffer/previews/PR22/assets/scripts/milestone5.py">Python solution</a></p> </ul> <h2 id=bonus_-_3d_plot ><a href="#bonus_-_3d_plot" class=header-anchor >Bonus - 3D plot</a></h2> <p>3D plot generated by Chong-Son Dröge, Fabian Höck, and Luca Levent Sommer.</p> <iframe src="/klimakoffer/previews/PR22/assets/julia_plots_out/diffusion_coeff.html" seamless width=800 height=600></iframe> <h2 id=scripts_for_milestone_5 ><a href="#scripts_for_milestone_5" class=header-anchor >Scripts for Milestone 5</a></h2> <p>You can also check out our Julia and Python implementations of milestone 5 in this site.</p> <h3 id=julia_implementation_of_milestone_5 ><a href="#julia_implementation_of_milestone_5" class=header-anchor >Julia implementation of milestone 5</a></h3> <pre><code class="julia hljs">include(<span class=hljs-string >&quot;milestone1.jl&quot;</span>)
+include(<span class=hljs-string >&quot;milestone2.jl&quot;</span>)
+include(<span class=hljs-string >&quot;milestone3.jl&quot;</span>)
+
+<span class=hljs-keyword >using</span> Arpack: eigs
+
+<span class=hljs-keyword >struct</span> Mesh
+    n_latitude::<span class=hljs-built_in >Int</span>
+    n_longitude::<span class=hljs-built_in >Int</span>
+    ndof::<span class=hljs-built_in >Int</span>
+    h::<span class=hljs-built_in >Float64</span>
+    area::<span class=hljs-built_in >Vector</span>{<span class=hljs-built_in >Float64</span>}
+    geom::<span class=hljs-built_in >Float64</span>
+    csc2::<span class=hljs-built_in >Vector</span>{<span class=hljs-built_in >Float64</span>}
+    cot::<span class=hljs-built_in >Vector</span>{<span class=hljs-built_in >Float64</span>}
+
+    <span class=hljs-keyword >function</span> Mesh(geo_dat)
+        n_latitude, n_longitude = size(geo_dat)
+        ndof = n_latitude * n_longitude
+        h = <span class=hljs-literal >pi</span> / (n_latitude - <span class=hljs-number >1</span>)
+
+        area = calc_area(geo_dat)
+        geom = sin(<span class=hljs-number >0.5</span> * h) / area[<span class=hljs-number >1</span>]
+
+        csc2 = [<span class=hljs-number >1</span> / sin(h * (j - <span class=hljs-number >1</span>))^<span class=hljs-number >2</span> <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-number >2</span>:(n_latitude - <span class=hljs-number >1</span>)]
+        cot = [<span class=hljs-number >1</span> / tan(h * (j - <span class=hljs-number >1</span>)) <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-number >2</span>:(n_latitude - <span class=hljs-number >1</span>)]
+
+        <span class=hljs-keyword >return</span> new(n_latitude, n_longitude, ndof, h, area, geom, csc2, cot)
+    <span class=hljs-keyword >end</span>
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_diffusion_coefficients(geo_dat)
+    nlatitude, nlongitude = size(geo_dat)
+
+    coeff_ocean_poles = <span class=hljs-number >0.4</span>
+    coeff_ocean_equator = <span class=hljs-number >0.65</span>
+    coeff_equator = <span class=hljs-number >0.65</span>
+    coeff_north_pole = <span class=hljs-number >0.28</span>
+    coeff_south_pole = <span class=hljs-number >0.2</span>
+
+    <span class=hljs-keyword >function</span> diffusion_coefficient(j, i)
+        <span class=hljs-comment ># Compute the j value of the equator</span>
+        j_equator = <span class=hljs-built_in >Int</span>((nlatitude - <span class=hljs-number >1</span>) / <span class=hljs-number >2</span>) + <span class=hljs-number >1</span>
+
+        theta = <span class=hljs-literal >pi</span> * (j - <span class=hljs-number >1</span>) / (nlatitude - <span class=hljs-number >1</span>)
+        colat = sin(theta)^<span class=hljs-number >5</span>
+
+        geo = geo_dat[j, i]
+        <span class=hljs-keyword >if</span> geo == <span class=hljs-number >5</span>  <span class=hljs-comment ># ocean</span>
+            <span class=hljs-keyword >return</span> coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
+        <span class=hljs-keyword >else</span>  <span class=hljs-comment ># land, sea ice, etc</span>
+            <span class=hljs-keyword >if</span> j &lt;= j_equator  <span class=hljs-comment ># northern hemisphere</span>
+                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for northern/southern hemisphere cancels out</span>
+                <span class=hljs-keyword >return</span> coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
+            <span class=hljs-keyword >else</span>  <span class=hljs-comment ># southern hemisphere</span>
+                <span class=hljs-keyword >return</span> coeff_south_pole + (coeff_equator - coeff_south_pole) * colat
+            <span class=hljs-keyword >end</span>
+        <span class=hljs-keyword >end</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> [diffusion_coefficient(j, i) <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlatitude, i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:nlongitude]
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_diffusion_operator(mesh, diffusion_coeff, temperature)
+    diffusion_op = similar(diffusion_coeff)
+
+    <span class=hljs-keyword >return</span> calc_diffusion_operator!(diffusion_op, mesh, diffusion_coeff, temperature)
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-comment ># Inplace version to avoid allocations</span>
+<span class=hljs-keyword >function</span> calc_diffusion_operator!(diffusion_op, mesh, diffusion_coeff, temperature)
+    diffusion_op .= <span class=hljs-number >0.0</span>
+
+    <span class=hljs-comment ># North Pole</span>
+    factor = sin(mesh.h / <span class=hljs-number >2</span>) / (<span class=hljs-number >4</span> * <span class=hljs-literal >pi</span> * mesh.area[<span class=hljs-number >1</span>])
+    <span class=hljs-comment ># Use `@views` to avoid (most) allocations</span>
+    <span class=hljs-meta >@views</span> diffusion_op[<span class=hljs-number >1</span>, :] .= factor * <span class=hljs-number >0.5</span> *
+                                 dot(diffusion_coeff[<span class=hljs-number >1</span>, :] + diffusion_coeff[<span class=hljs-number >2</span>, :],
+                                     temperature[<span class=hljs-number >2</span>, :] - temperature[<span class=hljs-number >1</span>, :])
+
+    <span class=hljs-comment ># South Pole</span>
+    factor = sin(mesh.h / <span class=hljs-number >2</span>) / (<span class=hljs-number >4</span> * <span class=hljs-literal >pi</span> * mesh.area[<span class=hljs-keyword >end</span>])
+    <span class=hljs-comment ># Use `@views` to avoid (most) allocations</span>
+    <span class=hljs-meta >@views</span> diffusion_op[<span class=hljs-keyword >end</span>, :] .= factor * <span class=hljs-number >0.5</span> *
+                                   dot(diffusion_coeff[<span class=hljs-keyword >end</span>, :] +
+                                       diffusion_coeff[<span class=hljs-keyword >end</span> - <span class=hljs-number >1</span>, :],
+                                       temperature[<span class=hljs-keyword >end</span> - <span class=hljs-number >1</span>, :] - temperature[<span class=hljs-keyword >end</span>, :])
+
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:(mesh.n_longitude)
+        <span class=hljs-comment ># Only loop over inner nodes</span>
+        <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-number >2</span>:(mesh.n_latitude - <span class=hljs-number >1</span>)
+            <span class=hljs-comment ># There are the special cases of i=1 and i=mesh.n_longitude.</span>
+            <span class=hljs-comment ># We have a periodic boundary condition, so for i=1, we want i-1 to be the last entry.</span>
+            <span class=hljs-comment ># For i=mesh.n_longitude, we want i+1 to be 1.</span>
+            <span class=hljs-comment ># For this, we define variables ip1 (i plus 1) and im1 (i minus 1)</span>
+            <span class=hljs-comment ># to avoid duplicating code.</span>
+            <span class=hljs-keyword >if</span> i == mesh.n_longitude
+                ip1 = <span class=hljs-number >1</span>
+            <span class=hljs-keyword >else</span>
+                ip1 = i + <span class=hljs-number >1</span>
+            <span class=hljs-keyword >end</span>
+
+            <span class=hljs-keyword >if</span> i == <span class=hljs-number >1</span>
+                im1 = mesh.n_longitude
+            <span class=hljs-keyword >else</span>
+                im1 = i - <span class=hljs-number >1</span>
+            <span class=hljs-keyword >end</span>
+
+            <span class=hljs-comment ># Note that mesh.csc2 does not contain the values at the poles</span>
+            factor1 = mesh.csc2[j - <span class=hljs-number >1</span>] / mesh.h^<span class=hljs-number >2</span>
+            term1 = factor1 * (-<span class=hljs-number >2</span> * diffusion_coeff[j, i] * temperature[j, i] +
+                     (diffusion_coeff[j, i] -
+                      <span class=hljs-number >0.25</span> * (diffusion_coeff[j, ip1] - diffusion_coeff[j, im1])) *
+                     temperature[j, im1] +
+                     (diffusion_coeff[j, i] +
+                      <span class=hljs-number >0.25</span> * (diffusion_coeff[j, ip1] - diffusion_coeff[j, im1])) *
+                     temperature[j, ip1])
+
+            factor2 = <span class=hljs-number >1</span> / mesh.h^<span class=hljs-number >2</span>
+            term2 = factor2 * (-<span class=hljs-number >2</span> * diffusion_coeff[j, i] * temperature[j, i] +
+                     (diffusion_coeff[j, i] -
+                      <span class=hljs-number >0.25</span> *
+                      (diffusion_coeff[j + <span class=hljs-number >1</span>, i] - diffusion_coeff[j - <span class=hljs-number >1</span>, i])) *
+                     temperature[j - <span class=hljs-number >1</span>, i]
+                     +
+                     (diffusion_coeff[j, i] +
+                      <span class=hljs-number >0.25</span> *
+                      (diffusion_coeff[j + <span class=hljs-number >1</span>, i] - diffusion_coeff[j - <span class=hljs-number >1</span>, i])) *
+                     temperature[j + <span class=hljs-number >1</span>, i])
+
+            term3 = mesh.cot[j - <span class=hljs-number >1</span>] * diffusion_coeff[j, i] * <span class=hljs-number >0.5</span> / mesh.h *
+                    (temperature[j + <span class=hljs-number >1</span>, i] - temperature[j - <span class=hljs-number >1</span>, i])
+
+            diffusion_op[j, i] = term1 + term2 + term3
+        <span class=hljs-keyword >end</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> diffusion_op
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_operator_ebm_2d(temperature, mesh, diffusion_coeff, heat_capacity,
+                              radiative_cooling_feedback=<span class=hljs-number >2.15</span>)
+    diffusion_op = calc_diffusion_operator(mesh, diffusion_coeff, temperature)
+
+    <span class=hljs-keyword >return</span> (diffusion_op .- radiative_cooling_feedback * temperature) ./ heat_capacity
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-comment ># Inplace version to avoid allocations. Called from the Jacobian computation</span>
+<span class=hljs-keyword >function</span> calc_operator_ebm_2d!(operator, temperature, mesh, diffusion_coeff, heat_capacity,
+                               radiative_cooling_feedback=<span class=hljs-number >2.15</span>)
+    calc_diffusion_operator!(operator, mesh, diffusion_coeff, temperature)
+
+    operator .-= radiative_cooling_feedback * temperature
+    operator ./= heat_capacity
+
+    <span class=hljs-keyword >return</span> operator
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_source_terms_ebm_2d(heat_capacity, solar_forcing, radiative_cooling)
+    <span class=hljs-keyword >return</span> (solar_forcing .- radiative_cooling) ./ heat_capacity
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_rhs_ebm_2d(temperature, mesh, diffusion_coeff, heat_capacity, solar_forcing,
+                         radiative_cooling)
+    operator = calc_operator_ebm_2d(temperature, mesh, diffusion_coeff, heat_capacity)
+    source_terms = calc_source_terms_ebm_2d(heat_capacity, solar_forcing, radiative_cooling)
+
+    <span class=hljs-keyword >return</span> operator + source_terms
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> timestep_euler_forward_2d(temperature, t, delta_t,
+                                   mesh, diffusion_coeff, heat_capacity, solar_forcing,
+                                   radiative_cooling)
+    <span class=hljs-comment ># Note that this function modifies the first argument instead of returning the result</span>
+    <span class=hljs-keyword >if</span> t == <span class=hljs-number >1</span>
+        t_old = size(temperature, <span class=hljs-number >3</span>)
+    <span class=hljs-keyword >else</span>
+        t_old = t - <span class=hljs-number >1</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> temperature[:, :, t] = temperature[:, :, t_old] +
+                                  delta_t * calc_rhs_ebm_2d(temperature[:, :, t_old], mesh,
+                                                  diffusion_coeff, heat_capacity,
+                                                  solar_forcing[:, :, t_old],
+                                                  radiative_cooling)
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> compute_equilibrium_2d(timestep_function, mesh, diffusion_coeff, heat_capacity,
+                                solar_forcing, radiative_cooling;
+                                max_iterations=<span class=hljs-number >100</span>, rel_error=<span class=hljs-number >2.0e-5</span>, verbose=<span class=hljs-literal >true</span>,
+                                initial_temperature=zeros((mesh.n_latitude,
+                                                           mesh.n_longitude,
+                                                           size(solar_forcing, <span class=hljs-number >3</span>))))
+    <span class=hljs-comment ># Number of time steps per year</span>
+    ntimesteps = size(solar_forcing, <span class=hljs-number >3</span>)
+
+    <span class=hljs-comment ># Step size</span>
+    delta_t = <span class=hljs-number >1</span> / ntimesteps
+    temperature = initial_temperature
+
+    <span class=hljs-comment ># Area-mean in every time step</span>
+    area_mean_temp = zeros(ntimesteps)
+
+    <span class=hljs-comment ># Average temperature over all time steps from the previous iteration to approximate the error</span>
+    old_avg_temperature = <span class=hljs-number >0</span>
+
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:max_iterations
+        <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:ntimesteps
+            timestep_function(temperature, t, delta_t,
+                              mesh, diffusion_coeff, heat_capacity, solar_forcing,
+                              radiative_cooling)
+            <span class=hljs-meta >@views</span> area_mean_temp[t] = calc_mean(temperature[:, :, t], mesh.area)
+        <span class=hljs-keyword >end</span>
+
+        avg_temperature = sum(area_mean_temp) / ntimesteps
+        verbose &amp;&amp; println(<span class=hljs-string >&quot;Average annual temperature in iteration <span class=hljs-variable >$i</span> is <span class=hljs-variable >$avg_temperature</span>&quot;</span>)
+
+        <span class=hljs-keyword >if</span> abs(avg_temperature - old_avg_temperature) &lt; rel_error
+            <span class=hljs-comment ># We can assume that the error is sufficiently small now.</span>
+            verbose &amp;&amp; println(<span class=hljs-string >&quot;Equilibrium reached!&quot;</span>)
+            <span class=hljs-keyword >break</span>
+        <span class=hljs-keyword >else</span>
+            old_avg_temperature = avg_temperature
+        <span class=hljs-keyword >end</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> temperature, area_mean_temp
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> plot_diffusion_coefficient(diffusion_coeff)
+    vmin = minimum(diffusion_coeff)
+    vmax = maximum(diffusion_coeff)
+
+    nlatitude, nlongitude = size(diffusion_coeff)
+    x, y = robinson_projection(nlatitude, nlongitude)
+
+    p = contourf(x, y, diffusion_coeff,
+                 clims=(vmin, vmax),
+                 levels=<span class=hljs-built_in >LinRange</span>(vmin, vmax, <span class=hljs-number >100</span>),
+                 aspect_ratio=<span class=hljs-number >1</span>,
+                 title=<span class=hljs-string >&quot;Diffusion Coefficients of the 2D EBM&quot;</span>,
+                 c=:cividis,
+                 colorbar_title=<span class=hljs-string >&quot;diffusion coefficient&quot;</span>,
+                 colorbar_ticks=([vmin, <span class=hljs-number >0.5</span> * (vmin + vmax), vmax]),
+                 axis=([], <span class=hljs-literal >false</span>),
+                 dpi=<span class=hljs-number >300</span>)
+
+    <span class=hljs-keyword >return</span> p
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-keyword >function</span> calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity,
+                              radiative_cooling_feedback=<span class=hljs-number >2.15</span>)
+    jacobian = zeros((mesh.ndof, mesh.ndof))
+    test_temperature = zeros(size(diffusion_coeff))
+    op = similar(diffusion_coeff)
+
+    index = <span class=hljs-number >1</span>
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:(mesh.n_longitude), j <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:(mesh.n_latitude)
+        test_temperature[j, i] = <span class=hljs-number >1.0</span>
+        <span class=hljs-comment ># Use inplace version to avoid a lot of allocations</span>
+        calc_operator_ebm_2d!(op, test_temperature, mesh, diffusion_coeff, heat_capacity,
+                              radiative_cooling_feedback)
+
+        <span class=hljs-comment ># Convert matrix to vector.</span>
+        <span class=hljs-comment ># Note that this must be compatible with the loop order, so that `index` is correct.</span>
+        <span class=hljs-comment ># `vec` works column-wise (as opposed to `flatten` in Python),</span>
+        <span class=hljs-comment ># so we must loop over columns first in order to get the correct Jacobian.</span>
+        <span class=hljs-comment ># To be precise, `vec(test_temperature)` must be the `index`-th unit vector.</span>
+        jacobian[:, index] = vec(op)
+
+        <span class=hljs-comment ># Reset test_temperature</span>
+        test_temperature[j, i] = <span class=hljs-number >0.0</span>
+        index += <span class=hljs-number >1</span>
+    <span class=hljs-keyword >end</span>
+
+    <span class=hljs-keyword >return</span> jacobian
+<span class=hljs-keyword >end</span>
+
+<span class=hljs-comment ># Run code</span>
+<span class=hljs-keyword >function</span> milestone5()
+    geo_dat = read_geography(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;The_World128x65.dat&quot;</span>))
+    mesh = Mesh(geo_dat)
+
+    albedo = calc_albedo(geo_dat)
+    heat_capacity = calc_heat_capacity(geo_dat)
+
+    <span class=hljs-comment ># Compute solar forcing</span>
+    true_longitude = read_true_longitude(joinpath(<span class=hljs-meta >@__DIR__</span>, <span class=hljs-string >&quot;input&quot;</span>, <span class=hljs-string >&quot;True_Longitude.dat&quot;</span>))
+    solar_forcing = calc_solar_forcing(albedo, true_longitude)
+
+    <span class=hljs-comment ># Compute and plot diffusion coefficient</span>
+    diffusion_coeff = calc_diffusion_coefficients(geo_dat)
+    plot_diffusion_coeff = plot_diffusion_coefficient(diffusion_coeff)
+
+    co2_ppm = <span class=hljs-number >315.0</span>
+    radiative_cooling = calc_radiative_cooling_co2(co2_ppm)
+
+    compute_equilibrium_2d(timestep_euler_forward_2d, mesh, diffusion_coeff,
+                           heat_capacity, solar_forcing,
+                           radiative_cooling, max_iterations=<span class=hljs-number >2</span>)
+
+    <span class=hljs-comment ># The Jacobian has three diagonals of non-zero entries and two blocks of non-zero entries for the poles.</span>
+    <span class=hljs-comment ># We only show a subset of the entries, otherwise the two side diagonals are not visible.</span>
+    jacobian = calc_jacobian_ebm_2d(mesh, diffusion_coeff, heat_capacity)
+
+    <span class=hljs-comment ># Warning: Plotting the whole matrix with the PythonPlot backend is very slow.</span>
+    <span class=hljs-comment ># Use the GR backend when examining the whole Jacobian.</span>
+    gr()
+    plot_jacobian = spy(jacobian[<span class=hljs-number >1</span>:<span class=hljs-number >300</span>, <span class=hljs-number >1</span>:<span class=hljs-number >300</span>])
+
+    println(<span class=hljs-string >&quot;Done with Jacobian&quot;</span>)
+
+    <span class=hljs-comment ># This computes only the 6 eigenvalues with largest magnitude and no eigenvectors</span>
+    eigenvalues, _ = eigs(jacobian, ritzvec=<span class=hljs-literal >false</span>)
+
+    <span class=hljs-comment ># The maximum absolute value of the eigenvalues is too high for an efficient explicit time integration scheme.</span>
+    print(max(maximum(real.(eigenvalues)), -minimum(real.(eigenvalues))))
+
+    <span class=hljs-comment ># Show the plots</span>
+    display(plot_diffusion_coeff)
+    display(plot_jacobian)
+
+    <span class=hljs-keyword >return</span> plot_diffusion_coeff, plot_jacobian
+<span class=hljs-keyword >end</span></code></pre> <h3 id=python_implementation_of_milestone_5 ><a href="#python_implementation_of_milestone_5" class=header-anchor >Python implementation of milestone 5</a></h3> <pre><code class="python hljs"><span class=hljs-keyword >import</span> matplotlib.pyplot <span class=hljs-keyword >as</span> plt
+<span class=hljs-keyword >import</span> numpy <span class=hljs-keyword >as</span> np
+<span class=hljs-keyword >import</span> scipy
+<span class=hljs-keyword >from</span> numba <span class=hljs-keyword >import</span> njit
+
+<span class=hljs-keyword >from</span> milestone1 <span class=hljs-keyword >import</span> read_geography, plot_robinson_projection
+<span class=hljs-keyword >from</span> milestone2 <span class=hljs-keyword >import</span> calc_albedo, calc_heat_capacity, calc_solar_forcing, read_true_longitude
+<span class=hljs-keyword >from</span> milestone3 <span class=hljs-keyword >import</span> calc_area, calc_mean, calc_radiative_cooling_co2
+
+
+<span class=hljs-keyword >class</span> <span class="hljs-title class_">Mesh</span>:
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, geo_dat</span>):
+        <span class="hljs-variable language_">self</span>.n_latitude, <span class="hljs-variable language_">self</span>.n_longitude = geo_dat.shape
+        <span class="hljs-variable language_">self</span>.ndof = <span class="hljs-variable language_">self</span>.n_latitude * <span class="hljs-variable language_">self</span>.n_longitude
+        <span class="hljs-variable language_">self</span>.h = np.pi / (<span class="hljs-variable language_">self</span>.n_latitude - <span class=hljs-number >1</span>)
+
+        <span class="hljs-variable language_">self</span>.area = calc_area(geo_dat)
+        <span class="hljs-variable language_">self</span>.geom = np.sin(<span class=hljs-number >0.5</span> * <span class="hljs-variable language_">self</span>.h) / <span class="hljs-variable language_">self</span>.area[<span class=hljs-number >0</span>]
+
+        <span class="hljs-variable language_">self</span>.csc2 = np.array([<span class=hljs-number >1</span> / np.sin(<span class="hljs-variable language_">self</span>.h * j) ** <span class=hljs-number >2</span> <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >1</span>, <span class="hljs-variable language_">self</span>.n_latitude - <span class=hljs-number >1</span>)])
+        <span class="hljs-variable language_">self</span>.cot = np.array([<span class=hljs-number >1</span> / np.tan(<span class="hljs-variable language_">self</span>.h * j) <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >1</span>, <span class="hljs-variable language_">self</span>.n_latitude - <span class=hljs-number >1</span>)])
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_diffusion_coefficients</span>(<span class=hljs-params >geo_dat</span>):
+    nlatitude, nlongitude = geo_dat.shape
+
+    coeff_ocean_poles = <span class=hljs-number >0.40</span>
+    coeff_ocean_equator = <span class=hljs-number >0.65</span>
+    coeff_equator = <span class=hljs-number >0.65</span>
+    coeff_north_pole = <span class=hljs-number >0.28</span>
+    coeff_south_pole = <span class=hljs-number >0.20</span>
+
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">diffusion_coefficient</span>(<span class=hljs-params >j, i</span>):
+        <span class=hljs-comment ># Compute the j value of the equator</span>
+        j_equator = <span class=hljs-built_in >int</span>(nlatitude / <span class=hljs-number >2</span>)
+
+        theta = np.pi * j / np.real(nlatitude - <span class=hljs-number >1</span>)
+        colat = np.sin(theta) ** <span class=hljs-number >5</span>
+
+        geo = geo_dat[j, i]
+        <span class=hljs-keyword >if</span> geo == <span class=hljs-number >5</span>:  <span class=hljs-comment ># ocean</span>
+            <span class=hljs-keyword >return</span> coeff_ocean_poles + (coeff_ocean_equator - coeff_ocean_poles) * colat
+        <span class=hljs-keyword >else</span>:  <span class=hljs-comment ># land, sea ice, etc</span>
+            <span class=hljs-keyword >if</span> j &lt;= j_equator:  <span class=hljs-comment ># northern hemisphere</span>
+                <span class=hljs-comment ># on the equator colat=1 -&gt; coefficients for northern/southern hemisphere cancels out</span>
+                <span class=hljs-keyword >return</span> coeff_north_pole + (coeff_equator - coeff_north_pole) * colat
+            <span class=hljs-keyword >else</span>:  <span class=hljs-comment ># southern hemisphere</span>
+                <span class=hljs-keyword >return</span> coeff_south_pole + (coeff_equator - coeff_south_pole) * colat
+
+    <span class=hljs-keyword >return</span> np.array(
+        [[diffusion_coefficient(j, i) <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlongitude)] <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nlatitude)]
+    )
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_diffusion_operator</span>(<span class=hljs-params >mesh, diffusion_coeff, temperature</span>):
+    h = mesh.h
+    area = mesh.area
+    n_latitude = mesh.n_latitude
+    n_longitude = mesh.n_longitude
+    csc2 = mesh.csc2
+    cot = mesh.cot
+
+    <span class=hljs-keyword >return</span> calc_diffusion_operator_inner(h, area, n_latitude, n_longitude, csc2, cot, diffusion_coeff, temperature)
+
+
+<span class=hljs-comment ># This function is slow. It takes about 22ms on my machine, which is a lot for such a simple function.</span>
+<span class=hljs-comment ># The problem is that Python is an interpreted (as opposed to compiled) language and therefore very slow.</span>
+<span class=hljs-comment ># We could try to outsource most of that code to Numpy functions to speed things up, but that is not easy.</span>
+<span class=hljs-comment ># Instead, we will use Numba, which is a JIT (just-in-time) compiler for Python to compile this function to fast</span>
+<span class=hljs-comment ># machine code.</span>
+<span class=hljs-comment ># With Numba, we can just add `@njit` to the function to tell Numba to compile it directly to machine code.</span>
+<span class=hljs-comment ># Note, however, that this does not work with classes like our `Mesh`.</span>
+<span class=hljs-comment ># Therefore, we cannot pass `mesh` to this function. Instead, we have to unpack all fields of `Mesh` above and</span>
+<span class=hljs-comment ># add a wrapper function that does the unpacking.</span>
+<span class=hljs-comment >#</span>
+<span class=hljs-comment ># Times on my machine:</span>
+<span class=hljs-comment ># Without `@njit`: 22ms (185s total for 8320 calls when calculating the Jacobian).</span>
+<span class=hljs-comment ># With `@njit`: 25µs (209ms total for 8320 calls when calculating the Jacobian).</span>
+<span class=hljs-comment >#</span>
+<span class=hljs-comment ># This gives us a ~1000x speedup! Just by slightly rewriting the function and adding a decorator.</span>
+<span class=hljs-comment ># Of course, we could try to further optimize this function, but that would be a waste of time, as it&#x27;s not</span>
+<span class=hljs-comment ># performance-relevant anymore.</span>
+<span class=hljs-meta >@njit</span>
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_diffusion_operator_inner</span>(<span class=hljs-params >h, area, n_latitude, n_longitude, csc2, cot, diffusion_coeff, temperature</span>):
+    result = np.zeros(diffusion_coeff.shape)
+
+    <span class=hljs-comment ># North Pole</span>
+    factor = np.sin(h / <span class=hljs-number >2</span>) / (<span class=hljs-number >4</span> * np.pi * area[<span class=hljs-number >0</span>])
+    result[<span class=hljs-number >0</span>, :] = factor * <span class=hljs-number >0.5</span> * np.dot(diffusion_coeff[<span class=hljs-number >0</span>, :] + diffusion_coeff[<span class=hljs-number >1</span>, :],
+                                         temperature[<span class=hljs-number >1</span>, :] - temperature[<span class=hljs-number >0</span>, :])
+
+    <span class=hljs-comment ># South Pole</span>
+    factor = np.sin(h / <span class=hljs-number >2</span>) / (<span class=hljs-number >4</span> * np.pi * area[-<span class=hljs-number >1</span>])
+    result[-<span class=hljs-number >1</span>, :] = factor * <span class=hljs-number >0.5</span> * np.dot(diffusion_coeff[-<span class=hljs-number >1</span>, :] + diffusion_coeff[-<span class=hljs-number >2</span>, :],
+                                          temperature[-<span class=hljs-number >2</span>, :] - temperature[-<span class=hljs-number >1</span>, :])
+
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(n_longitude):
+        <span class=hljs-comment ># Only loop over inner nodes</span>
+        <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >1</span>, n_latitude - <span class=hljs-number >1</span>):
+            <span class=hljs-comment ># There are the special cases of i=0 and i=n_longitude-1.</span>
+            <span class=hljs-comment ># We have a periodic boundary condition, so for i=0, we want i-1 to be the last entry.</span>
+            <span class=hljs-comment ># This happens automatically in Python when i=-1.</span>
+            <span class=hljs-comment ># For i=n_longitude-1, we want i+1 to be 0.</span>
+            <span class=hljs-comment ># For this, we define a variable ip1 (i plus 1) to avoid duplicating code.</span>
+            <span class=hljs-keyword >if</span> i == n_longitude - <span class=hljs-number >1</span>:
+                ip1 = <span class=hljs-number >0</span>
+            <span class=hljs-keyword >else</span>:
+                ip1 = i + <span class=hljs-number >1</span>
+
+            <span class=hljs-comment ># Note that csc2 does not contain the values at the poles</span>
+            factor1 = csc2[j - <span class=hljs-number >1</span>] / h ** <span class=hljs-number >2</span>
+            term1 = factor1 * (-<span class=hljs-number >2</span> * diffusion_coeff[j, i] * temperature[j, i] +
+                               (diffusion_coeff[j, i] - <span class=hljs-number >0.25</span> * (diffusion_coeff[j, ip1] - diffusion_coeff[j, i - <span class=hljs-number >1</span>])) *
+                               temperature[j, i - <span class=hljs-number >1</span>] +
+                               (diffusion_coeff[j, i] + <span class=hljs-number >0.25</span> * (diffusion_coeff[j, ip1] - diffusion_coeff[j, i - <span class=hljs-number >1</span>])) *
+                               temperature[j, ip1])
+
+            factor2 = <span class=hljs-number >1</span> / h ** <span class=hljs-number >2</span>
+            term2 = factor2 * (-<span class=hljs-number >2</span> * diffusion_coeff[j, i] * temperature[j, i] +
+                               (diffusion_coeff[j, i] - <span class=hljs-number >0.25</span> *
+                                (diffusion_coeff[j + <span class=hljs-number >1</span>, i] - diffusion_coeff[j - <span class=hljs-number >1</span>, i])) *
+                               temperature[j - <span class=hljs-number >1</span>, i]
+                               + (diffusion_coeff[j, i] + <span class=hljs-number >0.25</span> *
+                                  (diffusion_coeff[j + <span class=hljs-number >1</span>, i] - diffusion_coeff[j - <span class=hljs-number >1</span>, i])) *
+                               temperature[j + <span class=hljs-number >1</span>, i])
+
+            term3 = cot[j - <span class=hljs-number >1</span>] * diffusion_coeff[j, i] * <span class=hljs-number >0.5</span> / h * (temperature[j + <span class=hljs-number >1</span>, i] - temperature[j - <span class=hljs-number >1</span>, i])
+
+            result[j, i] = term1 + term2 + term3
+
+    <span class=hljs-keyword >return</span> result
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_operator_ebm_2d</span>(<span class=hljs-params >temperature, mesh, diffusion_coeff, heat_capacity, radiative_cooling_feedback=<span class=hljs-number >2.15</span></span>):
+    diffusion_op = calc_diffusion_operator(mesh, diffusion_coeff, temperature)
+
+    <span class=hljs-keyword >return</span> (diffusion_op - radiative_cooling_feedback * temperature) / heat_capacity
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_source_terms_ebm_2d</span>(<span class=hljs-params >heat_capacity, solar_forcing, radiative_cooling</span>):
+    <span class=hljs-keyword >return</span> (solar_forcing - radiative_cooling) / heat_capacity
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_rhs_ebm_2d</span>(<span class=hljs-params >temperature, mesh, diffusion_coeff, heat_capacity, solar_forcing, radiative_cooling</span>):
+    operator = calc_operator_ebm_2d(temperature, mesh, diffusion_coeff, heat_capacity)
+    source_terms = calc_source_terms_ebm_2d(heat_capacity, solar_forcing, radiative_cooling)
+
+    <span class=hljs-keyword >return</span> operator + source_terms
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">timestep_euler_forward_2d</span>(<span class=hljs-params >temperature, t, delta_t,
+                              mesh, diffusion_coeff, heat_capacity, solar_forcing, radiative_cooling</span>):
+    <span class=hljs-comment ># Note that this function modifies the first argument instead of returning the result</span>
+    temperature[:, :, t] = temperature[:, :, t - <span class=hljs-number >1</span>] + delta_t * calc_rhs_ebm_2d(temperature[:, :, t - <span class=hljs-number >1</span>], mesh,
+                                                                                diffusion_coeff, heat_capacity,
+                                                                                solar_forcing[:, :, t - <span class=hljs-number >1</span>],
+                                                                                radiative_cooling)
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">compute_equilibrium_2d</span>(<span class=hljs-params >timestep_function, mesh, diffusion_coeff, heat_capacity, solar_forcing, radiative_cooling,
+                           max_iterations=<span class=hljs-number >100</span>, rel_error=<span class=hljs-number >2e-5</span>, verbose=<span class=hljs-literal >True</span>, initial_temperature=<span class=hljs-literal >None</span></span>):
+    <span class=hljs-keyword >if</span> initial_temperature <span class=hljs-keyword >is</span> <span class=hljs-literal >None</span>:
+        <span class=hljs-comment ># We start with a constant temperature of 0 in every grid point throughout the year</span>
+        temperature = np.zeros((mesh.n_latitude, mesh.n_longitude, solar_forcing.shape[<span class=hljs-number >2</span>]))
+    <span class=hljs-keyword >else</span>:
+        temperature = initial_temperature
+
+    <span class=hljs-comment ># Number of time steps per year</span>
+    ntimesteps = solar_forcing.shape[<span class=hljs-number >2</span>]
+
+    <span class=hljs-comment ># Step size</span>
+    delta_t = <span class=hljs-number >1</span> / ntimesteps
+
+    <span class=hljs-comment ># Area-mean in every time step</span>
+    area_mean_temp = np.zeros(ntimesteps)
+
+    <span class=hljs-comment ># Average temperature over all time steps from the previous iteration to approximate the error</span>
+    old_avg_temperature = <span class=hljs-number >0</span>
+
+    <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(max_iterations):
+        <span class=hljs-keyword >for</span> t <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(ntimesteps):
+            timestep_function(temperature, t, delta_t,
+                              mesh, diffusion_coeff, heat_capacity, solar_forcing, radiative_cooling)
+            area_mean_temp[t] = calc_mean(temperature[:, :, t], mesh.area)
+
+        avg_temperature = np.<span class=hljs-built_in >sum</span>(area_mean_temp) / ntimesteps
+        verbose <span class=hljs-keyword >and</span> <span class=hljs-built_in >print</span>(<span class=hljs-string >f&quot;Average annual temperature in iteration <span class=hljs-subst >{i}</span> is <span class=hljs-subst >{avg_temperature}</span>&quot;</span>)
+
+        <span class=hljs-keyword >if</span> np.<span class=hljs-built_in >abs</span>(avg_temperature - old_avg_temperature) &lt; rel_error:
+            <span class=hljs-comment ># We can assume that the error is sufficiently small now.</span>
+            verbose <span class=hljs-keyword >and</span> <span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;Equilibrium reached!&quot;</span>)
+            <span class=hljs-keyword >break</span>
+        <span class=hljs-keyword >else</span>:
+            old_avg_temperature = avg_temperature
+
+    <span class=hljs-keyword >return</span> temperature, area_mean_temp
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">plot_diffusion_coefficient</span>(<span class=hljs-params >diffusion_coeff</span>):
+    vmin = np.amin(diffusion_coeff)
+    vmax = np.amax(diffusion_coeff)
+
+    levels = np.linspace(vmin, vmax, <span class=hljs-number >100</span>)
+
+    <span class=hljs-comment ># Reuse plotting function from milestone 1.</span>
+    cbar = plot_robinson_projection(diffusion_coeff, <span class=hljs-string >&quot;Diffusion Coefficients of the 2D EBM&quot;</span>,
+                                    levels=levels, cmap=<span class=hljs-string >&quot;cividis&quot;</span>,
+                                    vmin=vmin, vmax=vmax)
+    cbar.set_ticks([vmin, <span class=hljs-number >0.5</span> * (vmin + vmax), vmax])
+    cbar.set_label(<span class=hljs-string >&quot;diffusion coefficient&quot;</span>)
+
+    <span class=hljs-comment ># Adjust size of plot to viewport to prevent clipping of the legend.</span>
+    plt.tight_layout()
+    plt.show()
+
+
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">calc_jacobian_ebm_2d</span>(<span class=hljs-params >mesh, diffusion_coeff, heat_capacity, radiative_cooling_feedback=<span class=hljs-number >2.15</span></span>):
+    jacobian = np.zeros((mesh.ndof, mesh.ndof))
+    test_temperature = np.zeros(diffusion_coeff.shape)
+
+    index = <span class=hljs-number >0</span>
+    <span class=hljs-keyword >for</span> j <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(mesh.n_latitude):
+        <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(mesh.n_longitude):
+            test_temperature[j, i] = <span class=hljs-number >1.0</span>
+            op = calc_operator_ebm_2d(test_temperature, mesh, diffusion_coeff, heat_capacity,
+                                      radiative_cooling_feedback=radiative_cooling_feedback)
+
+            <span class=hljs-comment ># Convert matrix to vector.</span>
+            <span class=hljs-comment ># Note that this must be compatible with the loop order, so that `index` is correct.</span>
+            <span class=hljs-comment ># `flatten` works row-wise, so we must loop over rows first in order to get the correct Jacobian.</span>
+            <span class=hljs-comment ># To be precise, `test_temperature.flatten()` must be the `index`-th unit vector.</span>
+            jacobian[:, index] = op.flatten()
+
+            <span class=hljs-comment ># Reset test_temperature</span>
+            test_temperature[j, i] = <span class=hljs-number >0.0</span>
+            index += <span class=hljs-number >1</span>
+
+    <span class=hljs-keyword >return</span> jacobian
+
+
+<span class=hljs-comment ># Run code</span>
+<span class=hljs-keyword >if</span> __name__ == <span class=hljs-string >&#x27;__main__&#x27;</span>:
+    geo_dat_ = read_geography(<span class=hljs-string >&quot;input/The_World128x65.dat&quot;</span>)
+    mesh_ = Mesh(geo_dat_)
+
+    albedo = calc_albedo(geo_dat_)
+    heat_capacity_ = calc_heat_capacity(geo_dat_)
+
+    <span class=hljs-comment ># Compute solar forcing</span>
+    true_longitude = read_true_longitude(<span class=hljs-string >&quot;input/True_Longitude.dat&quot;</span>)
+    solar_forcing_ = calc_solar_forcing(albedo, true_longitude)
+
+    <span class=hljs-comment ># Compute and plot diffusion coefficient</span>
+    diffusion_coeff_ = calc_diffusion_coefficients(geo_dat_)
+    plot_diffusion_coefficient(diffusion_coeff_)
+
+    co2_ppm = <span class=hljs-number >315.0</span>
+    radiative_cooling_ = calc_radiative_cooling_co2(co2_ppm)
+
+    compute_equilibrium_2d(timestep_euler_forward_2d, mesh_, diffusion_coeff_, heat_capacity_, solar_forcing_,
+                           radiative_cooling_, max_iterations=<span class=hljs-number >2</span>)
+
+    <span class=hljs-comment ># The Jacobian has three diagonals of non-zero entries and two blocks of non-zero entries for the poles.</span>
+    <span class=hljs-comment ># We only show a subset of the entries, otherwise the two side diagonals are not visible.</span>
+    jacobian_ = calc_jacobian_ebm_2d(mesh_, diffusion_coeff_, heat_capacity_)
+    plt.spy(jacobian_[<span class=hljs-number >0</span>:<span class=hljs-number >300</span>, <span class=hljs-number >0</span>:<span class=hljs-number >300</span>])
+    plt.show()
+
+    <span class=hljs-comment ># Use Scipy to efficiently compute the eigenvalues of this sparse matrix.</span>
+    <span class=hljs-comment ># Converting the matrix to a sparse format first makes `eigs` ~100x faster.</span>
+    eigenvalues = scipy.sparse.linalg.eigs(scipy.sparse.csr_matrix(jacobian_), return_eigenvectors=<span class=hljs-literal >False</span>)
+
+    <span class=hljs-comment ># The maximum absolute value of the eigenvalues is too high for an efficient explicit time integration scheme.</span>
+    <span class=hljs-built_in >print</span>(np.real(<span class=hljs-built_in >max</span>(<span class=hljs-built_in >max</span>(eigenvalues), -<span class=hljs-built_in >min</span>(eigenvalues))))</code></pre> <div class=page-foot > <hr> Created by <a href="https://www.mi.uni-koeln.de/NumSim/gregor-gassner/">Gregor Gassner</a> and <a href="https://andres.rueda-ramirez.com/">Andrés Rueda-Ramírez</a> with contributions by <a href="https://www.mi.uni-koeln.de/NumSim/dr-simone-chiocchetti/">Simone Chiocchetti</a>, <a href="https://www.mi.uni-koeln.de/NumSim/daniel-bach/">Daniel Bach</a>, <a href="https://www.mi.uni-koeln.de/NumSim/sophia-schmickler/">Sophia Horak</a>, <a href="https://www.mi.uni-koeln.de/NumSim/philipp-baasch/">Philipp Baasch</a>, <a href="https://www.mi.uni-koeln.de/NumSim/benjamin-bolm/">Benjamin Bolm</a>, <a href="https://www.mi.uni-koeln.de/NumSim/erik-faulhaber/">Erik Faulhaber</a>, and <a>Luca Sommer</a>. Last modified: June 09, 2026. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> </div> <!-- end of class page-wrap--> <script src="/klimakoffer/previews/PR22/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
