@@ -16,6 +16,11 @@ Earth’s climate is changing due to human activity. Therefore, the ability to p
 Bachelor (final year) and master (early) students of science, technology, engineering and mathematics (STEM) programs.
 
 ## Disclaimer
-
 The whole course material is open source and can be freely used for educational
 purpose: [https://github.com/numsim-group/klimakoffer](https://github.com/numsim-group/klimakoffer).
+
+The source code for the class projects is licensed under the
+[MIT License](https://github.com/numsim-group/klimakoffer/blob/main/LICENSE-MIT).
+
+All other content (course material, text, figures, website) is licensed under
+[CC BY 4.0](https://github.com/numsim-group/klimakoffer/blob/main/LICENSE-CC-BY).
