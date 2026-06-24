@@ -49,10 +49,9 @@ An Introduction to Climate Modeling}\\
 \section{Fixing Stability in the spatial 2D Energy Balance Model}
 \begin{enumerate}
 
-\item In the previous milestone you have implemented the spatial operator of the diffusive EBM for two spatial dimensions. The investigations of the eigenvalues revealed that the stable time step of the explicit Euler method is prohibitively small. Hence, we focus on the implicit Euler method. Adapt the function\\
-csmall\texttt{\detokenize{calc_equilibrium_2d }}\normalsize to use the backward Euler instead of the forward Euler time integration method. Visualize the results as an animation.
+\item In the previous milestone you have implemented the spatial operator of the diffusive EBM for two spatial dimensions. The investigations of the eigenvalues revealed that the stable time step of the explicit Euler method is prohibitively small. Hence, we focus on the implicit Euler method in this milestone. Adapt the function {\small\texttt{\detokenize{calc_equilibrium_2d}}} to use the backward Euler instead of the forward Euler time integration method. Visualize the results as an animation.
 
-\item  Use the functions \small\texttt{\detokenize{calc_area_mean}}\normalsize, \small\texttt{\detokenize{calc_area_mean_north }}\normalsize and \small\texttt{\detokenize{calc_area_mean_south }}\normalsize  from previous milestones to compute the mean temperature values from the EBM in two space dimensions. Compare them with the results in milestone 4. Compare also the results for the temperature in Cologne. What is noticeable?
+\item  Use the functions {\small\texttt{\detokenize{calc_area_mean}}}, {\small\texttt{\detokenize{calc_area_mean_north}}} and {\small\texttt{\detokenize{calc_area_mean_south}}} from previous milestones to compute the mean temperature values from the EBM in two space dimensions. Compare them with the results in milestone 4. Compare also the results for the temperature in Cologne. What is noticeable?
 
 \item  Write a function to compute equilibrium simulations based on NASA $CO_2$ data from 1980 to the present. Plot the results.
 
